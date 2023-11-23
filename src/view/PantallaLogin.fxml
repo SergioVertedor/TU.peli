@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="265.0" fitWidth="292.0" layoutX="816.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../resources/logo.png" />
+            <Image url="@../resources/images/logo/logo.png" />
          </image>
       </ImageView>
       <TextField fx:id="txtLoginUser" layoutX="707.0" layoutY="398.0" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email">

@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
 
@@ -20,7 +19,7 @@ public class Main extends Application {
 			Pane ventana = (Pane) loader.load();
 
 			Scene scene = new Scene(ventana);
-			scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/resources/css/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			
 			primaryStage.show();
@@ -29,7 +28,7 @@ public class Main extends Application {
 			primaryStage.setMaximized(true);
 			
 			// Asignar icono
-			Image icon = new Image("resources/logo.png");
+			Image icon = new Image("resources/images/logo/logo.png");
 			primaryStage.getIcons().add(icon);
 			
 			// Poner titulo a la ventana
