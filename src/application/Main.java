@@ -15,15 +15,19 @@ public class Main extends Application {
 		try {
 			
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("/view/PantallaPrincipal.fxml"));
+			loader.setLocation(Main.class.getResource("/view/PantallaLogin.fxml"));
 			
 			Pane ventana = (Pane) loader.load();
 
 			Scene scene = new Scene(ventana);
-			scene.getStylesheets().add(getClass().getResource("/view/application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
 			primaryStage.setScene(scene);
+			
 			primaryStage.show();
-
+			
+			// Arranca maximizado
+			primaryStage.setMaximized(true);
+			
 			// Asignar icono
 			Image icon = new Image("resources/logo.png");
 			primaryStage.getIcons().add(icon);
