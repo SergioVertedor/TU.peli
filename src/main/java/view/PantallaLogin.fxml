@@ -17,19 +17,19 @@
                   <Image url="@../resources/images/logo/logo.png" />
                </image>
             </ImageView>
-            <TextField fx:id="txtLoginUser" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email" style="-fx-border-radius: 12;" text="Usuario/Email">
+            <TextField fx:id="txtLoginUser" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email" style="-fx-background-radius: 12;" text="Usuario/Email">
                <font>
                   <Font name="Corbel Light" size="24.0" />
                </font>
             </TextField>
-            <TextField fx:id="txtLoginPassword" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email" text="Password">
+            <TextField fx:id="txtLoginPassword" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email" style="-fx-background-radius: 12;" text="Password">
                <font>
                   <Font name="Corbel Light" size="24.0" />
                </font>
             </TextField>
-            <Button fx:id="btnLoginEnter" mnemonicParsing="false" onAction="#btnLoginEnterPressed" text="Entrar" />
-            <Button fx:id="btnLoginRegister" mnemonicParsing="false" onAction="#btnLoginRegisterPressed" text="Registrar" />
-            <Button fx:id="btnLoginWithGoogle" mnemonicParsing="false" onAction="#btnLoginWithGooglePressed" text="Registrar" />
+            <Button fx:id="btnLoginEnter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnLoginEnterPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Entrar" />
+            <Button fx:id="btnLoginRegister" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnLoginRegisterPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Registrar" />
+            <Button fx:id="btnLoginWithGoogle" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnLoginWithGooglePressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Registrar" />
          </children>
       </VBox>
    </children>
