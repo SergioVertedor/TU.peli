@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PantallaLoginController">
    <children>
-      <ImageView fitHeight="265.0" fitWidth="292.0" layoutX="816.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/images/logo/logo.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="txtLoginUser" layoutX="707.0" layoutY="398.0" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email">
-         <font>
-            <Font name="Corbel Light" size="24.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtLoginPassword" layoutX="716.0" layoutY="505.0" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email">
-         <font>
-            <Font name="Corbel Light" size="24.0" />
-         </font>
-      </TextField>
+      <VBox alignment="CENTER" prefHeight="1080.0" prefWidth="1920.0">
+         <children>
+            <ImageView fitHeight="265.0" fitWidth="292.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/images/logo/logo.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtLoginUser" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email" style="-fx-border-radius: 12;" text="Usuario/Email">
+               <font>
+                  <Font name="Corbel Light" size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtLoginPassword" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email" text="Password">
+               <font>
+                  <Font name="Corbel Light" size="24.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnLoginEnter" mnemonicParsing="false" onAction="#btnLoginEnterPressed" text="Entrar" />
+            <Button fx:id="btnLoginRegister" mnemonicParsing="false" onAction="#btnLoginRegisterPressed" text="Registrar" />
+            <Button fx:id="btnLoginWithGoogle" mnemonicParsing="false" onAction="#btnLoginWithGooglePressed" text="Registrar" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
