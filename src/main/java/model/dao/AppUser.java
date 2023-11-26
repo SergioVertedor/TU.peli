@@ -1,4 +1,4 @@
-package model;
+package model.dao;
 
 public class AppUser {
 private int id_user;

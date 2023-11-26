@@ -6,8 +6,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import model.dao.AppUser;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PantallaLoginController {
+private List<AppUser> users = new ArrayList<>();
 
     @FXML
     private Button btnLoginEnter;
