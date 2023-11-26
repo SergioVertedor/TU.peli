@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PantallaLoginController {
-private List<AppUser> users = new ArrayList<>();
+public static List<AppUser> users = new ArrayList<>();
 
     @FXML
     private Button btnLoginEnter;
