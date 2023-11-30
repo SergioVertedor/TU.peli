@@ -21,6 +21,7 @@
          <font>
             <Font size="34.0" />
          </font>
+<<<<<<< HEAD
       </Label>
       <VBox alignment="CENTER_RIGHT" layoutX="509.0" layoutY="307.0" spacing="60.0">
          <children>
@@ -105,5 +106,29 @@
          </children>
       </VBox>
       <Button fx:id="btnLoginRegister" alignment="CENTER" contentDisplay="CENTER" layoutX="884.0" layoutY="889.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnRegisterNewUserPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Crear nuevo usuario" textAlignment="CENTER" />
+=======
+      </TextField>
+      <TextField fx:id="txtName" layoutX="787.0" layoutY="378.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Nombre" style="-fx-background-radius: 12;">
+         <font>
+            <Font name="Corbel Light" size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtEmail" layoutX="787.0" layoutY="523.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Email" style="-fx-background-radius: 12;">
+         <font>
+            <Font name="Corbel Light" size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPassword" layoutX="787.0" layoutY="598.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Password" style="-fx-background-radius: 12;">
+         <font>
+            <Font name="Corbel Light" size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPasswordRepeat" layoutX="787.0" layoutY="675.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Repite Password" style="-fx-background-radius: 12;">
+         <font>
+            <Font name="Corbel Light" size="24.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnLoginRegister" layoutX="955.0" layoutY="859.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnRegisterNewUserPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Crear nuevo usuario" />
+>>>>>>> c8b26c32eb8362458c5846b2c2f0f2b115777300
    </children>
 </AnchorPane>

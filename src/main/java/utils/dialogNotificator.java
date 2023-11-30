@@ -13,7 +13,7 @@ import java.io.StringWriter;
 /**
  * Clase que notifica al usuario de las notificaciones que se producen en el login
  */
-public class LoginNotificator {
+public class dialogNotificator {
   /**
    * Notifica al usuario que el login ha sido correcto
    * @param usuario
@@ -89,4 +89,36 @@ public class LoginNotificator {
 
     alert.showAndWait();
     }
+
+  /**
+   *  Notifica al usuario que se ha producido un error en el registro
+   * @param errorMessages mensajes de error
+   * @param errorCount numero de errores
+   */
+  public void notifyRegisterError(String errorMessages, int errorCount) {
+    if (errorCount == 1) {
+      errorMessages = "Se ha producido " + errorCount + " error:" + errorMessages;
+    } else {
+      errorMessages = "Se han producido " + errorCount + " errores:" + errorMessages;
+    }
+    Alert alert = new Alert(Alert.AlertType.ERROR);
+    alert.setTitle(null);
+    alert.setHeaderText("Login incorrecto");
+    alert.setContentText(errorMessages);
+
+    alert.showAndWait();
+  }
+
+  /**
+   * Notifica al usuario que el registro ha sido correcto
+   * @param usuario usuario que se ha registrado
+   */
+  public void notifyRegister(AppUser usuario) {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(null);
+    alert.setHeaderText("Registro correcto");
+    alert.setContentText("Registro completado para " + usuario.getUsername());
+
+    alert.showAndWait();
+  }
 }

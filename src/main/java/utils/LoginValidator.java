@@ -1,7 +1,9 @@
 package utils;
 
 import controllers.PantallaLoginController;
-import javafx.scene.control.Alert;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Esta clase se encarga de validar el login
@@ -13,17 +15,21 @@ public class LoginValidator {
      * @param password contraseña introducida
      */
   public void validateLogin(String userOrMail, String password) {
-    LoginNotificator loginNotificator = new LoginNotificator();
+    dialogNotificator dialogNotificator = new dialogNotificator();
     if (userOrMail.isEmpty() || password.isEmpty()) {
-      loginNotificator.notifyEmptyFields();
+      dialogNotificator.notifyEmptyFields();
     } else {
       PantallaLoginController.users.forEach(
           appUser -> {
             if (appUser.getUsername().equals(userOrMail) && appUser.getPassword().equals(password)
                 || appUser.getMail().equals(userOrMail) && appUser.getPassword().equals(password)) {
-              loginNotificator.notifyLogin(appUser);
+                LocalDate fechaActual = LocalDate.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy");
+                String fechaFormateada = fechaActual.format(formatter);
+                appUser.setLast_login(fechaFormateada);
+              dialogNotificator.notifyLogin(appUser);
             } else {
-              loginNotificator.notifyLoginError();
+              dialogNotificator.notifyLoginError();
             }
           });
     }
