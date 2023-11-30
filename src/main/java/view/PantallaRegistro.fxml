@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PantallaRegistroController">
@@ -14,31 +17,93 @@
             <Image url="@../resources/images/logo/logo.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtUserName" layoutX="787.0" layoutY="306.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Usuario" style="-fx-background-radius: 12;">
+      <Label fx:id="lblEresNuevoPorAqui" layoutX="832.0" layoutY="176.0" text="¿Eres nuevo por aquí?" textFill="WHITE">
          <font>
-            <Font name="Corbel Light" size="24.0" />
+            <Font size="34.0" />
          </font>
-      </TextField>
-      <TextField fx:id="txtName" layoutX="787.0" layoutY="378.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Nombre" style="-fx-background-radius: 12;">
-         <font>
-            <Font name="Corbel Light" size="24.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtEmail" layoutX="787.0" layoutY="523.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Email" style="-fx-background-radius: 12;">
-         <font>
-            <Font name="Corbel Light" size="24.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtPassword" layoutX="787.0" layoutY="598.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Password" style="-fx-background-radius: 12;">
-         <font>
-            <Font name="Corbel Light" size="24.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtPasswordRepeat" layoutX="787.0" layoutY="675.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Password" style="-fx-background-radius: 12;">
-         <font>
-            <Font name="Corbel Light" size="24.0" />
-         </font>
-      </TextField>
-      <Button fx:id="btnLoginRegister" layoutX="955.0" layoutY="859.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnRegisterNewUserPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Crear nuevo usuario" />
+      </Label>
+      <VBox alignment="CENTER_RIGHT" layoutX="509.0" layoutY="307.0" spacing="60.0">
+         <children>
+            <VBox alignment="TOP_RIGHT" spacing="15.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" spacing="20.0">
+                     <children>
+                        <Label fx:id="lblUsuario" text="Usuario:" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtUserName" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;">
+                           <font>
+                              <Font name="Corbel Light" size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="20.0">
+                     <children>
+                        <Label fx:id="lblNombre" text="Nombre:" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtName" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;">
+                           <font>
+                              <Font name="Corbel Light" size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox spacing="15.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" spacing="20.0">
+                     <children>
+                        <Label fx:id="lblEmail" text="Correo electrónico:" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtEmail" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;">
+                           <font>
+                              <Font name="Corbel Light" size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="20.0">
+                     <children>
+                        <Label fx:id="lblPassword" text="Contraseña:" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPassword" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;">
+                           <font>
+                              <Font name="Corbel Light" size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="20.0">
+                     <children>
+                        <Label fx:id="lblPasswordRepeat" text="Repita contraseña:" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPasswordRepeat" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;">
+                           <font>
+                              <Font name="Corbel Light" size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <Button fx:id="btnLoginRegister" alignment="CENTER" contentDisplay="CENTER" layoutX="884.0" layoutY="889.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnRegisterNewUserPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Crear nuevo usuario" textAlignment="CENTER" />
    </children>
 </AnchorPane>

@@ -3,6 +3,7 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
@@ -13,6 +14,24 @@ public class PantallaRegistroController {
 
     @FXML
     private ImageView imgLoginLogo;
+
+    @FXML
+    private Label lblEmail;
+
+    @FXML
+    private Label lblEresNuevoPorAqui;
+
+    @FXML
+    private Label lblNombre;
+
+    @FXML
+    private Label lblPassword;
+
+    @FXML
+    private Label lblPasswordRepeat;
+
+    @FXML
+    private Label lblUsuario;
 
     @FXML
     private TextField txtEmail;
@@ -31,6 +50,7 @@ public class PantallaRegistroController {
 
     @FXML
     void btnRegisterNewUserPressed(ActionEvent event) {
-    	// TODO
+
     }
+
 }
