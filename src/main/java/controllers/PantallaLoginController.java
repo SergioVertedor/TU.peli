@@ -2,10 +2,15 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.dao.AppUser;
 import utils.InputValidator;
 import utils.dialogNotificator;
@@ -47,6 +52,21 @@ public class PantallaLoginController {
 
   @FXML
   void btnLoginRegisterPressed(ActionEvent event) {
+    FXMLLoader loader = new FXMLLoader();
+    loader.setLocation(getClass().getResource("/view/PantallaRegistro.fxml"));
+    Parent root = null; // Carga pantalla principal
+    try {
+      root = loader.load();
+    } catch (IOException e) {
+      System.err.println("Error al cargar la ventana de registro");
+    }
+    PantallaRegistroController ventSecController  = loader.getController();
+    Stage stage = new Stage();
+    stage.initModality(Modality.APPLICATION_MODAL);
+    Scene scene = new Scene(root);
+    stage.setScene(scene);
+    stage.setMaximized(true);
+    stage.showAndWait();
 
   }
 
