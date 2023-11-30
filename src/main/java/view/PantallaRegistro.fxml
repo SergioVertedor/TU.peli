@@ -34,7 +34,7 @@
             <Font name="Corbel Light" size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtPasswordRepeat" layoutX="787.0" layoutY="675.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Password" style="-fx-background-radius: 12;">
+      <TextField fx:id="txtPasswordRepeat" layoutX="787.0" layoutY="675.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Repite Password" style="-fx-background-radius: 12;">
          <font>
             <Font name="Corbel Light" size="24.0" />
          </font>

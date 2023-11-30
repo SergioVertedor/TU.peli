@@ -46,4 +46,8 @@ this.avatar_path = avatar_path;
     public String getAvatar_path() {
         return avatar_path;
     }
+
+    public void setLast_login(String last_login) {
+        this.last_login = last_login;
+    }
 }

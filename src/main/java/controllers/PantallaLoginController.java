@@ -8,10 +8,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import model.dao.AppUser;
 import utils.InputValidator;
-import utils.LoginNotificator;
+import utils.dialogNotificator;
 import utils.LoginValidator;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class PantallaLoginController {
   public static List<AppUser> users = new ArrayList<>();
@@ -36,18 +39,57 @@ public class PantallaLoginController {
     String password = txtLoginPassword.getText();
     LoginValidator loginValidator = new LoginValidator();
     InputValidator inputValidator = new InputValidator();
-    LoginNotificator loginNotificator = new LoginNotificator();
+    dialogNotificator dialogNotificator = new dialogNotificator();
     if (inputValidator.isEmailValid(userOrMail) || inputValidator.isUserValid(userOrMail)) {
       loginValidator.validateLogin(userOrMail, password);
     }
   }
 
   @FXML
-  void btnLoginRegisterPressed(ActionEvent event) {}
+  void btnLoginRegisterPressed(ActionEvent event) {
+
+  }
 
   @FXML
   void btnLoginWithGooglePressed(ActionEvent event) {}
 
   @FXML
-  void cbRememberMeSelected(ActionEvent event) {}
+  void cbRememberMeSelected(ActionEvent event) {
+    if (cbLoginRememberMe.isSelected()) {
+      setRemember("1");
+    } else {
+      setRemember("0");
+    }
+  }
+
+  private void setRemember(String i) {
+    Properties prop = new Properties();
+    InputStream input = null;
+    OutputStream output = null;
+    try {
+      input = new FileInputStream("config.properties");
+      prop.load(input);
+      prop.setProperty("remember", i);
+      // save properties to project root folder
+      output = new FileOutputStream("config.properties");
+      prop.store(output, null);
+    } catch (IOException e) {
+      System.err.println("Error al cargar el archivo de configuración");
+    } finally {
+      if (input != null) {
+        try {
+          input.close();
+        } catch (IOException e) {
+          System.err.println("Error al cerrar el archivo de configuración");
+        }
+      }
+      if (output != null) {
+        try {
+          output.close();
+        } catch (IOException e) {
+          System.err.println("Error al cerrar el archivo de configuración");
+        }
+      }
+    }
+  }
 }
