@@ -8,9 +8,9 @@ import java.time.format.DateTimeFormatter;
 
 public class RegisterValidator {
 
-
   /**
    * Este método valida los datos introducidos por el usuario en el registro
+   *
    * @param username nombre de usuario
    * @param password contraseña
    * @param passwordRepeat contraseña repetida
@@ -20,22 +20,33 @@ public class RegisterValidator {
     InputValidator inputValidator = new InputValidator();
     int errorCount = 0;
     StringBuilder errorMessages = new StringBuilder();
-    if (!inputValidator.isUserValid(username)) {
-      errorMessages.append(errorUsername());
-      errorCount++;
-      if (!inputValidator.isPasswordValid(password)) {
-        errorMessages.append(errorPassword());
+    for (AppUser user : ListStorage.users) {
+      if (user.getUsername().equals(username)) {
+        errorMessages.append("\nEl usuario introducido ya existe");
         errorCount++;
       }
-      if (!inputValidator.isEmailValid(email)) {
-        errorMessages.append(errorEmail());
-        errorCount++;
-      }
-      if (!password.equals(passwordRepeat)) {
-        errorMessages.append(errorPasswordRepeat());
+      if (user.getMail().equals(email)) {
+        errorMessages.append("\nEl email introducido ya existe");
         errorCount++;
       }
     }
+    if (!inputValidator.isUserValid(username)) {
+      errorMessages.append(errorUsername());
+      errorCount++;
+    }
+    if (!inputValidator.isPasswordValid(password)) {
+      errorMessages.append(errorPassword());
+      errorCount++;
+    }
+    if (!inputValidator.isEmailValid(email)) {
+      errorMessages.append(errorEmail());
+      errorCount++;
+    }
+    if (!password.equals(passwordRepeat)) {
+      errorMessages.append(errorPasswordRepeat());
+      errorCount++;
+    }
+
     dialogNotificator dialogNotificator = new dialogNotificator();
     if (errorCount > 0) {
       dialogNotificator.notifyRegisterError(errorMessages.toString(), errorCount);
@@ -44,13 +55,14 @@ public class RegisterValidator {
       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
       String fechaFormateada = fechaActual.format(formatter);
       AppUser usuario = new AppUser(1, username, email, password, "", fechaFormateada, "");
-      PantallaLoginController.users.add(usuario);
+      ListStorage.users.add(usuario);
       dialogNotificator.notifyRegister(usuario);
     }
   }
 
   /**
    * Este método devuelve un mensaje de error si el usuario introducido no es válido
+   *
    * @return mensaje de error
    */
   private String errorPasswordRepeat() {
@@ -59,6 +71,7 @@ public class RegisterValidator {
 
   /**
    * Este método devuelve un mensaje de error si el email introducido no es válido
+   *
    * @return mensaje de error
    */
   private String errorEmail() {
@@ -67,6 +80,7 @@ public class RegisterValidator {
 
   /**
    * Este método devuelve un mensaje de error si la contraseña introducida no es válida
+   *
    * @return mensaje de error
    */
   private String errorPassword() {
@@ -75,6 +89,7 @@ public class RegisterValidator {
 
   /**
    * Este método devuelve un mensaje de error si el usuario introducido no es válido
+   *
    * @return mensaje de error
    */
   private String errorUsername() {

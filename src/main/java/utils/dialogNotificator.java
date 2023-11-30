@@ -1,21 +1,22 @@
 package utils;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
 import model.dao.AppUser;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-/**
- * Clase que notifica al usuario de las notificaciones que se producen en el login
- */
+/** Clase que notifica al usuario de las notificaciones que se producen en el login */
 public class dialogNotificator {
   /**
    * Notifica al usuario que el login ha sido correcto
+   *
    * @param usuario
    */
   public void notifyLogin(AppUser usuario) {
@@ -27,9 +28,7 @@ public class dialogNotificator {
     alert.showAndWait();
   }
 
-  /**
-   * Notifica al usuario que el login ha sido incorrecto
-   */
+  /** Notifica al usuario que el login ha sido incorrecto */
   public void notifyLoginError() {
     Alert alert = new Alert(Alert.AlertType.ERROR);
     alert.setTitle(null);
@@ -39,9 +38,7 @@ public class dialogNotificator {
     alert.showAndWait();
   }
 
-  /**
-   * Notifica al usuario que hay campos vacios
-   */
+  /** Notifica al usuario que hay campos vacios */
   public void notifyEmptyFields() {
     Alert alert = new Alert(Alert.AlertType.WARNING);
     alert.setTitle(null);
@@ -51,9 +48,7 @@ public class dialogNotificator {
     alert.showAndWait();
   }
 
-  /**
-   * Notifica al usuario que se ha producido un error en tiempo de ejecución
-   */
+  /** Notifica al usuario que se ha producido un error en tiempo de ejecución */
   public void notifyRuntimeException() {
     Alert alert = new Alert(Alert.AlertType.ERROR);
     alert.setTitle("Exception Dialog");
@@ -88,10 +83,11 @@ public class dialogNotificator {
     alert.getDialogPane().setExpandableContent(expContent);
 
     alert.showAndWait();
-    }
+  }
 
   /**
-   *  Notifica al usuario que se ha producido un error en el registro
+   * Notifica al usuario que se ha producido un error en el registro
+   *
    * @param errorMessages mensajes de error
    * @param errorCount numero de errores
    */
@@ -101,16 +97,26 @@ public class dialogNotificator {
     } else {
       errorMessages = "Se han producido " + errorCount + " errores:" + errorMessages;
     }
+    String headerError;
+    if (errorCount == 1) {
+      headerError = "Se ha producido " + errorCount + " error";
+    } else {
+      headerError = "Se han producido " + errorCount + " errores";
+    }
     Alert alert = new Alert(Alert.AlertType.ERROR);
     alert.setTitle(null);
-    alert.setHeaderText("Login incorrecto");
-    alert.setContentText(errorMessages);
-
+    alert.setHeaderText(headerError);
+    DialogPane dialogPane = alert.getDialogPane();
+    Label content = new Label(errorMessages);
+    VBox vbox = new VBox(content);
+    // Vbox permite que el contenido se ajuste al tamaño del alert
+    alert.getDialogPane().setContent(vbox);
     alert.showAndWait();
   }
 
   /**
    * Notifica al usuario que el registro ha sido correcto
+   *
    * @param usuario usuario que se ha registrado
    */
   public void notifyRegister(AppUser usuario) {
