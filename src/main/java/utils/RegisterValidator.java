@@ -1,6 +1,5 @@
 package utils;
 
-import controllers.PantallaLoginController;
 import model.dao.AppUser;
 
 import java.time.LocalDate;
@@ -47,7 +46,7 @@ public class RegisterValidator {
       errorCount++;
     }
 
-    dialogNotificator dialogNotificator = new dialogNotificator();
+    DialogNotificator dialogNotificator = new DialogNotificator();
     if (errorCount > 0) {
       dialogNotificator.notifyRegisterError(errorMessages.toString(), errorCount);
     } else {

@@ -1,7 +1,5 @@
 package utils;
 
-import controllers.PantallaLoginController;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -14,7 +12,7 @@ public class LoginValidator {
    * @param password contraseña introducida
    */
   public void validateLogin(String userOrMail, String password) {
-    dialogNotificator dialogNotificator = new dialogNotificator();
+    DialogNotificator dialogNotificator = new DialogNotificator();
     if (userOrMail.isEmpty() || password.isEmpty()) {
       dialogNotificator.notifyEmptyFields();
     } else {

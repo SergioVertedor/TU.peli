@@ -22,7 +22,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import utils.InputValidator;
 import utils.LoginValidator;
-import utils.dialogNotificator;
+import utils.DialogNotificator;
 
 public class PantallaLoginController {
 
@@ -46,7 +46,7 @@ public class PantallaLoginController {
     String password = txtLoginPassword.getText();
     LoginValidator loginValidator = new LoginValidator();
     InputValidator inputValidator = new InputValidator();
-    dialogNotificator dialogNotificator = new dialogNotificator();
+    DialogNotificator dialogNotificator = new DialogNotificator();
     if (inputValidator.isEmailValid(userOrMail) || inputValidator.isUserValid(userOrMail)) {
       loginValidator.validateLogin(userOrMail, password);
     }

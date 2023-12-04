@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 /** Clase que notifica al usuario de las notificaciones que se producen en el login */
-public class dialogNotificator {
+public class DialogNotificator {
   /**
    * Notifica al usuario que el login ha sido correcto
    *
