@@ -18,17 +18,16 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
 public class RSAUtils {
-  final public static String PASSWORD_KEYSTORE = "Megustalapizzamucho.RSA";
-  final public static String RUTA_KEYSTORE = "main/files/tupeliKeyStore";
+  public static final String PASSWORD_KEYSTORE = "Megustalapizzamucho.RSA";
+  public static final String RUTA_KEYSTORE = "main/files/tupeliKeyStore";
 
   /**
    * Método que cifra el mensaje que recibe y lo devuelve en base64
-   * 
-   * @param mensaje
-   * @param alias
-   * @return
+   *
+   * @param mensaje mensaje a cifrar
+   * @param alias alias del usuario
+   * @return mensaje cifrado en base64
    */
-
   public static String cifra(String mensaje, String alias) {
     KeyStore almacen = null;
     try {
@@ -43,19 +42,23 @@ public class RSAUtils {
       cifrador = Cipher.getInstance("RSA");
       cifrador.init(Cipher.ENCRYPT_MODE, clavePublica);
       mensajeCifrado = cifrador.doFinal(mensaje.getBytes());
-    } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException
-        | IllegalBlockSizeException | BadPaddingException e) {
+    } catch (NoSuchAlgorithmException
+        | NoSuchPaddingException
+        | InvalidKeyException
+        | IllegalBlockSizeException
+        | BadPaddingException e) {
       e.printStackTrace();
     }
     return Base64.getEncoder().encodeToString(mensajeCifrado);
   }
 
-/**
- * Método que descifra el contenido de un mensaje cifrado en RSA 2048 en base64
- * @param mensajeCifrado
- * @param alias
- * @return
- */
+  /**
+   * Método que descifra el contenido de un mensaje cifrado en RSA 2048 en base64
+   *
+   * @param mensajeCifrado mensaje cifrado en base64
+   * @param alias alias del usuario
+   * @return mensaje descifrado
+   */
   public static String descifra(String mensajeCifrado, String alias) {
     KeyStore almacen = null;
     byte[] mensajeOriginal = Base64.getDecoder().decode(mensajeCifrado);
@@ -71,8 +74,11 @@ public class RSAUtils {
       cifrador = Cipher.getInstance("RSA");
       cifrador.init(Cipher.DECRYPT_MODE, clavePrivada);
       resultado = cifrador.doFinal(mensajeOriginal);
-    } catch (InvalidKeyException | NoSuchAlgorithmException | NoSuchPaddingException
-        | IllegalBlockSizeException | BadPaddingException e) {
+    } catch (InvalidKeyException
+        | NoSuchAlgorithmException
+        | NoSuchPaddingException
+        | IllegalBlockSizeException
+        | BadPaddingException e) {
       e.printStackTrace();
     }
     return new String(resultado);
@@ -80,10 +86,10 @@ public class RSAUtils {
 
   /**
    * Método que recoge la clave privada RSA del almacen y la devuelve.
-   * 
-   * @param almacen
-   * @param alias
-   * @return
+   *
+   * @param almacen almacen de claves
+   * @param alias alias del usuario
+   * @return clave privada
    */
   private static PrivateKey getPrivateKey(KeyStore almacen, String alias) {
     PrivateKey clavePrivada = null;
@@ -97,10 +103,10 @@ public class RSAUtils {
 
   /**
    * Método que recoge la clave pública RSA del almacen y la devuelve.
-   * 
-   * @param almacen
-   * @param alias
-   * @return
+   *
+   * @param almacen almacen de claves
+   * @param alias alias del usuario
+   * @return clave pública
    */
   private static PublicKey getPublicKey(KeyStore almacen, String alias) {
     Certificate certificado = null;

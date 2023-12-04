@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -22,7 +23,6 @@ import java.util.List;
 import java.util.Properties;
 
 public class PantallaLoginController {
-  public static List<AppUser> users = new ArrayList<>();
 
   @FXML private Button btnLoginEnter;
 
@@ -60,14 +60,22 @@ public class PantallaLoginController {
     } catch (IOException e) {
       System.err.println("Error al cargar la ventana de registro");
     }
-    PantallaRegistroController ventSecController  = loader.getController();
+    PantallaRegistroController ventSecController = loader.getController();
     Stage stage = new Stage();
     stage.initModality(Modality.APPLICATION_MODAL);
     Scene scene = new Scene(root);
     stage.setScene(scene);
     stage.setMaximized(true);
-    stage.showAndWait();
+    // Arranca maximizado
+    stage.setMaximized(true);
 
+    // Asignar icono
+    Image icon = new Image("resources/images/logo/logo.png");
+    stage.getIcons().add(icon);
+
+    // Poner titulo a la ventana
+    stage.setTitle("TU.PELI");
+    stage.showAndWait();
   }
 
   @FXML
