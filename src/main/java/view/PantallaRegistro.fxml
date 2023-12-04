@@ -2,27 +2,50 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PantallaRegistroController">
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PantallaRegistroController">
    <children>
-      <ImageView fx:id="imgLoginLogo" fitHeight="265.0" fitWidth="292.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/images/logo/logo.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="lblEresNuevoPorAqui" layoutX="832.0" layoutY="176.0" text="¿Eres nuevo por aquí?" textFill="WHITE">
-         <font>
-            <Font size="34.0" />
-         </font>
-      </Label>
-      <VBox alignment="CENTER_RIGHT" layoutX="509.0" layoutY="307.0" spacing="60.0">
+      <GridPane layoutY="11.199999809265137" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="1920.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="imgLoginLogo" fitHeight="265.0" fitWidth="292.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../resources/images/logo/logo.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblEresNuevoPorAqui" text="¿Eres nuevo por aquí?" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <VBox alignment="CENTER_RIGHT" layoutX="489.0" layoutY="298.19999980926514" spacing="60.0">
          <children>
             <VBox alignment="TOP_RIGHT" spacing="15.0">
                <children>
@@ -33,7 +56,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtUserName" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;">
+                        <TextField fx:id="txtUserName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;">
                            <font>
                               <Font name="Corbel Light" size="24.0" />
                            </font>
@@ -47,7 +70,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtEmail" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;">
+                        <TextField fx:id="txtEmail" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;">
                            <font>
                               <Font name="Corbel Light" size="24.0" />
                            </font>
@@ -65,11 +88,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtPassword" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;">
-                           <font>
-                              <Font name="Corbel Light" size="24.0" />
-                           </font>
-                        </TextField>
+                        <PasswordField fx:id="txtPassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" spacing="20.0">
@@ -79,17 +98,18 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtPasswordRepeat" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;">
-                           <font>
-                              <Font name="Corbel Light" size="24.0" />
-                           </font>
-                        </TextField>
+                        <PasswordField fx:id="txtPasswordRepeat" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;" />
                      </children>
                   </HBox>
                </children>
             </VBox>
          </children>
       </VBox>
-      <Button fx:id="btnLoginRegister" alignment="CENTER" contentDisplay="CENTER" layoutX="884.0" layoutY="758.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnRegisterNewUserPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Crear nuevo usuario" textAlignment="CENTER" />
+      <VBox layoutX="873.0" layoutY="733.1999998092651" spacing="5.0">
+         <children>
+            <Button fx:id="btnLoginRegister" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnRegisterNewUserPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Crear nuevo usuario" textAlignment="CENTER" />
+            <Button fx:id="btnVolver" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnVolver" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="¿Ya tienes cuenta?" textAlignment="CENTER" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

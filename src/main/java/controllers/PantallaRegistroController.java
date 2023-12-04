@@ -1,17 +1,29 @@
 package controllers;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import utils.RegisterValidator;
 
 public class PantallaRegistroController {
 
 	@FXML
 	private Button btnLoginRegister;
+
+	@FXML
+	private Button btnVolver;
 
 	@FXML
 	private ImageView imgLoginLogo;
@@ -41,10 +53,10 @@ public class PantallaRegistroController {
 	private TextField txtName;
 
 	@FXML
-	private TextField txtPassword;
+	private PasswordField txtPassword;
 
 	@FXML
-	private TextField txtPasswordRepeat;
+	private PasswordField txtPasswordRepeat;
 
 	@FXML
 	private TextField txtUserName;
@@ -64,5 +76,35 @@ public class PantallaRegistroController {
 		registerValidator.doValidate(username, password, passwordRepeat, email);
 	}
 
-}
+	/**
+	 * Vuelve a la pantalla principal
+	 * 
+	 * @param event
+	 */
+	@FXML
+	void btnVolver(ActionEvent event) {
 
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/view/PantallaLogin.fxml"));
+		Parent root = null; // Carga pantalla principal
+		try {
+			root = loader.load();
+		} catch (IOException e) {
+			System.err.println("Error al cargar la ventana login desde registro");
+		}
+
+		Stage stage = new Stage();
+		stage.initModality(Modality.APPLICATION_MODAL);
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+
+		// Asignar icono
+		Image icon = new Image("resources/images/logo/logo.png");
+		stage.getIcons().add(icon);
+
+		// Poner titulo a la ventana
+		stage.setTitle("TU.PELI");
+		stage.showAndWait();
+	}
+
+}

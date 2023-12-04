@@ -1,5 +1,12 @@
 package controllers;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Properties;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,20 +14,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.dao.AppUser;
 import utils.InputValidator;
-import utils.dialogNotificator;
 import utils.LoginValidator;
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import utils.dialogNotificator;
 
 public class PantallaLoginController {
 
@@ -34,7 +36,7 @@ public class PantallaLoginController {
 
   @FXML private ImageView imgLoginLogo;
 
-  @FXML private TextField txtLoginPassword;
+  @FXML private PasswordField txtLoginPassword;
 
   @FXML private TextField txtLoginUser;
 
@@ -60,8 +62,12 @@ public class PantallaLoginController {
     } catch (IOException e) {
       System.err.println("Error al cargar la ventana de registro");
     }
+    
     PantallaRegistroController ventSecController = loader.getController();
     Stage stage = new Stage();
+    // Tamaño indicado manualmente - NO FUNCIONA
+//    stage.setWidth(1920);
+//    stage.setHeight(1080);
     stage.initModality(Modality.APPLICATION_MODAL);
     Scene scene = new Scene(root);
     stage.setScene(scene);
@@ -77,9 +83,6 @@ public class PantallaLoginController {
     stage.setTitle("TU.PELI");
     stage.showAndWait();
   }
-
-  @FXML
-  void btnLoginWithGooglePressed(ActionEvent event) {}
 
   @FXML
   void cbRememberMeSelected(ActionEvent event) {
