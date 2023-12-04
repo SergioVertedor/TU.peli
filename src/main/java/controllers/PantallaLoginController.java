@@ -65,12 +65,13 @@ public class PantallaLoginController {
     
     PantallaRegistroController ventSecController = loader.getController();
     Stage stage = new Stage();
-    // Tamaño indicado manualmente - NO FUNCIONA
-//    stage.setWidth(1920);
-//    stage.setHeight(1080);
     stage.initModality(Modality.APPLICATION_MODAL);
     Scene scene = new Scene(root);
     stage.setScene(scene);
+    
+    // Tamaño indicado manualmente - NO FUNCIONA
+//    stage.setWidth(1920);
+//    stage.setHeight(1080);
     
     // Arranca maximizado
 //    stage.setMaximized(false);
