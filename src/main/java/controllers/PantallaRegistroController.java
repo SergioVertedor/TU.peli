@@ -11,61 +11,58 @@ import utils.RegisterValidator;
 
 public class PantallaRegistroController {
 
-    @FXML
-    private Button btnLoginRegister;
+	@FXML
+	private Button btnLoginRegister;
 
-    @FXML
-    private ImageView imgLoginLogo;
+	@FXML
+	private ImageView imgLoginLogo;
 
-    @FXML
-    private Label lblEmail;
+	@FXML
+	private Label lblEmail;
 
-    @FXML
-    private Label lblEresNuevoPorAqui;
+	@FXML
+	private Label lblEresNuevoPorAqui;
 
-    @FXML
-    private Label lblNombre;
+	@FXML
+	private Label lblNombre;
 
-    @FXML
-    private Label lblPassword;
+	@FXML
+	private Label lblPassword;
 
-    @FXML
-    private Label lblPasswordRepeat;
+	@FXML
+	private Label lblPasswordRepeat;
 
-    @FXML
-    private Label lblUsuario;
+	@FXML
+	private Label lblUsuario;
 
-    @FXML
-    private TextField txtEmail;
+	@FXML
+	private TextField txtEmail;
 
-    @FXML
-    private TextField txtName;
+	@FXML
+	private TextField txtName;
 
-    @FXML
-    private TextField txtPassword;
+	@FXML
+	private TextField txtPassword;
 
-    @FXML
-    private TextField txtPasswordRepeat;
+	@FXML
+	private TextField txtPasswordRepeat;
 
-    @FXML
-    private TextField txtUserName;
+	@FXML
+	private TextField txtUserName;
 
-    /**
-     * Este método se ejecuta cuando el usuario pulsa el botón de registro
-     * @param event evento
-     */
-    @FXML
-    void btnRegisterNewUserPressed(ActionEvent event) {
-<<<<<<< HEAD
-
-=======
-        String username = txtUserName.getText();
-      String password = txtPassword.getText();
-      String passwordRepeat = txtPasswordRepeat.getText();
-      String email = txtEmail.getText();
-      RegisterValidator registerValidator = new RegisterValidator();
-      registerValidator.doValidate(username, password, passwordRepeat, email);
->>>>>>> c8b26c32eb8362458c5846b2c2f0f2b115777300
-    }
+	/**
+	 * Este método se ejecuta cuando el usuario pulsa el botón de registro
+	 * 
+	 * @param event evento
+	 */
+	@FXML
+	void btnRegisterNewUserPressed(ActionEvent event) {
+		String username = txtUserName.getText();
+		String password = txtPassword.getText();
+		String passwordRepeat = txtPasswordRepeat.getText();
+		String email = txtEmail.getText();
+		RegisterValidator registerValidator = new RegisterValidator();
+		registerValidator.doValidate(username, password, passwordRepeat, email);
+	}
 
 }
