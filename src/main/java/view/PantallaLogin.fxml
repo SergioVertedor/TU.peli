@@ -6,6 +6,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -13,25 +16,54 @@
    <children>
       <VBox alignment="CENTER" prefHeight="1080.0" prefWidth="1920.0">
          <children>
-            <ImageView fx:id="imgLoginLogo" fitHeight="265.0" fitWidth="292.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgLoginLogo" fitHeight="265.0" fitWidth="292.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/images/logo/logo.png" />
                </image>
             </ImageView>
-            <TextField fx:id="txtLoginUser" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email" style="-fx-background-radius: 12;" text="Usuario/Email">
-               <font>
-                  <Font name="Corbel Light" size="24.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="txtLoginPassword" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email" style="-fx-background-radius: 12;" text="Password">
-               <font>
-                  <Font name="Corbel Light" size="24.0" />
-               </font>
-            </TextField>
-            <CheckBox fx:id="cbLoginRememberMe" mnemonicParsing="false" onAction="#cbRememberMeSelected" text="Recordar" />
-            <Button fx:id="btnLoginEnter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnLoginEnterPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Entrar" />
-            <Button fx:id="btnLoginRegister" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnLoginRegisterPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Registrar" />
-            <Button fx:id="btnLoginWithGoogle" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnLoginWithGooglePressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Continuar con Google" />
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="txtLoginUser" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email" style="-fx-background-radius: 12;">
+                     <font>
+                        <Font name="Corbel Light" size="24.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtLoginPassword" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Password" style="-fx-background-radius: 12;">
+                     <font>
+                        <Font name="Corbel Light" size="24.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <GridPane alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <CheckBox fx:id="cbLoginRememberMe" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#cbRememberMeSelected" text="Recordar" textFill="WHITE" GridPane.columnIndex="5">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </GridPane>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+               <children>
+                  <Button fx:id="btnLoginEnter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnLoginEnterPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Entrar" />
+                  <Button fx:id="btnLoginRegister" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnLoginRegisterPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Registrar" />
+               </children>
+            </VBox>
          </children>
       </VBox>
    </children>

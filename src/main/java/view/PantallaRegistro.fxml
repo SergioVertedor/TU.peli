@@ -42,24 +42,6 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" spacing="20.0">
                      <children>
-                        <Label fx:id="lblNombre" text="Nombre:" textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="txtName" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" style="-fx-background-radius: 12;">
-                           <font>
-                              <Font name="Corbel Light" size="24.0" />
-                           </font>
-                        </TextField>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-            <VBox spacing="15.0">
-               <children>
-                  <HBox alignment="CENTER_RIGHT" spacing="20.0">
-                     <children>
                         <Label fx:id="lblEmail" text="Correo electrónico:" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
@@ -72,6 +54,10 @@
                         </TextField>
                      </children>
                   </HBox>
+               </children>
+            </VBox>
+            <VBox spacing="15.0">
+               <children>
                   <HBox alignment="CENTER_RIGHT" spacing="20.0">
                      <children>
                         <Label fx:id="lblPassword" text="Contraseña:" textFill="WHITE">
@@ -104,6 +90,6 @@
             </VBox>
          </children>
       </VBox>
-      <Button fx:id="btnLoginRegister" alignment="CENTER" contentDisplay="CENTER" layoutX="884.0" layoutY="889.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnRegisterNewUserPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Crear nuevo usuario" textAlignment="CENTER" />
+      <Button fx:id="btnLoginRegister" alignment="CENTER" contentDisplay="CENTER" layoutX="884.0" layoutY="758.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#btnRegisterNewUserPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Crear nuevo usuario" textAlignment="CENTER" />
    </children>
 </AnchorPane>

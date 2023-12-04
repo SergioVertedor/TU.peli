@@ -65,9 +65,9 @@ public class PantallaLoginController {
     stage.initModality(Modality.APPLICATION_MODAL);
     Scene scene = new Scene(root);
     stage.setScene(scene);
-    stage.setMaximized(true);
+    
     // Arranca maximizado
-    stage.setMaximized(true);
+//    stage.setMaximized(false);
 
     // Asignar icono
     Image icon = new Image("resources/images/logo/logo.png");

@@ -26,7 +26,7 @@ public class Main extends Application {
       primaryStage.show();
 
       // Arranca maximizado
-      primaryStage.setMaximized(true);
+//      primaryStage.setMaximized(false);
 
       // Asignar icono
       Image icon = new Image("resources/images/logo/logo.png");
