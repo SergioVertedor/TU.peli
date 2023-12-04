@@ -18,16 +18,18 @@ public class Main extends Application {
 //			primaryStage.setMaxWidth(1920);
 //			primaryStage.setMaxHeight(1080);
 
+			// Cargar la vista fxml
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("/view/PantallaLogin.fxml"));
-
 			Pane ventana = (Pane) loader.load();
-
 			Scene scene = new Scene(ventana);
 
+			// Cargar el css
 			scene.getStylesheets().add(getClass().getResource("/resources/css/application.css").toExternalForm());
-			primaryStage.setScene(scene);
 
+
+			// Cargar el controlador
+			primaryStage.setScene(scene);
 			primaryStage.show();
 
 			// Poner titulo a la ventana

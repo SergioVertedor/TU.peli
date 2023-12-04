@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 import utils.InputValidator;
 import utils.LoginValidator;
 import utils.DialogNotificator;
+import utils.SceneSwitch;
 
 public class PantallaLoginController {
 
@@ -54,21 +55,14 @@ public class PantallaLoginController {
 
   @FXML
   void btnLoginRegisterPressed(ActionEvent event) {
-    FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(getClass().getResource("/view/PantallaRegistro.fxml"));
-    Parent root = null; // Carga pantalla principal
+    SceneSwitch sceneSwitch = new SceneSwitch();
     try {
-      root = loader.load();
+      sceneSwitch.switchScene("PantallaRegistro", new PantallaRegistroController());
+
     } catch (IOException e) {
       System.err.println("Error al cargar la ventana de registro");
     }
-    
-    PantallaRegistroController ventSecController = loader.getController();
-    Stage stage = new Stage();
-    stage.initModality(Modality.APPLICATION_MODAL);
-    Scene scene = new Scene(root);
-    stage.setScene(scene);
-    
+
     // Tamaño indicado manualmente - NO FUNCIONA
 //    stage.setWidth(1920);
 //    stage.setHeight(1080);
@@ -76,13 +70,7 @@ public class PantallaLoginController {
     // Arranca maximizado
 //    stage.setMaximized(false);
 
-    // Asignar icono
-    Image icon = new Image("resources/images/logo/logo.png");
-    stage.getIcons().add(icon);
 
-    // Poner titulo a la ventana
-    stage.setTitle("TU.PELI");
-    stage.showAndWait();
   }
 
   @FXML

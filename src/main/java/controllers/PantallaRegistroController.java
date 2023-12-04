@@ -16,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import utils.RegisterValidator;
+import utils.SceneSwitch;
 
 public class PantallaRegistroController {
 
@@ -83,28 +84,8 @@ public class PantallaRegistroController {
 	 */
 	@FXML
 	void btnVolver(ActionEvent event) {
-
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/PantallaLogin.fxml"));
-		Parent root = null; // Carga pantalla principal
-		try {
-			root = loader.load();
-		} catch (IOException e) {
-			System.err.println("Error al cargar la ventana login desde registro");
-		}
-
-		Stage stage = new Stage();
-		stage.initModality(Modality.APPLICATION_MODAL);
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-
-		// Asignar icono
-		Image icon = new Image("resources/images/logo/logo.png");
-		stage.getIcons().add(icon);
-
-		// Poner titulo a la ventana
-		stage.setTitle("TU.PELI");
-		stage.showAndWait();
+		SceneSwitch sceneSwitch = new SceneSwitch();
+		sceneSwitch.backToLogin(btnVolver);
 	}
 
 }
