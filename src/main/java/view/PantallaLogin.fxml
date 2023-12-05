@@ -6,15 +6,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="982.0" minWidth="1512.0" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PantallaLoginController">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="982.0" minWidth="1512.0" prefHeight="982.0" prefWidth="1512.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PantallaLoginController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints vgrow="SOMETIMES" />
+   </rowConstraints>
    <children>
       <VBox alignment="CENTER" prefHeight="1080.0" prefWidth="1920.0">
          <children>
@@ -25,12 +29,12 @@
             </ImageView>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                <children>
-                  <TextField fx:id="txtLoginUser" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email" style="-fx-background-radius: 12;">
+                  <TextField fx:id="txtLoginUser" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="500.0" prefHeight="63.0" prefWidth="573.0" promptText="Usuario/Email" style="-fx-background-radius: 12;">
                      <font>
                         <Font name="Corbel Light" size="24.0" />
                      </font>
                   </TextField>
-                  <PasswordField fx:id="txtLoginPassword" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="573.0" promptText="Password" style="-fx-background-radius: 12;">
+                  <PasswordField fx:id="txtLoginPassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="500.0" prefHeight="63.0" prefWidth="573.0" promptText="Password" style="-fx-background-radius: 12;">
                      <font>
                         <Font name="Corbel Light" size="24.0" />
                      </font>
@@ -39,21 +43,15 @@
             </VBox>
             <GridPane alignment="CENTER">
               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="540.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <CheckBox fx:id="cbLoginRememberMe" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#cbRememberMeSelected" text="Recordar" textFill="WHITE" GridPane.columnIndex="5">
+                  <CheckBox fx:id="cbLoginRememberMe" alignment="TOP_CENTER" contentDisplay="CENTER" minWidth="-Infinity" mnemonicParsing="false" onAction="#cbRememberMeSelected" prefWidth="110.0" text="Recordar" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -69,4 +67,4 @@
          </children>
       </VBox>
    </children>
-</AnchorPane>
+</GridPane>

@@ -2,10 +2,6 @@ package application;
 
 import controllers.PantallaLoginController;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import utils.SceneSwitch;
@@ -26,8 +22,8 @@ public class Main extends Application {
 				System.err.println("Error al cargar la fuente");
 			}
 
-			// Arranca maximizado
-//      primaryStage.setMaximized(false);
+			// Arranca maximizado NO HACE FALTA, ya se calcula en sceneSwitch
+//      primaryStage.setMaximized(true);
 
 			// Permitir que la ventana sea redimensionable (true) o no (false)
 			primaryStage.setResizable(false);
