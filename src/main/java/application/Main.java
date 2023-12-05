@@ -7,33 +7,33 @@ import javafx.stage.Stage;
 import utils.SceneSwitch;
 
 public class Main extends Application {
-	@Override
-	public void start(Stage primaryStage) {
+  @Override
+  public void start(Stage primaryStage) {
 
-		try {
+    try {
 
-			SceneSwitch sceneSwitch  = new SceneSwitch();
+      SceneSwitch sceneSwitch = new SceneSwitch();
       sceneSwitch.switchScene("PantallaLogin", new PantallaLoginController());
 
-			// Cargar la fuente desde el archivo externo
-			try {
-				Font.loadFont(getClass().getResourceAsStream("/resources/fonts/KronaOne-Regular.ttf"),12);
-			} catch (Exception e) {
-				System.err.println("Error al cargar la fuente");
-			}
+      // Cargar la fuente desde el archivo externo
+      try {
+        Font.loadFont(getClass().getResourceAsStream("/fonts/KronaOne-Regular.ttf"), 12);
+      } catch (Exception e) {
+        System.err.println("Error al cargar la fuente");
+      }
 
-			// Arranca maximizado NO HACE FALTA, ya se calcula en sceneSwitch
-//      primaryStage.setMaximized(true);
+      // Arranca maximizado NO HACE FALTA, ya se calcula en sceneSwitch
+      //      primaryStage.setMaximized(true);
 
-			// Permitir que la ventana sea redimensionable (true) o no (false)
-			primaryStage.setResizable(false);
+      // Permitir que la ventana sea redimensionable (true) o no (false)
+      primaryStage.setResizable(false);
 
-		} catch (Exception e) {
-			System.err.println("Error al cargar la ventana");
-		}
-	}
+    } catch (Exception e) {
+      System.err.println("Error al cargar la ventana");
+    }
+  }
 
-	public static void main(String[] args) {
-		launch(args);
-	}
+  public static void main(String[] args) {
+    launch(args);
+  }
 }

@@ -24,7 +24,7 @@
          <children>
             <ImageView fx:id="imgLoginLogo" fitHeight="265.0" fitWidth="292.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../resources/images/logo/logo.png" />
+                  <Image url="@../../resources/images/logo/logo.png" />
                </image>
             </ImageView>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">

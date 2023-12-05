@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Font;
 import utils.RegisterValidator;
 import utils.SceneSwitch;
 
@@ -78,6 +79,12 @@ public class PantallaRegistroController {
 	void btnVolver(ActionEvent event) {
 		SceneSwitch sceneSwitch = new SceneSwitch();
 		sceneSwitch.closeDialog(btnVolver);
+	}
+	@FXML
+	void initialize() {
+		Font font = Font.loadFont(getClass().getResourceAsStream("/fonts/KronaOne-Regular.ttf"), 16);
+		btnLoginRegister.setFont(font);
+		btnVolver.setFont(font);;
 	}
 
 }

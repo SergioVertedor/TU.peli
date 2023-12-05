@@ -28,7 +28,7 @@
    <children>
       <ImageView fx:id="imgLoginLogo" fitHeight="220.0" fitWidth="220.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../resources/images/logo/logo.png" />
+            <Image url="@../../resources/images/logo/logo.png" />
          </image>
          <GridPane.margin>
             <Insets left="15.0" top="15.0" />

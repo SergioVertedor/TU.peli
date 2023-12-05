@@ -18,6 +18,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import utils.*;
@@ -54,7 +55,6 @@ public class PantallaLoginController {
     SceneSwitch sceneSwitch = new SceneSwitch();
     try {
       sceneSwitch.switchScene("PantallaRegistro", new PantallaRegistroController());
-
     } catch (IOException e) {
       System.err.println("Error al cargar la ventana de registro");
     }
@@ -67,5 +67,12 @@ public class PantallaLoginController {
     } else {
       PropertiesManager.setRemember("0");
     }
+  }
+
+  @FXML
+  void initialize() {
+    Font font = Font.loadFont(getClass().getResourceAsStream("/fonts/KronaOne-Regular.ttf"), 16);
+    btnLoginEnter.setFont(font);
+    btnLoginRegister.setFont(font);;
   }
 }

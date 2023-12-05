@@ -7,7 +7,7 @@ import java.util.Properties;
  * Clase que se encarga de manejar el archivo de configuración del programa
  */
 public class PropertiesManager {
-  private static final String CONFIG_FILE = "src/main/java/resources/config.properties";
+  private static final String CONFIG_FILE = "src/main/resources/config.properties";
 
   /**
    * Método que se encarga de obtener el valor de la propiedad remember
