@@ -16,14 +16,8 @@ public class Main extends Application {
 
 		try {
 
-
-			// Tamaño manual - NO FUNCIONA
-//			primaryStage.setMaxWidth(1920);
-//			primaryStage.setMaxHeight(1080);
-
 			SceneSwitch sceneSwitch  = new SceneSwitch();
       sceneSwitch.switchScene("PantallaLogin", new PantallaLoginController());
-
 
 			// Cargar la fuente desde el archivo externo
 			try {
