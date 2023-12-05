@@ -1,5 +1,7 @@
 package model.dao;
 
+import utils.RSAUtils;
+
 public class AppUser {
   private int id_user;
   private String username;
@@ -20,7 +22,7 @@ public class AppUser {
     this.id_user = id_user;
     this.username = username;
     this.mail = mail;
-    this.password = password;
+    this.password = RSAUtils.cifra(password);
     this.last_login = last_login;
     this.register_date = register_date;
     this.avatar_path = avatar_path;
@@ -39,7 +41,7 @@ public class AppUser {
   }
 
   public String getPassword() {
-    return password;
+    return RSAUtils.descifra(password);
   }
 
   public String getLast_login() {

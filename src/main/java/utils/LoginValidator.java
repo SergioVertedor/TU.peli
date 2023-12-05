@@ -18,10 +18,10 @@ public class LoginValidator {
     } else {
       ListStorage.users.forEach(
           appUser -> {
-            if (appUser.getUsername().equals(userOrMail) && appUser.getPassword().equals(password)
-                || appUser.getMail().equals(userOrMail) && appUser.getPassword().equals(password)) {
+            if (appUser.getUsername().equalsIgnoreCase(userOrMail) && appUser.getPassword().equals(password)
+                || appUser.getMail().equalsIgnoreCase(userOrMail) && appUser.getPassword().equals(password)) {
               LocalDate fechaActual = LocalDate.now();
-              DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy");
+              DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
               String fechaFormateada = fechaActual.format(formatter);
               appUser.setLast_login(fechaFormateada);
               dialogNotificator.notifyLogin(appUser);

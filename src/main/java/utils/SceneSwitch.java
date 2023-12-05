@@ -5,7 +5,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -34,7 +33,7 @@ public class SceneSwitch {
 
     }
 
-    public void backToLogin(Button boton) {
+    public void closeDialog(Button boton) {
         Stage stage = (Stage)boton.getScene().getWindow();
         stage.close();
     }
