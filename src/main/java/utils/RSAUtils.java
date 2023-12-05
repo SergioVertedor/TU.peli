@@ -19,23 +19,24 @@ import javax.crypto.NoSuchPaddingException;
 
 public class RSAUtils {
   public static final String PASSWORD_KEYSTORE = "Megustalapizzamucho.RSA";
-  public static final String RUTA_KEYSTORE = "main/files/tupeliKeyStore";
+  public static final String RUTA_KEYSTORE = "files/tupeliKeyStore";
+
+  public static final String ALIAS = "tupelistore";
 
   /**
    * Método que cifra el mensaje que recibe y lo devuelve en base64
    *
    * @param mensaje mensaje a cifrar
-   * @param alias alias del usuario
    * @return mensaje cifrado en base64
    */
-  public static String cifra(String mensaje, String alias) {
+  public static String cifra(String mensaje) {
     KeyStore almacen = null;
     try {
       almacen = KeyStore.getInstance(new File(RUTA_KEYSTORE), PASSWORD_KEYSTORE.toCharArray());
     } catch (KeyStoreException | NoSuchAlgorithmException | CertificateException | IOException e) {
       e.printStackTrace();
     }
-    PublicKey clavePublica = getPublicKey(almacen, alias);
+    PublicKey clavePublica = getPublicKey(almacen, ALIAS);
     Cipher cifrador;
     byte[] mensajeCifrado = null;
     try {
@@ -56,10 +57,9 @@ public class RSAUtils {
    * Método que descifra el contenido de un mensaje cifrado en RSA 2048 en base64
    *
    * @param mensajeCifrado mensaje cifrado en base64
-   * @param alias alias del usuario
    * @return mensaje descifrado
    */
-  public static String descifra(String mensajeCifrado, String alias) {
+  public static String descifra(String mensajeCifrado) {
     KeyStore almacen = null;
     byte[] mensajeOriginal = Base64.getDecoder().decode(mensajeCifrado);
     byte[] resultado = null;
@@ -68,7 +68,7 @@ public class RSAUtils {
     } catch (KeyStoreException | NoSuchAlgorithmException | CertificateException | IOException e) {
       e.printStackTrace();
     }
-    PrivateKey clavePrivada = getPrivateKey(almacen, alias);
+    PrivateKey clavePrivada = getPrivateKey(almacen, ALIAS);
     Cipher cifrador;
     try {
       cifrador = Cipher.getInstance("RSA");
