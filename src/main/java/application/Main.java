@@ -14,10 +14,6 @@ public class Main extends Application {
 
 		try {
 
-			// Tamaño manual - NO FUNCIONA
-//			primaryStage.setMaxWidth(1920);
-//			primaryStage.setMaxHeight(1080);
-
 			// Cargar la vista fxml
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("/view/PantallaLogin.fxml"));
@@ -41,7 +37,7 @@ public class Main extends Application {
 
 			// Cargar la fuente desde el archivo externo
 			try {
-				Font.loadFont(getClass().getResourceAsStream("/resources/fonts/KronaOne-Regular.ttf"), 12);
+				Font.loadFont(getClass().getResourceAsStream("/resources/fonts/KronaOne-Regular.ttf"),12);
 			} catch (Exception e) {
 				System.err.println("Error al cargar la fuente");
 			}
@@ -50,7 +46,7 @@ public class Main extends Application {
 //      primaryStage.setMaximized(false);
 
 			// Permitir que la ventana sea redimensionable (true) o no (false)
-//			primaryStage.setResizable(true);
+			primaryStage.setResizable(false);
 
 		} catch (Exception e) {
 			System.err.println("Error al cargar la ventana");

@@ -14,10 +14,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PantallaRegistroController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="982.0" minWidth="1512.0" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PantallaRegistroController">
    <children>
-      <GridPane layoutY="11.199999809265137" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="1920.0">
+      <GridPane layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="262.0" prefWidth="1920.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -38,14 +37,14 @@
                   <Image url="@../resources/images/logo/logo.png" />
                </image>
             </ImageView>
-            <Label fx:id="lblEresNuevoPorAqui" text="¿Eres nuevo por aquí?" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Label fx:id="lblEresNuevoPorAqui" text="¿Eres nuevo por aquí?" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <font>
                   <Font size="34.0" />
                </font>
             </Label>
          </children>
       </GridPane>
-      <VBox alignment="CENTER_RIGHT" layoutX="489.0" layoutY="298.19999980926514" spacing="60.0">
+      <VBox alignment="CENTER_RIGHT" layoutX="475.0" layoutY="327.0" prefWidth="795.0" spacing="60.0">
          <children>
             <VBox alignment="TOP_RIGHT" spacing="15.0">
                <children>
@@ -105,11 +104,15 @@
             </VBox>
          </children>
       </VBox>
-      <VBox layoutX="873.0" layoutY="733.1999998092651" spacing="5.0">
+      <HBox alignment="CENTER" layoutY="782.0" prefHeight="299.0" prefWidth="1920.0">
          <children>
-            <Button fx:id="btnLoginRegister" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnRegisterNewUserPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Crear nuevo usuario" textAlignment="CENTER" />
-            <Button fx:id="btnVolver" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnVolver" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="¿Ya tienes cuenta?" textAlignment="CENTER" />
+            <VBox spacing="5.0">
+               <children>
+                  <Button fx:id="btnLoginRegister" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnRegisterNewUserPressed" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="Crear nuevo usuario" textAlignment="CENTER" />
+                  <Button fx:id="btnVolver" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnVolver" prefHeight="40.0" prefWidth="240.0" style="-fx-border-radius: 12;" text="¿Ya tienes cuenta?" textAlignment="CENTER" />
+               </children>
+            </VBox>
          </children>
-      </VBox>
+      </HBox>
    </children>
 </AnchorPane>
