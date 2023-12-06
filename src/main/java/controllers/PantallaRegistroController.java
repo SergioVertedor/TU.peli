@@ -82,10 +82,6 @@ public class PantallaRegistroController {
 	}
 	@FXML
 	void initialize() {
-		// No tendriamos porque cargar la fuente, porque ya está en el .css
-		// Si no funciona es porque hay algo mal, no porque haga falta este codigo de loadFont
-//		Font.loadFont(getClass().getResourceAsStream("src/main/resources/fonts/KronaOne.ttf"), 12);
-//		Font.loadFont(getClass().getResourceAsStream("/fonts/KronaOne.ttf"), 12);
 		imgLoginLogo.setImage(new Image("/images/logo/logo.png"));
 	}
 

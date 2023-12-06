@@ -60,7 +60,6 @@ public class PantallaLoginController {
 
   @FXML
   void initialize() {
-//    Font.loadFont(getClass().getResourceAsStream("/fonts/KronaOne.ttf"), 12);
     imgLoginLogo.setImage(new Image("/images/logo/logo.png"));
   }
 }
