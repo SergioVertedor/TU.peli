@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SceneSwitch {
+	
   public void switchScene(String fxml, Object controller) throws IOException {
     StringBuilder path = new StringBuilder();
     String fxmlFile = path.append("/view/").append(fxml).append(".fxml").toString();
@@ -22,12 +23,15 @@ public class SceneSwitch {
     controller = loader.getController();
     Stage stage = new Stage();
     stage.initModality(Modality.APPLICATION_MODAL);
+    stage.setResizable(false); // No redimensionable
 
-    // EVA - Obtener la pantalla principal
+    // Obtener la pantalla principal y su tamaño
     Screen screen = Screen.getPrimary();
     Rectangle2D bounds = screen.getVisualBounds();
     // Crear la escena con las dimensiones de la pantalla
     Scene scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+    // Cargar archivo css
+    scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
 
     stage.setScene(scene);
     // Quita el foco de los textbox
@@ -45,4 +49,5 @@ public class SceneSwitch {
     Stage stage = (Stage) boton.getScene().getWindow();
     stage.close();
   }
+  
 }

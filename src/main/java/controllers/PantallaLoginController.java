@@ -1,26 +1,15 @@
 package controllers;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Properties;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Font;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import utils.*;
 
 public class PantallaLoginController {
@@ -71,8 +60,7 @@ public class PantallaLoginController {
 
   @FXML
   void initialize() {
-    Font font = Font.loadFont(getClass().getResourceAsStream("/fonts/KronaOne-Regular.ttf"), 16);
-    btnLoginEnter.setFont(font);
-    btnLoginRegister.setFont(font);;
+//    Font.loadFont(getClass().getResourceAsStream("/fonts/KronaOne.ttf"), 12);
+    imgLoginLogo.setImage(new Image("/images/logo/logo.png"));
   }
 }

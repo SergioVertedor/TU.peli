@@ -6,8 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Font;
 import utils.RegisterValidator;
 import utils.SceneSwitch;
 
@@ -82,9 +82,11 @@ public class PantallaRegistroController {
 	}
 	@FXML
 	void initialize() {
-		Font font = Font.loadFont(getClass().getResourceAsStream("/fonts/KronaOne-Regular.ttf"), 16);
-		btnLoginRegister.setFont(font);
-		btnVolver.setFont(font);;
+		// No tendriamos porque cargar la fuente, porque ya está en el .css
+		// Si no funciona es porque hay algo mal, no porque haga falta este codigo de loadFont
+//		Font.loadFont(getClass().getResourceAsStream("src/main/resources/fonts/KronaOne.ttf"), 12);
+//		Font.loadFont(getClass().getResourceAsStream("/fonts/KronaOne.ttf"), 12);
+		imgLoginLogo.setImage(new Image("/images/logo/logo.png"));
 	}
 
 }

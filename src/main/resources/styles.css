@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "KronaOne";
+    src: url("file:src/main/resources/fonts/KronaOne.ttf");
+}
+
+.root {
+    -fx-font-family: "KronaOne";
+    -fx-font-size: 12px;
+}
