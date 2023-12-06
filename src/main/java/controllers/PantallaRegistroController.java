@@ -67,7 +67,10 @@ public class PantallaRegistroController {
 		String passwordRepeat = txtPasswordRepeat.getText();
 		String email = txtEmail.getText();
 		RegisterValidator registerValidator = new RegisterValidator();
-		registerValidator.doValidate(username, password, passwordRepeat, email);
+		if (registerValidator.doValidate(username, password, passwordRepeat, email)) {
+			SceneSwitch sceneSwitch = new SceneSwitch();
+			sceneSwitch.closeDialog(btnLoginRegister);
+		}
 	}
 
 	/**

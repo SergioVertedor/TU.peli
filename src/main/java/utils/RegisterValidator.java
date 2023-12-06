@@ -15,7 +15,7 @@ public class RegisterValidator {
    * @param passwordRepeat contraseña repetida
    * @param email email
    */
-  public void doValidate(String username, String password, String passwordRepeat, String email) {
+  public boolean doValidate(String username, String password, String passwordRepeat, String email) {
     InputValidator inputValidator = new InputValidator();
     int errorCount = 0;
     StringBuilder errorMessages = new StringBuilder();
@@ -49,6 +49,7 @@ public class RegisterValidator {
     DialogNotificator dialogNotificator = new DialogNotificator();
     if (errorCount > 0) {
       dialogNotificator.notifyRegisterError(errorMessages.toString(), errorCount);
+      return false;
     } else {
       LocalDate fechaActual = LocalDate.now();
       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -56,6 +57,7 @@ public class RegisterValidator {
       AppUser usuario = new AppUser(1, username, email, password, "", fechaFormateada, "");
       ListStorage.users.add(usuario);
       dialogNotificator.notifyRegister(usuario);
+      return true;
     }
   }
 
