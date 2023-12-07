@@ -11,6 +11,13 @@ import javafx.scene.image.ImageView;
 import utils.RegisterValidator;
 import utils.SceneSwitch;
 
+/**
+ * Controller de la vista "PantallaRegistro"
+ * 
+ * @author SVB
+ * @author EPP
+ *
+ */
 public class PantallaRegistroController {
 
 	@FXML
@@ -55,11 +62,12 @@ public class PantallaRegistroController {
 	@FXML
 	private TextField txtUserName;
 
-	/**
-	 * Este método se ejecuta cuando el usuario pulsa el botón de registro
-	 * 
-	 * @param event evento
-	 */
+  /**
+   * Método que se ejecuta cuando el usuario pulsa el botón de registro.
+   * Valida y procesa el registro de un nuevo usuario utilizando RegisterValidator.
+   *
+   * @param event Evento de acción generado por el usuario
+   */
 	@FXML
 	void btnRegisterNewUserPressed(ActionEvent event) {
 		String username = txtUserName.getText();
@@ -70,19 +78,23 @@ public class PantallaRegistroController {
 		registerValidator.doValidate(username, password, passwordRepeat, email);
 	}
 
-	/**
-	 * Vuelve a la pantalla principal
-	 * 
-	 * @param event
-	 */
+  /**
+   * Método que vuelve a la pantalla principal.
+   *
+   * @param event Evento de acción generado por el usuario
+   */
 	@FXML
 	void btnVolver(ActionEvent event) {
 		SceneSwitch sceneSwitch = new SceneSwitch();
 		sceneSwitch.closeDialog(btnVolver);
 	}
+
+  /**
+   * Método de inicialización que se ejecuta cuando se carga la interfaz gráfica.
+   */
 	@FXML
 	void initialize() {
-		imgLoginLogo.setImage(new Image("/images/logo/logo.png"));
+		imgLoginLogo.setImage(new Image("images/logo/logo.png"));
 	}
 
 }
