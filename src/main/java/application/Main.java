@@ -1,11 +1,8 @@
 package application;
 
-import controllers.PantallaLoginController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import utils.SceneSwitcher;
-
-import java.io.IOException;
 
 /**
  * @author SVB

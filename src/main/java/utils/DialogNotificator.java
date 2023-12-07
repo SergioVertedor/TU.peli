@@ -1,16 +1,15 @@
 package utils;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import model.dao.AppUser;
-
-import java.io.PrintWriter;
-import java.io.StringWriter;
 
 /**
  * Clase que notifica al usuario de las notificaciones que se producen en el login

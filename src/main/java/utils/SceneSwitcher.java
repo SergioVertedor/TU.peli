@@ -36,6 +36,7 @@ public class SceneSwitcher {
       setupStage();
       primeraVez = true;
     }
+    
     StringBuilder path = new StringBuilder();
     String fxmlFile = path.append("/view/").append(fxml).append(".fxml").toString();
 
@@ -44,8 +45,6 @@ public class SceneSwitcher {
     loader.setLocation(getClass().getResource(fxmlFile));
     // Carga la pantalla principal
     Parent root = loader.load();
-    // Quita el foco de los textbox
-    root.requestFocus();
     // Obtiene la pantalla principal y su tamaño
     Screen screen = Screen.getPrimary();
     Rectangle2D bounds = screen.getVisualBounds();
@@ -56,6 +55,9 @@ public class SceneSwitcher {
     scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
     // Asigna la escena a la ventana principal
     stage.setScene(scene);
+    // Quita el foco de los textbox
+    root.requestFocus();
+    
     // Muestra la nueva ventana y espera hasta que se cierre
     if (primeraVez) {
       stage.showAndWait();
