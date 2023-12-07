@@ -1,9 +1,8 @@
 package utils;
 
-import model.dao.AppUser;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import model.dao.AppUser;
 
 public class RegisterValidator {
 
