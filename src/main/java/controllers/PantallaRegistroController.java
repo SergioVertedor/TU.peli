@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import utils.RegisterValidator;
-import utils.SceneSwitch;
+import utils.SceneSwitcher;
 
 public class PantallaRegistroController {
 
@@ -68,8 +68,8 @@ public class PantallaRegistroController {
 		String email = txtEmail.getText();
 		RegisterValidator registerValidator = new RegisterValidator();
 		if (registerValidator.doValidate(username, password, passwordRepeat, email)) {
-			SceneSwitch sceneSwitch = new SceneSwitch();
-			sceneSwitch.closeDialog(btnLoginRegister);
+			SceneSwitcher sceneSwitcher = new SceneSwitcher();
+			sceneSwitcher.closeDialog(btnLoginRegister);
 		}
 	}
 
@@ -80,8 +80,8 @@ public class PantallaRegistroController {
 	 */
 	@FXML
 	void btnVolver(ActionEvent event) {
-		SceneSwitch sceneSwitch = new SceneSwitch();
-		sceneSwitch.closeDialog(btnVolver);
+		SceneSwitcher sceneSwitcher = new SceneSwitcher();
+		sceneSwitcher.closeDialog(btnVolver);
 	}
 	@FXML
 	void initialize() {

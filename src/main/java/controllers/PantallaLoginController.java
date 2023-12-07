@@ -18,8 +18,6 @@ public class PantallaLoginController {
 
   @FXML private Button btnLoginRegister;
 
-  @FXML private Button btnLoginWithGoogle;
-
   @FXML private CheckBox cbLoginRememberMe;
 
   @FXML private ImageView imgLoginLogo;
@@ -41,9 +39,9 @@ public class PantallaLoginController {
 
   @FXML
   void btnLoginRegisterPressed(ActionEvent event) {
-    SceneSwitch sceneSwitch = new SceneSwitch();
+    SceneSwitcher sceneSwitcher = new SceneSwitcher();
     try {
-      sceneSwitch.switchScene("PantallaRegistro", new PantallaRegistroController());
+      sceneSwitcher.switchScene("PantallaRegistro");
     } catch (IOException e) {
       System.err.println("Error al cargar la ventana de registro");
     }
@@ -60,6 +58,6 @@ public class PantallaLoginController {
 
   @FXML
   void initialize() {
-    imgLoginLogo.setImage(new Image("/images/logo/logo.png"));
+   imgLoginLogo.setImage(new Image("images/logo/logo.png"));;
   }
 }
