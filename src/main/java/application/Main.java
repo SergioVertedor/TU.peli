@@ -9,11 +9,16 @@ import java.io.IOException;
 
 /**
  * Clase principal
+<<<<<<< HEAD
  *
+=======
+ * 
+>>>>>>> eva
  * @author SVB
  * @author EPP
  */
 public class Main extends Application {
+<<<<<<< HEAD
 
   @Override
   public void start(Stage primaryStage) throws IOException {
@@ -22,8 +27,27 @@ public class Main extends Application {
       SceneSwitcher ss = new SceneSwitcher();
       ss.switchScene("PantallaLogin");
   }
+=======
+>>>>>>> eva
 
-  public static void main(String[] args) {
-    launch(args);
-  }
+	@Override
+	public void start(Stage primaryStage) {
+		try {
+			// Gestiona el cambio de escena a "Pantalla Login"
+			SceneSwitch sceneSwitch = new SceneSwitch();
+			sceneSwitch.switchScene("PantallaLogin", new PantallaLoginController());
+		} catch (Exception e) {
+			// Imprime un mensaje en caso de error
+			System.err.println("Error al cargar la ventana");
+		}
+	}
+
+	/**
+	 * Inicia la aplicación JavaFX
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		launch(args);
+	}
 }

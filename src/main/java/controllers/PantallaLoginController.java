@@ -12,6 +12,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import utils.*;
 
+/**
+ * Controler de la vista "PantallaLogin"
+ * 
+ * @author SVB
+ * @author EPP
+ *
+ */
 public class PantallaLoginController {
 
   @FXML private Button btnLoginEnter;
@@ -26,6 +33,12 @@ public class PantallaLoginController {
 
   @FXML private TextField txtLoginUser;
 
+  /**
+   * Método que se ejecuta cuando se presiona el botón de "Iniciar Sesión".
+   * Valida la entrada del usuario y la contraseña utilizando LoginValidator e InputValidator.
+   *
+   * @param event Evento de acción generado por el usuario
+   */
   @FXML
   void btnLoginEnterPressed(ActionEvent event) {
     String userOrMail = txtLoginUser.getText();
@@ -37,6 +50,12 @@ public class PantallaLoginController {
     }
   }
 
+  /**
+   * Método que se ejecuta cuando se presiona el botón de "Registrarse".
+   * Redirige a la pantalla de registro utilizando SceneSwitch.
+   *
+   * @param event Evento de acción generado por el usuario
+   */
   @FXML
   void btnLoginRegisterPressed(ActionEvent event) {
     SceneSwitcher sceneSwitcher = new SceneSwitcher();
@@ -47,6 +66,12 @@ public class PantallaLoginController {
     }
   }
 
+  /**
+   * Método que se ejecuta cuando se selecciona o deselecciona la casilla de "Recordar usuario".
+   * Almacena la preferencia del usuario utilizando PropertiesManager.
+   *
+   * @param event Evento de acción generado por el usuario
+   */
   @FXML
   void cbRememberMeSelected(ActionEvent event) {
     if (cbLoginRememberMe.isSelected()) {
@@ -56,8 +81,15 @@ public class PantallaLoginController {
     }
   }
 
+  /**
+   * Método de inicialización que se ejecuta cuando se carga la interfaz gráfica
+   */
   @FXML
   void initialize() {
+<<<<<<< HEAD
    imgLoginLogo.setImage(new Image("images/logo/logo.png"));;
+=======
+    imgLoginLogo.setImage(new Image("images/logo/logo.png"));
+>>>>>>> eva
   }
 }
