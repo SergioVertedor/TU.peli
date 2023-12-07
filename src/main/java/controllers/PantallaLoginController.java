@@ -4,12 +4,14 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import utils.*;
 
 /**
@@ -86,10 +88,6 @@ public class PantallaLoginController {
    */
   @FXML
   void initialize() {
-<<<<<<< HEAD
-   imgLoginLogo.setImage(new Image("images/logo/logo.png"));;
-=======
     imgLoginLogo.setImage(new Image("images/logo/logo.png"));
->>>>>>> eva
   }
 }

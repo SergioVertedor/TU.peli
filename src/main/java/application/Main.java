@@ -8,34 +8,17 @@ import utils.SceneSwitcher;
 import java.io.IOException;
 
 /**
- * Clase principal
-<<<<<<< HEAD
- *
-=======
- * 
->>>>>>> eva
  * @author SVB
  * @author EPP
  */
 public class Main extends Application {
-<<<<<<< HEAD
-
-  @Override
-  public void start(Stage primaryStage) throws IOException {
-
-
-      SceneSwitcher ss = new SceneSwitcher();
-      ss.switchScene("PantallaLogin");
-  }
-=======
->>>>>>> eva
 
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			// Gestiona el cambio de escena a "Pantalla Login"
-			SceneSwitch sceneSwitch = new SceneSwitch();
-			sceneSwitch.switchScene("PantallaLogin", new PantallaLoginController());
+			SceneSwitcher sceneSwitch = new SceneSwitcher();
+			sceneSwitch.switchScene("PantallaLogin");
 		} catch (Exception e) {
 			// Imprime un mensaje en caso de error
 			System.err.println("Error al cargar la ventana");
