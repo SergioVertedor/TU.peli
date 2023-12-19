@@ -1,7 +1,8 @@
-package model.dao.brute;
+package model.dto.brute.movie;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import model.dto.brute.*;
 
 import java.time.LocalDate;
 

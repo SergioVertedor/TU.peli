@@ -1,11 +1,11 @@
-package model.dao.brute;
+package model.dto.brute.watchprovider;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class Genre {
+public class WatchProvider {
     private long id;
-    private String name;
+    private Results results;
 }

@@ -1,4 +1,4 @@
-package model.dao.brute;
+package model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

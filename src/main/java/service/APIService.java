@@ -2,8 +2,8 @@ package service;
 
 import com.google.gson.Gson;
 import java.io.IOException;
-import model.dao.brute.Movie;
-import model.dao.brute.MovieSearchResult;
+import model.dto.brute.movie.Movie;
+import model.dto.brute.movie.MovieSearchResult;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -12,13 +12,10 @@ public class APIService {
   public Movie[] searchMovie(String name) throws IOException {
     OkHttpClient client = new OkHttpClient();
     // Generamos la URL de la petición HTTP.
-    StringBuilder urlFactory = new StringBuilder();
-    String url =
-        urlFactory
-            .append("https://api.themoviedb.org/3/search/movie?query=")
-            .append(name)
-            .append("&include_adult=true&language=es-ES&page=1")
-            .toString();
+      String url =
+              "https://api.themoviedb.org/3/search/movie?query=" +
+                      name +
+                      "&include_adult=true&language=es-ES&page=1";
     url = url.replace(" ", "%20").replace("ñ", "%C3%B1");
 
     // Realizamos la petición HTTP.

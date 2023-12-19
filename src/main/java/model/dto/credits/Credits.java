@@ -1,8 +1,7 @@
-package model.dao.brute;
+package model.dto.brute.credits;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 
 @AllArgsConstructor
 @Getter

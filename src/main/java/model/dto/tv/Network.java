@@ -1,13 +1,13 @@
-package model.dao.brute;
+package model.dto.brute.tv;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class BelongsToCollection {
+public class Network {
     private long id;
+    private String logoPath;
     private String name;
-    private String posterPath;
-    private String backdropPath;
+    private String originCountry;
 }

@@ -1,14 +1,11 @@
-package model.dao.brute;
+package model.dto.brute.watchprovider;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class Ag {
+public class Ad {
     private String link;
-    private Flatrate[] rent;
-    private Flatrate[] buy;
     private Flatrate[] flatrate;
-    private Flatrate[] ads;
 }
