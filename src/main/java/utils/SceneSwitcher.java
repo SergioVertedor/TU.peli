@@ -27,7 +27,6 @@ public class SceneSwitcher {
    * Método que cambia la escena principal de la aplicación cargando un nuevo archivo FXML.
    *
    * @param fxml Nombre del archivo FXML que se cargará.
-   * @param controller Objeto del controlador asociado a la nueva escena.
    * @throws IOException Si ocurre un error durante la carga del archivo FXML.
    */
   public void switchScene(String fxml) throws IOException {
