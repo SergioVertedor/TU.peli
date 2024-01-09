@@ -157,6 +157,9 @@
       </ToolBar>
    </left>
    <center>
-      <Pane fx:id="centralPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E9E9E9;" BorderPane.alignment="CENTER" />
+      <Pane fx:id="centralPane" style="-fx-background-color: #E9E9E9;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="878.0" prefWidth="1263.0" />
+         </children></Pane>
    </center>
 </BorderPane>
