@@ -2,8 +2,8 @@ package service;
 
 import com.google.gson.Gson;
 import java.io.IOException;
-import model.dto.brute.movie.Movie;
-import model.dto.brute.movie.MovieSearchResult;
+import model.dto.movie.Movie;
+import model.dto.movie.MovieSearchResult;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

@@ -1,9 +1,9 @@
-package model.dto.brute.tv;
+package model.dto.tv;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import model.dto.brute.OriginCountry;
-import model.dto.brute.OriginalLanguage;
+import model.dto.OriginCountry;
+import model.dto.OriginalLanguage;
 
 @Getter
 @AllArgsConstructor

@@ -1,10 +1,13 @@
-package model.dto.brute.movie;
+package model.dto.movie;
+
+import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import model.dto.brute.*;
-
-import java.time.LocalDate;
+import model.dto.Genre;
+import model.dto.ProductionCompany;
+import model.dto.ProductionCountry;
+import model.dto.SpokenLanguage;
 
 @AllArgsConstructor
 @Getter

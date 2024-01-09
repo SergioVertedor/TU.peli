@@ -1,4 +1,4 @@
-package model.dto.brute.movie;
+package model.dto.movie;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

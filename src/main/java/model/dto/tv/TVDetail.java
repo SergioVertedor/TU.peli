@@ -1,10 +1,10 @@
-package model.dto.brute.tv;
+package model.dto.tv;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import model.dto.brute.Genre;
-import model.dto.brute.ProductionCountry;
-import model.dto.brute.SpokenLanguage;
+import model.dto.Genre;
+import model.dto.ProductionCountry;
+import model.dto.SpokenLanguage;
 
 import java.time.LocalDate;
 
