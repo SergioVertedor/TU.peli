@@ -1,4 +1,4 @@
-package model.dto.brute.tv;
+package model.dto.tv;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -6,8 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class SpokenLanguage {
-    private String englishName;
-    private String iso639_1;
-    private String name;
-
+  private String englishName;
+  private String iso639_1;
+  private String name;
 }

@@ -3,6 +3,7 @@ package model.dto;
 import lombok.Getter;
 
 import java.io.IOException;
+
 public enum Department {
   ACTING,
   ART,

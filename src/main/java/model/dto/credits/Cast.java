@@ -1,8 +1,9 @@
-package model.dto.brute.credits;
+package model.dto.credits;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import model.dto.brute.Department;
+import model.dto.Department;
+
 
 @AllArgsConstructor
 @Getter

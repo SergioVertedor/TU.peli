@@ -1,4 +1,4 @@
-package model.dto.brute.watchprovider;
+package model.dto.watchprovider;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="hibernate.connection.password">Tek59Fropy#a</property>
+        <property name="hibernate.connection.url">
+            jdbc:mysql://srv980.hstgr.io:3306/u512132496_db512132496_?createDatabaseIfNotExist=true
+        </property>
+        <property name="hibernate.connection.username">u512132496_u512132496_</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- Para mostrar las sentencias SQL que se ejecutan, normalmente se usa en desarrollo -->
+        <property name="hibernate.show_sql">true</property>
+        <!-- Para mostrar las sentencias SQL formateadas y leerlas con mayor facilidad -->
+        <property name="hibernate.format_sql">true</property>
+        <!-- Esta propiedad dicta lo que sucede en la fase de arranque de la aplicación -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mapeo de las clases -->
+        <mapping class="model.dao.AppUser"/>
+
+    </session-factory>
+
+</hibernate-configuration>
+
