@@ -5,9 +5,9 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
-        <property name="hibernate.connection.password">Tek59Fropy#a</property>
+        <property name="hibernate.connection.password">55u%%iUhZw6y#Qk7R</property>
         <property name="hibernate.connection.url">
-            jdbc:mysql://srv980.hstgr.io:3306/u512132496_db512132496_
+            jdbc:mariadb://srv980.hstgr.io:3306/u512132496_db512132496_
         </property>
         <property name="hibernate.connection.username">u512132496_u512132496_</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>

@@ -17,7 +17,6 @@
             <version>6.4.0.Final</version>
         </dependency>
 
-
         <!-- MariaDB Driver -->
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
