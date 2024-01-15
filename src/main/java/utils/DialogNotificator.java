@@ -9,7 +9,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import model.dao.AppUser;
+import model.AppUser;
 
 /**
  * Clase que notifica al usuario de las notificaciones que se producen en el login

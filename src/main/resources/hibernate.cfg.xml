@@ -7,7 +7,7 @@
         <property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
         <property name="hibernate.connection.password">Tek59Fropy#a</property>
         <property name="hibernate.connection.url">
-            jdbc:mysql://srv980.hstgr.io:3306/u512132496_db512132496_?createDatabaseIfNotExist=true
+            jdbc:mysql://srv980.hstgr.io:3306/u512132496_db512132496_
         </property>
         <property name="hibernate.connection.username">u512132496_u512132496_</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -19,7 +19,7 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Mapeo de las clases -->
-        <mapping class="model.dao.AppUser"/>
+        <mapping class="model.AppUser"/>
 
     </session-factory>
 

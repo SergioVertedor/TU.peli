@@ -1,6 +1,6 @@
 package utils;
 
-import model.dao.AppUser;
+import model.AppUser;
 
 import java.util.ArrayList;
 import java.util.List;

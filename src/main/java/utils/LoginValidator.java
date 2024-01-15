@@ -28,7 +28,7 @@ public class LoginValidator {
 					LocalDate fechaActual = LocalDate.now();
 					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 					String fechaFormateada = fechaActual.format(formatter);
-					appUser.setLast_login(fechaFormateada);
+					appUser.setLastLogin(fechaFormateada);
 					dialogNotificator.notifyLogin(appUser);
 				} else {
 					dialogNotificator.notifyLoginError();

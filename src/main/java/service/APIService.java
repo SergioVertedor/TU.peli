@@ -2,10 +2,10 @@ package service;
 
 import com.google.gson.Gson;
 import java.io.IOException;
-import model.dto.movie.Movie;
-import model.dto.movie.MovieSearchResult;
-import model.dto.tv.TV;
-import model.dto.tv.TVSearchResult;
+import service.dto.movie.Movie;
+import service.dto.movie.MovieSearchResult;
+import service.dto.tv.TV;
+import service.dto.tv.TVSearchResult;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

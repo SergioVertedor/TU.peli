@@ -3,7 +3,7 @@ package utils;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import model.dao.AppUser;
+import model.AppUser;
 
 /**
  * Clase que realiza la validación de los datos introducidos por el usuario durante el proceso de
