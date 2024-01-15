@@ -9,6 +9,7 @@ import model.Crew;
 
 public class CrewDaoImpl extends CommonDaoImpl<Crew> implements CrewDaoI {
 
+	// Sesion para Crew
 	private Session session;
 
 	public CrewDaoImpl(Session session) {
@@ -16,6 +17,9 @@ public class CrewDaoImpl extends CommonDaoImpl<Crew> implements CrewDaoI {
 		this.session = session;
 	}
 
+	/**
+	 * Busca Crew por id
+	 */
 	@Override
 	public Crew searchById(int idCrew) {
 		if (!session.getTransaction().equals(TransactionStatus.ACTIVE)) {
@@ -25,6 +29,9 @@ public class CrewDaoImpl extends CommonDaoImpl<Crew> implements CrewDaoI {
 		return (Crew) session.createQuery("FROM Crew WHERE idCrew='" + idCrew + "'").uniqueResult();
 	}
 
+	/**
+	 * Busca Crew por nombre
+	 */
 	@Override
 	public List<Crew> searchByName(String crewName) {
 		if (!session.getTransaction().equals(TransactionStatus.ACTIVE)) {

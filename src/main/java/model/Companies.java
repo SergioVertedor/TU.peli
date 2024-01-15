@@ -8,6 +8,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Companies {
-    private int idCompany;
-    private String companyName;
+	private int idCompany;
+	private String companyName;
 }

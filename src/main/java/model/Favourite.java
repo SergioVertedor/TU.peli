@@ -8,6 +8,6 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class Favourite {
-    private int idWork;
-    private int idUser;
+	private int idWork;
+	private int idUser;
 }

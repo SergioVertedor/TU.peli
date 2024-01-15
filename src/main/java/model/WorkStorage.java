@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class workStorage {
-    private int idWorkStorage;
-    private String storageName;
-    private String storageType;
+public class WorkStorage {
+	private int idWorkStorage;
+	private String storageName;
+	private String storageType;
 }

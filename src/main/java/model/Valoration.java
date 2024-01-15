@@ -8,8 +8,8 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class Valoration {
-    private int idWork;
-    private int idUser;
-    private double rating;
-    private String userComment;
+	private int idWork;
+	private int idUser;
+	private double rating;
+	private String userComment;
 }
