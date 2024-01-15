@@ -2,6 +2,11 @@ package model.dto.movie;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import model.dto.Genre;
+import model.dto.ProductionCompany;
+import model.dto.ProductionCountry;
+import model.dto.SpokenLanguage;
+
 import java.time.LocalDate;
 
 @AllArgsConstructor
