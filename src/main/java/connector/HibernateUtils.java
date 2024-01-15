@@ -1,23 +1,16 @@
 package connector;
 
+
+import lombok.Getter;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-
-/** Clase HibernateUtils que abre la conexión con la base de datos. */
+@Getter
 public class HibernateUtils {
   private static Session session;
   private static SessionFactory sessionFactory;
-
-  /**
-   * Método que devuelve la sesión.
-   * @return session
-   */
-    public static Session getSession() {
-    return session;
-  }
 
   /**
    * Método que abre la conexión con la base de datos.

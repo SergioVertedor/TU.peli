@@ -8,9 +8,10 @@ module org.example.ddiud02javafxjsontest {
   requires com.google.gson;
   requires javafx.web;
   requires jakarta.persistence;
-    requires org.hibernate.orm.core;
+  requires org.hibernate.orm.core;
+  requires java.naming;
 
-    // Exports hace que el módulo sea visible para otros módulos, a diferencia de opens, no permite
+  // Exports hace que el módulo sea visible para otros módulos, a diferencia de opens, no permite
   // el acceso a los elementos internos del módulo
   exports application;
   exports controllers;
