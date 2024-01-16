@@ -8,8 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Crew {
-    private int idCrew;
-    private String crewName;
-    private String profilePath;
-    private String job;
+	private int idCrew;
+	private String crewName;
+	private String profilePath;
+	private String job;
 }

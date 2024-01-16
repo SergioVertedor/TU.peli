@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class WatchProvider {
-    private int providerId;
-    private String name;
-    private String logoPath;
+	private int providerId;
+	private String name;
+	private String logoPath;
 }

@@ -8,6 +8,6 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class Genres {
-    private int idGenre;
-    private int nameGenre;
+	private int idGenre;
+	private int nameGenre;
 }

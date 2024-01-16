@@ -8,6 +8,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class List {
-    private int idWork;
-    private int idUser;
+	private int idWork;
+	private int idUser;
 }

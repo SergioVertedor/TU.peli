@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneTopSerieController">
+   <children>
+      <Pane prefHeight="878.0" prefWidth="1263.0">
+         <children>
+            <VBox layoutX="8.0" prefHeight="878.0" prefWidth="1388.0" style="-fx-background-color: #E9E9E9;">
+               <children>
+                  <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="1266.0" style="-fx-background-color: #292929; -fx-background-radius: 8;">
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="100.0" top="30.0" />
+                     </VBox.margin>
+                     <children>
+                        <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="320.0" prefWidth="1266.0">
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <ImageView fitHeight="76.0" fitWidth="1240.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/others/filmLine.PNG" />
+                                       </image>
+                                    </ImageView>
+                                    <GridPane prefHeight="234.0" prefWidth="1198.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <ImageView fx:id="imgPoster1" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imgPoster2" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                                             <image>
+                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imgPoster3" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                                             <image>
+                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imgPoster4" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                                             <image>
+                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imgPoster5" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                                             <image>
+                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imgPoster6" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+                                             <image>
+                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imgPoster7" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
+                                             <image>
+                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="imgPoster8" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7">
+                                             <image>
+                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </GridPane>
+                                    <ImageView fitHeight="76.0" fitWidth="1240.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/others/filmLine.PNG" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <padding>
+                                    <Insets left="12.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane>
+                     <children>
+                        <VBox prefHeight="461.0" prefWidth="1266.0" style="-fx-background-color: #292929; -fx-background-radius: 8;">
+                           <children>
+                              <Label fx:id="lblTitulo" alignment="TOP_LEFT" text="TITULO" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="32.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="5.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="lblDirectorGenero" alignment="TOP_LEFT" text="Director · Genero" textFill="#ff7520">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="20.0" />
+                                 </padding>
+                              </Label>
+                              <HBox prefHeight="23.0" prefWidth="100.0">
+                                 <children>
+                                    <Label fx:id="lblEstreno" contentDisplay="CENTER" prefHeight="25.0" prefWidth="227.0" text="1994" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <Label fx:id="lblTituloSinopsis" alignment="TOP_LEFT" text="Sinopsis:" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="40.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="lblSinopsis" alignment="TOP_LEFT" text="Ejemplo texto sinopsis" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="30.0" top="30.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="100.0" />
+                     </VBox.margin>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
