@@ -1,6 +1,7 @@
 package model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import utils.RSAUtils;
  * @author EPP
  */
 @Entity
+@AllArgsConstructor
 @Table(name = "usuarios")
 @NoArgsConstructor
 @Getter
@@ -20,18 +22,25 @@ import utils.RSAUtils;
 public class AppUser {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
   private int idUser;
+  @Column(name = "name")
   private String username;
+  @Column(name = "mail")
   private String mail;
+  @Column(name = "password")
   private String password;
+  @Column(name = "last_login")
   private String lastLogin;
+  @Column(name = "register_date")
   private String registerDate;
+  @Column(name = "avatar_path")
   private String avatarPath;
+
 
   /**
    * Constructor de la clase AppUser
    *
-   * @param idUser Identificador del usuario
    * @param username Nombre de usuario
    * @param mail Correo electrónico
    * @param password Contraseña
@@ -40,14 +49,12 @@ public class AppUser {
    * @param avatarPath Ruta del avatar
    */
   public AppUser(
-      int idUser,
       String username,
       String mail,
       String password,
       String lastLogin,
       String registerDate,
       String avatarPath) {
-    this.idUser = idUser;
     this.username = username;
     this.mail = mail;
     this.password =

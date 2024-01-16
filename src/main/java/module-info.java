@@ -23,4 +23,5 @@ module org.example.ddiud02javafxjsontest {
       javafx.fxml;
   opens application to
       javafx.fxml;
+  opens model to org.hibernate.orm.core;
 }

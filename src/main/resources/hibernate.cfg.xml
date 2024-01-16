@@ -20,6 +20,10 @@
 
         <!-- Mapeo de las clases -->
         <mapping class="model.AppUser"/>
+        <mapping class="model.Work"/>
+        <mapping class="model.WorkStorage"/>
+        <mapping class="model.Pelicula"/>
+
 
     </session-factory>
 

@@ -1,12 +1,18 @@
 package model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
-@AllArgsConstructor
+
 @Getter
 @Setter
-public class Pelicula extends Works {
-    private  String productionCountries;
+@Entity
+@SuperBuilder
+@DiscriminatorValue("M")
+public class Pelicula extends Work {
+  @Column(name = "production_companies")
+  private String productionCountries;
 }
