@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneSerie">
+   <children>
+      <Pane prefHeight="878.0" prefWidth="1263.0">
+         <children>
+            <VBox prefHeight="878.0" prefWidth="1263.0" style="-fx-background-color: #E9E9E9;">
+               <children>
+                  <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="813.0" prefWidth="1266.0" style="-fx-background-color: blue; -fx-background-radius: 8;">
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="100.0" top="30.0" />
+                     </VBox.margin>
+                     <children>
+                        <VBox prefHeight="813.0" prefWidth="1266.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1166.0">
+                                 <children>
+                                    <Pane prefHeight="300.0" prefWidth="1614.0">
+                                       <children>
+                                          <ImageView fitHeight="76.0" fitWidth="1156.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/others/filmLine.PNG" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="76.0" fitWidth="1156.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/others/filmLine.PNG" />
+                                             </image>
+                                          </ImageView>
+                                          <GridPane layoutX="7.0" layoutY="30.0" prefHeight="234.0" prefWidth="1141.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                          </GridPane>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Pane>
+                                    <VBox fx:id="vBoxReparto" prefHeight="100.0" prefWidth="380.0">
+                                       <children>
+                                          <HBox fx:id="boxReparto11" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                                             <padding>
+                                                <Insets bottom="10.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="250.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label fx:id="lblTitulo" alignment="TOP_LEFT" text="TITULO" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="30.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="4.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label fx:id="lblDirectorGenero" alignment="TOP_LEFT" text="Director · Genero" textFill="#ff7520">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox prefHeight="23.0" prefWidth="100.0">
+                                             <children>
+                                                <Pane prefHeight="12.0" prefWidth="40.0" style="-fx-background-color: #CFCFCF; -fx-background-radius: 4;">
+                                                   <children>
+                                                      <Label fx:id="lbluserRating" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="2.0" onDragDetected="#userRatingPressed" prefHeight="20.0" prefWidth="30.0" text="8.5" textAlignment="CENTER" textFill="#ff7520">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="1.0" top="1.0" />
+                                                   </padding>
+                                                </Pane>
+                                                <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </HBox.margin>
+                                                   <image>
+                                                      <Image url="@../images/flags/eeuu.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label fx:id="lblEstrenoTemporadas" contentDisplay="CENTER" prefHeight="25.0" prefWidth="227.0" text="2023 · 1 temporada" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <Label fx:id="lblTituloSinopsis" alignment="TOP_LEFT" text="Sinopsis:" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="22.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label fx:id="lblSinopsis" alignment="TOP_LEFT" text="Ejemplo texto sinopsis" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="25.0" top="3.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="40.0" left="50.0" right="50.0" top="40.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

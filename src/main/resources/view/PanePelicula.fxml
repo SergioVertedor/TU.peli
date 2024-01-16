@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PantallaBusqueda">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PanePelicula">
    <children>
       <Pane prefHeight="878.0" prefWidth="1263.0">
          <children>
@@ -46,7 +46,7 @@
                                        <children>
                                           <ImageView fx:id="imgPoster" fitHeight="396.0" fitWidth="286.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                              <image>
-                                                <Image url="@../images/examples/ejemploPoster.jpg" />
+                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
@@ -56,7 +56,7 @@
                                                       <Font name="System Bold" size="30.0" />
                                                    </font>
                                                    <VBox.margin>
-                                                      <Insets bottom="10.0" top="2.0" />
+                                                      <Insets bottom="10.0" top="4.0" />
                                                    </VBox.margin>
                                                 </Label>
                                                 <Label fx:id="lblDirectorGenero" alignment="TOP_LEFT" text="Director · Genero" textFill="#ec1b1b">
@@ -64,14 +64,14 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                    <VBox.margin>
-                                                      <Insets bottom="40.0" />
+                                                      <Insets bottom="20.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <HBox prefHeight="20.0" prefWidth="100.0">
+                                                <HBox prefHeight="23.0" prefWidth="100.0">
                                                    <children>
-                                                      <Pane prefHeight="10.0" prefWidth="50.0" style="-fx-background-color: grey; -fx-background-radius: 4;">
+                                                      <Pane prefHeight="12.0" prefWidth="40.0" style="-fx-background-color: #CFCFCF; -fx-background-radius: 4;">
                                                          <children>
-                                                            <Label fx:id="lbluserRating" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="2.0" onDragDetected="#userRatingPressed" prefHeight="20.0" prefWidth="50.0" text="0.0" textAlignment="CENTER" textFill="WHITE">
+                                                            <Label fx:id="lbluserRating" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="2.0" onDragDetected="#userRatingPressed" prefHeight="20.0" prefWidth="30.0" text="8.5" textAlignment="CENTER" textFill="#ec1b1b">
                                                                <font>
                                                                   <Font name="System Bold" size="14.0" />
                                                                </font>
@@ -84,12 +84,15 @@
                                                             <Insets bottom="1.0" top="1.0" />
                                                          </padding>
                                                       </Pane>
-                                                      <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                      <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                                          <HBox.margin>
                                                             <Insets left="10.0" right="10.0" />
                                                          </HBox.margin>
+                                                         <image>
+                                                            <Image url="@../images/flags/japon.png" />
+                                                         </image>
                                                       </ImageView>
-                                                      <Label fx:id="lblEstrenoDuracion" text="2001 · 2h 5m" textFill="WHITE">
+                                                      <Label fx:id="lblEstrenoDuracion" contentDisplay="CENTER" prefHeight="25.0" prefWidth="85.0" text="2001 · 2h 5m" textFill="WHITE">
                                                          <font>
                                                             <Font name="System Bold" size="14.0" />
                                                          </font>
