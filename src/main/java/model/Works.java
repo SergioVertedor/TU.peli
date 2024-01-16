@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -14,6 +15,7 @@ public class Works {
   private int idWork;
   private String originalTitle;
   private LocalDate releaseDate;
+  private Set<Genres> genres;
   private Integer runtime;
   private String overview;
   private String backdropPath;
