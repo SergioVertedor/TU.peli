@@ -2,7 +2,7 @@ package model.dao;
 
 import model.Company;
 
-// TODO: Eva - Companies o Company?
+
 public interface CompaniesDaoI extends CommonDaoInt<Company> {
 	
 	/**

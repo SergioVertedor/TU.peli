@@ -1,34 +1,33 @@
 package model.dao;
 
-import model.Work;
+import java.util.List;
+import model.Pelicula;
 import org.hibernate.Session;
 
-import java.util.List;
-
 /** Clase con el DAO generico, CommonDaoImpl y la interfaz WorkInt */
-public class WorkImpl extends CommonDaoImpl<Work> implements WorkInt {
+public class PeliculaImpl extends CommonDaoImpl<Pelicula> implements PeliculaInt {
 
   /**
    * Constructor de la clase
    *
    * @param session Session de la base de datos
    */
-  public WorkImpl(Session session) {
+  public PeliculaImpl(Session session) {
     super(session);
   }
 
   /**
-   * Busca Work por título
+   * Busca Pelicula por título
    *
-   * @param title Título de la obra
-   * @return Work con el título dado
+   * @param title
+   * @return
    */
   @Override
-  public List<Work> searchByTitle(String title) {
+  public List<Pelicula> searchByTitle(String title) {
     session.beginTransaction();
     String hql = "FROM Work WHERE originalTitle='" + title + "'";
-    List<Work> works = session.createQuery(hql, Work.class).list();
+    List<Pelicula> peliculas = session.createQuery(hql, Pelicula.class).list();
     session.getTransaction().commit();
-    return works;
+    return peliculas;
   }
 }
