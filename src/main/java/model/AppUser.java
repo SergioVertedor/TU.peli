@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import utils.RSAUtils;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Representa un usuario de la aplicación
  *
@@ -36,7 +39,23 @@ public class AppUser {
   private String registerDate;
   @Column(name = "avatar_path")
   private String avatarPath;
+  @OneToMany(mappedBy = "user")
+  private Set<Store> stores;
 
+
+  @ManyToMany
+  @JoinTable(
+          name = "usuario_favorito",
+          joinColumns = @JoinColumn(name = "id_usuario"),
+          inverseJoinColumns = @JoinColumn(name = "id_obra"))
+  private Set<Work> favoritos = new HashSet<>();
+
+  @ManyToMany
+  @JoinTable(
+          name = "usuario_valoracion",
+          joinColumns = @JoinColumn(name = "id_usuario"),
+          inverseJoinColumns = @JoinColumn(name = "id_obra"))
+  private Set<Work> valoraciones = new HashSet<>();
 
   /**
    * Constructor de la clase AppUser

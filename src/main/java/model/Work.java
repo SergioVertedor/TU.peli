@@ -12,19 +12,24 @@ import org.hibernate.Hibernate;
 import org.hibernate.Session;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
 @Getter
 @Entity
+// Inheritance indica que la clase es padre de otras clases
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+// DiscriminatorColumn indica el nombre de la columna que indica el tipo de obra
 @DiscriminatorColumn(name = "work_type", discriminatorType = DiscriminatorType.STRING)
 @Table(name = "obra")
 public class Work {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
+  @Column(name = "work_id")
   private int idWork;
 
   @Column(name = "original_title")
@@ -53,6 +58,15 @@ public class Work {
 
   @Column(name = "user_comment")
   private String userComment;
+
+  @ManyToMany(mappedBy = "favoritos")
+  private Set<AppUser> usuariosFavoritos = new HashSet<>();
+
+  @ManyToMany(mappedBy = "valoraciones")
+  private Set<AppUser> usuariosValoraciones = new HashSet<>();
+
+  @OneToMany(mappedBy = "work")
+  private Set<Store> stores;
 
   public Work(
       String originalTitle,

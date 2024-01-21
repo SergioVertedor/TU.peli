@@ -23,6 +23,7 @@
         <mapping class="model.Work"/>
         <mapping class="model.WorkStorage"/>
         <mapping class="model.Pelicula"/>
+        <mapping class="model.Store"/>
 
 
     </session-factory>

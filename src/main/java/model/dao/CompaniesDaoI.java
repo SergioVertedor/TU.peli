@@ -1,23 +1,23 @@
 package model.dao;
 
-import model.Companies;
+import model.Company;
 
 // TODO: Eva - Companies o Company?
-public interface CompaniesDaoI extends CommonDaoInt<Companies> {
+public interface CompaniesDaoI extends CommonDaoInt<Company> {
 	
 	/**
 	 * Busca Company por id
 	 * @param idCompany
 	 * @return Company con el id dado
 	 */
-	public Companies searchById(final int idCompany);
+	public Company searchById(final int idCompany);
 	
 	/**
 	 * Busca Company por nombre
 	 * @param name
 	 * @return Company con el nombre dado
 	 */
-	public Companies searchByName(final String name);
+	public Company searchByName(final String name);
 
 	
 	

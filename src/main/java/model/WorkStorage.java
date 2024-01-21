@@ -4,8 +4,10 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Entity
-@Table(name = "almacenes")
+@Table(name = "almacen")
 @NoArgsConstructor
 @Getter
 public class WorkStorage {
