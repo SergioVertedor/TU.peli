@@ -4,7 +4,6 @@ import java.util.List;
 
 import model.Serie;
 
-//TODO: Eva - Las series y las películas donde guardan el género?
 
 /**
  * Interface para Serie
@@ -32,13 +31,13 @@ public interface SerieDaoI extends CommonDaoInt<Serie> {
 	 * @return Series con duración menor a la indicada
 	 */
 	public List<Serie> searchByLessRuntime(final Integer runtime);
-
+	
 	/**
-	 * Busca Series por poularidad
-	 * @param popularity
-	 * @return Series con popularidad igual a la indicada
+	 * Busca Series por género
+	 * @param genre
+	 * @return Series del género indicado
 	 */
-	public List<Serie> searchByPopularity(final Double popularity);
+	public List<Serie> searchByGenre(final String genre);
 
 	/**
 	 * Busca Series por pais
