@@ -19,7 +19,7 @@ import lombok.experimental.SuperBuilder;
 // DiscriminatorColumn indica el nombre de la columna que indica el tipo de obra
 @DiscriminatorColumn(name = "work_type", discriminatorType = DiscriminatorType.STRING)
 @Table(name = "obra")
-public class Work {
+public class Work implements java.io.Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "work_id")
@@ -52,14 +52,8 @@ public class Work {
   @Column(name = "user_comment")
   private String userComment;
 
-  @ManyToMany(mappedBy = "favoritos")
-  private Set<AppUser> usuariosFavoritos = new HashSet<>();
-
-  @ManyToMany(mappedBy = "valoraciones")
-  private Set<AppUser> usuariosValoraciones = new HashSet<>();
-
-  @OneToMany(mappedBy = "work")
-  private Set<Store> stores;
+  @OneToMany(mappedBy = "id.work", cascade = CascadeType.ALL)
+  private Set<WorkUserStorage> workUserStorages = new HashSet<>();
 
   public Work(
       String originalTitle,

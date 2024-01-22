@@ -7,7 +7,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Casting {
+public class Casting implements java.io.Serializable {
   private int idCasting;
   private String castName;
   private String character;

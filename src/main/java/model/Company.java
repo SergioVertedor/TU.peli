@@ -7,7 +7,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Company {
+public class Company implements java.io.Serializable {
     private int idCompany;
     private String companyName;
 }

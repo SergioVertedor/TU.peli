@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-public class Genres {
+public class Genres implements java.io.Serializable {
 	private int idGenre;
 	private int nameGenre;
 }

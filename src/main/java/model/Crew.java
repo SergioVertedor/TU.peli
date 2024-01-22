@@ -7,7 +7,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Crew {
+public class Crew implements java.io.Serializable {
 	private int idCrew;
 	private String crewName;
 	private String profilePath;

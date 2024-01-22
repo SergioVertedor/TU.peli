@@ -21,7 +21,7 @@ import utils.RSAUtils;
 @NoArgsConstructor
 @Getter
 @Setter
-public class AppUser {
+public class AppUser implements java.io.Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
@@ -45,8 +45,11 @@ public class AppUser {
   @Column(name = "avatar_path")
   private String avatarPath;
 
-  @OneToMany(mappedBy = "user")
-  private Set<Store> stores;
+  @OneToMany(mappedBy = "id.user", cascade = CascadeType.ALL)
+  private Set<WorkUserStorage> workUserStorages = new HashSet<>();
+
+  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+  private Set<Storage> storages = new HashSet<>();
 
   @ManyToMany
   @JoinTable(

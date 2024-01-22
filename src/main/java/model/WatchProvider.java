@@ -7,7 +7,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class WatchProvider {
+public class WatchProvider implements java.io.Serializable {
 	private int providerId;
 	private String name;
 	private String logoPath;

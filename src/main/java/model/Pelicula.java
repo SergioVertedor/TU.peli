@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @DiscriminatorValue("M")
-public class Pelicula extends Work {
+public class Pelicula extends Work implements java.io.Serializable {
   @Column(name = "production_companies")
   private String productionCountries;
 }
