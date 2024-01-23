@@ -1,6 +1,7 @@
 package model;
 
 import jakarta.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +20,7 @@ import lombok.experimental.SuperBuilder;
 // DiscriminatorColumn indica el nombre de la columna que indica el tipo de obra
 @DiscriminatorColumn(name = "work_type", discriminatorType = DiscriminatorType.STRING)
 @Table(name = "obra")
-public class Work implements java.io.Serializable {
+public class Work implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "work_id")
@@ -54,6 +55,41 @@ public class Work implements java.io.Serializable {
 
   @OneToMany(mappedBy = "id.work", cascade = CascadeType.ALL)
   private Set<WorkUserStorage> workUserStorages = new HashSet<>();
+
+  @ManyToMany(cascade = CascadeType.ALL)
+  @JoinTable(
+      name = "work_casting",
+      joinColumns = @JoinColumn(name = "work_id"),
+      inverseJoinColumns = @JoinColumn(name = "casting_id"))
+  private Set<Casting> casting = new HashSet<>();
+
+  @ManyToMany(cascade = CascadeType.ALL)
+  @JoinTable(
+      name = "work_companies",
+      joinColumns = @JoinColumn(name = "work_id"),
+      inverseJoinColumns = @JoinColumn(name = "company_id"))
+  private Set<Company> companies = new HashSet<>();
+
+  @ManyToMany(cascade = CascadeType.ALL)
+  @JoinTable(
+      name = "work_crew",
+      joinColumns = @JoinColumn(name = "work_id"),
+      inverseJoinColumns = @JoinColumn(name = "crew_id"))
+  private Set<Crew> crew = new HashSet<>();
+
+  @ManyToMany(cascade = CascadeType.ALL)
+  @JoinTable(
+      name = "work_genres",
+      joinColumns = @JoinColumn(name = "work_id"),
+      inverseJoinColumns = @JoinColumn(name = "genres_id"))
+  private Set<Crew> genres = new HashSet<>();
+
+  @ManyToMany(cascade = CascadeType.ALL)
+  @JoinTable(
+      name = "work_watchProviders",
+      joinColumns = @JoinColumn(name = "work_id"),
+      inverseJoinColumns = @JoinColumn(name = "watchProviders_id"))
+  private Set<WatchProvider> watchProviders = new HashSet<>();
 
   public Work(
       String originalTitle,

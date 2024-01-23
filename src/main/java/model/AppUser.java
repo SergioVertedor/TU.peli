@@ -51,20 +51,6 @@ public class AppUser implements java.io.Serializable {
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
   private Set<Storage> storages = new HashSet<>();
 
-  @ManyToMany
-  @JoinTable(
-      name = "usuario_favorito",
-      joinColumns = @JoinColumn(name = "id_usuario"),
-      inverseJoinColumns = @JoinColumn(name = "id_obra"))
-  private Set<Work> favoritos = new HashSet<>();
-
-  @ManyToMany
-  @JoinTable(
-      name = "usuario_valoracion",
-      joinColumns = @JoinColumn(name = "id_usuario"),
-      inverseJoinColumns = @JoinColumn(name = "id_obra"))
-  private Set<Work> valoraciones = new HashSet<>();
-
   /**
    * Constructor de la clase AppUser
    *
