@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneProximamente">
    <children>
       <Pane prefHeight="878.0" prefWidth="1263.0">
          <children>
-            <VBox prefHeight="878.0" prefWidth="1263.0" style="-fx-background-color: #E9E9E9;">
+            <VBox prefHeight="878.0" prefWidth="1256.0" style="-fx-background-color: #E9E9E9;">
                <children>
                   <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="813.0" prefWidth="1266.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 8;">
                      <VBox.margin>
@@ -28,27 +34,287 @@
                            <children>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/user.png" />
                                        </image>
                                     </ImageView>
-                                    <VBox prefHeight="200.0" prefWidth="821.0">
+                                    <VBox prefHeight="200.0" prefWidth="694.0">
                                        <children>
                                           <Label text="Usuario" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="28.0" />
                                              </font>
                                              <VBox.margin>
-                                                <Insets bottom="10.0" top="20.0" />
+                                                <Insets top="30.0" />
                                              </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label fx:id="lblMiembrodesde" text="Miembro desde el {dia} de {mes} del {año}" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblTNumTitulosLista" text="En lista: {num} títulos" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblUltimaConexion" text="Última conexión: {fecha 00/00/0000}" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
                                           </Label>
                                        </children>
                                     </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="276.0">
+                                       <children>
+                                          <Button fx:id="lblImportar" mnemonicParsing="false" prefWidth="200.0" text="Importar datos">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="lblExportar" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Exportar datos">
+                                             <padding>
+                                                <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </VBox>
                                  </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
                               </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0" />
-                              <HBox prefHeight="100.0" prefWidth="200.0" />
+                              <Line endX="150.0" startX="-1000.0" stroke="WHITE" strokeWidth="3.0" />
+                              <HBox prefHeight="386.0" prefWidth="1166.0">
+                                 <children>
+                                    <GridPane prefHeight="380.0" prefWidth="1167.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="438.0" minHeight="10.0" prefHeight="415.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <GridPane>
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.0" minWidth="10.0" prefWidth="240.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="414.0" minWidth="10.0" prefWidth="326.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="364.0" minWidth="10.0" prefWidth="56.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="8.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="8.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="8.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="8.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label text="Modificar datos de perfil" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Nombre de usuario:" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets right="15.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label text="Correo electrónico:" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets right="15.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label text="Contraseña:" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets right="15.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label text="Repita contraseña:" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets right="15.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Button fx:id="btnGuardar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnGuardarPressed" prefWidth="200.0" text="Guardar" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                                                   <padding>
+                                                      <Insets bottom="6.0" left="40.0" right="40.0" top="6.0" />
+                                                   </padding>
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets />
+                                                   </GridPane.margin>
+                                                </Button>
+                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                             </children>
+                                          </GridPane>
+                                          <GridPane GridPane.columnIndex="1">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.0" minWidth="10.0" prefWidth="262.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="321.0" minWidth="10.0" prefWidth="321.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="68.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                                              <RowConstraints maxHeight="218.0" minHeight="10.0" prefHeight="210.0" vgrow="SOMETIMES" />
+                                              <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label alignment="BOTTOM_LEFT" text="Mis dispositivos:" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets bottom="2.0" left="1.0" />
+                                                   </padding>
+                                                </Label>
+                                                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <HBox fx:id="hBoxDispositivo1" prefHeight="30.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ImageView fx:id="imgDispositivo1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/others/pcIcon.png" />
+                                                               </image>
+                                                               <HBox.margin>
+                                                                  <Insets top="5.0" />
+                                                               </HBox.margin>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="25.0" text="·" textAlignment="CENTER" textFill="WHITE">
+                                                               <font>
+                                                                  <Font size="20.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="lblDispositivo1" prefHeight="30.0" prefWidth="236.0" text="Mi Equipo" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox fx:id="hBoxDispositivo2" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ImageView fx:id="imgDispositivo2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/others/pcIcon.png" />
+                                                               </image>
+                                                               <HBox.margin>
+                                                                  <Insets top="5.0" />
+                                                               </HBox.margin>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="25.0" text="·" textAlignment="CENTER" textFill="WHITE">
+                                                               <font>
+                                                                  <Font size="20.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="lblDispositivo2" prefHeight="30.0" prefWidth="236.0" text="Mi Equipo" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox fx:id="hBoxDispositivo3" layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ImageView fx:id="imgDispositivo3" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/others/pcIcon.png" />
+                                                               </image>
+                                                               <HBox.margin>
+                                                                  <Insets top="5.0" />
+                                                               </HBox.margin>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="25.0" text="·" textAlignment="CENTER" textFill="WHITE">
+                                                               <font>
+                                                                  <Font size="20.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="lblDispositivo3" prefHeight="30.0" prefWidth="236.0" text="Mi Equipo" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox fx:id="hBoxDispositivo1111" layoutX="10.0" layoutY="70.0" prefHeight="30.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ImageView fx:id="imgDispositivo4" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../images/others/pcIcon.png" />
+                                                               </image>
+                                                               <HBox.margin>
+                                                                  <Insets top="5.0" />
+                                                               </HBox.margin>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="25.0" text="·" textAlignment="CENTER" textFill="WHITE">
+                                                               <font>
+                                                                  <Font size="20.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="lblDispositivo4" prefHeight="30.0" prefWidth="236.0" text="Mi Equipo" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" top="20.0" />
+                                                   </GridPane.margin>
+                                                </VBox>
+                                                <Button fx:id="btnGuardar1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnGuardarPressed" prefWidth="200.0" text="Editar dispositivos" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <padding>
+                                                      <Insets bottom="6.0" left="40.0" right="40.0" top="6.0" />
+                                                   </padding>
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="99.0" prefWidth="1166.0" text="Si tienes cualquier duda o consulta no dudes en contactar con nosotros en atencionalcliente@tupeli.es o llamando a nuestro teléfono +34 666 666 666  " textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="50.0" />
+                                 </VBox.margin>
+                              </Label>
                            </children>
                         </VBox>
                      </children>
