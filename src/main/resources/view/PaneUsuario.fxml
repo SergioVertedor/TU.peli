@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneProximamente">
+   <children>
+      <Pane prefHeight="878.0" prefWidth="1263.0">
+         <children>
+            <VBox prefHeight="878.0" prefWidth="1263.0" style="-fx-background-color: #E9E9E9;">
+               <children>
+                  <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="813.0" prefWidth="1266.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 8;">
+                     <VBox.margin>
+                        <Insets left="30.0" right="100.0" top="30.0" />
+                     </VBox.margin>
+                     <children>
+                        <VBox prefHeight="849.0" prefWidth="1266.0">
+                           <padding>
+                              <Insets left="50.0" right="50.0" top="40.0" />
+                           </padding>
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/user.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="200.0" prefWidth="821.0">
+                                       <children>
+                                          <Label text="Usuario" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="28.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
