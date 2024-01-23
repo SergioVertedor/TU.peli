@@ -13,7 +13,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SuperBuilder
 @DiscriminatorValue("S")
-public class Serie extends Work {
+public class Serie extends Work implements java.io.Serializable {
   @Column(name = "original_country")
   private String originalCountry;
   @Column(name = "production_companies")

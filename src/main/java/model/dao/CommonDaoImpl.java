@@ -15,7 +15,7 @@ public abstract class CommonDaoImpl<T> implements CommonDaoInt<T> {
 	private Class<T> entityClass;
 
 	/** Sesion de conexion a BD */
-	private Session session;
+	Session session;
 
 	/**
 	 * Constructor de la clase
@@ -37,7 +37,7 @@ public abstract class CommonDaoImpl<T> implements CommonDaoInt<T> {
 			session.getTransaction().begin();
 		}
 
-		session.save(paramT);
+		session.persist(paramT);
 		session.flush();
 		session.getTransaction().commit();
 	}
@@ -50,7 +50,7 @@ public abstract class CommonDaoImpl<T> implements CommonDaoInt<T> {
 			session.getTransaction().begin();
 		}
 
-		session.saveOrUpdate(paramT);
+		session.merge(paramT);
 		session.getTransaction().commit();
 	}
 
@@ -62,7 +62,7 @@ public abstract class CommonDaoImpl<T> implements CommonDaoInt<T> {
 			session.getTransaction().begin();
 		}
 
-		session.delete(paramT);
+		session.remove(paramT);
 		session.getTransaction().commit();
 	}
 

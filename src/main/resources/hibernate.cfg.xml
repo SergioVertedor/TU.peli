@@ -21,8 +21,9 @@
         <!-- Mapeo de las clases -->
         <mapping class="model.AppUser"/>
         <mapping class="model.Work"/>
-        <mapping class="model.WorkStorage"/>
+        <mapping class="model.Storage"/>
         <mapping class="model.Pelicula"/>
+        <mapping class="model.WorkUserStorage"/>
 
 
     </session-factory>

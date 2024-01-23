@@ -1,6 +1,8 @@
 package model;
 
 import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,24 +21,35 @@ import utils.RSAUtils;
 @NoArgsConstructor
 @Getter
 @Setter
-public class AppUser {
+public class AppUser implements java.io.Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private int idUser;
+
   @Column(name = "name")
   private String username;
+
   @Column(name = "mail")
   private String mail;
+
   @Column(name = "password")
   private String password;
+
   @Column(name = "last_login")
   private String lastLogin;
+
   @Column(name = "register_date")
   private String registerDate;
+
   @Column(name = "avatar_path")
   private String avatarPath;
 
+  @OneToMany(mappedBy = "id.user", cascade = CascadeType.ALL)
+  private Set<WorkUserStorage> workUserStorages = new HashSet<>();
+
+  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+  private Set<Storage> storages = new HashSet<>();
 
   /**
    * Constructor de la clase AppUser

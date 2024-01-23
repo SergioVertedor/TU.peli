@@ -26,7 +26,7 @@ public class CrewDaoImpl extends CommonDaoImpl<Crew> implements CrewDaoI {
 			session.getTransaction().begin();
 		}
 
-		return (Crew) session.createQuery("FROM Crew WHERE idCrew='" + idCrew + "'").uniqueResult();
+		return (Crew) session.createQuery("FROM Crew WHERE idCrew ='" + idCrew + "'", Crew.class).uniqueResult();
 	}
 
 	/**
