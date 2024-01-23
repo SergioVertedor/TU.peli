@@ -1,9 +1,11 @@
 package utils;
 
+import connector.HibernateUtils;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+import java.util.List;
 import model.AppUser;
+import model.dao.AppUserImpl;
 
 /**
  * Clase que realiza la validación de los datos introducidos por el usuario durante el proceso de
@@ -11,7 +13,6 @@ import model.AppUser;
  *
  * @author SVB
  * @author EPP
- * 
  */
 public class RegisterValidator {
   /**
@@ -21,7 +22,6 @@ public class RegisterValidator {
    * @param password contraseña
    * @param passwordRepeat contraseña repetida
    * @param email email
-   * @param stage
    * @return
    */
   public boolean doValidate(String username, String password, String passwordRepeat, String email) {
@@ -31,7 +31,11 @@ public class RegisterValidator {
     StringBuilder errorMessages = new StringBuilder();
 
     // Validación de duplicados de nombre de usuario y correo electrónico.
-    for (AppUser user : ListStorage.users) {
+    AppUserImpl appUserImpl = new AppUserImpl(HibernateUtils.getSession());
+    List<AppUser> users = appUserImpl.searchAll();
+    HibernateUtils.clearSession();
+
+    for (AppUser user : users) {
       if (user.getUsername().equals(username)) {
         errorMessages.append("\nEl usuario introducido ya existe");
         errorCount++;
@@ -73,7 +77,7 @@ public class RegisterValidator {
       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
       String fechaFormateada = fechaActual.format(formatter);
       AppUser usuario = new AppUser(username, email, password, "", fechaFormateada, "");
-      ListStorage.users.add(usuario);
+      appUserImpl.insert(usuario);
       dialogNotificator.notifyRegister(usuario);
       return true;
     }

@@ -1,9 +1,7 @@
 package model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,6 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(name = "company")
 public class Company implements Serializable {
   @Id
   @Column(name = "id")
@@ -25,6 +24,6 @@ public class Company implements Serializable {
   @Column(name = "name")
   private String companyName;
 
-  @ManyToMany(mappedBy = "campanies")
+  @ManyToMany(mappedBy = "companies")
   private Set<Work> works = new HashSet<>();
 }

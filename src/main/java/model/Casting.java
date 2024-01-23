@@ -15,6 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(name = "casting")
 public class Casting implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

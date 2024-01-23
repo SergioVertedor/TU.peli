@@ -13,5 +13,5 @@ import java.util.List;
  *
  */
 public class ListStorage {
-	public static List<AppUser> users = new ArrayList<>();
+//	public static List<AppUser> users = new ArrayList<>();
 }

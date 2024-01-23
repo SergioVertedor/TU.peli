@@ -24,6 +24,15 @@
         <mapping class="model.Storage"/>
         <mapping class="model.Pelicula"/>
         <mapping class="model.WorkUserStorage"/>
+        <mapping class="model.Casting"/>
+        <mapping class="model.Company"/>
+        <mapping class="model.Crew"/>
+        <mapping class="model.Genres"/>
+        <mapping class="model.Pelicula"/>
+        <mapping class="model.Serie"/>
+        <mapping class="model.Storage"/>
+        <mapping class="model.WatchProvider"/>
+        <mapping class="model.WorkUserStorageId"/>
 
 
     </session-factory>

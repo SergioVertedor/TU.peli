@@ -78,7 +78,7 @@ public abstract class CommonDaoImpl<T> implements CommonDaoInt<T> {
 		}
 
 		// Devuelve todos los objetos
-		return session.createQuery("FROM " + this.entityClass.getName()).list();
+		return session.createQuery("FROM " + this.entityClass.getName(), this.entityClass).list();
 	}
 
 	/**

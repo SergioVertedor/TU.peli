@@ -44,6 +44,15 @@ public class DialogNotificator {
     alert.showAndWait();
   }
 
+  public void databaseConnectionError() {
+    Alert alert = new Alert(Alert.AlertType.ERROR);
+    alert.setTitle(null);
+    alert.setHeaderText("Error de conexión");
+    alert.setContentText("Error al conectar con la base de datos");
+
+    alert.showAndWait();
+  }
+
   /** Notifica al usuario que hay campos vacios */
   public void notifyEmptyFields() {
     Alert alert = new Alert(Alert.AlertType.WARNING);

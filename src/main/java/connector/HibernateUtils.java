@@ -9,7 +9,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 @Getter
 public class HibernateUtils {
-  @Getter
   private static Session session;
   private static SessionFactory sessionFactory;
 
@@ -35,5 +34,9 @@ public class HibernateUtils {
     if ((sessionFactory != null) && (!sessionFactory.isClosed())) {
       sessionFactory.close();
     }
+  }
+  public static Session getSession() {
+
+    return sessionFactory.getCurrentSession();
   }
 }

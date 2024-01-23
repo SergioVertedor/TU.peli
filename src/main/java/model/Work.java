@@ -82,13 +82,13 @@ public class Work implements Serializable {
       name = "work_genres",
       joinColumns = @JoinColumn(name = "work_id"),
       inverseJoinColumns = @JoinColumn(name = "genres_id"))
-  private Set<Crew> genres = new HashSet<>();
+  private Set<Genres> genres = new HashSet<>();
 
   @ManyToMany(cascade = CascadeType.ALL)
   @JoinTable(
-      name = "work_watchProviders",
+      name = "work_watchproviders",
       joinColumns = @JoinColumn(name = "work_id"),
-      inverseJoinColumns = @JoinColumn(name = "watchProviders_id"))
+      inverseJoinColumns = @JoinColumn(name = "watchproviders_id"))
   private Set<WatchProvider> watchProviders = new HashSet<>();
 
   public Work(
