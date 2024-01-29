@@ -49,7 +49,7 @@ public class PantallaLoginController {
         dialogNotificator.notifyLogin(txtLoginUser.getText());
         var sceneSwitcher = new SceneSwitcher();
           try {
-              sceneSwitcher.switchScene("PanelInicio");
+              sceneSwitcher.switchScene("PantallaModelo");
           } catch (IOException e) {
             System.err.println("Error al cargar la ventana de inicio");
           }
@@ -84,9 +84,9 @@ public class PantallaLoginController {
   @FXML
   void cbRememberMeSelected(ActionEvent event) {
     if (cbLoginRememberMe.isSelected()) {
-      PropertiesManager.setRemember("1");
+      PropertiesManager.setRememberLogin("1");
     } else {
-      PropertiesManager.setRemember("0");
+      PropertiesManager.setRememberLogin("0");
     }
   }
 

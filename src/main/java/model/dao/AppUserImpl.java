@@ -13,12 +13,13 @@ public class AppUserImpl extends CommonDaoImpl<AppUser> implements AppUserDAOInt
   }
 
   @Override
-  public List<AppUser> searchByUsername(String username) {
+  public AppUser searchByUsername(String username) {
     HibernateUtils.startTransaction();
     String hql = "FROM AppUser WHERE username='" + username + "'";
     List<AppUser> appUsers = session.createQuery(hql, AppUser.class).list();
     HibernateUtils.commitTransaction();
-    return appUsers;
+    AppUser appUser = appUsers.get(0);
+    return appUser;
   }
 
   @Override

@@ -6,12 +6,11 @@ import model.AppUser;
 public interface AppUserDAOInt extends CommonDaoInt<AppUser> {
 
   /**
-   * Busca usuario por nombre
-   *
+   * Busca usuario por username
    * @param username
    * @return
    */
-  public List<AppUser> searchByUsername(final String username);
+  public AppUser searchByUsername(final String username);
 
   /**
    * Busca usuario por mail
