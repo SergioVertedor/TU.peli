@@ -23,13 +23,13 @@ public class DialogNotificator {
   /**
    * Notifica al usuario que el login ha sido correcto
    *
-   * @param usuario Usuario que ha iniciado sesión correctamente
+   * @param nombre Usuario que ha iniciado sesión correctamente
    */
-  public void notifyLogin(AppUser usuario) {
+  public void notifyLogin(String nombre) {
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
     alert.setTitle(null);
     alert.setHeaderText("Login correcto");
-    alert.setContentText("Bienvenido " + usuario.getUsername());
+    alert.setContentText("Bienvenido " + nombre);
 
     alert.showAndWait();
   }

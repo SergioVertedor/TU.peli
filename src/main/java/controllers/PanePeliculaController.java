@@ -1,3 +1,4 @@
+/*
 package controllers;
 
 import com.gluonhq.charm.glisten.control.Avatar;
@@ -163,3 +164,4 @@ public class PanePeliculaController {
     }
 
 }
+*/

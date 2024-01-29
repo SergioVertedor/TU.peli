@@ -4,6 +4,8 @@ import connector.HibernateUtils;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import model.AppUser;
 import model.dao.AppUserImpl;
 
@@ -20,14 +22,18 @@ public class LoginValidator {
    * @param userOrMail usuario o email introducido
    * @param password contraseña introducida
    */
-  public void validateLogin(String userOrMail, String password) {
+  public boolean validateLogin(String userOrMail, String password) {
+      // La Clase AtomicBoolean actúa como variable booleana que puede ser modificada atómicamente.
+      // Esto significa que las operaciones de lectura y escritura se realizan en una sola operación
+      // atómica. Esto evita que otros hilos lean un valor intermedio o incompleto. Y permite que
+      // se pueda declarar dentro de un lambda.
+      AtomicBoolean resultado = new AtomicBoolean(false);
     var appUserImpl = new AppUserImpl(HibernateUtils.getSession());
     List<AppUser> users = appUserImpl.searchAll();
     var dialogNotificator = new DialogNotificator();
     if (userOrMail.isEmpty() || password.isEmpty()) {
       dialogNotificator.notifyEmptyFields();
     } else {
-
       users.forEach(
           appUser -> {
             String pw = RSAUtils.descifra(appUser.getPassword());
@@ -38,11 +44,14 @@ public class LoginValidator {
               String fechaFormateada = fechaActual.format(formatter);
               appUser.setLastLogin(fechaFormateada);
               appUserImpl.updateLastLogin(appUser);
-              dialogNotificator.notifyLogin(appUser);
+
+              resultado.set(true);
             } else {
-              dialogNotificator.notifyLoginError();
+
+              resultado.set(false);
             }
           });
     }
+    return resultado.get();
   }
 }
