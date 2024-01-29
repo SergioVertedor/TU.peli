@@ -68,6 +68,9 @@ public class PantallaModeloController {
 
     @FXML
     private TextField txtBusqueda;
+    
+    @FXML
+    private Pane paneContent;
 
     @FXML
     void btnBuscarPressed(MouseEvent event) {
