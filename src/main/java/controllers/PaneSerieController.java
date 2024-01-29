@@ -1,4 +1,4 @@
-/** package controllers;
+package controllers;
 
 import com.gluonhq.charm.glisten.control.Avatar;
 import java.net.URL;
@@ -162,4 +162,4 @@ public class PaneSerieController {
 
     }
 
-}**/
+}

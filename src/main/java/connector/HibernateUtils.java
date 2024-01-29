@@ -3,13 +3,14 @@ package connector;
 import lombok.Getter;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-@Getter
 public class HibernateUtils {
-  private static Session session;
+  @Getter private static Session session;
+  private static Transaction transaction;
   private static SessionFactory sessionFactory;
 
   /** Método que abre la conexión con la base de datos. */
@@ -17,7 +18,6 @@ public class HibernateUtils {
     if (session == null || !session.isOpen()) {
       StandardServiceRegistry sr = new StandardServiceRegistryBuilder().configure().build();
       sessionFactory = new MetadataSources(sr).buildMetadata().buildSessionFactory();
-      sessionFactory.openSession();
       session = sessionFactory.openSession();
     }
   }
@@ -35,8 +35,30 @@ public class HibernateUtils {
       sessionFactory.close();
     }
   }
-  public static Session getSession() {
 
-    return sessionFactory.getCurrentSession();
+  /**
+   * Método que devuelve la sesión.
+   *
+   * @return la sesión
+   */
+  public static Session getSession() {
+    if (session == null || !session.isOpen()) {
+      openSession();
+    }
+    return session;
+  }
+
+  /** Método que inicia la transacción. */
+  public static void startTransaction() {
+    if (!session.getTransaction().isActive()) {
+      transaction = session.beginTransaction();
+    } else {
+      transaction = session.getTransaction();
+    }
+  }
+
+  /** Método que confirma la transacción. */
+  public static void commitTransaction() {
+    transaction.commit();
   }
 }

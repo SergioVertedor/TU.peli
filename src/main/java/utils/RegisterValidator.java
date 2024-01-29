@@ -74,9 +74,9 @@ public class RegisterValidator {
       return false;
     } else {
       LocalDate fechaActual = LocalDate.now();
-      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
       String fechaFormateada = fechaActual.format(formatter);
-      AppUser usuario = new AppUser(username, email, password, "", fechaFormateada, "");
+      AppUser usuario = new AppUser(username, email, RSAUtils.cifra(password), "", fechaFormateada, "");
       appUserImpl.insert(usuario);
       dialogNotificator.notifyRegister(usuario);
       return true;

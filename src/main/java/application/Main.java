@@ -18,7 +18,6 @@ public class Main extends Application {
       try {
         HibernateUtils.openSession();
       } catch (Exception e) {
-
         System.err.println("\n####### TRAZA #######\n");
         e.printStackTrace();
         var dialogNotificator = new DialogNotificator();

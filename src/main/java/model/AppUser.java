@@ -3,11 +3,11 @@ package model;
 import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import utils.RSAUtils;
 
 /**
  * Representa un usuario de la aplicación
@@ -16,8 +16,8 @@ import utils.RSAUtils;
  * @author EPP
  */
 @Entity
-@AllArgsConstructor
 @Table(name = "usuarios")
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
@@ -25,7 +25,7 @@ public class AppUser implements java.io.Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
-  private int idUser;
+  private Integer idUser;
 
   @Column(name = "name")
   private String username;
@@ -33,7 +33,7 @@ public class AppUser implements java.io.Serializable {
   @Column(name = "mail")
   private String mail;
 
-  @Column(name = "password")
+  @Column(name = "password", length = 10000)
   private String password;
 
   @Column(name = "last_login")
@@ -70,15 +70,9 @@ public class AppUser implements java.io.Serializable {
       String avatarPath) {
     this.username = username;
     this.mail = mail;
-    this.password =
-        RSAUtils.cifra(password); // Cifra la contraseña utilizando RSAUtils para mayor seguridad.
+    this.password = password;
     this.lastLogin = lastLogin;
     this.registerDate = registerDate;
     this.avatarPath = avatarPath;
-  }
-
-  // Descifra la contraseña para obtener el valor real
-  public String getPassword() {
-    return RSAUtils.descifra(password);
   }
 }

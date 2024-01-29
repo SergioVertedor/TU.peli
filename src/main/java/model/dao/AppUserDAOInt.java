@@ -20,4 +20,6 @@ public interface AppUserDAOInt extends CommonDaoInt<AppUser> {
    * @return
    */
   public List<AppUser> searchByMail(final String mail);
+
+  public void updateLastLogin(final AppUser appUser);
 }
