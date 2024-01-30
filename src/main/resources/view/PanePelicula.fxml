@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -50,7 +51,7 @@
                                           </ImageView>
                                           <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                                              <children>
-                                                <Label fx:id="lblTitulo" alignment="TOP_LEFT" text="TITULO PELICULA" textFill="WHITE">
+                                                <Label fx:id="lblTitulo" prefHeight="90.0" prefWidth="570.0" text="TITULO PELICULA" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="30.0" />
                                                    </font>
@@ -70,7 +71,7 @@
                                                    <children>
                                                       <Pane prefHeight="51.0" prefWidth="41.0" style="-fx-background-color: #CFCFCF; -fx-background-radius: 4;">
                                                          <children>
-                                                            <Label fx:id="lbluserRating" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="2.0" onDragDetected="#userRatingPressed" prefHeight="25.0" prefWidth="30.0" text="8.5" textAlignment="CENTER" textFill="#ec1b1b">
+                                                            <Label fx:id="lbluserRating" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="2.0" onDragDetected="#userRatingPressed" prefHeight="27.0" prefWidth="30.0" text="8.5" textAlignment="CENTER" textFill="#ec1b1b">
                                                                <font>
                                                                   <Font name="System Bold" size="18.0" />
                                                                </font>
@@ -91,16 +92,16 @@
                                                             <Image url="@../images/flags/japon.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <Label fx:id="lblEstrenoDuracion" prefHeight="25.0" prefWidth="174.0" text="2001 · 2h 5m" textFill="WHITE">
+                                                      <Label fx:id="lblEstrenoDuracion" prefHeight="25.0" prefWidth="224.0" text="2001 · 2h 5m" textFill="WHITE">
                                                          <font>
                                                             <Font name="System Bold" size="16.0" />
                                                          </font>
                                                       </Label>
                                                    </children>
                                                 </HBox>
-                                                <ImageView fx:id="imgLike" fitHeight="50.0" fitWidth="50.0" onDragDetected="#imgLikePressed" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="imgLike" fitHeight="45.0" fitWidth="45.0" onDragDetected="#imgLikePressed" pickOnBounds="true" preserveRatio="true">
                                                    <VBox.margin>
-                                                      <Insets left="20.0" top="40.0" />
+                                                      <Insets left="15.0" top="35.0" />
                                                    </VBox.margin>
                                                    <image>
                                                       <Image url="@../images/others/likeUnselected.png" />
@@ -128,13 +129,13 @@
                                                 <Insets left="25.0" top="10.0" />
                                              </padding>
                                           </VBox>
-                                          <Button fx:id="btnAdd" mnemonicParsing="false" prefHeight="25.0" prefWidth="265.0" style="-fx-background-radius: 8;" text="Añadr a " GridPane.rowIndex="1">
+                                          <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#btnAddPressed" prefHeight="25.0" prefWidth="265.0" style="-fx-background-radius: 8;" text="Añadr a " GridPane.rowIndex="1">
                                              <GridPane.margin>
                                                 <Insets bottom="2.0" left="6.0" right="6.0" top="2.0" />
                                              </GridPane.margin></Button>
                                           <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                              <children>
-                                                <Button fx:id="btnTrailer" mnemonicParsing="false" prefHeight="25.0" prefWidth="418.0" text="Ver Trailer">
+                                                <Button fx:id="btnTrailer" mnemonicParsing="false" onAction="#btnTrailerPressed" prefHeight="25.0" prefWidth="418.0" text="Ver Trailer">
                                                    <HBox.margin>
                                                       <Insets left="10.0" right="10.0" />
                                                    </HBox.margin>
@@ -149,14 +150,29 @@
                                                 </Label>
                                              </children>
                                           </HBox>
-                                          <Label graphicTextGap="6.0" prefHeight="27.0" prefWidth="598.0" style="-fx-background-color: black;" text="&gt;_Añadir comentario:   " textFill="#02ffa1" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
+                                          <HBox style="-fx-background-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <children>
+                                                <Label fx:id="lblComentario" graphicTextGap="6.0" prefHeight="27.0" prefWidth="562.0" text="&gt;_Añadir comentario:   " textFill="#02ffa1">
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </Label>
+                                                <ImageView fx:id="imgPen" fitHeight="20.0" fitWidth="20.0" onDragDetected="#editComentarioPressed" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/others/pen.png" />
+                                                   </image>
+                                                   <effect>
+                                                      <ColorAdjust contrast="-1.0" />
+                                                   </effect>
+                                                   <HBox.margin>
+                                                      <Insets left="8.0" right="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                             </children>
                                              <GridPane.margin>
-                                                <Insets left="10.0" right="13.0" />
+                                                <Insets bottom="3.0" left="10.0" right="13.0" top="3.0" />
                                              </GridPane.margin>
-                                          </Label>
+                                          </HBox>
                                           <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey; -fx-background-radius: 8;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                                              <GridPane.margin>
                                                 <Insets bottom="2.0" left="6.0" right="6.0" top="2.0" />
@@ -212,7 +228,7 @@
                                                       <Insets right="15.0" />
                                                    </HBox.margin>
                                                 </ImageView>
-                                                <Label fx:id="lblReparto1" text="ActorActriz" textFill="WHITE">
+                                                <Label fx:id="lblReparto1" prefHeight="25.0" prefWidth="195.0" text="ActorActriz" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="16.0" />
                                                    </font>
@@ -229,7 +245,7 @@
                                                       <Insets right="15.0" />
                                                    </HBox.margin>
                                                 </ImageView>
-                                                <Label fx:id="lblReparto2" text="ActorActriz" textFill="WHITE">
+                                                <Label fx:id="lblReparto2" prefHeight="25.0" prefWidth="195.0" text="ActorActriz" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="16.0" />
                                                    </font>
@@ -246,7 +262,7 @@
                                                       <Insets right="15.0" />
                                                    </HBox.margin>
                                                 </ImageView>
-                                                <Label fx:id="lblReparto21" text="ActorActriz" textFill="WHITE">
+                                                <Label fx:id="lblReparto21" prefHeight="25.0" prefWidth="195.0" text="ActorActriz" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="16.0" />
                                                    </font>
@@ -263,7 +279,7 @@
                                                       <Insets right="15.0" />
                                                    </HBox.margin>
                                                 </ImageView>
-                                                <Label fx:id="lblReparto4" text="ActorActriz" textFill="WHITE">
+                                                <Label fx:id="lblReparto4" prefHeight="25.0" prefWidth="195.0" text="ActorActriz" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="16.0" />
                                                    </font>
@@ -282,7 +298,7 @@
                               </HBox>
                               <VBox prefHeight="250.0" prefWidth="100.0">
                                  <children>
-                                    <Label fx:id="lblTituloSinopsis" alignment="TOP_LEFT" text="Sinopsis:" textFill="WHITE">
+                                    <Label fx:id="lblTituloSinopsis" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="106.0" text="Sinopsis:" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="22.0" />
                                        </font>
@@ -290,7 +306,7 @@
                                           <Insets bottom="10.0" top="20.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <Label fx:id="lblSinopsis" alignment="TOP_LEFT" text="Ejemplo texto sinopsis" textFill="WHITE">
+                                    <Label fx:id="lblSinopsis" alignment="TOP_LEFT" prefHeight="191.0" prefWidth="1166.0" text="Ejemplo texto sinopsis" textFill="WHITE" wrapText="true">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>

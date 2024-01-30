@@ -2,6 +2,7 @@ package controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -73,6 +74,9 @@ public class PanePeliculaController {
     private ImageView imgNetflix;
 
     @FXML
+    private ImageView imgPen;
+
+    @FXML
     private ImageView imgPoster;
 
     @FXML
@@ -86,6 +90,9 @@ public class PanePeliculaController {
 
     @FXML
     private ImageView imgReparto4;
+
+    @FXML
+    private Label lblComentario;
 
     @FXML
     private Label lblDirectorGenero;
@@ -125,6 +132,21 @@ public class PanePeliculaController {
 
     @FXML
     private VBox vBoxReparto;
+
+    @FXML
+    void btnAddPressed(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnTrailerPressed(ActionEvent event) {
+
+    }
+
+    @FXML
+    void editComentarioPressed(MouseEvent event) {
+
+    }
 
     @FXML
     void fav1Selected(MouseEvent event) {
@@ -181,11 +203,13 @@ public class PanePeliculaController {
         assert imgHBO != null : "fx:id=\"imgHBO\" was not injected: check your FXML file 'PanePelicula.fxml'.";
         assert imgLike != null : "fx:id=\"imgLike\" was not injected: check your FXML file 'PanePelicula.fxml'.";
         assert imgNetflix != null : "fx:id=\"imgNetflix\" was not injected: check your FXML file 'PanePelicula.fxml'.";
+        assert imgPen != null : "fx:id=\"imgPen\" was not injected: check your FXML file 'PanePelicula.fxml'.";
         assert imgPoster != null : "fx:id=\"imgPoster\" was not injected: check your FXML file 'PanePelicula.fxml'.";
         assert imgPrimeVideo != null : "fx:id=\"imgPrimeVideo\" was not injected: check your FXML file 'PanePelicula.fxml'.";
         assert imgReparto1 != null : "fx:id=\"imgReparto1\" was not injected: check your FXML file 'PanePelicula.fxml'.";
         assert imgReparto2 != null : "fx:id=\"imgReparto2\" was not injected: check your FXML file 'PanePelicula.fxml'.";
         assert imgReparto4 != null : "fx:id=\"imgReparto4\" was not injected: check your FXML file 'PanePelicula.fxml'.";
+        assert lblComentario != null : "fx:id=\"lblComentario\" was not injected: check your FXML file 'PanePelicula.fxml'.";
         assert lblDirectorGenero != null : "fx:id=\"lblDirectorGenero\" was not injected: check your FXML file 'PanePelicula.fxml'.";
         assert lblEstrenoDuracion != null : "fx:id=\"lblEstrenoDuracion\" was not injected: check your FXML file 'PanePelicula.fxml'.";
         assert lblFechaVista != null : "fx:id=\"lblFechaVista\" was not injected: check your FXML file 'PanePelicula.fxml'.";
