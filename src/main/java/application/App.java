@@ -12,7 +12,7 @@ import utils.SessionHandler;
  * @author SVB
  * @author EPP
  */
-public class Main extends Application {
+public class App extends Application {
 
   @Override
   public void start(Stage primaryStage) {

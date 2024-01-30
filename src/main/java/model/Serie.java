@@ -5,13 +5,16 @@ import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.time.LocalDate;
 
 @Getter
 @Entity
 @SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @DiscriminatorValue("S")
 public class Serie extends Work implements java.io.Serializable {
   @Column(name = "original_country")
@@ -22,4 +25,13 @@ public class Serie extends Work implements java.io.Serializable {
   private Integer numberOfEpisodes;
   @Column(name = "number_of_seasons")
   private Integer numberOfSeasons;
+
+  // Añade este constructor que llama al constructor de la clase padre (Work)
+  public Serie(String originalTitle, LocalDate releaseDate, Integer runtime, String overview, String backdropPath, String posterPath, Double popularity, LocalDate lastViewDate, String userComment, String originalCountry, String productionCompanies, Integer numberOfEpisodes, Integer numberOfSeasons) {
+    super(originalTitle, releaseDate, runtime, overview, backdropPath, posterPath, popularity, lastViewDate, userComment);
+    this.originalCountry = originalCountry;
+    this.productionCompanies = productionCompanies;
+    this.numberOfEpisodes = numberOfEpisodes;
+    this.numberOfSeasons = numberOfSeasons;
+  }
 }
