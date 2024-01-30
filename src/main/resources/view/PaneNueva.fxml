@@ -130,7 +130,7 @@
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <ComboBox prefWidth="250.0">
+                                                <ComboBox fx:id="cbPais" prefWidth="250.0">
                                                    <VBox.margin>
                                                       <Insets bottom="15.0" top="5.0" />
                                                    </VBox.margin>
@@ -140,7 +140,7 @@
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <ComboBox prefWidth="250.0">
+                                                <ComboBox fx:id="cbVistaUltimaVez" prefWidth="250.0">
                                                    <VBox.margin>
                                                       <Insets bottom="15.0" top="5.0" />
                                                    </VBox.margin>
@@ -150,7 +150,7 @@
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <ComboBox prefWidth="250.0">
+                                                <ComboBox fx:id="cbDispositivo" prefWidth="250.0">
                                                    <VBox.margin>
                                                       <Insets bottom="15.0" top="5.0" />
                                                    </VBox.margin>
@@ -248,7 +248,7 @@
                                        <children>
                                           <HBox alignment="CENTER" prefHeight="116.0" prefWidth="575.0">
                                              <children>
-                                                <RadioButton fx:id="rbFilm" mnemonicParsing="false" text="Nueva Película" textFill="WHITE">
+                                                <RadioButton fx:id="rbFilm" mnemonicParsing="false" onAction="#rbFilmPressed" text="Nueva Película" textFill="WHITE">
                                                    <HBox.margin>
                                                       <Insets left="50.0" right="50.0" />
                                                    </HBox.margin>
@@ -256,7 +256,7 @@
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
                                                 </RadioButton>
-                                                <RadioButton fx:id="rbSerie" mnemonicParsing="false" text="Nueva Serie" textFill="WHITE">
+                                                <RadioButton fx:id="rbSerie" mnemonicParsing="false" onAction="#rbSeriePressed" text="Nueva Serie" textFill="WHITE">
                                                    <HBox.margin>
                                                       <Insets left="20.0" />
                                                    </HBox.margin>
@@ -355,7 +355,7 @@
                                           </GridPane>
                                           <HBox alignment="CENTER" prefHeight="116.0" prefWidth="575.0">
                                              <children>
-                                                <Button fx:id="btnRestablecer" mnemonicParsing="false" text="Restablecer">
+                                                <Button fx:id="btnRestablecer" mnemonicParsing="false" onAction="#btnRestablecerPressed" text="Restablecer">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -363,7 +363,7 @@
                                                       <Insets left="80.0" right="40.0" />
                                                    </HBox.margin>
                                                 </Button>
-                                                <Button fx:id="btnGuardar" mnemonicParsing="false" text="Guardar">
+                                                <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#btnGuardarPressed" text="Guardar">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
