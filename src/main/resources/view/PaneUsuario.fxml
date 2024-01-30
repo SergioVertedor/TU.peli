@@ -34,14 +34,14 @@
                            <children>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgUser" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/user.png" />
                                        </image>
                                     </ImageView>
                                     <VBox prefHeight="200.0" prefWidth="694.0">
                                        <children>
-                                          <Label text="Usuario" textFill="WHITE">
+                                          <Label fx:id="lblUsername" text="Usuario" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="28.0" />
                                              </font>
@@ -173,10 +173,10 @@
                                                       <Insets />
                                                    </GridPane.margin>
                                                 </Button>
-                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtUsername" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtPass" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="txtPass2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                              </children>
                                           </GridPane>
                                           <GridPane GridPane.columnIndex="1">
@@ -294,7 +294,7 @@
                                                       <Insets left="10.0" top="20.0" />
                                                    </GridPane.margin>
                                                 </VBox>
-                                                <Button fx:id="btnGuardar1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnGuardarPressed" prefWidth="200.0" text="Editar dispositivos" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                <Button fx:id="btnEditarDispositivos" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnEditarDispositivosPressed" prefWidth="200.0" text="Editar dispositivos" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                                    <padding>
                                                       <Insets bottom="6.0" left="40.0" right="40.0" top="6.0" />
                                                    </padding>
