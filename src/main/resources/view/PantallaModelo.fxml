@@ -56,14 +56,32 @@
                <children>
                   <HBox alignment="TOP_RIGHT" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                      <children>
-                        <Label fx:id="lblUserName" alignment="CENTER" contentDisplay="RIGHT" onDragDetected="#usernamePressed" text="User1234" textAlignment="RIGHT" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets right="10.0" top="20.0" />
-                           </HBox.margin>
-                        </Label>
+                        <VBox alignment="CENTER_RIGHT" spacing="15.0">
+                           <children>
+                              <Label fx:id="lblUserName1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" onDragDetected="#usernamePressed" text="User1234" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="lblCerrarSesion" alignment="CENTER_RIGHT" contentDisplay="RIGHT" onDragDetected="#cerrarSesionPressed" text="Cerrar sesión" textAlignment="RIGHT" textFill="#ff4343">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imgClose" fitHeight="18.0" fitWidth="18.0" onDragDetected="#cerrarSesionPressed" pickOnBounds="true" preserveRatio="true">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@../images/others/close.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
                         <ImageView fx:id="imgUser" fitHeight="80.0" fitWidth="80.0" nodeOrientation="INHERIT" onDragDetected="#imgUserPressed" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../resources/images/user.png" />
