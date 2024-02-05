@@ -20,8 +20,7 @@ public class App extends Application {
       try {
         HibernateUtils.openSession();
       } catch (Exception e) {
-        System.err.println("\n####### TRAZA #######\n");
-        e.printStackTrace();
+        System.err.println("Error al conectar con la base de datos");
         var dialogNotificator = new DialogNotificator();
         dialogNotificator.databaseConnectionError();
         System.exit(1);
@@ -46,7 +45,7 @@ public class App extends Application {
   /**
    * Inicia la aplicación JavaFX
    *
-   * @param args
+   * @param args argumentos de la línea de comandos
    */
   public static void main(String[] args) {
     launch(args);
