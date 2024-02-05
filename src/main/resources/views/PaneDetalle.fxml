@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PanePeliculaController">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneDetalleController">
    <children>
       <Pane prefHeight="878.0" prefWidth="1263.0">
          <children>
@@ -59,7 +59,7 @@
                                                       <Insets bottom="10.0" top="4.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label fx:id="lblDirectorGenero" alignment="TOP_LEFT" text="Director · Genero" textFill="#ec1b1b">
+                                                <Label fx:id="lblSubtitulo" alignment="TOP_LEFT" prefHeight="30.0" prefWidth="563.0" text="Director · Genero" textFill="#ec1b1b">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
