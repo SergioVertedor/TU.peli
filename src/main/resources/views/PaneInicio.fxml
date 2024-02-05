@@ -16,7 +16,7 @@
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="878.0" prefWidth="1263.0" style="-fx-background-color: #E9E9E9;">
                <children>
-                  <GridPane alignment="CENTER" prefHeight="141.0" prefWidth="924.0" style="-fx-background-color: #3B3B3B;">
+                  <GridPane alignment="CENTER" prefHeight="141.0" prefWidth="924.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -72,7 +72,7 @@
                         <Insets top="50.0" />
                      </VBox.margin>
                   </ImageView>
-                  <GridPane alignment="CENTER" prefHeight="200.0" prefWidth="1263.0" style="-fx-background-color: #3B3B3B;">
+                  <GridPane alignment="CENTER" prefHeight="200.0" prefWidth="1263.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -87,7 +87,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <ImageView fx:id="imgObra0" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fx:id="imgObra01" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" onDragDetected="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
@@ -95,37 +95,37 @@
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra1" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fx:id="imgObra2" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" onDragDetected="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra4" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fx:id="imgObra5" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" onDragDetected="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra5" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fx:id="imgObra6" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" onDragDetected="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra6" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fx:id="imgObra7" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" onDragDetected="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra7" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fx:id="imgObra8" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" onDragDetected="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra2" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fx:id="imgObra3" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" onDragDetected="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra3" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fx:id="imgObra4" fitHeight="200.0" fitWidth="115.0" nodeOrientation="INHERIT" onDragDetected="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                            </image>

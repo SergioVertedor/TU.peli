@@ -2,9 +2,11 @@ package controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -31,6 +33,9 @@ public class PaneNuevaController {
     private CheckBox cbDisney;
 
     @FXML
+    private ComboBox<?> cbDispositivo;
+
+    @FXML
     private CheckBox cbFilmin;
 
     @FXML
@@ -40,7 +45,13 @@ public class PaneNuevaController {
     private CheckBox cbNetflix;
 
     @FXML
+    private ComboBox<?> cbPais;
+
+    @FXML
     private CheckBox cbPrimeVideo;
+
+    @FXML
+    private ComboBox<?> cbVistaUltimaVez;
 
     @FXML
     private ImageView imgAppleTV;
@@ -109,15 +120,38 @@ public class PaneNuevaController {
     private TextField txtYear;
 
     @FXML
+    void btnGuardarPressed(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnRestablecerPressed(ActionEvent event) {
+
+    }
+
+    @FXML
+    void rbFilmPressed(ActionEvent event) {
+
+    }
+
+    @FXML
+    void rbSeriePressed(ActionEvent event) {
+
+    }
+
+    @FXML
     void initialize() {
         assert btnGuardar != null : "fx:id=\"btnGuardar\" was not injected: check your FXML file 'PaneNueva.fxml'.";
         assert btnRestablecer != null : "fx:id=\"btnRestablecer\" was not injected: check your FXML file 'PaneNueva.fxml'.";
         assert cbAppleTV != null : "fx:id=\"cbAppleTV\" was not injected: check your FXML file 'PaneNueva.fxml'.";
         assert cbDisney != null : "fx:id=\"cbDisney\" was not injected: check your FXML file 'PaneNueva.fxml'.";
+        assert cbDispositivo != null : "fx:id=\"cbDispositivo\" was not injected: check your FXML file 'PaneNueva.fxml'.";
         assert cbFilmin != null : "fx:id=\"cbFilmin\" was not injected: check your FXML file 'PaneNueva.fxml'.";
         assert cbHBO != null : "fx:id=\"cbHBO\" was not injected: check your FXML file 'PaneNueva.fxml'.";
         assert cbNetflix != null : "fx:id=\"cbNetflix\" was not injected: check your FXML file 'PaneNueva.fxml'.";
+        assert cbPais != null : "fx:id=\"cbPais\" was not injected: check your FXML file 'PaneNueva.fxml'.";
         assert cbPrimeVideo != null : "fx:id=\"cbPrimeVideo\" was not injected: check your FXML file 'PaneNueva.fxml'.";
+        assert cbVistaUltimaVez != null : "fx:id=\"cbVistaUltimaVez\" was not injected: check your FXML file 'PaneNueva.fxml'.";
         assert imgAppleTV != null : "fx:id=\"imgAppleTV\" was not injected: check your FXML file 'PaneNueva.fxml'.";
         assert imgDisney != null : "fx:id=\"imgDisney\" was not injected: check your FXML file 'PaneNueva.fxml'.";
         assert imgFilmin != null : "fx:id=\"imgFilmin\" was not injected: check your FXML file 'PaneNueva.fxml'.";
