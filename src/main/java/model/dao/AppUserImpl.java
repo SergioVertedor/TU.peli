@@ -30,19 +30,4 @@ public class AppUserImpl extends CommonDaoImpl<AppUser> implements AppUserDAOInt
     session.getTransaction().commit();
     return appUsers;
   }
-
-  @Override
-  public void updateLastLogin(AppUser usuario) {
-    try {
-      HibernateUtils.startTransaction();
-      HibernateUtils.flushSession();
-      HibernateUtils.commitTransaction();
-
-    } catch (Exception e) {
-      HibernateUtils.rollbackTransaction();
-      System.out.println("Error al actualizar el último login del usuario");
-    } finally{
-      HibernateUtils.closeSession();
-    }
-  }
 }
