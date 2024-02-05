@@ -37,7 +37,7 @@ public class SceneSwitcher {
     }
     
     StringBuilder path = new StringBuilder();
-    String fxmlFile = path.append("/view/").append(fxml).append(".fxml").toString();
+    String fxmlFile = path.append("/views/").append(fxml).append(".fxml").toString();
 
     // Crear un cargador de FXML y establecer la ubicación del archivo FXML
     FXMLLoader loader = new FXMLLoader();
