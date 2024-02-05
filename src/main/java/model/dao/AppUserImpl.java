@@ -33,18 +33,16 @@ public class AppUserImpl extends CommonDaoImpl<AppUser> implements AppUserDAOInt
 
   @Override
   public void updateLastLogin(AppUser usuario) {
-    HibernateUtils.startTransaction();
-    String hql =
-        "UPDATE AppUser SET lastLogin = :lastLogin WHERE "
-            + "(username = :userOrMail AND password = :password) OR "
-            + "(mail = :userOrMail AND password = :password)";
+    try {
+      HibernateUtils.startTransaction();
+      HibernateUtils.flushSession();
+      HibernateUtils.commitTransaction();
 
-    Query query = session.createQuery(hql);
-    query.setParameter("lastLogin", usuario.getLastLogin());
-    query.setParameter("userOrMail", usuario.getUsername());
-    query.setParameter("password", usuario.getPassword());
-
-    query.executeUpdate();
-    HibernateUtils.commitTransaction();
+    } catch (Exception e) {
+      HibernateUtils.rollbackTransaction();
+      System.out.println("Error al actualizar el último login del usuario");
+    } finally{
+      HibernateUtils.closeSession();
+    }
   }
 }

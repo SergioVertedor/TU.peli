@@ -25,6 +25,9 @@ public class HibernateUtils {
   /** Método que limpia la sesión. */
   public static void clearSession() {
     session.clear();
+  }
+
+  public static void flushSession() {
     session.flush();
   }
 
@@ -60,5 +63,9 @@ public class HibernateUtils {
   /** Método que confirma la transacción. */
   public static void commitTransaction() {
     transaction.commit();
+  }
+
+  public static void rollbackTransaction() {
+    transaction.rollback();
   }
 }
