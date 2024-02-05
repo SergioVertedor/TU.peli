@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneProximamenteController">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneCartelera">
    <children>
       <Pane prefHeight="878.0" prefWidth="1263.0">
          <children>
@@ -52,11 +52,6 @@
                                           </ImageView>
                                           <VBox prefHeight="202.0" prefWidth="455.0">
                                              <children>
-                                                <Label fx:id="lblFecha00" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="16.0" />
-                                                   </font>
-                                                </Label>
                                                 <Label fx:id="lblTitulo00" prefHeight="30.0" prefWidth="405.0" text="Título" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
@@ -65,7 +60,7 @@
                                                       <Insets bottom="10.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label fx:id="lblInfo00" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="lblInfo00" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="16.0" />
                                                    </font>
@@ -91,11 +86,6 @@
                                           </ImageView>
                                           <VBox prefHeight="202.0" prefWidth="455.0">
                                              <children>
-                                                <Label fx:id="lblFecha10" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="16.0" />
-                                                   </font>
-                                                </Label>
                                                 <Label fx:id="lblTitulo10" prefWidth="405.0" text="Título" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
@@ -104,7 +94,7 @@
                                                       <Insets bottom="10.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                                <Label alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="16.0" />
                                                    </font>
@@ -130,11 +120,6 @@
                                           </ImageView>
                                           <VBox prefHeight="202.0" prefWidth="455.0">
                                              <children>
-                                                <Label fx:id="lblFecha01" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="16.0" />
-                                                   </font>
-                                                </Label>
                                                 <Label fx:id="lblTitulo01" prefWidth="405.0" text="Título" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
@@ -143,7 +128,7 @@
                                                       <Insets bottom="10.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label fx:id="lblInfo01" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="lblInfo01" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="16.0" />
                                                    </font>
@@ -169,11 +154,6 @@
                                           </ImageView>
                                           <VBox prefHeight="202.0" prefWidth="455.0">
                                              <children>
-                                                <Label fx:id="lblFecha11" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="16.0" />
-                                                   </font>
-                                                </Label>
                                                 <Label fx:id="lblTitulo11" prefWidth="405.0" text="Título" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
@@ -182,7 +162,7 @@
                                                       <Insets bottom="10.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label fx:id="lblInfo11" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="lblInfo11" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="16.0" />
                                                    </font>
@@ -208,11 +188,6 @@
                                           </ImageView>
                                           <VBox prefHeight="202.0" prefWidth="455.0">
                                              <children>
-                                                <Label fx:id="lblFecha02" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="16.0" />
-                                                   </font>
-                                                </Label>
                                                 <Label fx:id="lblTitulo02" prefWidth="405.0" text="Título" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
@@ -221,7 +196,7 @@
                                                       <Insets bottom="10.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label fx:id="lblInfo02" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="lblInfo02" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="16.0" />
                                                    </font>
@@ -247,11 +222,6 @@
                                           </ImageView>
                                           <VBox prefHeight="202.0" prefWidth="455.0">
                                              <children>
-                                                <Label fx:id="lblFecha12" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="16.0" />
-                                                   </font>
-                                                </Label>
                                                 <Label fx:id="lblTitulo12" prefWidth="405.0" text="Título" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
@@ -260,7 +230,7 @@
                                                       <Insets bottom="10.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label fx:id="lblInfo12" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="lblInfo12" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="16.0" />
                                                    </font>
