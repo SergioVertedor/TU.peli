@@ -4,6 +4,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PantallaBusqueda">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneBusquedaController">
    <children>
       <Pane prefHeight="878.0" prefWidth="1263.0">
          <children>
@@ -39,25 +40,28 @@
                               <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <TextField fx:id="txtBusqueda" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="658.0" promptText="Búsqueda Avanzada ▼" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <ImageView fx:id="btnBuscar" fitHeight="30.0" fitWidth="30.0" onDragDetected="#btnBuscarPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <TextField fx:id="txtBusqueda" alignment="CENTER_RIGHT" onKeyPressed="#buscarKeyPressed" prefHeight="26.0" prefWidth="658.0" promptText="Búsqueda Avanzada ▼" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ImageView fx:id="btnBuscar" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#btnBuscarClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <image>
                                     <Image url="@../images/others/search.png" />
                                  </image>
                               </ImageView>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="35.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <children>
-                                    <RadioButton fx:id="rbTodas" mnemonicParsing="false" text="Todas" textFill="WHITE">
+                                    <RadioButton fx:id="rbTodas" mnemonicParsing="false" selected="true" text="Todas" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="btnGroup" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbPeliculas" mnemonicParsing="false" text="Peliculas" textFill="WHITE" toggleGroup="$btnGroup">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </RadioButton>
-                                    <RadioButton fx:id="rbPeliculas" mnemonicParsing="false" text="Peliculas" textFill="WHITE">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font>
-                                    </RadioButton>
-                                    <RadioButton fx:id="rbSeries" mnemonicParsing="false" text="Series" textFill="WHITE">
+                                    <RadioButton fx:id="rbSeries" mnemonicParsing="false" text="Series" textFill="WHITE" toggleGroup="$btnGroup">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -73,7 +77,7 @@
                   </Pane>
                   <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="659.0" prefWidth="1269.0" vbarPolicy="NEVER">
                      <content>
-                        <GridPane prefHeight="942.0" prefWidth="1200.0" style="-fx-background-color: #3B3B3B;">
+                        <GridPane prefHeight="942.0" prefWidth="1200.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60.0" />
                            </columnConstraints>
@@ -84,179 +88,159 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <HBox alignment="CENTER" prefHeight="216.0" prefWidth="1287.0" spacing="20.0">
+                              <HBox fx:id="line0" alignment="CENTER" prefHeight="216.0" prefWidth="1287.0" spacing="20.0">
                                  <children>
-                                    <ImageView fx:id="imgResultado00" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado00" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado001" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado01" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado002" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado02" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado003" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado03" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado004" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado04" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado005" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado05" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado006" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/examples/ejemploPosterSerie.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="imgResultado007" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado06" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
                                  </children>
                                  <GridPane.margin>
-                                    <Insets top="20.0" />
+                                    <Insets />
                                  </GridPane.margin>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1200.0" spacing="20.0" GridPane.rowIndex="1">
+                              <HBox fx:id="line1" alignment="CENTER" prefHeight="100.0" prefWidth="1200.0" spacing="20.0" GridPane.rowIndex="1">
                                  <children>
-                                    <ImageView fx:id="imgResultado001" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado10" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0011" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado11" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0021" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado12" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0031" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado13" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0041" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado14" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0051" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado15" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0061" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/examples/ejemploPosterSerie.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="imgResultado0071" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado16" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="2">
+                              <HBox fx:id="line2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="2">
                                  <children>
-                                    <ImageView fx:id="imgResultado001" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado20" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0012" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado21" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0022" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado22" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0032" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado23" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0042" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado24" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0052" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado25" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0062" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/examples/ejemploPosterSerie.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="imgResultado0072" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado26" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="3">
+                              <HBox fx:id="line3" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="3">
                                  <children>
-                                    <ImageView fx:id="imgResultado001" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado30" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0013" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado31" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0023" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado32" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0033" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado33" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0043" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado34" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0053" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado35" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado0063" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/examples/ejemploPosterSerie.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="imgResultado0073" fitHeight="190.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado36" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
@@ -267,6 +251,9 @@
                                  </GridPane.margin>
                               </HBox>
                            </children>
+                           <padding>
+                              <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                           </padding>
                         </GridPane>
                      </content>
                      <VBox.margin>
