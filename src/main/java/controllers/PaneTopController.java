@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.image.ImageView;
 
-public class PaneTop {
+public class PaneTopController {
 
     @FXML
     private ResourceBundle resources;
