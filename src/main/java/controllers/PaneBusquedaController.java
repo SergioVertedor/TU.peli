@@ -25,6 +25,8 @@ public class PaneBusquedaController {
     @FXML
     private ToggleGroup btnGroup;
 
+    /** Declaración imagenes por fila 0-3 y columna 0-6 */
+    
     @FXML
     private ImageView imgResultado00;
 
@@ -145,44 +147,7 @@ public class PaneBusquedaController {
 
     @FXML
     void initialize() {
-        assert btnBuscar != null : "fx:id=\"btnBuscar\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert btnGroup != null : "fx:id=\"btnGroup\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado00 != null : "fx:id=\"imgResultado00\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado01 != null : "fx:id=\"imgResultado01\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado02 != null : "fx:id=\"imgResultado02\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado03 != null : "fx:id=\"imgResultado03\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado04 != null : "fx:id=\"imgResultado04\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado05 != null : "fx:id=\"imgResultado05\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado06 != null : "fx:id=\"imgResultado06\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado10 != null : "fx:id=\"imgResultado10\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado11 != null : "fx:id=\"imgResultado11\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado12 != null : "fx:id=\"imgResultado12\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado13 != null : "fx:id=\"imgResultado13\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado14 != null : "fx:id=\"imgResultado14\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado15 != null : "fx:id=\"imgResultado15\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado16 != null : "fx:id=\"imgResultado16\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado20 != null : "fx:id=\"imgResultado20\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado21 != null : "fx:id=\"imgResultado21\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado22 != null : "fx:id=\"imgResultado22\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado23 != null : "fx:id=\"imgResultado23\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado24 != null : "fx:id=\"imgResultado24\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado25 != null : "fx:id=\"imgResultado25\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado26 != null : "fx:id=\"imgResultado26\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado30 != null : "fx:id=\"imgResultado30\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado31 != null : "fx:id=\"imgResultado31\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado32 != null : "fx:id=\"imgResultado32\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado33 != null : "fx:id=\"imgResultado33\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado34 != null : "fx:id=\"imgResultado34\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado35 != null : "fx:id=\"imgResultado35\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert imgResultado36 != null : "fx:id=\"imgResultado36\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert line0 != null : "fx:id=\"line0\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert line1 != null : "fx:id=\"line1\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert line2 != null : "fx:id=\"line2\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert line3 != null : "fx:id=\"line3\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert rbPeliculas != null : "fx:id=\"rbPeliculas\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert rbSeries != null : "fx:id=\"rbSeries\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert rbTodas != null : "fx:id=\"rbTodas\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
-        assert txtBusqueda != null : "fx:id=\"txtBusqueda\" was not injected: check your FXML file 'PaneBusqueda.fxml'.";
+    	
 
     }
 
