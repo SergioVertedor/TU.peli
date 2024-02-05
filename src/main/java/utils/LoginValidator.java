@@ -49,7 +49,7 @@ public class LoginValidator {
               String fechaFormateada = fechaActual.format(formatter);
               // Actualizamos la fecha de último login
               appUser.setLastLogin(fechaFormateada);
-              appUserImpl.updateLastLogin(appUser);
+              appUserImpl.update(appUser);
               // Si el usuario ha marcado la casilla de "Recordar usuario", guardamos el usuario en
               // el fichero de propiedades
               if (PropertiesManager.getRememberLogin() == 1) {

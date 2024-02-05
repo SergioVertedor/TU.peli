@@ -32,18 +32,35 @@ public abstract class CommonDaoImpl<T> implements CommonDaoInt<T> {
 
   /** Metodo insert, que inserta un objeto en la base de datos */
   public void insert(final T paramT) {
-    HibernateUtils.startTransaction();
-    session.persist(paramT);
-    HibernateUtils.clearSession();
-    HibernateUtils.commitTransaction();
+    try {
+      HibernateUtils.openSession();
+      HibernateUtils.startTransaction();
+      session.persist(paramT);
+      HibernateUtils.flushSession();
+      HibernateUtils.clearSession();
+      HibernateUtils.commitTransaction();
+    } catch (Exception e) {
+      HibernateUtils.rollbackTransaction();
+      System.out.println("Error al insertar.");
+    } finally {
+      HibernateUtils.closeSession();
+    }
   }
 
   /** Metodo que modifica un objeto de la base de datos */
   public void update(final T paramT) {
-    HibernateUtils.startTransaction();
-    session.merge(paramT);
-    HibernateUtils.clearSession();
-    HibernateUtils.commitTransaction();
+    try {
+      HibernateUtils.openSession();
+      HibernateUtils.startTransaction();
+      HibernateUtils.flushSession();
+      HibernateUtils.commitTransaction();
+
+    } catch (Exception e) {
+      HibernateUtils.rollbackTransaction();
+      System.out.println("Error al actualizar.");
+    } finally {
+      HibernateUtils.closeSession();
+    }
   }
 
   /** Metodo que elimina un objeto de la base de datos */
