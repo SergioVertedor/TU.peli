@@ -66,7 +66,7 @@
                                              <children>
                                                 <Pane prefHeight="51.0" prefWidth="41.0" style="-fx-background-color: #CFCFCF; -fx-background-radius: 4;">
                                                    <children>
-                                                      <Label fx:id="lbluserRating" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="2.0" onDragDetected="#userRatingPressed" prefHeight="27.0" prefWidth="30.0" text="8.5" textAlignment="CENTER" textFill="#ec1b1b">
+                                                      <Label fx:id="lblRating" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="2.0" prefHeight="27.0" prefWidth="30.0" text="8.5" textAlignment="CENTER" textFill="#ec1b1b">
                                                          <font>
                                                             <Font name="System Bold" size="18.0" />
                                                          </font>
@@ -79,7 +79,7 @@
                                                       <Insets bottom="1.0" top="1.0" />
                                                    </padding>
                                                 </Pane>
-                                                <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="imgPais" fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                                    <HBox.margin>
                                                       <Insets left="10.0" right="10.0" />
                                                    </HBox.margin>
@@ -153,7 +153,7 @@
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </padding>
                                           </Label>
-                                          <ImageView fx:id="imgPen" fitHeight="20.0" fitWidth="20.0" onDragDetected="#editComentarioPressed" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgPen" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#escribirComentario" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/others/pen.png" />
                                              </image>
@@ -174,29 +174,29 @@
                                           <Insets bottom="2.0" left="6.0" right="6.0" top="2.0" />
                                        </GridPane.margin>
                                        <children>
-                                          <HBox fx:id="hBoxRating" alignment="CENTER" layoutX="12.0" layoutY="4.0" prefHeight="16.0" prefWidth="228.0" spacing="6.0">
+                                          <HBox alignment="CENTER" layoutX="12.0" layoutY="4.0" prefHeight="16.0" prefWidth="228.0" spacing="6.0">
                                              <children>
-                                                <ImageView fx:id="imgFav1" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onDragDetected="#fav1Selected" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="imgStar1" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@../images/others/favUnselected.png" />
                                                    </image>
                                                 </ImageView>
-                                                <ImageView fx:id="imgFav11" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onDragDetected="#fav2Selected" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="imgStar2" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@../images/others/favUnselected.png" />
                                                    </image>
                                                 </ImageView>
-                                                <ImageView fx:id="imgFav12" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onDragDetected="#fav3Selected" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="imgStar3" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@../images/others/favUnselected.png" />
                                                    </image>
                                                 </ImageView>
-                                                <ImageView fx:id="imgFav13" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onDragDetected="#fav4Selected" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="imgStar4" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@../images/others/favUnselected.png" />
                                                    </image>
                                                 </ImageView>
-                                                <ImageView fx:id="imgFav14" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onDragDetected="#fav5Selected" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="imgStar5" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@../images/others/favUnselected.png" />
                                                    </image>
@@ -207,7 +207,7 @@
                                     </Pane>
                                  </children>
                               </GridPane>
-                              <VBox fx:id="vBoxReparto" prefHeight="100.0" prefWidth="380.0">
+                              <VBox prefHeight="100.0" prefWidth="380.0">
                                  <children>
                                     <Label fx:id="lblReparto" alignment="TOP_LEFT" text="Reparto:" textFill="WHITE">
                                        <font>
@@ -217,7 +217,24 @@
                                           <Insets bottom="20.0" left="8.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <HBox fx:id="elementReparto1" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fx:id="imgReparto0" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                             <HBox.margin>
+                                                <Insets right="15.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label fx:id="lblReparto0" prefHeight="25.0" prefWidth="195.0" text="ActorActriz" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
                                        <children>
                                           <ImageView fx:id="imgReparto1" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                              <HBox.margin>
@@ -234,7 +251,7 @@
                                           <Insets bottom="10.0" />
                                        </padding>
                                     </HBox>
-                                    <HBox fx:id="boxReparto1" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
                                        <children>
                                           <ImageView fx:id="imgReparto2" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                              <HBox.margin>
@@ -251,31 +268,14 @@
                                           <Insets bottom="10.0" />
                                        </padding>
                                     </HBox>
-                                    <HBox fx:id="boxReparto11" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgReparto4" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgReparto3" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                              <HBox.margin>
                                                 <Insets right="15.0" />
                                              </HBox.margin>
                                           </ImageView>
-                                          <Label fx:id="lblReparto21" prefHeight="25.0" prefWidth="195.0" text="ActorActriz" textFill="WHITE">
-                                             <font>
-                                                <Font name="System Bold" size="16.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                       <padding>
-                                          <Insets bottom="10.0" />
-                                       </padding>
-                                    </HBox>
-                                    <HBox fx:id="boxReparto111" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
-                                       <children>
-                                          <ImageView fx:id="imgReparto4" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                             <HBox.margin>
-                                                <Insets right="15.0" />
-                                             </HBox.margin>
-                                          </ImageView>
-                                          <Label fx:id="lblReparto4" prefHeight="25.0" prefWidth="195.0" text="ActorActriz" textFill="WHITE">
+                                          <Label fx:id="lblReparto3" prefHeight="25.0" prefWidth="195.0" text="ActorActriz" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="16.0" />
                                              </font>
@@ -294,7 +294,7 @@
                         </HBox>
                         <VBox prefHeight="250.0" prefWidth="100.0">
                            <children>
-                              <Label fx:id="lblTituloSinopsis" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="106.0" text="Sinopsis:" textFill="WHITE">
+                              <Label fx:id="lblTituloSinopsis" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="240.0" text="Sinopsis:" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="22.0" />
                                  </font>
