@@ -8,6 +8,8 @@ import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.IOException;
 
@@ -19,8 +21,10 @@ import java.io.IOException;
  * @author SVB
  * @author EPP
  */
-public class SceneSwitcher {
 
+
+public class SceneSwitcher {
+  @Setter
   private static Stage stage;
   private boolean primeraVez;
   /**
@@ -59,7 +63,7 @@ public class SceneSwitcher {
     
     // Muestra la nueva ventana y espera hasta que se cierre
     if (primeraVez) {
-      stage.showAndWait();
+      stage.show();
       primeraVez = false;
     }
   }

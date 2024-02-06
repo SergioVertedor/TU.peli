@@ -1,16 +1,16 @@
 package controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import utils.PaneSwitcher;
+import utils.*;
 
 public class PantallaModeloController {
 
@@ -59,22 +59,41 @@ public class PantallaModeloController {
   @FXML private TextField txtBusqueda;
 
   @FXML
-  void btnBuscarPressed(MouseEvent event) {}
+  void btnBuscarPressed(MouseEvent event) {
+    PaneSwitcher.switchPane("PaneBusqueda", paneContent);
+  }
 
   @FXML
-  void cerrarSesionPressed(MouseEvent event) {}
+  void cerrarSesionPressed(MouseEvent event) {
+    var sw = new SceneSwitcher();
+    try {
+      PropertiesManager.setRememberLogin("0");
+      SessionHandler.setAppUser(null);
+      var dn = new DialogNotificator();
+      dn.logoutNotification();
+      sw.switchScene("PantallaLogin");
+    } catch (IOException e) {
+      System.out.println("Error al cargar la ventana de inicio de sesión");
+    }
+  }
 
   @FXML
-  void imgUserPressed(MouseEvent event) {}
+  void imgUserPressed(MouseEvent event) {
+    PaneSwitcher.switchPane("PaneUsuario", paneContent);
+  }
 
   @FXML
-  void lblCarteleraPressed(MouseEvent event) {}
+  void lblCarteleraPressed(MouseEvent event) {
+    PaneSwitcher.switchPane("PaneCartelera", paneContent);
+  }
 
   @FXML
   void lblFilmotecaPressed(MouseEvent event) {}
 
   @FXML
-  void lblInicioPressed(MouseEvent event) {}
+  void lblInicioPressed(MouseEvent event) {
+    PaneSwitcher.switchPane("PaneInicio", paneContent);
+  }
 
   @FXML
   void lblMisListasPressed(MouseEvent event) {}
@@ -83,22 +102,32 @@ public class PantallaModeloController {
   void lblPeliculasPressed(MouseEvent event) {}
 
   @FXML
-  void lblProximamentePressed(MouseEvent event) {}
+  void lblProximamentePressed(MouseEvent event) {
+    PaneSwitcher.switchPane("PaneProximamente", paneContent);
+  }
 
   @FXML
   void lblSeriesPressed(MouseEvent event) {}
 
   @FXML
-  void lblTopPeliculasPressed(MouseEvent event) {}
+  void lblTopPeliculasPressed(MouseEvent event) {
+    PaneSwitcher.switchPane("PaneTop", paneContent);
+  }
 
   @FXML
-  void lblTopSeriesPressed(MouseEvent event) {}
+  void lblTopSeriesPressed(MouseEvent event) {
+    PaneSwitcher.switchPane("PaneTop", paneContent);
+  }
 
   @FXML
-  void logoPressed(MouseEvent event) {}
+  void logoPressed(MouseEvent event) {
+    PaneSwitcher.switchPane("PaneInicio", paneContent);
+  }
 
   @FXML
-  void usernamePressed(MouseEvent event) {}
+  void usernamePressed(MouseEvent event) {
+    PaneSwitcher.switchPane("PaneUsuario", paneContent);
+  }
 
   @FXML
   void initialize() {
