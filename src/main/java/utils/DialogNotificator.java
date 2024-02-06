@@ -44,6 +44,7 @@ public class DialogNotificator {
     alert.showAndWait();
   }
 
+
   public void databaseConnectionError() {
     Alert alert = new Alert(Alert.AlertType.ERROR);
     alert.setTitle(null);
@@ -139,6 +140,14 @@ public class DialogNotificator {
     alert.setTitle(null);
     alert.setHeaderText("Registro correcto");
     alert.setContentText("Registro completado para " + usuario.getUsername());
+    alert.showAndWait();
+  }
+
+  public void logoutNotification() {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(null);
+    alert.setHeaderText("Usuario deslogeado");
+    alert.setContentText("Volviendo a la pantalla de inicio.");
     alert.showAndWait();
   }
 }

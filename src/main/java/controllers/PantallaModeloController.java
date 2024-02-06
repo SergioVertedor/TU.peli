@@ -1,5 +1,6 @@
 package controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -10,7 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import utils.PaneSwitcher;
+import utils.*;
 
 public class PantallaModeloController {
 
@@ -80,27 +81,34 @@ public class PantallaModeloController {
 	@FXML
 	private TextField txtBusqueda;
 
-	@FXML
-	void btnBuscarPressed(MouseEvent event) {
-	}
+  @FXML
+  void btnBuscarPressed(MouseEvent event) {
+    PaneSwitcher.switchPane("PaneBusqueda", paneContent);
+  }
 
-	//goToPerfilUsuario
-	@FXML
-	void imgUserPressed(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneUsuario", centralPane);
-		// TODO: que no se vea la imagen de section
-	}
+  @FXML
+  void cerrarSesionPressed(MouseEvent event) {
+    var sw = new SceneSwitcher();
+    try {
+      PropertiesManager.setRememberLogin("0");
+      SessionHandler.setAppUser(null);
+      var dn = new DialogNotificator();
+      dn.logoutNotification();
+      sw.switchScene("PantallaLogin");
+    } catch (IOException e) {
+      System.out.println("Error al cargar la ventana de inicio de sesión");
+    }
+  }
 
-	@FXML
-	void cerrarSesionPressed(MouseEvent event) {
-	}
+  @FXML
+  void imgUserPressed(MouseEvent event) {
+    PaneSwitcher.switchPane("PaneUsuario", paneContent);
+  }
 
-	// goToInicio REPETIDO
-	@FXML
-	void lblInicioPressed(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneInicio", centralPane);
-		// TODO: que no se vea la imagen de section
-	}
+  @FXML
+  void lblCarteleraPressed(MouseEvent event) {
+    PaneSwitcher.switchPane("PaneCartelera", paneContent);
+  }
 
 	// goToFilmoteca
 	@FXML
