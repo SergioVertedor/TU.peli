@@ -26,7 +26,7 @@ public class LoginValidator {
     // La Clase AtomicBoolean actúa como variable booleana que puede ser modificada atómicamente.
     // Esto significa que las operaciones de lectura y escritura se realizan en una sola operación
     // atómica. Esto evita que otros hilos lean un valor intermedio o incompleto. Y permite que
-    // se pueda declarar dentro de un lambda.
+    // se pueda declarar dentro de un lambda. (Que ha sido el caso).
     AtomicBoolean resultado = new AtomicBoolean(false);
     var appUserImpl = new AppUserImpl(HibernateUtils.getSession());
     // Obtenemos todos los usuarios de la base de datos
@@ -36,8 +36,8 @@ public class LoginValidator {
     if (userOrMail.isEmpty() || password.isEmpty()) {
       dialogNotificator.notifyEmptyFields();
     } else {
-      users.forEach(
-          appUser -> {
+      users.stream().filter(appUser -> appUser.getUsername().equalsIgnoreCase(userOrMail)
+          || appUser.getMail().equalsIgnoreCase(userOrMail)).forEach(appUser -> {
             // Desciframos la contraseña del usuario en lista
             String pw = RSAUtils.descifra(appUser.getPassword());
             // Comprobamos si el usuario o el email introducido coinciden con la contraseña descifrada
@@ -58,9 +58,6 @@ public class LoginValidator {
               // Guardamos el usuario en la sesión
               SessionHandler.setAppUser(appUser);
               resultado.set(true);
-            } else {
-
-              resultado.set(false);
             }
           });
     }
