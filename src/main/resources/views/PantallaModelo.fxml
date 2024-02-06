@@ -114,12 +114,12 @@
       </GridPane>
    </top>
    <left>
-      <ToolBar maxHeight="1.7976931348623157E308" prefHeight="502.0" prefWidth="250.0" style="-fx-background-color: white;" BorderPane.alignment="TOP_LEFT">
+      <ToolBar maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="502.0" prefWidth="250.0" style="-fx-background-color: white;" BorderPane.alignment="TOP_LEFT">
          <padding>
             <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
          </padding>
          <items>
-            <VBox prefHeight="839.0" prefWidth="220.0" spacing="20.0">
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="220.0" spacing="20.0">
                <children>
                   <Label fx:id="lblInicio" alignment="TOP_LEFT" onMouseClicked="#goToInicio" text="INICIO">
                      <font>
@@ -178,6 +178,6 @@
       </ToolBar>
    </left>
    <center>
-      <Pane fx:id="centralPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #E9E9E9;" BorderPane.alignment="CENTER" />
+      <Pane fx:id="centralPane" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #E9E9E9;" BorderPane.alignment="TOP_CENTER" />
    </center>
 </BorderPane>

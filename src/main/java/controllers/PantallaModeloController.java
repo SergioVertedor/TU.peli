@@ -127,6 +127,7 @@ public class PantallaModeloController {
 	void goToPeliculas(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
 		imgSection.setImage(new Image("images/sections/Peliculas.png"));
+		// TODO: Mostrar solo peliculas
 	}
 
 	/**
@@ -137,6 +138,7 @@ public class PantallaModeloController {
 	void goToSeries(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
 		imgSection.setImage(new Image("images/sections/Series.png"));
+	// TODO: Mostrar solo series
 	}
 
 	/**

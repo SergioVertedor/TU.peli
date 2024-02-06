@@ -1,8 +1,12 @@
 package controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import utils.PaneSwitcher;
 
 public class PaneInicioController {
 
@@ -50,6 +54,11 @@ public class PaneInicioController {
 
     @FXML
     private ImageView imgSeries;
+    
+    // TODO: DECLARACION centralPane e imgSection del parent para cargar los distintos paneles
+    // Puesto así ahora mismo para que no falle
+    Pane centralPane; 
+    ImageView imgSection;
 
     /**
      * Redirige la página hacia el apartado "Filmoteca"
@@ -57,8 +66,9 @@ public class PaneInicioController {
      */
     @FXML
     void goToFilmoteca(MouseEvent event) {
-
-    }
+    	PaneSwitcher.switchPane("PaneBusqueda", centralPane);
+  		imgSection.setImage(new Image("images/sections/Filmoteca.png"));
+  	}
     
     /**
      * Redirige la página hacia el apartado "Películas"
@@ -66,8 +76,9 @@ public class PaneInicioController {
      */
     @FXML
     void goToPeliculas(MouseEvent event) {
-
-    }
+    	PaneSwitcher.switchPane("PaneBusqueda", centralPane);
+  		imgSection.setImage(new Image("images/sections/Peliculas.png"));
+  	}
     
     /**
      * Redirige la página hacia el apartado "Series"
@@ -75,8 +86,9 @@ public class PaneInicioController {
      */
     @FXML
     void goToSeries(MouseEvent event) {
-
-    }
+  		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
+  		imgSection.setImage(new Image("images/sections/Series.png"));
+  	}
 
     /**
      * Redirige la página hacia el apartado "Cartelera"
@@ -84,8 +96,9 @@ public class PaneInicioController {
      */
     @FXML
     void goToCartelera(MouseEvent event) {
-    	
-    }
+  		PaneSwitcher.switchPane("PaneCartelera", centralPane);
+  		imgSection.setImage(new Image("images/sections/Cartelera.png"));
+  	}
 
     /**
      * Redirige la página hacia el apartado "Proximamente"
@@ -93,8 +106,9 @@ public class PaneInicioController {
      */
     @FXML
     void goToProximamente(MouseEvent event) {
-
-    }
+  		PaneSwitcher.switchPane("PaneProximamente", centralPane);
+  		imgSection.setImage(new Image("images/sections/Proximamente.png"));
+  	}
 
     /**
      * Redirige la página hacia el apartado "Mis listas"
@@ -102,15 +116,18 @@ public class PaneInicioController {
      */
     @FXML
     void goToMisListas(MouseEvent event) {
-
-    }
+  		PaneSwitcher.switchPane("PaneMisListas", centralPane);
+  		imgSection.setImage(new Image("images/sections/Favoritos.png"));
+  	}
 
     // Redirige al titulo seleccionado en detalle
     @FXML
     void imgObraPressed(MouseEvent event) {
-
-    }
-    
-    // TODO: Método carga peliculas y series "novedades" 8
+  		PaneSwitcher.switchPane("PaneMisListas", centralPane);
+  		// If pelicula o serie
+  		//imgSection.setImage(new Image("images/sections/Peliculas.png"));
+  		//imgSection.setImage(new Image("images/sections/Series.png"));
+  	}
+   
 
 }
