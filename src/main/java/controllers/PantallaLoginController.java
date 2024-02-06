@@ -55,6 +55,7 @@ public class PantallaLoginController {
           }
       } else {
         dialogNotificator.notifyLoginError();
+        txtLoginPassword.clear();
       }
     }
   }
