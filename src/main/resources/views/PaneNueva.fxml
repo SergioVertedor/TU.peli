@@ -8,6 +8,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -105,7 +106,7 @@
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <TextArea fx:id="txtComments" prefHeight="113.0" prefWidth="295.0">
+                                                <TextArea fx:id="txtComentarios" prefHeight="113.0" prefWidth="295.0" wrapText="true">
                                                    <VBox.margin>
                                                       <Insets top="5.0" />
                                                    </VBox.margin>
@@ -248,15 +249,18 @@
                                        <children>
                                           <HBox alignment="CENTER" prefHeight="116.0" prefWidth="575.0">
                                              <children>
-                                                <RadioButton fx:id="rbFilm" mnemonicParsing="false" onAction="#rbFilmPressed" text="Nueva Película" textFill="WHITE">
+                                                <RadioButton fx:id="rbPelicula" mnemonicParsing="false" selected="true" text="Nueva Película" textFill="WHITE">
                                                    <HBox.margin>
                                                       <Insets left="50.0" right="50.0" />
                                                    </HBox.margin>
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="rbSeleccion" />
+                                                   </toggleGroup>
                                                 </RadioButton>
-                                                <RadioButton fx:id="rbSerie" mnemonicParsing="false" onAction="#rbSeriePressed" text="Nueva Serie" textFill="WHITE">
+                                                <RadioButton fx:id="rbSerie" mnemonicParsing="false" text="Nueva Serie" textFill="WHITE" toggleGroup="$rbSeleccion">
                                                    <HBox.margin>
                                                       <Insets left="20.0" />
                                                    </HBox.margin>
@@ -316,17 +320,17 @@
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField fx:id="txtTitle" GridPane.columnIndex="1">
+                                                <TextField fx:id="txtTitulo" GridPane.columnIndex="1">
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="40.0" />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="txtYear" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <TextField fx:id="txtAnno" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="40.0" />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="txtCompany" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                <TextField fx:id="txtCompania" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="40.0" />
                                                    </GridPane.margin>
@@ -336,17 +340,17 @@
                                                       <Insets left="10.0" right="40.0" />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="txtGenre" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                <TextField fx:id="txtGenero" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="40.0" />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="txtCast" prefHeight="110.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                <TextField fx:id="txtReparto" prefHeight="110.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="40.0" />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="txtResume" prefHeight="240.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                <TextField fx:id="txtSinopsis" prefHeight="240.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="40.0" />
                                                    </GridPane.margin>

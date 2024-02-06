@@ -26,7 +26,7 @@
       <RowConstraints maxHeight="1.7976931348623157E308" prefHeight="300.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <ImageView fx:id="imgLoginLogo" fitHeight="220.0" fitWidth="220.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgLogo" fitHeight="220.0" fitWidth="220.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/logo/logo.png" />
          </image>
@@ -34,7 +34,7 @@
             <Insets left="15.0" top="15.0" />
          </GridPane.margin>
       </ImageView>
-      <Label fx:id="lblEresNuevoPorAqui" alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" prefWidth="600.0" text="¿Eres nuevo por aquí?" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+      <Label alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" prefWidth="600.0" text="¿Eres nuevo por aquí?" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
          <font>
             <Font size="34.0" />
          </font>

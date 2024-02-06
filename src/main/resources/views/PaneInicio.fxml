@@ -39,7 +39,7 @@
                   </ImageView>
                   <ImageView fx:id="imgPeliculas" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToPeliculas" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../images/sections/Pelicula.png" />
+                        <Image url="@../images/sections/Peliculas.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="imgSeries" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToSeries" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -64,7 +64,7 @@
                   </ImageView>
                </children>
             </GridPane>
-            <ImageView fx:id="imgInicio" fitHeight="241.0" fitWidth="723.0" pickOnBounds="true">
+            <ImageView fx:id="imgCentralInicio" fitHeight="241.0" fitWidth="723.0" pickOnBounds="true">
                <VBox.margin>
                   <Insets bottom="20.0" top="20.0" />
                </VBox.margin>
@@ -87,7 +87,7 @@
                   <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <ImageView fx:id="imgObra01" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="imgObra00" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
@@ -95,37 +95,37 @@
                         <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="imgObra2" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="imgObra01" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="imgObra3" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="imgObra02" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="imgObra4" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="imgObra03" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="imgObra5" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="imgObra04" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="imgObra6" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="imgObra05" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="imgObra7" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="imgObra06" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="imgObra8" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="imgObra07" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                      </image>

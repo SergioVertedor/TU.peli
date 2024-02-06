@@ -94,7 +94,7 @@
                                                       <Insets bottom="10.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <Label alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="lblInfo10" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="16.0" />
                                                    </font>
