@@ -1,7 +1,5 @@
 package controllers;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,103 +7,88 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 
 public class PaneUsuarioController {
 
-    @FXML private ResourceBundle resources;
+	// Imagenes dispositivos
+	@FXML	private ImageView imgDispositivo1;
+	@FXML	private ImageView imgDispositivo2;
+	@FXML	private ImageView imgDispositivo3;
+	@FXML	private ImageView imgDispositivo4;
+	
+	// Nombre e imagen de perfil del usuario
+	@FXML	private Label lblUsername;
+	@FXML	private ImageView imgUser;
+	
+	// Otros Datos cabecera
+	@FXML	private Label lblMiembroDesde;
+	@FXML	private Label lblNumeroDeTitulosGuardados;
+	@FXML	private Label lblUltimaConexion;
+	
+	// Importar y Exportar (funcionan como botones)
+	@FXML	private Button lblExportar;
+	@FXML	private Button lblImportar;
+	
+	// Nombres de los distintos dispositivos
+	@FXML	private Label lblDispositivo1;
+	@FXML	private Label lblDispositivo2;
+	@FXML	private Label lblDispositivo3;
+	@FXML	private Label lblDispositivo4;
+	
+	// Campos para modificar los datos del usuario
+	@FXML	private TextField txtEmail;
+	@FXML	private TextField txtPass;
+	@FXML	private TextField txtPass2;
+	@FXML	private TextField txtUsername;
 
-    @FXML private URL location;
+	// Botones
+	@FXML	private Button btnEditarDispositivos;
+	@FXML	private Button btnGuardar;
+	
+	
+	/**
+	 * Edita el listado de dispositivos del usuario
+	 * 
+	 * @param event
+	 */
+	@FXML
+	void btnEditarDispositivosPressed(ActionEvent event) {
+		// TODO
+	}
 
-    @FXML private Button btnEditarDispositivos;
+	/**
+	 * Guarda/Modifica la información del usuario
+	 * 
+	 * @param event
+	 */
+	@FXML
+	void btnGuardarPressed(ActionEvent event) {
+		// TODO
+	}
 
-    @FXML private Button btnGuardar;
+	/**
+	 * Exportar datos
+	 * 
+	 * @param event
+	 */
+	@FXML
+	void exportarDatosPressed(ActionEvent event) {
+		// TODO
+	}
 
-    @FXML private HBox hBoxDispositivo1;
+	/**
+	 * Importar datos
+	 * 
+	 * @param event
+	 */
+	@FXML
+	void importarDatosPressed(ActionEvent event) {
+		// TODO
+	}
 
-    @FXML private HBox hBoxDispositivo1111;
-
-    @FXML private HBox hBoxDispositivo2;
-
-    @FXML private HBox hBoxDispositivo3;
-
-    @FXML private ImageView imgDispositivo1;
-
-    @FXML private ImageView imgDispositivo2;
-
-    @FXML private ImageView imgDispositivo3;
-
-    @FXML private ImageView imgDispositivo4;
-
-    @FXML private ImageView imgUser;
-
-    @FXML private Label lblDispositivo1;
-
-    @FXML private Label lblDispositivo2;
-
-    @FXML private Label lblDispositivo3;
-
-    @FXML private Label lblDispositivo4;
-
-    @FXML private Button lblExportar;
-
-    @FXML private Button lblImportar;
-
-    @FXML private Label lblMiembrodesde;
-
-    @FXML private Label lblTNumTitulosLista;
-
-    @FXML private Label lblUltimaConexion;
-
-    @FXML private Label lblUsername;
-
-    @FXML private TextField txtEmail;
-
-    @FXML private TextField txtPass;
-
-    @FXML private TextField txtPass2;
-
-    @FXML private TextField txtUsername;
-
-    /**
-     * Edita el listado de dispositivos del usuario
-     * @param event
-     */
-    @FXML
-    void btnEditarDispositivosPressed(ActionEvent event) {
-    	// TODO
-    }
-
-    /**
-     * Guarda/Modifica la información del usuario
-     * @param event
-     */
-    @FXML
-    void btnGuardarPressed(ActionEvent event) {
-    	// TODO
-    }
-    
-    /**
-     * Exportar datos
-     * @param event
-     */
-    @FXML
-    void exportarDatosPressed(ActionEvent event) {
-    	// TODO
-    }
-
-    /**
-     * Importar datos
-     * @param event
-     */
-    @FXML
-    void importarDatosPressed(ActionEvent event) {
-    	// TODO
-    }
-
-    @FXML
-    void initialize() {
-    	imgUser.setImage(new Image("images/user.png"));
-    }
+	@FXML
+	void initialize() {
+		imgUser.setImage(new Image("images/user.png"));
+	}
 
 }

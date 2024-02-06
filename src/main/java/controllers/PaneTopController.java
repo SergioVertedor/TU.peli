@@ -39,12 +39,12 @@ public class PaneTopController {
 
     
     /**
-     * Muestra la información de una película
+     * Muestra la información de la obra seleccionada
      * @param event
      */
     @FXML
     void onMouseEnteredTitle(MouseEvent event) {
-    	// TODO
+    	// TODO: Mostrar en pantalla la información de la obra seleccionada
     }
 
     @FXML

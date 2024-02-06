@@ -21,48 +21,29 @@ import utils.SceneSwitcher;
  *
  */
 public class PantallaRegistroController {
+	
+	// Imagen logo TU.PELI
+  @FXML private ImageView imgLogo;
+  
+  // TODO: Creo que estos no se está usando, no los ubico
+  @FXML private Label lblNombre;
+  @FXML private TextField txtName;
+  
+  // Campos usuario
+  @FXML private Label lblUsuario;
+  @FXML private Label lblEmail;
+  @FXML  private TextField txtUserName;
+  @FXML private TextField txtEmail;
+  
+  // Campos contraseña
+  @FXML private Label lblPassword;
+  @FXML private Label lblPasswordRepeat;
+  @FXML  private PasswordField txtPassword;
+  @FXML  private PasswordField txtPasswordRepeat;
 
-  @FXML
-  private Button btnLoginRegister;
-
-  @FXML
-  private Button btnVolver;
-
-  @FXML
-  private ImageView imgLoginLogo;
-
-  @FXML
-  private Label lblEmail;
-
-  @FXML
-  private Label lblEresNuevoPorAqui;
-
-  @FXML
-  private Label lblNombre;
-
-  @FXML
-  private Label lblPassword;
-
-  @FXML
-  private Label lblPasswordRepeat;
-
-  @FXML
-  private Label lblUsuario;
-
-  @FXML
-  private TextField txtEmail;
-
-  @FXML
-  private TextField txtName;
-
-  @FXML
-  private PasswordField txtPassword;
-
-  @FXML
-  private PasswordField txtPasswordRepeat;
-
-  @FXML
-  private TextField txtUserName;
+  // Botones
+  @FXML private Button btnLoginRegister;
+  @FXML private Button btnVolver;
 
   /**
    * Método que se ejecuta cuando el usuario pulsa el botón de registro. Valida y procesa el
@@ -107,7 +88,7 @@ public class PantallaRegistroController {
    */
   @FXML
   void initialize() {
-    imgLoginLogo.setImage(new Image("images/logo/logo.png"));
+    imgLogo.setImage(new Image("images/logo/logo.png"));
   }
 
 }

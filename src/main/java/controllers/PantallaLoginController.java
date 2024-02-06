@@ -12,7 +12,7 @@ import javafx.scene.image.ImageView;
 import utils.*;
 
 /**
- * Controler de la vista "PantallaLogin"
+ * Controller de la vista "PantallaLogin"
  *
  * @author SVB
  * @author EPP

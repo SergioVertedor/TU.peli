@@ -1,8 +1,6 @@
 package controllers;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -15,71 +13,42 @@ import utils.*;
 
 public class PantallaModeloController {
 
-	@FXML
-	private ResourceBundle resources;
+	// Panel central de carga
+	@FXML	private Pane centralPane;
+	
+	// Otros paneles
+	@FXML	private Pane paneContent;
+	@FXML	private GridPane paneHeader;
+	
+	// Logo TU.PELI
+	@FXML	private ImageView imgLogo;
+	
+	// ImageView para la sección seleccionada
+	@FXML	private ImageView imgSection;
 
-	@FXML
-	private URL location;
+	// Nombre e imagen de perfil del usuario
+	@FXML	private ImageView imgUser;
+	@FXML	private Label lblUserName;
+	
+	// ELementos de búsqueda
+	@FXML	private TextField txtBusqueda;
+	@FXML	private ImageView btnBuscar;
 
-	@FXML
-	private ImageView btnBuscar;
+	// Cerrar sesión
+	@FXML	private ImageView imgClose;
+	@FXML	private Label lblCerrarSesion;
+	
+	// Secciones barra menú 
+	@FXML	private Label lblInicio;
+	@FXML	private Label lblFilmoteca;
+	@FXML	private Label lblPeliculas;
+	@FXML	private Label lblSeries;
+	@FXML	private Label lblTopPeliculas;
+	@FXML	private Label lblTopSeries;
+	@FXML	private Label lblCartelera;
+	@FXML	private Label lblProximamente;
+	@FXML	private Label lblMisListas;
 
-	@FXML
-	private Pane centralPane;
-
-	@FXML
-	private ImageView imgClose;
-
-	@FXML
-	private ImageView imgLogo;
-
-	@FXML
-	private ImageView imgSection;
-
-	@FXML
-	private ImageView imgUser;
-
-	@FXML
-	private Label lblCartelera;
-
-	@FXML
-	private Label lblCerrarSesion;
-
-	@FXML
-	private Label lblFilmoteca;
-
-	@FXML
-	private Label lblInicio;
-
-	@FXML
-	private Label lblMisListas;
-
-	@FXML
-	private Label lblPeliculas;
-
-	@FXML
-	private Label lblProximamente;
-
-	@FXML
-	private Label lblSeries;
-
-	@FXML
-	private Label lblTopPeliculas;
-
-	@FXML
-	private Label lblTopSeries;
-
-	@FXML
-	private Label lblUserName1;
-
-	@FXML
-	private Pane paneContent;
-
-	@FXML
-	private GridPane paneHeader;
-
-	@FXML
-	private TextField txtBusqueda;
 
 	/**
 	 * Genera una búsqueda con el texto insertado en txtBusqueda
