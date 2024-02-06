@@ -84,6 +84,7 @@ public class PantallaModeloController {
   @FXML
   void btnBuscarPressed(MouseEvent event) {
     PaneSwitcher.switchPane("PaneBusqueda", paneContent);
+    imgSection.setImage(new Image("images/sections/Filmoteca.png"));
   }
 
   @FXML
@@ -100,82 +101,72 @@ public class PantallaModeloController {
     }
   }
 
-  @FXML
-  void imgUserPressed(MouseEvent event) {
-    PaneSwitcher.switchPane("PaneUsuario", paneContent);
-  }
-
-  @FXML
-  void lblCarteleraPressed(MouseEvent event) {
-    PaneSwitcher.switchPane("PaneCartelera", paneContent);
-  }
-
 	// goToFilmoteca
 	@FXML
-	void lblFilmotecaPressed(MouseEvent event) {
+	void goToFilmoteca(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
 		imgSection.setImage(new Image("images/sections/Filmoteca.png"));
 	}
 
 	// goToPeliculas
 	@FXML
-	void lblPeliculasPressed(MouseEvent event) {
+	void goToPeliculas(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
 		imgSection.setImage(new Image("images/sections/Peliculas.png"));
 	}
 
 	// goToSeries
 	@FXML
-	void lblSeriesPressed(MouseEvent event) {
+	void goToSeries(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
 		imgSection.setImage(new Image("images/sections/Series.png"));
 	}
 
 	// goToTopPeliculas
 	@FXML
-	void lblTopPeliculasPressed(MouseEvent event) {
+	void goToTopPeliculas(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneTop", centralPane);
 		imgSection.setImage(new Image("images/sections/Peliculas.png"));
 	}
 
 	// goToTopSeries
 	@FXML
-	void lblTopSeriesPressed(MouseEvent event) {
+	void goToTopSeries(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneTop", centralPane);
 		imgSection.setImage(new Image("images/sections/Series.png"));
 	}
 
 	// goToCartelera
 	@FXML
-	void lblCarteleraPressed(MouseEvent event) {
+	void goToCartelera(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneCartelera", centralPane);
 		imgSection.setImage(new Image("images/sections/Cartelera.png"));
 	}
 
 	// goToProximamente
 	@FXML
-	void lblProximamentePressed(MouseEvent event) {
+	void goToProximamente(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneProximamente", centralPane);
 		imgSection.setImage(new Image("images/sections/Proximamente.png"));
 	}
 
 	// goToMisListas
 	@FXML
-	void lblMisListasPressed(MouseEvent event) {
+	void goToMisListas(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneMisListas", centralPane);
 		imgSection.setImage(new Image("images/sections/Favoritos.png"));
 	}
 
 	// goToInicio REPETIDO
 	@FXML
-	void logoPressed(MouseEvent event) {
+	void goToInicio(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneInicio", centralPane);
 		// TODO: que no se vea la imagen de section
 	}
 
 	// goToPerfilUsuario REPETIDO
 	@FXML
-	void usernamePressed(MouseEvent event) {
+	void goToUserProfile(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneUsuario", centralPane);
 		// TODO: que no se vea la imagen de section
 	}

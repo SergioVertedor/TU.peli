@@ -27,7 +27,7 @@
           <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fx:id="imgLogo" fitHeight="80.0" fitWidth="80.0" onDragDetected="#logoPressed" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgLogo" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#goToInicio" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../resources/images/logo/logo.png" />
                </image>
@@ -58,14 +58,14 @@
                      <children>
                         <VBox alignment="CENTER_RIGHT" spacing="10.0">
                            <children>
-                              <Label fx:id="lblUserName1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" onDragDetected="#usernamePressed" text="User1234" textAlignment="RIGHT" textFill="WHITE">
+                              <Label fx:id="lblUserName1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" onMouseClicked="#goToUserProfile" text="User1234" textAlignment="RIGHT" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
                               <HBox>
                                  <children>
-                                    <Label fx:id="lblCerrarSesion" alignment="CENTER_RIGHT" contentDisplay="RIGHT" onDragDetected="#cerrarSesionPressed" text="Cerrar sesión" textAlignment="RIGHT" textFill="#ff4343">
+                                    <Label fx:id="lblCerrarSesion" alignment="CENTER_RIGHT" contentDisplay="RIGHT" onMouseClicked="#cerrarSesionPressed" text="Cerrar sesión" textAlignment="RIGHT" textFill="#ff4343">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -85,7 +85,7 @@
                               <Insets bottom="5.0" top="5.0" />
                            </HBox.margin>
                         </VBox>
-                        <ImageView fx:id="imgUser" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" onDragDetected="#imgUserPressed" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgUser" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" onMouseClicked="#goToUserProfile" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../resources/images/user.png" />
                            </image>
@@ -121,47 +121,47 @@
          <items>
             <VBox prefHeight="839.0" prefWidth="220.0" spacing="20.0">
                <children>
-                  <Label fx:id="lblInicio" alignment="TOP_LEFT" onDragDetected="#lblInicioPressed" text="INICIO">
+                  <Label fx:id="lblInicio" alignment="TOP_LEFT" onMouseClicked="#goToInicio" text="INICIO">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblFilmoteca" alignment="TOP_LEFT" onDragDetected="#lblFilmotecaPressed" text="FILMOTECA">
+                  <Label fx:id="lblFilmoteca" alignment="TOP_LEFT" onMouseClicked="#goToFilmoteca" text="FILMOTECA">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblPeliculas" alignment="TOP_LEFT" onDragDetected="#lblPeliculasPressed" text="- PELICULAS">
+                  <Label fx:id="lblPeliculas" alignment="TOP_LEFT" onMouseClicked="#goToPeliculas" text="- PELICULAS">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblSeries" alignment="TOP_LEFT" onDragDetected="#lblSeriesPressed" text="- SERIES">
+                  <Label fx:id="lblSeries" alignment="TOP_LEFT" onMouseClicked="#goToSeries" text="- SERIES">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblTopPeliculas" alignment="TOP_LEFT" onDragDetected="#lblTopPeliculasPressed" text="TOP PELICULAS">
+                  <Label fx:id="lblTopPeliculas" alignment="TOP_LEFT" onMouseClicked="#goToTopPeliculas" text="TOP PELICULAS">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblTopSeries" alignment="TOP_LEFT" onDragDetected="#lblTopSeriesPressed" text="TOP SERIES">
+                  <Label fx:id="lblTopSeries" alignment="TOP_LEFT" onMouseClicked="#goToTopSeries" text="TOP SERIES">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblCartelera" alignment="TOP_LEFT" onDragDetected="#lblCarteleraPressed" text="CARTELERA">
+                  <Label fx:id="lblCartelera" alignment="TOP_LEFT" onMouseClicked="#goToCartelera" text="CARTELERA">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblProximamente" alignment="TOP_LEFT" onDragDetected="#lblProximamentePressed" text="PROXIMAMENTE">
+                  <Label fx:id="lblProximamente" alignment="TOP_LEFT" onMouseClicked="#goToProximamente" text="PROXIMAMENTE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblMisListas" alignment="TOP_LEFT" onDragDetected="#lblMisListasPressed" text="MIS LISTAS">
+                  <Label fx:id="lblMisListas" alignment="TOP_LEFT" onMouseClicked="#goToMisListas" text="MIS LISTAS">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
