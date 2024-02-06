@@ -199,6 +199,7 @@ public class PantallaModeloController {
 	void goToInicio(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneInicio", centralPane);
 		// TODO: que no se vea la imagen de section
+		
 	}
 
 	/**

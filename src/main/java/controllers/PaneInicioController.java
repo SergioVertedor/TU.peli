@@ -1,7 +1,6 @@
 package controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -10,50 +9,35 @@ import utils.PaneSwitcher;
 
 public class PaneInicioController {
 
-    @FXML
-    private ImageView imgCartelera;
+    @FXML private ImageView imgCartelera;
 
-    @FXML
-    private ImageView imgFavoritos;
+    @FXML private ImageView imgFavoritos;
 
-    @FXML
-    private ImageView imgFilmoteca;
+    @FXML private ImageView imgFilmoteca;
 
-    @FXML
-    private ImageView imgInicio;
+    @FXML private ImageView imgCentralInicio;
 
-    @FXML
-    private ImageView imgObra01;
+    @FXML private ImageView imgObra00;
 
-    @FXML
-    private ImageView imgObra2;
+    @FXML private ImageView imgObra01;
 
-    @FXML
-    private ImageView imgObra3;
+    @FXML private ImageView imgObra02;
+    
+    @FXML private ImageView imgObra03;
+    
+    @FXML private ImageView imgObra04;
+    
+    @FXML private ImageView imgObra05;
+    
+    @FXML private ImageView imgObra06;
+    
+    @FXML private ImageView imgObra07;
 
-    @FXML
-    private ImageView imgObra4;
+    @FXML private ImageView imgPeliculas;
 
-    @FXML
-    private ImageView imgObra5;
+    @FXML private ImageView imgProximamente;
 
-    @FXML
-    private ImageView imgObra6;
-
-    @FXML
-    private ImageView imgObra7;
-
-    @FXML
-    private ImageView imgObra8;
-
-    @FXML
-    private ImageView imgPeliculas;
-
-    @FXML
-    private ImageView imgProximamente;
-
-    @FXML
-    private ImageView imgSeries;
+    @FXML private ImageView imgSeries;
     
     // TODO: DECLARACION centralPane e imgSection del parent para cargar los distintos paneles
     // Puesto así ahora mismo para que no falle
@@ -128,6 +112,20 @@ public class PaneInicioController {
   		//imgSection.setImage(new Image("images/sections/Peliculas.png"));
   		//imgSection.setImage(new Image("images/sections/Series.png"));
   	}
+    
+    @FXML
+    void initialize() {
+    	imgFilmoteca.setImage(new Image("images/sections/Filmoteca.png"));
+    	imgPeliculas.setImage(new Image("images/sections/Peliculas.png"));
+    	imgSeries.setImage(new Image("images/sections/Series.png"));
+    	imgCartelera.setImage(new Image("images/sections/Cartelera.png"));
+    	imgProximamente.setImage(new Image("images/sections/Proximamente.png"));
+    	imgFavoritos.setImage(new Image("images/sections/Favoritos.png"));
+    	imgCentralInicio.setImage(new Image("images/sections/imgInicio.png"));
+    	
+    	// TODO: Cargar 8 peliculas en el inicio 'imgObra00'
+
+    }
    
 
 }

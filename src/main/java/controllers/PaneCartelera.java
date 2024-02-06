@@ -82,28 +82,7 @@ public class PaneCartelera {
 
     @FXML
     void initialize() {
-        assert imgPoster00 != null : "fx:id=\"imgPoster00\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert imgPoster01 != null : "fx:id=\"imgPoster01\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert imgPoster02 != null : "fx:id=\"imgPoster02\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert imgPoster10 != null : "fx:id=\"imgPoster10\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert imgPoster11 != null : "fx:id=\"imgPoster11\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert imgPoster12 != null : "fx:id=\"imgPoster12\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblGenero00 != null : "fx:id=\"lblGenero00\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblGenero01 != null : "fx:id=\"lblGenero01\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblGenero02 != null : "fx:id=\"lblGenero02\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblGenero11 != null : "fx:id=\"lblGenero11\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblGenero12 != null : "fx:id=\"lblGenero12\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblInfo00 != null : "fx:id=\"lblInfo00\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblInfo01 != null : "fx:id=\"lblInfo01\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblInfo02 != null : "fx:id=\"lblInfo02\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblInfo11 != null : "fx:id=\"lblInfo11\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblInfo12 != null : "fx:id=\"lblInfo12\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblTitulo00 != null : "fx:id=\"lblTitulo00\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblTitulo01 != null : "fx:id=\"lblTitulo01\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblTitulo02 != null : "fx:id=\"lblTitulo02\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblTitulo10 != null : "fx:id=\"lblTitulo10\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblTitulo11 != null : "fx:id=\"lblTitulo11\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
-        assert lblTitulo12 != null : "fx:id=\"lblTitulo12\" was not injected: check your FXML file 'PaneProximamente.fxml'.";
+
 
     }
 
