@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneBusquedaController">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneMisListasController">
    <children>
       <Pane prefHeight="878.0" prefWidth="1263.0">
          <children>
@@ -130,12 +130,12 @@
                                     <Insets left="30.0" />
                                  </padding>
                               </Label>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#addMisPeliculasPressed" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/others/add.png" />
                                  </image>
                                  <HBox.margin>
-                                    <Insets right="20.0" />
+                                    <Insets right="25.0" />
                                  </HBox.margin>
                               </ImageView>
                            </children>
@@ -150,12 +150,12 @@
                                     <Insets left="30.0" />
                                  </padding>
                               </Label>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#addMisSeriesPressed" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/others/add.png" />
                                  </image>
                                  <HBox.margin>
-                                    <Insets right="20.0" />
+                                    <Insets right="25.0" />
                                  </HBox.margin>
                               </ImageView>
                            </children>
@@ -175,28 +175,28 @@
                                     <Image url="@../images/others/favSelected.png" />
                                  </image>
                                  <HBox.margin>
-                                    <Insets right="20.0" />
+                                    <Insets right="25.0" />
                                  </HBox.margin>
                               </ImageView>
                            </children>
                         </HBox>
                         <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" GridPane.rowIndex="1">
                            <content>
-                              <VBox alignment="TOP_CENTER" prefHeight="820.0" prefWidth="386.0" spacing="10.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
+                              <VBox alignment="TOP_CENTER" prefHeight="820.0" prefWidth="380.0" spacing="10.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                                  <padding>
                                     <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
                                  </padding>
                                  <children>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula00" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgPelicula00" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
                                              <children>
-                                                <Label fx:id="tituloPelicula00" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="tituloPelicula00" alignment="TOP_LEFT" onMouseClicked="#goToTitulo" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -404,31 +404,31 @@
                               </VBox>
                            </content>
                            <GridPane.margin>
-                              <Insets />
+                              <Insets right="6.0" />
                            </GridPane.margin>
                         </ScrollPane>
                         <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <content>
-                              <VBox alignment="TOP_CENTER" prefHeight="820.0" prefWidth="386.0" spacing="10.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
+                              <VBox alignment="TOP_CENTER" prefHeight="820.0" prefWidth="380.0" spacing="10.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                                  <padding>
                                     <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
                                  </padding>
                                  <children>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula001" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie00" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                                <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
                                              <children>
-                                                <Label fx:id="tituloSerie00" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="tituloSerie00" alignment="TOP_LEFT" onMouseClicked="#goToTitulo" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula001" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#ff7520" wrapText="true">
+                                                <Label fx:id="temporadasSerie00" prefHeight="18.0" prefWidth="260.0" text="1 temporadas" textFill="#ff7520" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -445,9 +445,9 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula0011" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie01" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                                <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
@@ -457,7 +457,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula0011" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#ff7520" wrapText="true">
+                                                <Label fx:id="temporadasSerie01" prefHeight="18.0" prefWidth="260.0" text="1 temporadas" textFill="#ff7520" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -474,9 +474,9 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula0021" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie02" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                                <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
@@ -486,7 +486,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula0021" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#ff7520" wrapText="true">
+                                                <Label fx:id="temporadasSerie02" prefHeight="18.0" prefWidth="260.0" text="1 temporadas" textFill="#ff7520" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -503,9 +503,9 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula0031" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie03" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                                <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
@@ -515,7 +515,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula0031" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#ff7520" wrapText="true">
+                                                <Label fx:id="temporadasSerie03" prefHeight="18.0" prefWidth="260.0" text="1 temporadas" textFill="#ff7520" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -532,9 +532,9 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula0041" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie04" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                                <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
@@ -544,7 +544,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula0041" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#ff7520" wrapText="true">
+                                                <Label fx:id="temporadasSerie04" prefHeight="18.0" prefWidth="260.0" text="1 temporadas" textFill="#ff7520" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -561,9 +561,9 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula0051" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie05" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                                <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
@@ -573,7 +573,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula0051" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#ff7520" wrapText="true">
+                                                <Label fx:id="temporadasSerie05" prefHeight="18.0" prefWidth="260.0" text="1 temporadas" textFill="#ff7520" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -590,9 +590,9 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula0061" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie06" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                                <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
@@ -602,7 +602,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula0061" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#ff7520" wrapText="true">
+                                                <Label fx:id="temporadasSerie06" prefHeight="18.0" prefWidth="260.0" text="1 temporadas" textFill="#ff7520" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -631,31 +631,31 @@
                               </VBox>
                            </content>
                            <GridPane.margin>
-                              <Insets />
+                              <Insets right="6.0" />
                            </GridPane.margin>
                         </ScrollPane>
                         <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <content>
-                              <VBox alignment="TOP_CENTER" prefHeight="820.0" prefWidth="386.0" spacing="10.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
+                              <VBox alignment="TOP_CENTER" prefHeight="820.0" prefWidth="380.0" spacing="10.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                                  <padding>
                                     <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
                                  </padding>
                                  <children>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula001" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav00" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
                                              <children>
-                                                <Label fx:id="tituloPelicula001" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="tituloFav00" alignment="TOP_LEFT" onMouseClicked="#goToTitulo" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula001" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav00" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -672,19 +672,19 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula0012" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav01" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
                                              <children>
-                                                <Label fx:id="tituloPelicula0012" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="tituloFav01" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula0012" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav01" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -701,19 +701,19 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula0022" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav02" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
                                              <children>
-                                                <Label fx:id="tituloPelicula0022" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="tituloFav02" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula0022" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav02" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -730,19 +730,19 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula0032" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav03" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
                                              <children>
-                                                <Label fx:id="tituloPelicula0032" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="tituloFav03" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula0032" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav03" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -759,19 +759,19 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula0042" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav04" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
                                              <children>
-                                                <Label fx:id="tituloPelicula0042" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="tituloFav04" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula0042" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav04" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -788,19 +788,19 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula0052" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav05" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
                                              <children>
-                                                <Label fx:id="tituloPelicula0052" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="tituloFav05" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula0052" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav05" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -817,19 +817,19 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula0062" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav06" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
                                           </ImageView>
                                           <VBox>
                                              <children>
-                                                <Label fx:id="tituloPelicula0062" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
+                                                <Label fx:id="tituloFav06" alignment="TOP_LEFT" prefHeight="82.0" prefWidth="260.0" text="Titulo" textFill="WHITE" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="directorPelicula0062" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav06" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -849,7 +849,7 @@
                                           <Insets bottom="3.0" left="6.0" right="6.0" top="3.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <Label fx:id="lblVerMasPeliculas2" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#verTodasMisPeliculas" prefHeight="50.0" prefWidth="261.0" text="-  VER MÁS  -" textFill="WHITE" wrapText="true">
+                                    <Label fx:id="lblVerMasFavoritos" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#verTodosMisFavoritos" prefHeight="50.0" prefWidth="261.0" text="-  VER MÁS  -" textFill="WHITE" wrapText="true">
                                        <font>
                                           <Font name="System Bold" size="20.0" />
                                        </font>
@@ -858,7 +858,7 @@
                               </VBox>
                            </content>
                            <GridPane.margin>
-                              <Insets />
+                              <Insets right="6.0" />
                            </GridPane.margin>
                         </ScrollPane>
                      </children>
