@@ -6,6 +6,8 @@ import java.io.StringWriter;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
@@ -30,6 +32,13 @@ public class DialogNotificator {
     alert.setTitle(null);
     alert.setHeaderText("Login correcto");
     alert.setContentText("Bienvenido " + nombre);
+    Image logo = new Image("./images/logo/logo.png"); // Cambia "ruta/del/archivo/logo.png" a la ruta de tu archivo de imagen
+    ImageView imageView = new ImageView(logo);
+    imageView.setFitWidth(50); // Ajusta el ancho de la imagen según lo necesites
+    imageView.setFitHeight(50); // Ajusta la altura de la imagen según lo necesites
+
+    // Establecer el logo como gráfico en el diálogo
+    alert.setGraphic(imageView);
 
     alert.showAndWait();
   }
@@ -40,6 +49,13 @@ public class DialogNotificator {
     alert.setTitle(null);
     alert.setHeaderText("Login incorrecto");
     alert.setContentText("Usuario o contraseña incorrectos");
+    Image logo = new Image("./images/logo/logo.png"); // Cambia "ruta/del/archivo/logo.png" a la ruta de tu archivo de imagen
+    ImageView imageView = new ImageView(logo);
+    imageView.setFitWidth(50); // Ajusta el ancho de la imagen según lo necesites
+    imageView.setFitHeight(50); // Ajusta la altura de la imagen según lo necesites
+
+    // Establecer el logo como gráfico en el diálogo
+    alert.setGraphic(imageView);
 
     alert.showAndWait();
   }
@@ -50,6 +66,13 @@ public class DialogNotificator {
     alert.setTitle(null);
     alert.setHeaderText("Error de conexión");
     alert.setContentText("Error al conectar con la base de datos");
+    Image logo = new Image("./images/logo/logo.png"); // Cambia "ruta/del/archivo/logo.png" a la ruta de tu archivo de imagen
+    ImageView imageView = new ImageView(logo);
+    imageView.setFitWidth(50); // Ajusta el ancho de la imagen según lo necesites
+    imageView.setFitHeight(50); // Ajusta la altura de la imagen según lo necesites
+
+    // Establecer el logo como gráfico en el diálogo
+    alert.setGraphic(imageView);
 
     alert.showAndWait();
   }
@@ -60,6 +83,13 @@ public class DialogNotificator {
     alert.setTitle(null);
     alert.setHeaderText("Campos vacios");
     alert.setContentText("Por favor, rellene todos los campos");
+    Image logo = new Image("./images/logo/logo.png"); // Cambia "ruta/del/archivo/logo.png" a la ruta de tu archivo de imagen
+    ImageView imageView = new ImageView(logo);
+    imageView.setFitWidth(50); // Ajusta el ancho de la imagen según lo necesites
+    imageView.setFitHeight(50); // Ajusta la altura de la imagen según lo necesites
+
+    // Establecer el logo como gráfico en el diálogo
+    alert.setGraphic(imageView);
 
     alert.showAndWait();
   }
@@ -97,6 +127,13 @@ public class DialogNotificator {
 
     // Establece el contenido expansible en un cuadro de diálogo
     alert.getDialogPane().setExpandableContent(expContent);
+    Image logo = new Image("./images/logo/logo.png"); // Cambia "ruta/del/archivo/logo.png" a la ruta de tu archivo de imagen
+    ImageView imageView = new ImageView(logo);
+    imageView.setFitWidth(50); // Ajusta el ancho de la imagen según lo necesites
+    imageView.setFitHeight(50); // Ajusta la altura de la imagen según lo necesites
+
+    // Establecer el logo como gráfico en el diálogo
+    alert.setGraphic(imageView);
 
     alert.showAndWait();
   }
@@ -127,6 +164,14 @@ public class DialogNotificator {
     VBox vbox = new VBox(content);
     // Vbox permite que el contenido se ajuste al tamaño del alert
     alert.getDialogPane().setContent(vbox);
+    Image logo = new Image("./images/logo/logo.png"); // Cambia "ruta/del/archivo/logo.png" a la ruta de tu archivo de imagen
+    ImageView imageView = new ImageView(logo);
+    imageView.setFitWidth(50); // Ajusta el ancho de la imagen según lo necesites
+    imageView.setFitHeight(50); // Ajusta la altura de la imagen según lo necesites
+
+    // Establecer el logo como gráfico en el diálogo
+    alert.setGraphic(imageView);
+
     alert.showAndWait();
   }
 
@@ -140,6 +185,14 @@ public class DialogNotificator {
     alert.setTitle(null);
     alert.setHeaderText("Registro correcto");
     alert.setContentText("Registro completado para " + usuario.getUsername());
+    Image logo = new Image("./images/logo/logo.png"); // Cambia "ruta/del/archivo/logo.png" a la ruta de tu archivo de imagen
+    ImageView imageView = new ImageView(logo);
+    imageView.setFitWidth(50); // Ajusta el ancho de la imagen según lo necesites
+    imageView.setFitHeight(50); // Ajusta la altura de la imagen según lo necesites
+
+    // Establecer el logo como gráfico en el diálogo
+    alert.setGraphic(imageView);
+
     alert.showAndWait();
   }
 
@@ -148,6 +201,14 @@ public class DialogNotificator {
     alert.setTitle(null);
     alert.setHeaderText("Usuario deslogeado");
     alert.setContentText("Volviendo a la pantalla de inicio.");
+    Image logo = new Image("./images/logo/logo.png"); // Cambia "ruta/del/archivo/logo.png" a la ruta de tu archivo de imagen
+    ImageView imageView = new ImageView(logo);
+    imageView.setFitWidth(50); // Ajusta el ancho de la imagen según lo necesites
+    imageView.setFitHeight(50); // Ajusta la altura de la imagen según lo necesites
+
+    // Establecer el logo como gráfico en el diálogo
+    alert.setGraphic(imageView);
+
     alert.showAndWait();
   }
 }

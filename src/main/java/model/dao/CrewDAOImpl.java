@@ -7,12 +7,12 @@ import org.hibernate.resource.transaction.spi.TransactionStatus;
 
 import model.Crew;
 
-public class CrewDaoImpl extends CommonDaoImpl<Crew> implements CrewDaoI {
+public class CrewDAOImpl extends CommonDAOImpl<Crew> implements CrewDaoI {
 
 	// Sesion para Crew
 	private Session session;
 
-	public CrewDaoImpl(Session session) {
+	public CrewDAOImpl(Session session) {
 		super(session);
 		this.session = session;
 	}

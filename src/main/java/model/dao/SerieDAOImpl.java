@@ -7,11 +7,11 @@ import org.hibernate.resource.transaction.spi.TransactionStatus;
 
 import model.Serie;
 
-public class SerieDaoImpl extends CommonDaoImpl<Serie> implements SerieDaoI {
+public class SerieDAOImpl extends CommonDAOImpl<Serie> implements SerieDaoI {
 
 	private Session session;
 
-	public SerieDaoImpl(Session session) {
+	public SerieDAOImpl(Session session) {
 		super(session);
 		this.session = session;
 	}

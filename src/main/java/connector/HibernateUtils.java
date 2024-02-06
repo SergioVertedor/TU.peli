@@ -53,10 +53,8 @@ public class HibernateUtils {
 
   /** Método que inicia la transacción. */
   public static void startTransaction() {
-    if (!session.getTransaction().isActive()) {
-      transaction = session.beginTransaction();
-    } else {
-      transaction = session.getTransaction();
+    if (transaction == null || !transaction.isActive()) {
+     transaction = session.beginTransaction();
     }
   }
 

@@ -5,7 +5,7 @@ import model.Pelicula;
 import org.hibernate.Session;
 
 /** Clase con el DAO generico, CommonDaoImpl y la interfaz WorkInt */
-public class PeliculaImpl extends CommonDaoImpl<Pelicula> implements PeliculaInt {
+public class PeliculaImpl extends CommonDAOImpl<Pelicula> implements PeliculaInt {
 
   /**
    * Constructor de la clase

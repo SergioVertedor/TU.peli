@@ -33,7 +33,6 @@ public class RegisterValidator {
     // Validación de duplicados de nombre de usuario y correo electrónico.
     AppUserImpl appUserImpl = new AppUserImpl(HibernateUtils.getSession());
     List<AppUser> users = appUserImpl.searchAll();
-    HibernateUtils.clearSession();
 
     for (AppUser user : users) {
       if (user.getUsername().equals(username)) {
@@ -77,6 +76,7 @@ public class RegisterValidator {
       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
       String fechaFormateada = fechaActual.format(formatter);
       AppUser usuario = new AppUser(username, email, RSAUtils.cifra(password), "", fechaFormateada, "");
+      appUserImpl = new AppUserImpl(HibernateUtils.getSession());
       appUserImpl.insert(usuario);
       dialogNotificator.notifyRegister(usuario);
       return true;

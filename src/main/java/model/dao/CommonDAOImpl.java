@@ -4,11 +4,9 @@ import connector.HibernateUtils;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.resource.transaction.spi.TransactionStatus;
 
 /** Clase con el DAO generico, CommonDaoImpl */
-public abstract class CommonDaoImpl<T> implements CommonDaoInt<T> {
+public abstract class CommonDAOImpl<T> implements CommonDaoInt<T> {
 
   /** Tipo de clase */
   private Class<T> entityClass;
@@ -22,7 +20,7 @@ public abstract class CommonDaoImpl<T> implements CommonDaoInt<T> {
    * @param session Session de la base de datos
    */
   @SuppressWarnings("unchecked")
-  protected CommonDaoImpl(Session session) {
+  protected CommonDAOImpl(Session session) {
     setEntityClass(
         (Class<T>)
             ((ParameterizedType) this.getClass().getGenericSuperclass())
@@ -33,15 +31,15 @@ public abstract class CommonDaoImpl<T> implements CommonDaoInt<T> {
   /** Metodo insert, que inserta un objeto en la base de datos */
   public void insert(final T paramT) {
     try {
-      HibernateUtils.openSession();
+      session = HibernateUtils.getSession();
       HibernateUtils.startTransaction();
       session.persist(paramT);
       HibernateUtils.flushSession();
-      HibernateUtils.clearSession();
       HibernateUtils.commitTransaction();
     } catch (Exception e) {
       HibernateUtils.rollbackTransaction();
       System.out.println("Error al insertar.");
+      System.out.println(e.getMessage());
     } finally {
       HibernateUtils.closeSession();
     }
@@ -54,7 +52,6 @@ public abstract class CommonDaoImpl<T> implements CommonDaoInt<T> {
       HibernateUtils.startTransaction();
       HibernateUtils.flushSession();
       HibernateUtils.commitTransaction();
-
     } catch (Exception e) {
       HibernateUtils.rollbackTransaction();
       System.out.println("Error al actualizar.");
@@ -65,23 +62,32 @@ public abstract class CommonDaoImpl<T> implements CommonDaoInt<T> {
 
   /** Metodo que elimina un objeto de la base de datos */
   public void delete(final T paramT) {
-    if (!session.getTransaction().equals(TransactionStatus.ACTIVE)) {
-      session.getTransaction().begin();
+    try {
+      session = HibernateUtils.getSession();
+      HibernateUtils.startTransaction();
+      session.remove(paramT);
+      HibernateUtils.commitTransaction();
+    } catch (Exception e) {
+      HibernateUtils.rollbackTransaction();
+      System.out.println("Error al eliminar.");
+      System.out.println(e.getMessage());
+    } finally {
+      HibernateUtils.closeSession();
     }
-    session.remove(paramT);
-    session.getTransaction().commit();
   }
 
-  /** Metodo que lista todos los objetos de la base de datos */
-  @SuppressWarnings("unchecked")
+  /** Método que lista todos los objetos de la base de datos */
   public List<T> searchAll() {
-    // if (!session.getTransaction().isActive()) {
-    if (!session.getTransaction().getStatus().equals(TransactionStatus.ACTIVE)) {
-      session.getTransaction().begin();
+   HibernateUtils.openSession();
+      List<T> list = null;
+      try {
+          list = HibernateUtils.getSession().createQuery("FROM " + this.entityClass.getName(), this.entityClass).list();
+    } catch (Exception e) {
+      System.out.println("Error al listar.");
+    } finally {
+      HibernateUtils.closeSession();
     }
-
-    // Devuelve todos los objetos
-    return session.createQuery("FROM " + this.entityClass.getName(), this.entityClass).list();
+      return list;
   }
 
   /**
