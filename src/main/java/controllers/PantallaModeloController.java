@@ -81,90 +81,128 @@ public class PantallaModeloController {
 	@FXML
 	private TextField txtBusqueda;
 
-  @FXML
-  void btnBuscarPressed(MouseEvent event) {
-    PaneSwitcher.switchPane("PaneBusqueda", paneContent);
-    imgSection.setImage(new Image("images/sections/Filmoteca.png"));
-  }
+	/**
+	 * Genera una búsqueda con el texto insertado en txtBusqueda
+	 * @param event
+	 */
+	@FXML
+	void btnBuscarPressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneBusqueda", paneContent);
+		imgSection.setImage(new Image("images/sections/Filmoteca.png"));
+	}
 
-  @FXML
-  void cerrarSesionPressed(MouseEvent event) {
-    var sw = new SceneSwitcher();
-    try {
-      PropertiesManager.setRememberLogin("0");
-      SessionHandler.setAppUser(null);
-      var dn = new DialogNotificator();
-      dn.logoutNotification();
-      sw.switchScene("PantallaLogin");
-    } catch (IOException e) {
-      System.out.println("Error al cargar la ventana de inicio de sesión");
-    }
-  }
+	/**
+	 * Cierra la sesión para el usuario activo
+	 * @param event
+	 */
+	@FXML
+	void cerrarSesionPressed(MouseEvent event) {
+		var sw = new SceneSwitcher();
+		try {
+			PropertiesManager.setRememberLogin("0");
+			SessionHandler.setAppUser(null);
+			var dn = new DialogNotificator();
+			dn.logoutNotification();
+			sw.switchScene("PantallaLogin");
+		} catch (IOException e) {
+			System.out.println("Error al cargar la ventana de inicio de sesión");
+		}
+	}
 
-	// goToFilmoteca
+	/**
+	 * Navega al panel "Filmoteca"
+	 * @param event
+	 */
 	@FXML
 	void goToFilmoteca(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
 		imgSection.setImage(new Image("images/sections/Filmoteca.png"));
 	}
 
-	// goToPeliculas
+	/**
+	 * Navega al panel "Películas"
+	 * @param event
+	 */
 	@FXML
 	void goToPeliculas(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
 		imgSection.setImage(new Image("images/sections/Peliculas.png"));
 	}
 
-	// goToSeries
+	/**
+	 * Navega al panel "Series"
+	 * @param event
+	 */
 	@FXML
 	void goToSeries(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
 		imgSection.setImage(new Image("images/sections/Series.png"));
 	}
 
-	// goToTopPeliculas
+	/**
+	 * Navega al panel "Top Películas"
+	 * @param event
+	 */
 	@FXML
 	void goToTopPeliculas(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneTop", centralPane);
 		imgSection.setImage(new Image("images/sections/Peliculas.png"));
 	}
 
-	// goToTopSeries
+	/**
+	 * Navega al panel "Top Series"
+	 * @param event
+	 */
 	@FXML
 	void goToTopSeries(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneTop", centralPane);
 		imgSection.setImage(new Image("images/sections/Series.png"));
 	}
 
-	// goToCartelera
+	/**
+	 * Navega al panel "Cartelera"
+	 * @param event
+	 */
 	@FXML
 	void goToCartelera(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneCartelera", centralPane);
 		imgSection.setImage(new Image("images/sections/Cartelera.png"));
 	}
 
-	// goToProximamente
+	/**
+	 * Navega al panel "Próximamente"
+	 * @param event
+	 */
 	@FXML
 	void goToProximamente(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneProximamente", centralPane);
 		imgSection.setImage(new Image("images/sections/Proximamente.png"));
 	}
 
-	// goToMisListas
+	/**
+	 * Navega al panel "Mis Listas"
+	 * @param event
+	 */
 	@FXML
 	void goToMisListas(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneMisListas", centralPane);
 		imgSection.setImage(new Image("images/sections/Favoritos.png"));
 	}
 
-	// goToInicio REPETIDO
+	/**
+	 * Navega al panel "Inicio"
+	 * @param event
+	 */
 	@FXML
 	void goToInicio(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneInicio", centralPane);
 		// TODO: que no se vea la imagen de section
 	}
 
-	// goToPerfilUsuario REPETIDO
+	/**
+	 * Navega al panel "Usuario"
+	 * @param event
+	 */
 	@FXML
 	void goToUserProfile(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneUsuario", centralPane);
