@@ -14,96 +14,168 @@ import utils.PaneSwitcher;
 
 public class PantallaModeloController {
 
-  @FXML private ResourceBundle resources;
+	@FXML
+	private ResourceBundle resources;
 
-  @FXML private URL location;
+	@FXML
+	private URL location;
 
-  @FXML private ImageView btnBuscar;
+	@FXML
+	private ImageView btnBuscar;
 
-  @FXML private Pane centralPane;
+	@FXML
+	private Pane centralPane;
 
-  @FXML private ImageView imgClose;
+	@FXML
+	private ImageView imgClose;
 
-  @FXML private ImageView imgLogo;
+	@FXML
+	private ImageView imgLogo;
 
-  @FXML private ImageView imgSection;
+	@FXML
+	private ImageView imgSection;
 
-  @FXML private ImageView imgUser;
+	@FXML
+	private ImageView imgUser;
 
-  @FXML private Label lblCartelera;
+	@FXML
+	private Label lblCartelera;
 
-  @FXML private Label lblCerrarSesion;
+	@FXML
+	private Label lblCerrarSesion;
 
-  @FXML private Label lblFilmoteca;
+	@FXML
+	private Label lblFilmoteca;
 
-  @FXML private Label lblInicio;
+	@FXML
+	private Label lblInicio;
 
-  @FXML private Label lblMisListas;
+	@FXML
+	private Label lblMisListas;
 
-  @FXML private Label lblPeliculas;
+	@FXML
+	private Label lblPeliculas;
 
-  @FXML private Label lblProximamente;
+	@FXML
+	private Label lblProximamente;
 
-  @FXML private Label lblSeries;
+	@FXML
+	private Label lblSeries;
 
-  @FXML private Label lblTopPeliculas;
+	@FXML
+	private Label lblTopPeliculas;
 
-  @FXML private Label lblTopSeries;
+	@FXML
+	private Label lblTopSeries;
 
-  @FXML private Label lblUserName1;
+	@FXML
+	private Label lblUserName1;
 
-  @FXML private Pane paneContent;
+	@FXML
+	private Pane paneContent;
 
-  @FXML private GridPane paneHeader;
+	@FXML
+	private GridPane paneHeader;
 
-  @FXML private TextField txtBusqueda;
+	@FXML
+	private TextField txtBusqueda;
 
-  @FXML
-  void btnBuscarPressed(MouseEvent event) {}
+	@FXML
+	void btnBuscarPressed(MouseEvent event) {
+	}
 
-  @FXML
-  void cerrarSesionPressed(MouseEvent event) {}
+	//goToPerfilUsuario
+	@FXML
+	void imgUserPressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneUsuario", centralPane);
+		// TODO: que no se vea la imagen de section
+	}
 
-  @FXML
-  void imgUserPressed(MouseEvent event) {}
+	@FXML
+	void cerrarSesionPressed(MouseEvent event) {
+	}
 
-  @FXML
-  void lblCarteleraPressed(MouseEvent event) {}
+	// goToInicio REPETIDO
+	@FXML
+	void lblInicioPressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneInicio", centralPane);
+		// TODO: que no se vea la imagen de section
+	}
 
-  @FXML
-  void lblFilmotecaPressed(MouseEvent event) {}
+	// goToFilmoteca
+	@FXML
+	void lblFilmotecaPressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
+		imgSection.setImage(new Image("images/sections/Filmoteca.png"));
+	}
 
-  @FXML
-  void lblInicioPressed(MouseEvent event) {}
+	// goToPeliculas
+	@FXML
+	void lblPeliculasPressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
+		imgSection.setImage(new Image("images/sections/Peliculas.png"));
+	}
 
-  @FXML
-  void lblMisListasPressed(MouseEvent event) {}
+	// goToSeries
+	@FXML
+	void lblSeriesPressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
+		imgSection.setImage(new Image("images/sections/Series.png"));
+	}
 
-  @FXML
-  void lblPeliculasPressed(MouseEvent event) {}
+	// goToTopPeliculas
+	@FXML
+	void lblTopPeliculasPressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneTop", centralPane);
+		imgSection.setImage(new Image("images/sections/Peliculas.png"));
+	}
 
-  @FXML
-  void lblProximamentePressed(MouseEvent event) {}
+	// goToTopSeries
+	@FXML
+	void lblTopSeriesPressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneTop", centralPane);
+		imgSection.setImage(new Image("images/sections/Series.png"));
+	}
 
-  @FXML
-  void lblSeriesPressed(MouseEvent event) {}
+	// goToCartelera
+	@FXML
+	void lblCarteleraPressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneCartelera", centralPane);
+		imgSection.setImage(new Image("images/sections/Cartelera.png"));
+	}
 
-  @FXML
-  void lblTopPeliculasPressed(MouseEvent event) {}
+	// goToProximamente
+	@FXML
+	void lblProximamentePressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneProximamente", centralPane);
+		imgSection.setImage(new Image("images/sections/Proximamente.png"));
+	}
 
-  @FXML
-  void lblTopSeriesPressed(MouseEvent event) {}
+	// goToMisListas
+	@FXML
+	void lblMisListasPressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneMisListas", centralPane);
+		imgSection.setImage(new Image("images/sections/Favoritos.png"));
+	}
 
-  @FXML
-  void logoPressed(MouseEvent event) {}
+	// goToInicio REPETIDO
+	@FXML
+	void logoPressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneInicio", centralPane);
+		// TODO: que no se vea la imagen de section
+	}
 
-  @FXML
-  void usernamePressed(MouseEvent event) {}
+	// goToPerfilUsuario REPETIDO
+	@FXML
+	void usernamePressed(MouseEvent event) {
+		PaneSwitcher.switchPane("PaneUsuario", centralPane);
+		// TODO: que no se vea la imagen de section
+	}
 
-  @FXML
-  void initialize() {
-    PaneSwitcher.switchPane("PaneInicio", centralPane);
-    imgLogo.setImage(new Image("images/logo/logo.png"));
-    imgUser.setImage(new Image("images/user.png"));
-  }
+	@FXML
+	void initialize() {
+		PaneSwitcher.switchPane("PaneInicio", centralPane);
+		imgLogo.setImage(new Image("images/logo/logo.png"));
+		imgUser.setImage(new Image("images/user.png"));
+	}
 }
