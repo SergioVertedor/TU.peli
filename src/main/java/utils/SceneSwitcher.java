@@ -68,6 +68,9 @@ public class SceneSwitcher {
     }
   }
 
+  /**
+   * Método que prepara la ventana principal de la aplicación.
+   */
   public void setupStage() {
     // Configura y muestra una nueva ventana modal no redimensionable
     stage = new Stage();
