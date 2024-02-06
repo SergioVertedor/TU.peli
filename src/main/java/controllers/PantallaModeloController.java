@@ -3,7 +3,6 @@ package controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -102,6 +101,6 @@ public class PantallaModeloController {
 
   @FXML
   void initialize() {
-    PaneSwitcher.switchPane("PaneInicio", paneContent);
+    PaneSwitcher.switchPane("PaneInicio", centralPane);
   }
 }

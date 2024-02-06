@@ -11,7 +11,7 @@ import lombok.Setter;
 public class PaneSwitcher {
 
   /** Método que cambia el panel principal de la aplicación cargando un nuevo archivo FXML. */
-  public static void switchPane(String paneTarget, Pane paneContainer) {
+  public static void switchPane(String paneTarget, Pane centralPane) {
     StringBuilder path = new StringBuilder();
     String fxmlFile = path.append("/views/").append(paneTarget).append(".fxml").toString();
 
@@ -19,7 +19,12 @@ public class PaneSwitcher {
       FXMLLoader loader = new FXMLLoader();
       loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
       Pane myPane = loader.load();
-      paneContainer.getChildren().setAll(myPane);
+
+      // Ajuste resolución maximizada
+      myPane.setMinHeight(centralPane.getPrefHeight());
+      myPane.setMinWidth(centralPane.getPrefWidth());
+      
+      centralPane.getChildren().setAll(myPane);
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
       System.out.println(e);

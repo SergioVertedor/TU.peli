@@ -6,147 +6,142 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneInicioController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneInicioController">
    <children>
-      <Pane prefHeight="740.0" prefWidth="1284.0">
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #E9E9E9;">
          <children>
-            <VBox alignment="TOP_CENTER" prefHeight="740.0" prefWidth="1284.0" style="-fx-background-color: #E9E9E9;">
+            <GridPane alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="924.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <VBox.margin>
+                  <Insets left="180.0" right="180.0" top="40.0" />
+               </VBox.margin>
                <children>
-                  <GridPane alignment="CENTER" prefHeight="160.0" prefWidth="924.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <VBox.margin>
-                        <Insets left="180.0" right="180.0" top="40.0" />
-                     </VBox.margin>
-                     <children>
-                        <ImageView fx:id="imgFilmoteca" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToFilmoteca" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <GridPane.margin>
-                              <Insets />
-                           </GridPane.margin>
-                           <image>
-                              <Image url="@../images/sections/Filmoteca.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgPeliculas" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToPeliculas" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/sections/Pelicula.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgSeries" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToSeries" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/sections/Series.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgCartelera" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToCartelera" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/sections/Cartelera.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgProximamente" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToProximamente" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/sections/Proximamente.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgFavoritos" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToMisListas" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/sections/Favoritos.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </GridPane>
-                  <ImageView fx:id="imgInicio" fitHeight="241.0" fitWidth="723.0" pickOnBounds="true">
-                     <VBox.margin>
-                        <Insets top="30.0" />
-                     </VBox.margin>
+                  <ImageView fx:id="imgFilmoteca" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToFilmoteca" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
                      <image>
-                        <Image url="@../images/others/imgInicio.png" />
+                        <Image url="@../images/sections/Filmoteca.png" />
                      </image>
                   </ImageView>
-                  <GridPane alignment="CENTER" prefHeight="260.0" prefWidth="1263.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <ImageView fx:id="imgObra01" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <GridPane.margin>
-                              <Insets />
-                           </GridPane.margin>
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgObra2" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterSerie.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgObra3" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgObra4" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterSerie.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgObra5" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgObra6" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterSerie.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgObra7" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgObra8" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterSerie.jpg" />
-                           </image>
-                        </ImageView>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="50.0" left="50.0" right="50.0" top="30.0" />
-                     </VBox.margin>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <padding>
-                        <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
-                     </padding>
-                  </GridPane>
+                  <ImageView fx:id="imgPeliculas" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToPeliculas" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../images/sections/Pelicula.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgSeries" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToSeries" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../images/sections/Series.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgCartelera" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToCartelera" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../images/sections/Cartelera.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgProximamente" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToProximamente" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../images/sections/Proximamente.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgFavoritos" fitHeight="130.0" fitWidth="112.0" nodeOrientation="INHERIT" onMouseClicked="#goToMisListas" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../images/sections/Favoritos.png" />
+                     </image>
+                  </ImageView>
                </children>
-            </VBox>
+            </GridPane>
+            <ImageView fx:id="imgInicio" fitHeight="241.0" fitWidth="723.0" pickOnBounds="true">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../images/others/imgInicio.png" />
+               </image>
+            </ImageView>
+            <GridPane alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fx:id="imgObra01" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <image>
+                        <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgObra2" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../images/examples/ejemploPosterSerie.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgObra3" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgObra4" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../images/examples/ejemploPosterSerie.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgObra5" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgObra6" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../images/examples/ejemploPosterSerie.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgObra7" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgObra8" fitHeight="190.0" fitWidth="115.0" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../images/examples/ejemploPosterSerie.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="50.0" left="50.0" right="50.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+               </padding>
+            </GridPane>
          </children>
-      </Pane>
+      </VBox>
    </children>
 </AnchorPane>
