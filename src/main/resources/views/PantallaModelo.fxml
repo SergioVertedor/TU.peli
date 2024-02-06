@@ -27,7 +27,7 @@
           <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fx:id="imgLogo" fitHeight="100.0" fitWidth="80.0" onDragDetected="#logoPressed" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgLogo" fitHeight="80.0" fitWidth="80.0" onDragDetected="#logoPressed" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../resources/images/logo/logo.png" />
                </image>
@@ -35,7 +35,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
             </ImageView>
-            <ImageView fx:id="imgSection" fitHeight="100.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+            <ImageView fx:id="imgSection" fitHeight="80.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                <image>
                   <Image url="@../../resources/images/sections/Pelicula.png" />
                </image>
@@ -116,7 +116,7 @@
             <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
          </padding>
          <items>
-            <VBox prefHeight="839.0" prefWidth="226.0" spacing="20.0">
+            <VBox prefHeight="839.0" prefWidth="220.0" spacing="20.0">
                <children>
                   <Label fx:id="lblInicio" alignment="TOP_LEFT" onDragDetected="#lblInicioPressed" text="INICIO">
                      <font>

@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 public class PaneTopController {
 
@@ -65,6 +66,11 @@ public class PaneTopController {
 
     @FXML
     private RadioButton rbTodos;
+    
+    @FXML
+    void onMouseEnteredTitle(MouseEvent event) {
+
+    }
 
     @FXML
     void initialize() {

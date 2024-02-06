@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -48,37 +48,37 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <ImageView fx:id="imgPoster1" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgPoster1" fitHeight="230.0" fitWidth="177.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgPoster2" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                                    <ImageView fx:id="imgPoster2" fitHeight="230.0" fitWidth="177.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgPoster3" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                                    <ImageView fx:id="imgPoster3" fitHeight="230.0" fitWidth="177.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgPoster4" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                                    <ImageView fx:id="imgPoster4" fitHeight="230.0" fitWidth="177.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgPoster5" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                                    <ImageView fx:id="imgPoster5" fitHeight="230.0" fitWidth="177.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgPoster6" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+                                    <ImageView fx:id="imgPoster6" fitHeight="230.0" fitWidth="177.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgPoster7" fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
+                                    <ImageView fx:id="imgPoster7" fitHeight="230.0" fitWidth="177.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                        </image>
@@ -117,30 +117,29 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" spacing="20.0">
                            <children>
-                              <Group>
-                                 <children>
-                                    <RadioButton fx:id="rbTodos" mnemonicParsing="false" selected="true" text="Todos los tiempos" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </RadioButton>
-                                    <RadioButton fx:id="rbDecada" layoutX="165.0" mnemonicParsing="false" text="Última década" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </RadioButton>
-                                    <RadioButton fx:id="rbAnno" layoutX="305.0" mnemonicParsing="false" text="Este año" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </RadioButton>
-                                    <RadioButton fx:id="rb3Meses" layoutX="406.0" mnemonicParsing="false" text="Últimos 3 meses" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </RadioButton>
-                                 </children>
-                              </Group>
+                              <RadioButton fx:id="rbTodos" mnemonicParsing="false" selected="true" text="Todos los tiempos" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="btnGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="rbDecada" mnemonicParsing="false" text="Última década" textFill="WHITE" toggleGroup="$btnGroup">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rbAnno" mnemonicParsing="false" text="Este año" textFill="WHITE" toggleGroup="$btnGroup">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rb3Meses" mnemonicParsing="false" text="Últimos 3 meses" textFill="WHITE" toggleGroup="$btnGroup">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </RadioButton>
                            </children>
                            <GridPane.margin>
                               <Insets left="25.0" />
