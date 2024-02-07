@@ -15,8 +15,7 @@ public class PaneSwitcher {
 
   /** Método que cambia el panel principal de la aplicación cargando un nuevo archivo FXML. */
   public static void switchPane(String paneTarget, Pane centralPane) {
-    StringBuilder path = new StringBuilder();
-    String fxmlFile = path.append("/views/").append(paneTarget).append(".fxml").toString();
+    String fxmlFile = "/views/" + paneTarget + ".fxml";
 
     try {
       FXMLLoader loader = new FXMLLoader();
@@ -26,7 +25,7 @@ public class PaneSwitcher {
       // Ajuste resolución maximizada
       myPane.setPrefHeight(centralPane.getPrefHeight());
       myPane.setPrefWidth(centralPane.getPrefWidth());
-      
+
       // Hacer que los contenedores se expandan si el tamaño de la ventana cambia
       HBox.setHgrow(myPane, Priority.ALWAYS);
       VBox.setVgrow(myPane, Priority.ALWAYS);

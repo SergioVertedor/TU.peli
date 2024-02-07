@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -9,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import thread.WorkerApiLoader;
 import utils.*;
 
 public class PantallaModeloController {
@@ -182,9 +184,14 @@ public class PantallaModeloController {
 	}
 
 	@FXML
-	void initialize() {
+	void initialize() throws InterruptedException {
 		PaneSwitcher.switchPane("PaneInicio", centralPane);
 		imgLogo.setImage(new Image("images/logo/logo.png"));
 		imgUser.setImage(new Image("images/user.png"));
+		var workerThread = new WorkerApiLoader();
+		workerThread.start();
 	}
+
+
+
 }
