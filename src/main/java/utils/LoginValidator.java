@@ -33,7 +33,6 @@ public class LoginValidator {
     List<AppUser> users = appUserImpl.searchAll();
     var dialogNotificator = new DialogNotificator();
     // Comprobamos que los campos no estén vacíos
-    System.out.println(userOrMail.length() + " " + password.length());
     if (userOrMail.isEmpty() || password.isEmpty()) {
         dialogNotificator.notifyEmptyFields();
     } else {
