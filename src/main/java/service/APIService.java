@@ -28,7 +28,7 @@ public class APIService {
         "https://api.themoviedb.org/3/search/movie?query="
             + name
             + "&include_adult=true&language=es-ES&page=1";
-    MovieSearchResult resultados = (MovieSearchResult) realizaPeticion(url);
+    MovieSearchResult resultados = (MovieSearchResult) doRequest(url);
     return resultados.getResults();
   }
 
@@ -45,7 +45,7 @@ public class APIService {
         "https://api.themoviedb.org/3/search/tv?query="
             + name
             + "&include_adult=true&language=es-ES&page=1";
-    TVSearchResult resultados = (TVSearchResult) realizaPeticion(url);
+    TVSearchResult resultados = (TVSearchResult) doRequest(url);
     return resultados.getResults();
   }
 
@@ -55,7 +55,7 @@ public class APIService {
    * @return Objeto Java con la respuesta de la petición HTTP.
    * @throws IOException Excepción en caso de que la petición HTTP falle.
    */
-  private Object realizaPeticion(String url) throws IOException {
+  private Object doRequest(String url) throws IOException {
     OkHttpClient client = new OkHttpClient();
     url = Formatter.acondicionaUrl(url);
     // Realizamos la petición HTTP.

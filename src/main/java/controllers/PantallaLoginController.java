@@ -42,10 +42,6 @@ public class PantallaLoginController {
     var dialogNotificator = new DialogNotificator();
     String userOrMail = txtLoginUser.getText();
     String password = txtLoginPassword.getText();
-    if (userOrMail.isEmpty() || password.isEmpty()) {
-      dialogNotificator.notifyEmptyFields();
-      return;
-    }
     LoginValidator loginValidator = new LoginValidator();
     InputValidator inputValidator = new InputValidator();
     if (inputValidator.isEmailValid(userOrMail) || inputValidator.isUserValid(userOrMail)) {
@@ -61,6 +57,10 @@ public class PantallaLoginController {
         dialogNotificator.notifyLoginError();
         txtLoginPassword.clear();
       }
+    } else {
+      dialogNotificator.notifyInvalidUserOrMail();
+      txtLoginUser.clear();
+      txtLoginPassword.clear();
     }
   }
 

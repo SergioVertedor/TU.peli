@@ -92,6 +92,7 @@ public class DialogNotificator {
     // Vbox permite que el contenido se ajuste al tamaño del alert
     alert.getDialogPane().setContent(vbox);
     activateLogos(alert);
+    alert.showAndWait();
   }
 
   /**
@@ -105,6 +106,7 @@ public class DialogNotificator {
     alert.setHeaderText("Registro correcto");
     alert.setContentText("Registro completado para " + usuario.getUsername());
     activateLogos(alert);
+    alert.showAndWait();
   }
 
   /**
@@ -116,6 +118,16 @@ public class DialogNotificator {
     alert.setHeaderText("Usuario deslogeado");
     alert.setContentText("Volviendo a la pantalla de inicio.");
     activateLogos(alert);
+    alert.showAndWait();
+  }
+
+  public void notifyInvalidUserOrMail() {
+    Alert alert = new Alert(Alert.AlertType.WARNING);
+    alert.setTitle(null);
+    alert.setHeaderText("Usuario o email incorrectos");
+    alert.setContentText("Por favor, introduzca un usuario y  email válidos");
+    activateLogos(alert);
+    alert.showAndWait();
   }
 
   private void activateLogos(Alert alert) {
@@ -129,6 +141,7 @@ public class DialogNotificator {
     stage
         .getIcons()
         .add(new Image(Objects.requireNonNull(this.getClass().getResource(LOGO_PATH)).toString()));
-    alert.showAndWait();
   }
+
+
 }
