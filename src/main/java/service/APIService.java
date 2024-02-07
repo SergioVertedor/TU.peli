@@ -2,6 +2,11 @@ package service;
 
 import com.google.gson.Gson;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import model.Serie;
 import service.dto.movie.Movie;
 import service.dto.movie.MovieSearchResult;
 import service.dto.tv.TV;
@@ -50,6 +55,30 @@ public class APIService {
   }
 
   /**
+   * Obtiene las películas más populares de la semana.
+   * @return Array de objetos Java con los resultados de la búsqueda.
+   * @throws IOException Excepción en caso de que la petición HTTP falle.
+   */
+  public Movie[] getTrendingMovies() throws IOException {
+    // Generamos la URL de la petición HTTP.
+    String url = "https://api.themoviedb.org/3/trending/movie/week?language=es-ES";
+    MovieSearchResult resultados = (MovieSearchResult) doRequest(url);
+    return resultados.getResults();
+  }
+
+  /**
+   * Obtiene las series más populares de la semana.
+   * @return Array de objetos Java con los resultados de la búsqueda.
+   * @throws IOException Excepción en caso de que la petición HTTP falle.
+   */
+  public TV[] getTrendingSeries() throws IOException {
+    // Generamos la URL de la petición HTTP.
+    String url = "https://api.themoviedb.org/3/trending/tv/day?language=en-US";
+    TVSearchResult resultados = (TVSearchResult) doRequest(url);
+    return resultados.getResults();
+  }
+
+  /**
    * Realiza una petición HTTP a la API de TheMovieDB.
    * @param url URL de la petición HTTP.
    * @return Objeto Java con la respuesta de la petición HTTP.
@@ -75,5 +104,8 @@ public class APIService {
     // Parseamos la respuesta a un objeto Java.
     Gson gson = new Gson();
     return gson.fromJson(respuesta, Object.class);
+  }
+  private List<Object> toList(Object[] array) {
+      return new ArrayList<>(Arrays.asList(array));
   }
 }
