@@ -34,8 +34,8 @@ public class PaneInicioController {
 	// TODO: DECLARACION centralPane e imgSection del parent para cargar los
 	// distintos paneles
 	// Puesto así ahora mismo para que no falle
-	Pane centralPane;
-	ImageView imgSection;
+//	Pane centralPane;
+//	ImageView imgSection;
 
 	/**
 	 * Redirige la página hacia el apartado "Filmoteca"
@@ -44,8 +44,8 @@ public class PaneInicioController {
 	 */
 	@FXML
 	void goToFilmoteca(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
-		imgSection.setImage(new Image("images/sections/Filmoteca.png"));
+//		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
+//		imgSection.setImage(new Image("images/sections/Filmoteca.png"));
 	}
 
 	/**
@@ -55,8 +55,8 @@ public class PaneInicioController {
 	 */
 	@FXML
 	void goToPeliculas(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
-		imgSection.setImage(new Image("images/sections/Peliculas.png"));
+//		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
+//		imgSection.setImage(new Image("images/sections/Peliculas.png"));
 	}
 
 	/**
@@ -66,8 +66,8 @@ public class PaneInicioController {
 	 */
 	@FXML
 	void goToSeries(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
-		imgSection.setImage(new Image("images/sections/Series.png"));
+//		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
+//		imgSection.setImage(new Image("images/sections/Series.png"));
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class PaneInicioController {
 	 */
 	@FXML
 	void goToCartelera(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneCartelera", centralPane);
-		imgSection.setImage(new Image("images/sections/Cartelera.png"));
+//		PaneSwitcher.switchPane("PaneCartelera", centralPane);
+//		imgSection.setImage(new Image("images/sections/Cartelera.png"));
 	}
 
 	/**
@@ -88,8 +88,8 @@ public class PaneInicioController {
 	 */
 	@FXML
 	void goToProximamente(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneProximamente", centralPane);
-		imgSection.setImage(new Image("images/sections/Proximamente.png"));
+//		PaneSwitcher.switchPane("PaneProximamente", centralPane);
+//		imgSection.setImage(new Image("images/sections/Proximamente.png"));
 	}
 
 	/**
@@ -99,14 +99,14 @@ public class PaneInicioController {
 	 */
 	@FXML
 	void goToMisListas(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneMisListas", centralPane);
-		imgSection.setImage(new Image("images/sections/Favoritos.png"));
+//		PaneSwitcher.switchPane("PaneMisListas", centralPane);
+//		imgSection.setImage(new Image("images/sections/Favoritos.png"));
 	}
 
 	// Redirige al titulo seleccionado en detalle
 	@FXML
 	void imgObraPressed(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneMisListas", centralPane);
+//		PaneSwitcher.switchPane("PaneMisListas", centralPane);
 		// If pelicula o serie
 		// imgSection.setImage(new Image("images/sections/Peliculas.png"));
 		// imgSection.setImage(new Image("images/sections/Series.png"));
@@ -114,13 +114,13 @@ public class PaneInicioController {
 
 	@FXML
 	void initialize() {
-		imgFilmoteca.setImage(new Image("images/sections/Filmoteca.png"));
-		imgPeliculas.setImage(new Image("images/sections/Peliculas.png"));
-		imgSeries.setImage(new Image("images/sections/Series.png"));
-		imgCartelera.setImage(new Image("images/sections/Cartelera.png"));
-		imgProximamente.setImage(new Image("images/sections/Proximamente.png"));
-		imgFavoritos.setImage(new Image("images/sections/Favoritos.png"));
-		imgCentralInicio.setImage(new Image("images/sections/imgInicio.png"));
+//		imgFilmoteca.setImage(new Image("images/sections/Filmoteca.png"));
+//		imgPeliculas.setImage(new Image("images/sections/Peliculas.png"));
+//		imgSeries.setImage(new Image("images/sections/Series.png"));
+//		imgCartelera.setImage(new Image("images/sections/Cartelera.png"));
+//		imgProximamente.setImage(new Image("images/sections/Proximamente.png"));
+//		imgFavoritos.setImage(new Image("images/sections/Favoritos.png"));
+//		imgCentralInicio.setImage(new Image("images/sections/imgInicio.png"));
 
 		// TODO: Cargar 8 peliculas en el inicio 'imgObra00'
 
