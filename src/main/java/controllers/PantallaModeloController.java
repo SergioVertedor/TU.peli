@@ -10,7 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import thread.WorkerApiLoader;
+import application.thread.WorkerPantallaModelo;
 import utils.*;
 
 public class PantallaModeloController {
@@ -188,7 +188,7 @@ public class PantallaModeloController {
 		PaneSwitcher.switchPane("PaneInicio", centralPane);
 		imgLogo.setImage(new Image("images/logo/logo.png"));
 		imgUser.setImage(new Image("images/user.png"));
-		var workerThread = new WorkerApiLoader();
+		var workerThread = new WorkerPantallaModelo();
 		workerThread.start();
 	}
 
