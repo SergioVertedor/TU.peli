@@ -7,6 +7,7 @@ import service.dto.Genre;
 import service.dto.credits.Credits;
 import service.dto.movie.Movie;
 import service.dto.tv.TV;
+import service.dto.watchprovider.Flatrate;
 
 public class ListStorage {
   // Añadimos las listas de películas y series más populares.
@@ -26,5 +27,18 @@ public class ListStorage {
   @Setter @Getter private static List<TV> tvByGenre;
 
   // Añadimos los créditos de las películas y series.
-  @Setter @Getter private static Credits movieCredits;
+  @Setter @Getter private static Credits credits;
+
+  // Añadimos la lista de peliculas en el cine.
+  @Setter @Getter private static List<Movie> nowPlayingMovies;
+
+  // Añadimos la lista de peliculas y las series más populares.
+  @Setter @Getter private static List<Movie> topMovies;
+  @Setter @Getter private static List<Movie> topSeries;
+
+  // Añadimos la lista de peliculas que se estrenarán.
+  @Setter @Getter private static List<Movie> upcomingMovies;
+
+  // Añadimos la lista de proveedores de streaming.
+  @Setter @Getter private static List<Flatrate> watchProviders;
 }

@@ -7,5 +7,5 @@ import lombok.Getter;
 @Getter
 public class WatchProvider {
     private long id;
-    private Results results;
+    private WatchProvidersResults watchProvidersResults;
 }

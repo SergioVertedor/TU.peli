@@ -37,12 +37,12 @@ public class RSAUtils {
 	public static final String ALIAS = "tupelistore";
 
 	/**
-	 * Método que cifra el mensaje que recibe y lo devuelve en base64
+	 * Método que cifra el contenido de un password en RSA 2048 en base64
 	 *
-	 * @param mensaje mensaje a cifrar
-	 * @return mensaje cifrado en base64
+	 * @param password mensaje a cifrar
+	 * @return mensaje cifrado
 	 */
-	public static String cifra(String mensaje) {
+	public static String cifra(String password) {
 		KeyStore almacen = null;
 		try {
 			// Carga el almacén de claves desde el archivo especificado
@@ -52,29 +52,29 @@ public class RSAUtils {
 		}
 		PublicKey clavePublica = getPublicKey(almacen, ALIAS);
 		Cipher cifrador;
-		byte[] mensajeCifrado = null;
+		byte[] passwordCifrado = null;
 		try {
 			cifrador = Cipher.getInstance("RSA");
 			cifrador.init(Cipher.ENCRYPT_MODE, clavePublica);
-			mensajeCifrado = cifrador.doFinal(mensaje.getBytes());
+			passwordCifrado = cifrador.doFinal(password.getBytes());
 		} catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException
 				| BadPaddingException e) {
 			e.printStackTrace();
 		}
 
 		// Codifica el mensaje cifrado en formato Base64
-		return Base64.getEncoder().encodeToString(mensajeCifrado);
+		return Base64.getEncoder().encodeToString(passwordCifrado);
 	}
 
 	/**
-	 * Método que descifra el contenido de un mensaje cifrado en RSA 2048 en base64
+	 * Método que descifra el contenido de un password cifrado en RSA 2048 en base64
 	 *
-	 * @param mensajeCifrado mensaje cifrado en base64
+	 * @param passwordCifrado mensaje cifrado en base64
 	 * @return mensaje descifrado
 	 */
-	public static String descifra(String mensajeCifrado) {
+	public static String descifra(String passwordCifrado) {
 		KeyStore almacen = null;
-		byte[] mensajeOriginal = Base64.getDecoder().decode(mensajeCifrado);
+		byte[] passwordOriginal = Base64.getDecoder().decode(passwordCifrado);
 		byte[] resultado = null;
 		try {
 			// Carga el almacén de claves desde el archivo especificado
@@ -91,7 +91,7 @@ public class RSAUtils {
 		try {
 			cifrador = Cipher.getInstance("RSA");
 			cifrador.init(Cipher.DECRYPT_MODE, clavePrivada);
-			resultado = cifrador.doFinal(mensajeOriginal);
+			resultado = cifrador.doFinal(passwordOriginal);
 		} catch (InvalidKeyException | NoSuchAlgorithmException | NoSuchPaddingException | IllegalBlockSizeException
 				| BadPaddingException e) {
 			e.printStackTrace();

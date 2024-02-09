@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class Results {
+public class WatchProvidersResults {
     private Ad ad;
     private Ad ae;
     private Ag ag;

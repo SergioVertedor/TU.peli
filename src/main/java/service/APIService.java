@@ -11,6 +11,7 @@ import service.dto.movie.MovieDetail;
 import service.dto.movie.MovieSearchResult;
 import service.dto.tv.TVDetail;
 import service.dto.tv.TVSearchResult;
+import service.dto.watchprovider.WorkWatchProvider;
 import utils.Formatter;
 
 /** Clase que realiza peticiones HTTP a la API de TheMovieDB. */
@@ -51,19 +52,35 @@ public class APIService {
     Gson gson = new Gson();
     return gson.fromJson(doRequest(url), TVSearchResult.class);
   }
-public MovieDetail getMovieDetail(int id) throws IOException {
+
+  /**
+   * Obtiene el detalle de una película.
+   *
+   * @param id ID de la película.
+   * @return Objeto Java con los resultados de la búsqueda.
+   * @throws IOException Excepción en caso de que la petición HTTP falle.
+   */
+  public MovieDetail getMovieDetail(int id) throws IOException {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/movie/" + id + "?language=es-ES";
     Gson gson = new Gson();
     return gson.fromJson(doRequest(url), MovieDetail.class);
   }
 
+  /**
+   * Obtiene el detalle de una serie.
+   *
+   * @param id ID de la serie.
+   * @return Objeto Java con los resultados de la búsqueda.
+   * @throws IOException Excepción en caso de que la petición HTTP falle.
+   */
   public TVDetail getTVDetail(int id) throws IOException {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/tv/" + id + "?language=es-ES";
     Gson gson = new Gson();
     return gson.fromJson(doRequest(url), TVDetail.class);
   }
+
   /**
    * Obtiene las películas más populares de la semana.
    *
@@ -151,6 +168,7 @@ public MovieDetail getMovieDetail(int id) throws IOException {
 
   /**
    * Obtiene los créditos de una película.
+   *
    * @param idPelicula ID de la película.
    * @return Objeto Java con los resultados de la búsqueda.
    * @throws IOException Excepción en caso de que la petición HTTP falle.
@@ -164,6 +182,7 @@ public MovieDetail getMovieDetail(int id) throws IOException {
 
   /**
    * Obtiene los créditos de una serie.
+   *
    * @param idSerie ID de la serie.
    * @return Objeto Java con los resultados de la búsqueda.
    * @throws IOException Excepción en caso de que la petición HTTP falle.
@@ -174,6 +193,73 @@ public MovieDetail getMovieDetail(int id) throws IOException {
     Gson gson = new Gson();
     return gson.fromJson(doRequest(url), Credits.class);
   }
+
+  /**
+   * Obtiene las películas mejor valoradas.
+   *
+   * @return Objeto Java con los resultados de la búsqueda.
+   * @throws IOException Excepción en caso de que la petición HTTP falle.
+   */
+  public MovieSearchResult getTopMovies() throws IOException {
+    // Generamos la URL de la petición HTTP.
+    String url = "https://api.themoviedb.org/3/movie/top_rated?language=es-ES&page=1";
+    Gson gson = new Gson();
+    return gson.fromJson(doRequest(url), MovieSearchResult.class);
+  }
+
+  /**
+   * Obtiene las series mejor valoradas.
+   *
+   * @return Objeto Java con los resultados de la búsqueda.
+   * @throws IOException Excepción en caso de que la petición HTTP falle.
+   */
+  public TVSearchResult getTopSeries() throws IOException {
+    // Generamos la URL de la petición HTTP.
+    String url = "https://api.themoviedb.org/3/tv/top_rated?language=es-ES&page=1";
+    Gson gson = new Gson();
+    return gson.fromJson(doRequest(url), TVSearchResult.class);
+  }
+
+  /**
+   * Obtiene las películas que se están proyectando en los cines.
+   *
+   * @return Objeto Java con los resultados de la búsqueda.
+   * @throws IOException Excepción en caso de que la petición HTTP falle.
+   */
+  public MovieSearchResult getNowPlayingMovies() throws IOException {
+    // Generamos la URL de la petición HTTP.
+    String url = "https://api.themoviedb.org/3/movie/now_playing?language=es-ES";
+    Gson gson = new Gson();
+    return gson.fromJson(doRequest(url), MovieSearchResult.class);
+  }
+
+  /**
+   * Obtiene las películas que se estrenarán.
+   *
+   * @return Objeto Java con los resultados de la búsqueda.
+   * @throws IOException Excepción en caso de que la petición HTTP falle.
+   */
+  public MovieSearchResult getUpcomingMovies() throws IOException {
+    // Generamos la URL de la petición HTTP.
+    String url = "https://api.themoviedb.org/3/movie/upcoming?language=es-ES";
+    Gson gson = new Gson();
+    return gson.fromJson(doRequest(url), MovieSearchResult.class);
+  }
+
+  public WorkWatchProvider getMovieWatchProviders(int id) throws IOException {
+    // Generamos la URL de la petición HTTP.
+    String url = "https://api.themoviedb.org/3/movie/" + id + "/watch/providers?language=es-ES";
+    Gson gson = new Gson();
+    return gson.fromJson(doRequest(url), WorkWatchProvider.class);
+  }
+
+  public WorkWatchProvider getTVWatchProviders(int id) throws IOException {
+    // Generamos la URL de la petición HTTP.
+    String url = "https://api.themoviedb.org/3/tv/" + id + "/watch/providers?language=es-ES";
+    Gson gson = new Gson();
+    return gson.fromJson(doRequest(url), WorkWatchProvider.class);
+  }
+
   /**
    * Realiza una petición HTTP a la API de TheMovieDB.
    *
