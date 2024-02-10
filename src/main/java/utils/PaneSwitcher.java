@@ -1,10 +1,7 @@
 package utils;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,6 +20,10 @@ public class PaneSwitcher {
       Pane myPane = loader.load();
 
       // Ajuste resolución maximizada
+      myPane.setMaxHeight(centralPane.getMaxHeight());
+      myPane.setMaxWidth(centralPane.getMaxWidth());
+      myPane.setMinHeight(centralPane.getMinHeight());
+      myPane.setMinWidth(centralPane.getMinWidth());
       myPane.setPrefHeight(centralPane.getPrefHeight());
       myPane.setPrefWidth(centralPane.getPrefWidth());
 

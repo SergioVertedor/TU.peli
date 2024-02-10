@@ -8,12 +8,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import application.thread.WorkerPantallaModelo;
 import utils.*;
 
 public class PantallaModeloController {
+
+	@FXML
+	private BorderPane borderPane;
 
 	// Panel central de carga
 	@FXML	private Pane centralPane;
