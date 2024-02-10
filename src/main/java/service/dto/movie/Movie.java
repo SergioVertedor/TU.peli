@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 public class Movie {
   private boolean adult;
-  private String backdrop_path;
+  private String backdropPath;
   private int[] genre_ids;
   private int id;
   private String original_language;

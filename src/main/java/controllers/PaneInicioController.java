@@ -1,27 +1,41 @@
 package controllers;
 
+import application.thread.WorkerPantallaInicio;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import lombok.Setter;
 import service.APIService;
+import service.dto.movie.Movie;
+import service.dto.tv.TV;
 import utils.ListStorage;
 
 public class PaneInicioController {
+  private final int NUM_OBRAS = 8;
 
   // Imagen central de la página de inicio
   @FXML private ImageView imgCentralInicio;
 
   // Imagenes novedades inicio
-  @FXML private ImageView imgObra00;
-  @FXML private ImageView imgObra01;
-  @FXML private ImageView imgObra02;
-  @FXML private ImageView imgObra03;
-  @FXML private ImageView imgObra04;
-  @FXML private ImageView imgObra05;
-  @FXML private ImageView imgObra06;
-  @FXML private ImageView imgObra07;
+  @FXML @Setter private static ImageView imgObra01;
+
+  @FXML @Setter private static ImageView imgObra02;
+
+  @FXML @Setter private static ImageView imgObra03;
+
+  @FXML @Setter private static ImageView imgObra04;
+
+  @FXML @Setter private static ImageView imgObra05;
+
+  @FXML @Setter private static ImageView imgObra06;
+
+  @FXML @Setter private static ImageView imgObra07;
+
+  @FXML @Setter private static ImageView imgObra08;
 
   // Imagenes secciones
   @FXML private ImageView imgFilmoteca;
@@ -114,6 +128,10 @@ public class PaneInicioController {
 
   @FXML
   void initialize() {
+    fillWorks();
+//    var workerPantallaInicio = new WorkerPantallaInicio();
+//    workerPantallaInicio.start();
+
     //		imgFilmoteca.setImage(new Image("images/sections/Filmoteca.png"));
     //		imgPeliculas.setImage(new Image("images/sections/Peliculas.png"));
     //		imgSeries.setImage(new Image("images/sections/Series.png"));
@@ -125,4 +143,24 @@ public class PaneInicioController {
     // TODO: Cargar 8 peliculas en el inicio 'imgObra00'
   }
 
+  public static void fillWorks() {
+    List<Movie> trendingMovies;
+    List<TV> trendingSeries;
+    APIService apiService = new APIService();
+    try {
+      trendingMovies = Arrays.stream(apiService.getTrendingMovies().getResults()).toList();
+      trendingSeries = Arrays.stream(apiService.getTrendingSeries().getResults()).toList();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+    String url = "https://image.tmdb.org/t/p/w115/";
+    imgObra01.setImage(new Image(url + trendingMovies.get(0).getBackdropPath()));
+    imgObra02.setImage(new Image(url + trendingSeries.get(1).getBackdropPath()));
+    imgObra03.setImage(new Image(url + trendingMovies.get(2).getBackdropPath()));
+    imgObra04.setImage(new Image(url + trendingSeries.get(3).getBackdropPath()));
+    imgObra05.setImage(new Image(url + trendingMovies.get(4).getBackdropPath()));
+    imgObra06.setImage(new Image(url + trendingSeries.get(5).getBackdropPath()));
+    imgObra07.setImage(new Image(url + trendingMovies.get(6).getBackdropPath()));
+    imgObra08.setImage(new Image(url + trendingSeries.get(7).getBackdropPath()));
+  }
 }

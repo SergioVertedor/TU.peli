@@ -22,7 +22,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneNueva">
    <children>
-      <Pane prefHeight="878.0" prefWidth="1263.0">
+      <Pane minHeight="620.0" minWidth="1030.0" prefHeight="980.0" prefWidth="1670.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox prefHeight="878.0" prefWidth="1256.0" style="-fx-background-color: #E9E9E9;">
                <children>
