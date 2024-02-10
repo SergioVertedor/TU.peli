@@ -17,7 +17,7 @@ public class TV {
     private String originalName;
     private String overview;
     private double popularity;
-    private String posterPath;
+    private String poster_path;
     private String firstAirDate;
     private String name;
     private double voteAverage;

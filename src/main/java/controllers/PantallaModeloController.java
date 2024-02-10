@@ -1,7 +1,6 @@
 package controllers;
 
 import java.io.IOException;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -11,7 +10,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import application.thread.WorkerPantallaModelo;
 import utils.*;
 
 public class PantallaModeloController {
@@ -192,10 +190,7 @@ public class PantallaModeloController {
 		PaneSwitcher.switchPane("PaneInicio", centralPane);
 		imgLogo.setImage(new Image("images/logo/logo.png"));
 		imgUser.setImage(new Image("images/user.png"));
-		var workerThread = new WorkerPantallaModelo();
-		workerThread.start();
-	}
-
-
-
+    //		var workerThread = new WorkerPantallaModelo();
+    //		workerThread.start();
+  }
 }

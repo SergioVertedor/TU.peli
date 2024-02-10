@@ -1,8 +1,12 @@
 package utils;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
+import service.APIService;
 import service.dto.Genre;
 import service.dto.credits.Credits;
 import service.dto.movie.Movie;
@@ -11,8 +15,8 @@ import service.dto.watchprovider.Flatrate;
 
 public class ListStorage {
   // Añadimos las listas de películas y series más populares.
-  @Setter @Getter private static List<Movie> trendingMovies;
-  @Setter @Getter private static List<TV> trendingSeries;
+  @Setter @Getter private static List<Movie> trendingMovies = new ArrayList<>();
+  @Setter @Getter private static List<TV> trendingSeries = new ArrayList<>();
 
   // Añadimos las listas de búsqueda.
   @Setter @Getter private static List<Movie> searchMovies;
@@ -41,4 +45,14 @@ public class ListStorage {
 
   // Añadimos la lista de proveedores de streaming.
   @Setter @Getter private static List<Flatrate> watchProviders;
+
+  public static void fillLists() {
+    var apiService = new APIService();
+    try {
+      trendingSeries = Arrays.stream(apiService.getTrendingSeries().getResults()).toList();
+      trendingMovies = Arrays.stream(apiService.getTrendingMovies().getResults()).toList();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
 }
