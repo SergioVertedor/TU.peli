@@ -19,17 +19,9 @@ public class PaneSwitcher {
       loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
       Pane myPane = loader.load();
 
-      // Ajuste resolución maximizada
-      myPane.setMaxHeight(centralPane.getMaxHeight());
-      myPane.setMaxWidth(centralPane.getMaxWidth());
-      myPane.setMinHeight(centralPane.getMinHeight());
-      myPane.setMinWidth(centralPane.getMinWidth());
-      myPane.setPrefHeight(centralPane.getPrefHeight());
-      myPane.setPrefWidth(centralPane.getPrefWidth());
-
       // Hacer que los contenedores se expandan si el tamaño de la ventana cambia
-      HBox.setHgrow(myPane, Priority.ALWAYS);
-      VBox.setVgrow(myPane, Priority.ALWAYS);
+      //      HBox.setHgrow(myPane, Priority.ALWAYS);
+      //      VBox.setVgrow(myPane, Priority.ALWAYS);
 
       centralPane.getChildren().setAll(myPane);
     } catch (Exception e) {
