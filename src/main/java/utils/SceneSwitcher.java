@@ -76,7 +76,7 @@ public class SceneSwitcher {
     stage = new Stage();
     stage.initModality(Modality.APPLICATION_MODAL);
     //stage.setResizable(false);
-    //stage.setMaximized(true);
+    stage.setMaximized(true);
     // Asigna un título e icono a la ventana
     stage.setTitle("TU.PELI");
     Image icon = new Image("images/logo/logo.png");

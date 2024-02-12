@@ -43,7 +43,7 @@ public class APIService {
    * @return Objeto Java con los resultados de la búsqueda.
    * @throws IOException
    */
-  public MovieSearchResult searchMovieByYear(String date) {
+  public MovieSearchResult searchMovieByDate(String date) {
     // Generamos la URL de la petición HTTP.
     String url =
         "https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=false&language=es-ES&page=1&release_date.gte="
@@ -53,7 +53,7 @@ public class APIService {
     try {
       return gson.fromJson(doRequest(url), MovieSearchResult.class);
     } catch (IOException e) {
-      System.err.println("Error al buscar películas por año.");
+      System.err.println("Error al buscar películas por fecha.");
       throw new RuntimeException(e);
     }
   }

@@ -67,7 +67,7 @@ public class PaneSwitcher {
       Pane myPane = loader.load();
       centralPane.getChildren().setAll(myPane);
       PaneTopController paneTopController = loader.getController();
-      paneTopController.fillTopWorks(type, null);
+      paneTopController.fillTopWorks(type, "");
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
       System.out.println(e);

@@ -155,7 +155,7 @@
                <children>
                   <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="1278.0" style="-fx-background-color: #292929; -fx-background-radius: 8;">
                      <children>
-                        <Label fx:id="lblTitulo" alignment="TOP_LEFT" prefHeight="52.0" prefWidth="1199.0" text="TITULO" textFill="WHITE" wrapText="true">
+                        <Label fx:id="lblTitulo" alignment="TOP_LEFT" prefHeight="52.0" prefWidth="1199.0" textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="System Bold" size="32.0" />
                            </font>
@@ -163,7 +163,7 @@
                               <Insets bottom="5.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="lblDirectorGenero" alignment="TOP_LEFT" prefHeight="55.0" prefWidth="1171.0" text="Director · Genero" textFill="#ec1b1b" wrapText="true">
+                        <Label fx:id="lblDirectorGenero" alignment="TOP_LEFT" prefHeight="55.0" prefWidth="1171.0" textFill="#ec1b1b" wrapText="true">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -173,7 +173,7 @@
                         </Label>
                         <HBox prefHeight="27.0" prefWidth="926.0">
                            <children>
-                              <Label fx:id="lblEstreno" contentDisplay="CENTER" prefHeight="27.0" prefWidth="441.0" text="1994" textFill="WHITE">
+                              <Label fx:id="lblEstreno" contentDisplay="CENTER" prefHeight="27.0" prefWidth="441.0" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
@@ -183,7 +183,7 @@
                               </Label>
                            </children>
                         </HBox>
-                        <Label fx:id="lblTituloSinopsis" alignment="TOP_LEFT" prefHeight="57.0" prefWidth="208.0" text="Sinopsis:" textFill="WHITE">
+                        <Label fx:id="lblTituloSinopsis" alignment="TOP_LEFT" prefHeight="57.0" prefWidth="208.0" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -191,7 +191,7 @@
                               <Insets top="25.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="lblSinopsis" alignment="TOP_LEFT" prefHeight="150.0" prefWidth="1199.0" text="Ejemplo texto sinopsis" textFill="WHITE" wrapText="true">
+                        <Label fx:id="lblSinopsis" alignment="TOP_LEFT" prefHeight="150.0" prefWidth="1199.0" textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
