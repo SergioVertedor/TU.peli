@@ -1,5 +1,7 @@
 package utils;
 
+import controllers.PaneBusquedaController;
+import controllers.PaneTopController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.*;
 import lombok.Getter;
@@ -28,6 +30,44 @@ public class PaneSwitcher {
 			VBox.setVgrow(myPane, Priority.ALWAYS);
 
       centralPane.getChildren().setAll(myPane);
+    } catch (Exception e) {
+      System.out.println("Error al cargar la ventana de inicio.");
+      System.out.println(e);
+    }
+  }
+
+  /**
+   * Método que cambia el panel principal de la aplicación cargando un nuevo archivo FXML y
+   * rellenando los resultados de la búsqueda.
+   *
+   * @param paneTarget
+   * @param centralPane
+   * @param type {m}ovie or {t}v
+   */
+  public static void switchSearchPane(String paneTarget, Pane centralPane, char type) {
+    String fxmlFile = "/views/" + paneTarget + ".fxml";
+    try {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
+      Pane myPane = loader.load();
+      centralPane.getChildren().setAll(myPane);
+      PaneBusquedaController paneBusquedaController = loader.getController();
+      paneBusquedaController.fillResults(type);
+    } catch (Exception e) {
+      System.out.println("Error al cargar la ventana de inicio.");
+      System.out.println(e);
+    }
+  }
+
+  public static void switchTopPane(String paneTarget, Pane centralPane, char type) {
+    String fxmlFile = "/views/" + paneTarget + ".fxml";
+    try {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
+      Pane myPane = loader.load();
+      centralPane.getChildren().setAll(myPane);
+      PaneTopController paneTopController = loader.getController();
+      paneTopController.fillTopWorks(type, "");
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
       System.out.println(e);

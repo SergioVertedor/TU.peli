@@ -41,10 +41,32 @@
                       <RowConstraints minHeight="220.0" prefHeight="220.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <ImageView fx:id="imgObra00" fitHeight="220.0" fitWidth="160.0" onMouseEntered="#onMouseEnteredTitle00" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                           <children>
+                              <RadioButton fx:id="rbAllTime" mnemonicParsing="false" onMouseClicked="#allTimePressed" selected="true" text="Todos los tiempos" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="btnGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="rbLastTenYears" mnemonicParsing="false" onMouseClicked="#LastTenYearsPressed" text="Última década" textFill="WHITE" toggleGroup="$btnGroup">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rbThisYear" mnemonicParsing="false" onMouseClicked="#thisYearPressed" text="Este año" textFill="WHITE" toggleGroup="$btnGroup">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rbThreeMonths" mnemonicParsing="false" onMouseClicked="#LastThreeMonthsPressed" text="Últimos 3 meses" textFill="WHITE" toggleGroup="$btnGroup">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
@@ -143,7 +165,7 @@
                <children>
                   <VBox minWidth="0.0">
                      <children>
-                        <Label fx:id="lblTitulo" alignment="TOP_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="1120.0" text="TITULO" textFill="WHITE" wrapText="true">
+                        <Label fx:id="lblTitulo" alignment="TOP_LEFT" prefHeight="52.0" prefWidth="1199.0" textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="System Bold" size="32.0" />
                            </font>
@@ -151,7 +173,7 @@
                               <Insets bottom="5.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="lblDirectorGenero" alignment="TOP_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="1120.0" text="Director · Genero" textFill="#ec1b1b" wrapText="true">
+                        <Label fx:id="lblDirectorGenero" alignment="TOP_LEFT" prefHeight="55.0" prefWidth="1171.0" textFill="#ec1b1b" wrapText="true">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -159,12 +181,19 @@
                               <Insets bottom="20.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="lblEstreno" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="400.0" text="1994" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="lblTituloSinopsis" alignment="TOP_LEFT" prefHeight="56.0" prefWidth="300.0" text="Sinopsis:" textFill="WHITE">
+                        <HBox prefHeight="27.0" prefWidth="926.0">
+                           <children>
+                              <Label fx:id="lblEstreno" contentDisplay="CENTER" prefHeight="27.0" prefWidth="441.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label fx:id="lblTituloSinopsis" alignment="TOP_LEFT" prefHeight="57.0" prefWidth="208.0" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -172,7 +201,7 @@
                               <Insets top="25.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="lblSinopsis" alignment="TOP_LEFT" minWidth="1120.0" prefHeight="150.0" prefWidth="1120.0" text="Ejemplo texto sinopsis" textFill="WHITE" wrapText="true">
+                        <Label fx:id="lblSinopsis" alignment="TOP_LEFT" prefHeight="150.0" prefWidth="1199.0" textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
