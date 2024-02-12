@@ -20,9 +20,9 @@
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="883.0" prefWidth="1262.0" style="-fx-background-color: #E9E9E9;">
                <children>
-                  <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="265.0" prefWidth="1232.0" style="-fx-background-radius: 12;" vbarPolicy="NEVER" vmax="-1.0">
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="265.0" prefWidth="1232.0" style="-fx-background-radius: 12;" vbarPolicy="NEVER" vmax="-1.0">
                      <content>
-                        <VBox prefWidth="1660.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
+                        <VBox style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                            <children>
                               <Label text="AÑADIDAS RECIENTEMENTE" textFill="WHITE">
                                  <font>
@@ -96,7 +96,7 @@
                                     </ImageView>
                                  </children>
                                  <padding>
-                                    <Insets bottom="30.0" left="30.0" />
+                                    <Insets bottom="25.0" left="25.0" />
                                  </padding>
                               </HBox>
                            </children>
@@ -109,8 +109,8 @@
                   <GridPane alignment="BOTTOM_CENTER" hgap="16.0" VBox.vgrow="ALWAYS">
                     <columnConstraints>
                       <ColumnConstraints fillWidth="false" maxWidth="380.0" minWidth="360.0" prefWidth="360.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="380.0" minWidth="360.0" prefWidth="360.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.0" minWidth="360.0" prefWidth="360.0" />
+                      <ColumnConstraints maxWidth="380.0" minWidth="360.0" prefWidth="360.0" />
+                        <ColumnConstraints fillWidth="false" maxWidth="360.0" minWidth="360.0" prefWidth="360.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints fillHeight="false" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
@@ -180,7 +180,7 @@
                               </ImageView>
                            </children>
                         </HBox>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="502.0" prefWidth="371.0" vbarPolicy="NEVER" GridPane.rowIndex="1">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" vbarPolicy="NEVER" GridPane.rowIndex="1">
                            <content>
                               <VBox alignment="TOP_CENTER" prefHeight="820.0" prefWidth="372.0" spacing="10.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                                  <padding>
