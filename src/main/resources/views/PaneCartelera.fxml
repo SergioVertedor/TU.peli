@@ -30,7 +30,7 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster00" fitHeight="170.0" fitWidth="130.0" onMouseClicked="#handleImageViewClick" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                        <ImageView fx:id="imgPoster00" fitHeight="170.0" fitWidth="130.0"  pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
@@ -70,7 +70,7 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster10" fitHeight="170.0" fitWidth="130.0" onMouseClicked="#handleImageViewClick" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                        <ImageView fx:id="imgPoster10" fitHeight="170.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
@@ -107,7 +107,7 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster01" fitHeight="170.0" fitWidth="130.0" onMouseClicked="#handleImageViewClick" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                        <ImageView fx:id="imgPoster01" fitHeight="170.0" fitWidth="130.0"  pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
@@ -144,7 +144,7 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster11" fitHeight="170.0" fitWidth="130.0" onMouseClicked="#handleImageViewClick" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                        <ImageView fx:id="imgPoster11" fitHeight="170.0" fitWidth="130.0"  pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
@@ -181,7 +181,7 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster02" fitHeight="170.0" fitWidth="130.0" onMouseClicked="#handleImageViewClick" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                        <ImageView fx:id="imgPoster02" fitHeight="170.0" fitWidth="130.0"  pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
@@ -218,7 +218,7 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster12" fitHeight="170.0" fitWidth="130.0" onMouseClicked="#handleImageViewClick" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                        <ImageView fx:id="imgPoster12" fitHeight="170.0" fitWidth="130.0"  pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
@@ -255,7 +255,7 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster03" fitHeight="170.0" fitWidth="130.0" onMouseClicked="#handleImageViewClick" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                        <ImageView fx:id="imgPoster03" fitHeight="170.0" fitWidth="130.0"  pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
@@ -292,7 +292,7 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster13" fitHeight="170.0" fitWidth="130.0" onMouseClicked="#handleImageViewClick" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                        <ImageView fx:id="imgPoster13" fitHeight="170.0" fitWidth="130.0"  pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
