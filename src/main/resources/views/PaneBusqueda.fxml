@@ -90,37 +90,37 @@
                            <children>
                               <HBox fx:id="line0" alignment="CENTER" prefHeight="216.0" prefWidth="1287.0" spacing="20.0">
                                  <children>
-                                    <ImageView fx:id="imgResultado00" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado00" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado01" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado01" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado02" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado02" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado03" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado03" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado04" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado04" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado05" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado05" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado06" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado06" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
@@ -132,37 +132,37 @@
                               </HBox>
                               <HBox fx:id="line1" alignment="CENTER" prefHeight="100.0" prefWidth="1200.0" spacing="20.0" GridPane.rowIndex="1">
                                  <children>
-                                    <ImageView fx:id="imgResultado10" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado10" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado11" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado11" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado12" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado12" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado13" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado13" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado14" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado14" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado15" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado15" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado16" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado16" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
@@ -171,37 +171,37 @@
                               </HBox>
                               <HBox fx:id="line2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="2">
                                  <children>
-                                    <ImageView fx:id="imgResultado20" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado20" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado21" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado21" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado22" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado22" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado23" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado23" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado24" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado24" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado25" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado25" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado26" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado26" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
@@ -210,37 +210,37 @@
                               </HBox>
                               <HBox fx:id="line3" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="3">
                                  <children>
-                                    <ImageView fx:id="imgResultado30" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado30" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado31" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado31" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado32" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado32" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado33" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado33" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado34" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado34" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado35" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado35" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <ImageView fx:id="imgResultado36" fitHeight="210.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgResultado36" fitHeight="210.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>

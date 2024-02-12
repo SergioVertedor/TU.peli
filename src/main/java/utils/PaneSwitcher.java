@@ -17,13 +17,17 @@ public class PaneSwitcher {
     String fxmlFile = "/views/" + paneTarget + ".fxml";
 
     try {
+    	centralPane.getChildren().clear();
       FXMLLoader loader = new FXMLLoader();
       loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
       Pane myPane = loader.load();
+      
+      myPane.maxHeightProperty();
+      myPane.maxWidthProperty();
 
-      // Hacer que los contenedores se expandan si el tamaño de la ventana cambia
-      //      HBox.setHgrow(myPane, Priority.ALWAYS);
-      //      VBox.setVgrow(myPane, Priority.ALWAYS);
+			// Hacer que los contenedores se expandan si el tamaño de la ventana cambia
+			HBox.setHgrow(myPane, Priority.ALWAYS);
+			VBox.setVgrow(myPane, Priority.ALWAYS);
 
       centralPane.getChildren().setAll(myPane);
     } catch (Exception e) {

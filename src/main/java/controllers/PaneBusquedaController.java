@@ -15,10 +15,6 @@ import utils.ListStorage;
 
 public class PaneBusquedaController {
 
-  // NPI de que es esto
-  @FXML private ResourceBundle resources;
-  @FXML private URL location;
-
   // Elementos de búsqueda
   @FXML private TextField txtBusqueda;
   @FXML private ImageView btnBuscar;
