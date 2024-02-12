@@ -46,7 +46,7 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <ImageView fx:id="imgObra00" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra00" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle00" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
@@ -54,37 +54,37 @@
                                     <Insets />
                                  </GridPane.margin>
                               </ImageView>
-                              <ImageView fx:id="imgObra01" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra01" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle01" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="imgObra02" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra02" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle02" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="imgObra03" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra03" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle03" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="imgObra04" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra04" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle04" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="imgObra05" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra05" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle05" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="imgObra06" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra06" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle06" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="imgObra07" fitHeight="220.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra07" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle07" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>

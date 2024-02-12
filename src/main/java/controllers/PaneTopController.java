@@ -43,8 +43,43 @@ public class PaneTopController {
      * @param event
      */
     @FXML
-    void onMouseEnteredTitle(MouseEvent event) {
-    	// TODO: Mostrar en pantalla la información de la obra seleccionada
+    void onMouseEnteredTitle00(MouseEvent event) {
+
+    }
+
+    @FXML
+    void onMouseEnteredTitle01(MouseEvent event) {
+
+    }
+
+    @FXML
+    void onMouseEnteredTitle02(MouseEvent event) {
+
+    }
+
+    @FXML
+    void onMouseEnteredTitle03(MouseEvent event) {
+
+    }
+
+    @FXML
+    void onMouseEnteredTitle04(MouseEvent event) {
+
+    }
+
+    @FXML
+    void onMouseEnteredTitle05(MouseEvent event) {
+
+    }
+
+    @FXML
+    void onMouseEnteredTitle06(MouseEvent event) {
+
+    }
+
+    @FXML
+    void onMouseEnteredTitle07(MouseEvent event) {
+
     }
 
     @FXML
