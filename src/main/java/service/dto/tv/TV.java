@@ -9,17 +9,17 @@ import service.dto.OriginalLanguage;
 @AllArgsConstructor
 public class TV {
     private boolean adult;
-    private String backdropPath;
-    private long[] genreIDS;
+    private String backdrop_path;
+    private long[] genre_ids;
     private long id;
-    private OriginCountry[] originCountry;
-    private OriginalLanguage originalLanguage;
-    private String originalName;
+    private OriginCountry[] origin_country;
+    private OriginalLanguage original_language;
+    private String original_name;
     private String overview;
     private double popularity;
     private String poster_path;
-    private String firstAirDate;
+    private String first_air_date;
     private String name;
-    private double voteAverage;
-    private long voteCount;
+    private double vote_average;
+    private long vote_count;
 }
