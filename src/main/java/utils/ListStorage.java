@@ -38,7 +38,7 @@ public class ListStorage {
 
   // Añadimos la lista de peliculas y las series más populares.
   @Setter @Getter private static List<Movie> topMovies;
-  @Setter @Getter private static List<Movie> topSeries;
+  @Setter @Getter private static List<TV> topSeries;
 
   // Añadimos la lista de peliculas que se estrenarán.
   @Setter @Getter private static List<Movie> upcomingMovies;
@@ -51,7 +51,10 @@ public class ListStorage {
     try {
       trendingSeries = Arrays.stream(apiService.getTrendingSeries().getResults()).toList();
       trendingMovies = Arrays.stream(apiService.getTrendingMovies().getResults()).toList();
-
+      movieGenres = Arrays.stream(apiService.getMovieGenres().getGenres()).toList();
+      tvGenres = Arrays.stream(apiService.getTVGenres().getGenres()).toList();
+      topMovies = Arrays.stream(apiService.getTopMovies().getResults()).toList();
+      topSeries = Arrays.stream(apiService.getTopSeries().getResults()).toList();
     } catch (IOException e) {
       throw new RuntimeException(e);
     }

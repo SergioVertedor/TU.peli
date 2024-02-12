@@ -72,54 +72,6 @@ public class PaneBusquedaController {
   void initialize() {}
 
   public void fillResults(char type) {
-    List<ImageView> imgViews =
-        List.of(
-            imgResultado00,
-            imgResultado01,
-            imgResultado02,
-            imgResultado03,
-            imgResultado04,
-            imgResultado05,
-            imgResultado06,
-            imgResultado10,
-            imgResultado11,
-            imgResultado12,
-            imgResultado13,
-            imgResultado14,
-            imgResultado15,
-            imgResultado16,
-            imgResultado20,
-            imgResultado21,
-            imgResultado22,
-            imgResultado23,
-            imgResultado24,
-            imgResultado25,
-            imgResultado26);
-    if (type == 'm') {
-      for (int i = 0; i < imgViews.size(); i++) {
-        imgViews
-            .get(i)
-            .setImage(new Image(ListStorage.getTrendingMovies().get(i).getPoster_path()));
-      }
-    } else if (type == 't') {
-      for (int i = 0; i < imgViews.size(); i++) {
-        imgViews
-            .get(i)
-            .setImage(new Image(ListStorage.getTrendingSeries().get(i).getPoster_path()));
-      }
-    } else {
-      for (int i = 0; i < imgViews.size(); i++) {
-        imgViews
-            .get(i)
-            .setImage(new Image(ListStorage.getTrendingMovies().get(i).getPoster_path()));
-        if (i == 19) {
-          break;
-        }
-        i++;
-        imgViews
-            .get(i)
-            .setImage(new Image(ListStorage.getTrendingSeries().get(i).getPoster_path()));
-      }
-    }
+
   }
 }

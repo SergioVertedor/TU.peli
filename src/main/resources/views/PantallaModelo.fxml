@@ -100,7 +100,7 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fx:id="btnBuscar" fitHeight="25.0" fitWidth="25.0" onDragDetected="#btnBuscarPressed" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="btnBuscar" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/others/search.png" />
                            </image>

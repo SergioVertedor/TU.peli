@@ -46,7 +46,7 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <ImageView fx:id="imgObra00" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra00" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle00" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
@@ -54,37 +54,37 @@
                                     <Insets />
                                  </GridPane.margin>
                               </ImageView>
-                              <ImageView fx:id="imgObra01" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra01" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle01" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="imgObra02" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra02" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle02" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="imgObra03" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra03" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle03" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="imgObra04" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra04" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle04" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="imgObra05" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra05" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle05" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="imgObra06" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra06" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle06" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="imgObra07" fitHeight="220.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="imgObra07" fitHeight="220.0" fitWidth="150.0" onMouseEntered="#onMouseEnteredTitle07" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                  </image>
@@ -116,7 +116,7 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" spacing="20.0">
                            <children>
-                              <RadioButton fx:id="rbTodos" mnemonicParsing="false" selected="true" text="Todos los tiempos" textFill="WHITE">
+                              <RadioButton fx:id="rbAllTime" mnemonicParsing="false" onMouseClicked="#allTimePressed" selected="true" text="Todos los tiempos" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
@@ -124,17 +124,17 @@
                                     <ToggleGroup fx:id="btnGroup" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="rbDecada" mnemonicParsing="false" text="Última década" textFill="WHITE" toggleGroup="$btnGroup">
+                              <RadioButton fx:id="rbLastTenYears" mnemonicParsing="false" onMouseClicked="#LastTenYearsPressed" text="Última década" textFill="WHITE" toggleGroup="$btnGroup">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton fx:id="rbAnno" mnemonicParsing="false" text="Este año" textFill="WHITE" toggleGroup="$btnGroup">
+                              <RadioButton fx:id="rbThisYear" mnemonicParsing="false" onMouseClicked="#thisYearPressed" text="Este año" textFill="WHITE" toggleGroup="$btnGroup">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton fx:id="rb3Meses" mnemonicParsing="false" text="Últimos 3 meses" textFill="WHITE" toggleGroup="$btnGroup">
+                              <RadioButton fx:id="rbThreeMonths" mnemonicParsing="false" onMouseClicked="#LastThreeMonthsPressed" text="Últimos 3 meses" textFill="WHITE" toggleGroup="$btnGroup">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>

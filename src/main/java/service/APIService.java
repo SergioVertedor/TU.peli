@@ -37,6 +37,43 @@ public class APIService {
   }
 
   /**
+   * Busca una película por año en la API de TheMovieDB.
+   *
+   * @param date Año desde el que se quiere buscar películas.
+   * @return Objeto Java con los resultados de la búsqueda.
+   * @throws IOException
+   */
+  public MovieSearchResult searchMovieByYear(String date) {
+    // Generamos la URL de la petición HTTP.
+    String url =
+        "https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=false&language=es-ES&page=1&release_date.gte="
+            + date
+            + "&sort_by=popularity.desc";
+    Gson gson = new Gson();
+    try {
+      return gson.fromJson(doRequest(url), MovieSearchResult.class);
+    } catch (IOException e) {
+      System.err.println("Error al buscar películas por año.");
+      throw new RuntimeException(e);
+    }
+  }
+
+  public TVSearchResult searchSerieByYear(String date) {
+    // Generamos la URL de la petición HTTP.
+    String url =
+        "https://api.themoviedb.org/3/discover/tv?include_adult=true&include_video=true&language=es-ES&page=1&first_air_date.gte="
+            + date
+            + "&sort_by=popularity.desc";
+    Gson gson = new Gson();
+    try {
+      return gson.fromJson(doRequest(url), TVSearchResult.class);
+    } catch (IOException e) {
+      System.err.println("Error al buscar series por año.");
+      throw new RuntimeException(e);
+    }
+  }
+
+  /**
    * Busca una serie en la API de TheMovieDB.
    *
    * @param name Nombre de la serie a buscar.
@@ -173,11 +210,17 @@ public class APIService {
    * @return Objeto Java con los resultados de la búsqueda.
    * @throws IOException Excepción en caso de que la petición HTTP falle.
    */
-  public Credits getMovieCredits(int idPelicula) throws IOException {
+  public Credits getMovieCredits(long idPelicula) {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/movie/" + idPelicula + "/credits?language=es-ES";
     Gson gson = new Gson();
-    return gson.fromJson(doRequest(url), Credits.class);
+    try {
+      return gson.fromJson(doRequest(url), Credits.class);
+    } catch (IOException e) {
+
+      System.err.println("Error al obtener los créditos de la película.");
+      throw new RuntimeException(e);
+    }
   }
 
   /**
@@ -187,11 +230,16 @@ public class APIService {
    * @return Objeto Java con los resultados de la búsqueda.
    * @throws IOException Excepción en caso de que la petición HTTP falle.
    */
-  public Credits getTVCredits(int idSerie) throws IOException {
+  public Credits getTVCredits(long idSerie) {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/tv/" + idSerie + "/credits?language=es-ES";
     Gson gson = new Gson();
-    return gson.fromJson(doRequest(url), Credits.class);
+    try {
+      return gson.fromJson(doRequest(url), Credits.class);
+    } catch (IOException e) {
+      System.err.println("Error al obtener los créditos de la serie.");
+      throw new RuntimeException(e);
+    }
   }
 
   /**

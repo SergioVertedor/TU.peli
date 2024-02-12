@@ -120,7 +120,7 @@ public class PantallaModeloController {
 	 */
 	@FXML
 	void goToTopPeliculas(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneTop", centralPane);
+		PaneSwitcher.switchTopPane("PaneTop", centralPane, 'm');
 		imgSection.setImage(new Image("images/sections/Peliculas.png"));
 	}
 
@@ -130,7 +130,7 @@ public class PantallaModeloController {
 	 */
 	@FXML
 	void goToTopSeries(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneTop", centralPane);
+		PaneSwitcher.switchTopPane("PaneTop", centralPane, 't');
 		imgSection.setImage(new Image("images/sections/Series.png"));
 	}
 
