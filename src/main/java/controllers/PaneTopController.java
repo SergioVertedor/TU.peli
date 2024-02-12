@@ -22,43 +22,33 @@ import service.dto.tv.TV;
 import utils.ListStorage;
 
 public class PaneTopController {
+	
   @Setter @Getter private static char type;
 
-  @FXML private ToggleGroup btnGroup;
-
+  // Imagenes Top
   @FXML private ImageView imgObra00;
-
   @FXML private ImageView imgObra01;
-
   @FXML private ImageView imgObra02;
-
   @FXML private ImageView imgObra03;
-
   @FXML private ImageView imgObra04;
-
   @FXML private ImageView imgObra05;
-
   @FXML private ImageView imgObra06;
-
   @FXML private ImageView imgObra07;
 
+  // Info titulo - detalle
+  @FXML private Label lblTitulo;
   @FXML private Label lblDirectorGenero;
-
   @FXML private Label lblEstreno;
-
+  @FXML private Label lblTituloSinopsis;
   @FXML private Label lblSinopsis;
 
-  @FXML private Label lblTitulo;
-
-  @FXML private Label lblTituloSinopsis;
-
+  // Opciones radioButton
+  @FXML private ToggleGroup btnGroup;
   @FXML private RadioButton rbAllTime;
-
   @FXML private RadioButton rbLastTenYears;
-
+  @FXML private RadioButton rbThreeMonths;
   @FXML private RadioButton rbThisYear;
 
-  @FXML private RadioButton rbThreeMonths;
 
   @FXML
   void thisYearPressed(MouseEvent event) {
