@@ -15,18 +15,18 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="882.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneUsuarioController">
+<AnchorPane maxHeight="882.0" maxWidth="1262.0" minHeight="882.0" minWidth="1262.0" prefHeight="882.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneUsuarioController">
    <children>
-      <VBox alignment="TOP_CENTER" minHeight="620.0" minWidth="1030.0" prefHeight="980.0" prefWidth="1670.0" style="-fx-background-color: #E9E9E9;" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" maxHeight="882.0" maxWidth="1262.0" minHeight="882.0" minWidth="1262.0" prefHeight="882.0" prefWidth="1262.0" style="-fx-background-color: #E9E9E9;" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
+            <VBox alignment="TOP_CENTER" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                <padding>
-                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
                </padding>
                <children>
-                  <HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="150.0">
                      <children>
-                        <ImageView fx:id="imgUser" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgUser" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/user.png" />
                            </image>
@@ -34,11 +34,11 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <VBox prefHeight="180.0" prefWidth="729.0">
+                        <VBox prefHeight="160.0" prefWidth="580.0">
                            <children>
                               <Label fx:id="lblUsername" text="Usuario" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="28.0" />
+                                    <Font name="System Bold" size="26.0" />
                                  </font>
                                  <VBox.margin>
                                     <Insets top="30.0" />
@@ -49,22 +49,25 @@
                               </Label>
                               <Label fx:id="lblMiembroDesde" prefHeight="26.0" prefWidth="326.0" text="Miembro desde el {dia} de {mes} del {año}" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
                               <Label fx:id="lblNumeroDeTitulosGuardados" text="En lista: {num} títulos" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
                               <Label fx:id="lblUltimaConexion" text="Última conexión: {fecha 00/00/0000}" textFill="WHITE">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
                            </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="276.0">
+                        <VBox alignment="CENTER" prefHeight="160.0" prefWidth="270.0">
                            <children>
                               <Button fx:id="lblImportar" mnemonicParsing="false" onAction="#importarDatosPressed" prefWidth="200.0" text="Importar datos">
                                  <VBox.margin>
@@ -92,21 +95,24 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </HBox>
-                  <Line endX="150.0" startX="-1000.0" stroke="WHITE" strokeWidth="3.0" />
-                  <HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="1155.0" spacing="200.0">
+                  <Line endX="7.878759860992432" endY="1.0786798000335693" startX="-1000.0" stroke="WHITE" strokeWidth="3.0">
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin></Line>
+                  <HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="280.0" minWidth="1000.0" prefHeight="280.0" prefWidth="1000.0" spacing="160.0">
                      <children>
                         <GridPane>
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.0" minWidth="10.0" prefWidth="240.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="320.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.0" minWidth="10.0" prefWidth="180.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
                           </columnConstraints>
                           <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="8.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="8.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="8.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="8.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
@@ -164,15 +170,15 @@
                               <TextField fx:id="txtPass2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                            </children>
                         </GridPane>
-                        <GridPane>
+                        <GridPane prefHeight="307.0" prefWidth="320.0">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="321.0" minWidth="250.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="320.0" prefWidth="320.0" />
                           </columnConstraints>
                           <rowConstraints>
-                            <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="68.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="218.0" minHeight="10.0" prefHeight="210.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="68.0" minHeight="57.399993896484375" prefHeight="63.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="218.0" minHeight="10.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="28.60002441406249" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="58.19997558593752" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
                               <Label alignment="BOTTOM_LEFT" text="Mis dispositivos:" textAlignment="CENTER" textFill="WHITE">
@@ -183,7 +189,7 @@
                                     <Insets bottom="2.0" left="1.0" />
                                  </padding>
                               </Label>
-                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                              <VBox GridPane.rowIndex="1">
                                  <children>
                                     <HBox prefHeight="30.0" prefWidth="200.0">
                                        <children>
@@ -275,7 +281,7 @@
                                     </HBox>
                                  </children>
                                  <GridPane.margin>
-                                    <Insets left="10.0" top="20.0" />
+                                    <Insets left="10.0" top="10.0" />
                                  </GridPane.margin>
                               </VBox>
                               <Button fx:id="btnEditarDispositivos" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnEditarDispositivosPressed" prefWidth="200.0" text="Editar dispositivos" GridPane.rowIndex="3">
@@ -289,18 +295,21 @@
                            </children>
                         </GridPane>
                      </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
                   </HBox>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="4.0" prefWidth="1154.0" text="Si tienes cualquier duda o consulta no dudes en contactar con nosotros en atencionalcliente@tupeli.es o llamando a nuestro teléfono +34 666 666 666  " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="4.0" prefWidth="1000.0" text="Si tienes cualquier duda o consulta no dudes en contactar con nosotros en atencionalcliente@tupeli.es o llamando a nuestro teléfono +34 666 666 666  " textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
                      <VBox.margin>
-                        <Insets bottom="50.0" top="40.0" />
+                        <Insets bottom="30.0" top="45.0" />
                      </VBox.margin>
                   </Label>
                </children>
                <VBox.margin>
-                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
                </VBox.margin>
             </VBox>
          </children>

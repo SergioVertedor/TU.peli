@@ -11,9 +11,9 @@
 
 <AnchorPane maxHeight="882.0" maxWidth="1262.0" minHeight="882.0" minWidth="1262.0" prefHeight="882.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneInicioController">
    <children>
-      <VBox alignment="CENTER" focusTraversable="true" prefHeight="882.0" prefWidth="1262.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="882.0" prefWidth="1262.0" AnchorPane.topAnchor="0.0">
          <children>
-            <GridPane alignment="CENTER" maxHeight="140.0" maxWidth="900.0" minHeight="140.0" minWidth="900.0" prefHeight="140.0" prefWidth="900.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
+            <GridPane alignment="CENTER" maxHeight="130.0" maxWidth="900.0" minHeight="130.0" minWidth="900.0" prefHeight="130.0" prefWidth="900.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="90.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="90.0" prefWidth="100.0" />
@@ -64,7 +64,7 @@
                   </ImageView>
                </children>
             </GridPane>
-            <ImageView fx:id="imgCentralInicio" fitHeight="340.0" fitWidth="800.0" pickOnBounds="true">
+            <ImageView fx:id="imgCentralInicio" fitHeight="250.0" fitWidth="750.0" pickOnBounds="true">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -87,42 +87,42 @@
                   <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <ImageView fx:id="imgObra01" fitHeight="185.0" fitWidth="140.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra01" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imgObra02" fitHeight="185.0" fitWidth="140.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra02" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imgObra03" fitHeight="185.0" fitWidth="140.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra03" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imgObra04" fitHeight="185.0" fitWidth="140.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra04" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imgObra05" fitHeight="185.0" fitWidth="140.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra05" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imgObra06" fitHeight="185.0" fitWidth="140.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra06" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imgObra07" fitHeight="185.0" fitWidth="140.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra07" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fx:id="imgObra08" fitHeight="185.0" fitWidth="140.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra08" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
@@ -135,7 +135,7 @@
                   <Insets />
                </opaqueInsets>
                <padding>
-                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                  <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
                </padding>
             </GridPane>
          </children>

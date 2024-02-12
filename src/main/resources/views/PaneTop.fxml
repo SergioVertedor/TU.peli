@@ -19,14 +19,14 @@
    <children>
       <VBox alignment="TOP_CENTER" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox alignment="TOP_CENTER" maxWidth="1200.0" minWidth="1200.0" prefWidth="1200.0" style="-fx-background-color: #292929; -fx-background-radius: 8;">
+            <VBox alignment="TOP_CENTER" maxWidth="1202.0" minWidth="1202.0" prefWidth="1202.0" style="-fx-background-color: #292929; -fx-background-radius: 8;">
                <children>
-                  <ImageView fitHeight="32.0" fitWidth="1200.0" pickOnBounds="true">
+                  <ImageView fitHeight="28.0" fitWidth="1180.0" pickOnBounds="true">
                      <image>
                         <Image url="@../images/others/filmLine.PNG" />
                      </image>
                   </ImageView>
-                  <GridPane alignment="TOP_CENTER" maxWidth="1200.0" minWidth="1200.0" prefWidth="1200.0">
+                  <GridPane alignment="TOP_CENTER" hgap="10.0" maxWidth="1170.0" minWidth="1170.0" prefWidth="1170.0">
                     <columnConstraints>
                       <ColumnConstraints halignment="CENTER" minWidth="100.0" />
                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="100.0" />
@@ -38,10 +38,10 @@
                         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints minHeight="220.0" prefHeight="220.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="192.0" prefHeight="192.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <ImageView fx:id="imgObra00" fitHeight="220.0" fitWidth="160.0" onMouseEntered="#onMouseEnteredTitle00" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                        <ImageView fx:id="imgObra00" fitHeight="190.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle00" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
@@ -49,59 +49,59 @@
                               <Insets />
                            </GridPane.margin>
                         </ImageView>
-                        <ImageView fx:id="imgObra01" fitHeight="220.0" fitWidth="160.0" onMouseEntered="#onMouseEnteredTitle01" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                        <ImageView fx:id="imgObra01" fitHeight="190.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle01" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra02" fitHeight="220.0" fitWidth="160.0" onMouseEntered="#onMouseEnteredTitle02" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                        <ImageView fx:id="imgObra02" fitHeight="190.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle02" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra03" fitHeight="220.0" fitWidth="160.0" onMouseEntered="#onMouseEnteredTitle03" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                        <ImageView fx:id="imgObra03" fitHeight="190.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle03" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra04" fitHeight="220.0" fitWidth="160.0" onMouseEntered="#onMouseEnteredTitle04" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                        <ImageView fx:id="imgObra04" fitHeight="190.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle04" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra05" fitHeight="220.0" fitWidth="160.0" onMouseEntered="#onMouseEnteredTitle05" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                        <ImageView fx:id="imgObra05" fitHeight="190.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle05" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra06" fitHeight="220.0" fitWidth="160.0" onMouseEntered="#onMouseEnteredTitle06" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                        <ImageView fx:id="imgObra06" fitHeight="190.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle06" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="imgObra07" fitHeight="220.0" fitWidth="160.0" onMouseEntered="#onMouseEnteredTitle07" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                        <ImageView fx:id="imgObra07" fitHeight="190.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle07" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
                         </ImageView>
                      </children>
                   </GridPane>
-                  <ImageView fitHeight="32.0" fitWidth="1200.0" pickOnBounds="true">
+                  <ImageView fitHeight="28.0" fitWidth="1180.0" pickOnBounds="true">
                      <image>
                         <Image url="@../images/others/filmLine.PNG" />
                      </image>
                   </ImageView>
                </children>
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="8.0" left="10.0" right="10.0" top="8.0" />
                </padding>
                <VBox.margin>
-                  <Insets left="20.0" right="30.0" top="30.0" />
+                  <Insets left="30.0" right="30.0" top="28.0" />
                </VBox.margin>
             </VBox>
-            <Pane maxHeight="50.0" maxWidth="1200.0" minHeight="50.0" minWidth="1200.0" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #292929; -fx-background-radius: 8;" VBox.vgrow="ALWAYS">
+            <Pane maxHeight="48.0" maxWidth="1202.0" minHeight="48.0" minWidth="1202.0" prefHeight="48.0" prefWidth="1202.0" style="-fx-background-color: #292929; -fx-background-radius: 8;" VBox.vgrow="ALWAYS">
                <children>
-                  <HBox alignment="CENTER_LEFT" spacing="20.0">
+                  <HBox alignment="CENTER_LEFT" maxWidth="1202.0" minWidth="1202.0" prefHeight="46.0" prefWidth="1202.0" spacing="20.0">
                      <children>
                         <RadioButton fx:id="rbTodos" mnemonicParsing="false" selected="true" text="Todos los tiempos" textFill="WHITE">
                            <font>
@@ -131,48 +131,48 @@
                         </RadioButton>
                      </children>
                      <padding>
-                        <Insets bottom="12.0" top="12.0" />
+                        <Insets bottom="10.0" top="10.0" />
                      </padding>
                   </HBox>
                </children>
                <VBox.margin>
-                  <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+                  <Insets bottom="12.0" left="30.0" right="30.0" top="12.0" />
                </VBox.margin>
             </Pane>
-            <Pane style="-fx-background-color: #292929; -fx-background-radius: 8;" VBox.vgrow="ALWAYS">
+            <Pane maxWidth="1202.0" minWidth="1202.0" prefWidth="1202.0" style="-fx-background-color: #292929; -fx-background-radius: 8;" VBox.vgrow="ALWAYS">
                <children>
-                  <VBox minWidth="0.0">
+                  <VBox>
                      <children>
-                        <Label fx:id="lblTitulo" alignment="TOP_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="1120.0" text="TITULO" textFill="WHITE" wrapText="true">
+                        <Label fx:id="lblTitulo" alignment="TOP_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="1120.0" text="TITULO" textFill="WHITE" wrapText="true">
                            <font>
-                              <Font name="System Bold" size="32.0" />
+                              <Font name="System Bold" size="28.0" />
                            </font>
                            <padding>
-                              <Insets bottom="5.0" />
+                              <Insets bottom="3.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="lblDirectorGenero" alignment="TOP_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="1120.0" text="Director · Genero" textFill="#ec1b1b" wrapText="true">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                           <padding>
-                              <Insets bottom="20.0" />
-                           </padding>
-                        </Label>
-                        <Label fx:id="lblEstreno" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="400.0" text="1994" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="lblTituloSinopsis" alignment="TOP_LEFT" prefHeight="56.0" prefWidth="300.0" text="Sinopsis:" textFill="WHITE">
+                        <Label fx:id="lblDirectorGenero" alignment="TOP_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="1120.0" text="Director · Genero" textFill="#ec1b1b" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
                            <padding>
-                              <Insets top="25.0" />
+                              <Insets bottom="10.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="lblSinopsis" alignment="TOP_LEFT" minWidth="1120.0" prefHeight="150.0" prefWidth="1120.0" text="Ejemplo texto sinopsis" textFill="WHITE" wrapText="true">
+                        <Label fx:id="lblEstreno" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="400.0" text="1994" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTituloSinopsis" alignment="TOP_LEFT" prefHeight="40.0" prefWidth="300.0" text="Sinopsis:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <padding>
+                              <Insets top="12.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lblSinopsis" alignment="TOP_LEFT" minWidth="1120.0" prefHeight="120.0" prefWidth="1120.0" text="Ejemplo texto sinopsis" textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
@@ -182,7 +182,7 @@
                         </Label>
                      </children>
                      <padding>
-                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                        <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
                      </padding>
                   </VBox>
                </children>
