@@ -178,6 +178,6 @@
       </ToolBar>
    </left>
    <center>
-      <Pane fx:id="centralPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: blue;" BorderPane.alignment="TOP_CENTER" />
+      <Pane fx:id="centralPane" focusTraversable="true" style="-fx-background-color: blue;" BorderPane.alignment="TOP_CENTER" />
    </center>
 </BorderPane>
