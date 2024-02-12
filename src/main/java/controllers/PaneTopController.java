@@ -98,16 +98,17 @@ public class PaneTopController {
           .forEach(director -> directores.add(director.getName()));
       String directorGenero = "";
       for (String director : directores) {
-        directorGenero += director + " ";
-      }
-      int[] generos = ListStorage.getTopMovies().get(0).getGenre_ids();
-      for (int i = 0; i < generos.length; i++) {
-        for (Genre genero : ListStorage.getMovieGenres()) {
-          if (genero.getId() == generos[i]) {
-            directorGenero += genero.getName() + "\n";
+        for (int i = 0; i < directores.size(); i++) {
+          if (i == directores.size() - 1) {
+            directorGenero += director + " - ";
+          } else {
+            directorGenero += director + ", ";
           }
         }
       }
+      int[] generos = ListStorage.getTopMovies().get(0).getGenre_ids();
+      ListStorage.getMovieGenres();
+
       lblDirectorGenero.setText(directorGenero);
       lblSinopsis.setText(ListStorage.getTopMovies().get(0).getOverview());
 
