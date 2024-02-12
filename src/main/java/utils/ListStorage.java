@@ -51,6 +51,7 @@ public class ListStorage {
     try {
       trendingSeries = Arrays.stream(apiService.getTrendingSeries().getResults()).toList();
       trendingMovies = Arrays.stream(apiService.getTrendingMovies().getResults()).toList();
+
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
