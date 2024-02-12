@@ -20,374 +20,370 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneNueva">
+<AnchorPane maxHeight="882.0" maxWidth="1262.0" minHeight="882.0" minWidth="1262.0" prefHeight="882.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneNueva">
    <children>
-      <Pane minHeight="620.0" minWidth="1030.0" prefHeight="980.0" prefWidth="1670.0" AnchorPane.topAnchor="0.0">
+      <VBox prefHeight="882.0" prefWidth="1262.0" style="-fx-background-color: #E9E9E9;" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox prefHeight="878.0" prefWidth="1256.0" style="-fx-background-color: #E9E9E9;">
+            <Pane style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                <children>
-                  <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="813.0" prefWidth="1266.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 8;">
-                     <VBox.margin>
-                        <Insets left="30.0" right="100.0" top="30.0" />
-                     </VBox.margin>
+                  <VBox>
                      <children>
-                        <VBox prefHeight="849.0" prefWidth="1266.0">
-                           <padding>
-                              <Insets left="50.0" right="50.0" top="40.0" />
-                           </padding>
+                        <GridPane prefHeight="731.0" prefWidth="1102.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="320.0" prefWidth="320.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="700.0" minWidth="10.0" prefWidth="450.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="270.0" prefWidth="270.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
                            <children>
-                              <GridPane prefHeight="731.0" prefWidth="1190.0">
+                              <GridPane>
                                 <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="388.0" minWidth="10.0" prefWidth="295.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="700.0" minWidth="10.0" prefWidth="561.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.0" minWidth="10.0" prefWidth="281.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                 </columnConstraints>
                                 <rowConstraints>
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="551.0" minHeight="10.0" prefHeight="491.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="358.0" minHeight="10.0" prefHeight="240.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <GridPane>
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints maxHeight="551.0" minHeight="10.0" prefHeight="491.0" vgrow="SOMETIMES" />
-                                        <RowConstraints maxHeight="358.0" minHeight="10.0" prefHeight="240.0" vgrow="SOMETIMES" />
-                                      </rowConstraints>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
                                        <children>
-                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                          <ImageView fx:id="imgPoster" fitHeight="380.0" fitWidth="280.0" onMouseClicked="#imgPosterClicked" pickOnBounds="true" preserveRatio="true">
+                                             <VBox.margin>
+                                                <Insets left="10.0" />
+                                             </VBox.margin>
+                                             <image>
+                                                <Image url="@../images/examples/ejemploPosterSerie.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <HBox prefHeight="50.0" prefWidth="204.0" spacing="10.0">
                                              <children>
-                                                <ImageView fx:id="imgPoster" fitHeight="380.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
-                                                   <VBox.margin>
-                                                      <Insets left="10.0" />
-                                                   </VBox.margin>
+                                                <ImageView fx:id="imgStar1" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../images/examples/ejemploPosterSerie.jpg" />
+                                                      <Image url="@../images/others/favUnselected.png" />
                                                    </image>
                                                 </ImageView>
-                                                <HBox prefHeight="50.0" prefWidth="204.0" spacing="10.0">
-                                                   <children>
-                                                      <ImageView fx:id="imgStar1" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../images/others/favUnselected.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                      <ImageView fx:id="imgStar2" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../images/others/favUnselected.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                      <ImageView fx:id="imgStar3" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../images/others/favUnselected.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                      <ImageView fx:id="imgStar4" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../images/others/favUnselected.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                      <ImageView fx:id="imgStar5" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../images/others/favUnselected.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                   </children>
-                                                   <padding>
-                                                      <Insets bottom="10.0" left="40.0" right="30.0" top="10.0" />
-                                                   </padding>
-                                                </HBox>
+                                                <ImageView fx:id="imgStar2" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/others/favUnselected.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="imgStar3" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/others/favUnselected.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="imgStar4" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/others/favUnselected.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="imgStar5" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/others/favUnselected.png" />
+                                                   </image>
+                                                </ImageView>
                                              </children>
-                                          </VBox>
-                                          <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
-                                             <children>
-                                                <Label lineSpacing="2.0" text="Comentarios:" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <TextArea fx:id="txtComentarios" prefHeight="113.0" prefWidth="295.0" wrapText="true">
-                                                   <VBox.margin>
-                                                      <Insets top="5.0" />
-                                                   </VBox.margin>
-                                                </TextArea>
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                    </GridPane>
-                                    <GridPane GridPane.columnIndex="2">
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints maxHeight="466.0" minHeight="10.0" prefHeight="289.0" vgrow="SOMETIMES" />
-                                        <RowConstraints maxHeight="444.0" minHeight="10.0" prefHeight="442.0" vgrow="SOMETIMES" />
-                                      </rowConstraints>
-                                       <children>
-                                          <VBox alignment="BOTTOM_LEFT" prefHeight="296.0" prefWidth="281.0">
-                                             <children>
-                                                <Label text="País:" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <ComboBox fx:id="cbPais" prefWidth="250.0">
-                                                   <VBox.margin>
-                                                      <Insets bottom="15.0" top="5.0" />
-                                                   </VBox.margin>
-                                                </ComboBox>
-                                                <Label text="Vista por última vez:" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <ComboBox fx:id="cbVistaUltimaVez" prefWidth="250.0">
-                                                   <VBox.margin>
-                                                      <Insets bottom="15.0" top="5.0" />
-                                                   </VBox.margin>
-                                                </ComboBox>
-                                                <Label text="Dispositivo:" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <ComboBox fx:id="cbDispositivo" prefWidth="250.0">
-                                                   <VBox.margin>
-                                                      <Insets bottom="15.0" top="5.0" />
-                                                   </VBox.margin>
-                                                </ComboBox>
-                                             </children>
-                                          </VBox>
-                                          <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
-                                             <children>
-                                                <Label text="Donde ver:" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                   <VBox.margin>
-                                                      <Insets top="30.0" />
-                                                   </VBox.margin>
-                                                </Label>
-                                                <GridPane alignment="CENTER" prefHeight="212.0" prefWidth="281.0">
-                                                  <columnConstraints>
-                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                  </columnConstraints>
-                                                  <rowConstraints>
-                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                  </rowConstraints>
-                                                   <children>
-                                                      <VBox alignment="CENTER">
-                                                         <children>
-                                                            <ImageView fx:id="imgNetflix" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
-                                                            <CheckBox fx:id="cbNetflix" mnemonicParsing="false">
-                                                               <VBox.margin>
-                                                                  <Insets top="5.0" />
-                                                               </VBox.margin>
-                                                            </CheckBox>
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox alignment="CENTER" GridPane.columnIndex="1">
-                                                         <children>
-                                                            <ImageView fx:id="imgHBO" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
-                                                            <CheckBox fx:id="cbHBO" mnemonicParsing="false">
-                                                               <VBox.margin>
-                                                                  <Insets top="5.0" />
-                                                               </VBox.margin>
-                                                            </CheckBox>
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox alignment="CENTER" GridPane.columnIndex="2">
-                                                         <children>
-                                                            <ImageView fx:id="imgDisney" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
-                                                            <CheckBox fx:id="cbDisney" mnemonicParsing="false">
-                                                               <VBox.margin>
-                                                                  <Insets top="5.0" />
-                                                               </VBox.margin>
-                                                            </CheckBox>
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox alignment="CENTER" GridPane.rowIndex="1">
-                                                         <children>
-                                                            <ImageView fx:id="imgPrimeVideo" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
-                                                            <CheckBox fx:id="cbPrimeVideo" mnemonicParsing="false">
-                                                               <VBox.margin>
-                                                                  <Insets top="5.0" />
-                                                               </VBox.margin>
-                                                            </CheckBox>
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                                         <children>
-                                                            <ImageView fx:id="imgFilmin" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
-                                                            <CheckBox fx:id="cbFilmin" mnemonicParsing="false">
-                                                               <VBox.margin>
-                                                                  <Insets top="5.0" />
-                                                               </VBox.margin>
-                                                            </CheckBox>
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                                         <children>
-                                                            <ImageView fx:id="imgAppleTV" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
-                                                            <CheckBox fx:id="cbAppleTV" mnemonicParsing="false">
-                                                               <VBox.margin>
-                                                                  <Insets top="5.0" />
-                                                               </VBox.margin>
-                                                            </CheckBox>
-                                                         </children>
-                                                      </VBox>
-                                                   </children>
-                                                </GridPane>
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                    </GridPane>
-                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
-                                       <children>
-                                          <HBox alignment="CENTER" prefHeight="116.0" prefWidth="575.0">
-                                             <children>
-                                                <RadioButton fx:id="rbPelicula" mnemonicParsing="false" selected="true" text="Nueva Película" textFill="WHITE">
-                                                   <HBox.margin>
-                                                      <Insets left="50.0" right="50.0" />
-                                                   </HBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                   <toggleGroup>
-                                                      <ToggleGroup fx:id="rbSeleccion" />
-                                                   </toggleGroup>
-                                                </RadioButton>
-                                                <RadioButton fx:id="rbSerie" mnemonicParsing="false" text="Nueva Serie" textFill="WHITE" toggleGroup="$rbSeleccion">
-                                                   <HBox.margin>
-                                                      <Insets left="20.0" />
-                                                   </HBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </RadioButton>
-                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="40.0" right="30.0" top="10.0" />
+                                             </padding>
                                           </HBox>
-                                          <GridPane prefHeight="545.0" prefWidth="561.0">
-                                            <columnConstraints>
-                                              <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="281.0" minWidth="10.0" prefWidth="108.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="478.0" minWidth="10.0" prefWidth="467.0" />
-                                            </columnConstraints>
-                                            <rowConstraints>
-                                              <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                                              <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                                              <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="250.0" vgrow="SOMETIMES" />
-                                            </rowConstraints>
-                                             <children>
-                                                <Label text="Título:" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label text="Año:" textFill="WHITE" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label text="Compañía:" textFill="WHITE" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label text="Director:" textFill="WHITE" GridPane.rowIndex="3">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label text="Género:" textFill="WHITE" GridPane.rowIndex="4">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label text="Reparto:" textFill="WHITE" GridPane.rowIndex="5" GridPane.valignment="TOP">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label text="Sinopsis:" textFill="WHITE" GridPane.rowIndex="6" GridPane.valignment="TOP">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <TextField fx:id="txtTitulo" GridPane.columnIndex="1">
-                                                   <GridPane.margin>
-                                                      <Insets left="10.0" right="40.0" />
-                                                   </GridPane.margin>
-                                                </TextField>
-                                                <TextField fx:id="txtAnno" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                                   <GridPane.margin>
-                                                      <Insets left="10.0" right="40.0" />
-                                                   </GridPane.margin>
-                                                </TextField>
-                                                <TextField fx:id="txtCompania" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                                   <GridPane.margin>
-                                                      <Insets left="10.0" right="40.0" />
-                                                   </GridPane.margin>
-                                                </TextField>
-                                                <TextField fx:id="txtDirector" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                                   <GridPane.margin>
-                                                      <Insets left="10.0" right="40.0" />
-                                                   </GridPane.margin>
-                                                </TextField>
-                                                <TextField fx:id="txtGenero" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                                   <GridPane.margin>
-                                                      <Insets left="10.0" right="40.0" />
-                                                   </GridPane.margin>
-                                                </TextField>
-                                                <TextField fx:id="txtReparto" prefHeight="110.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                                                   <GridPane.margin>
-                                                      <Insets left="10.0" right="40.0" />
-                                                   </GridPane.margin>
-                                                </TextField>
-                                                <TextField fx:id="txtSinopsis" prefHeight="240.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                                                   <GridPane.margin>
-                                                      <Insets left="10.0" right="40.0" />
-                                                   </GridPane.margin>
-                                                </TextField>
-                                             </children>
-                                          </GridPane>
-                                          <HBox alignment="CENTER" prefHeight="116.0" prefWidth="575.0">
-                                             <children>
-                                                <Button fx:id="btnRestablecer" mnemonicParsing="false" onAction="#btnRestablecerPressed" text="Restablecer">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                   <HBox.margin>
-                                                      <Insets left="80.0" right="40.0" />
-                                                   </HBox.margin>
-                                                </Button>
-                                                <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#btnGuardarPressed" text="Guardar">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                   <HBox.margin>
-                                                      <Insets />
-                                                   </HBox.margin>
-                                                </Button>
-                                             </children>
-                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label lineSpacing="2.0" text="Comentarios:" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="txtComentarios" prefHeight="113.0" prefWidth="295.0" wrapText="true">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </TextArea>
                                        </children>
                                     </VBox>
                                  </children>
                               </GridPane>
+                              <GridPane GridPane.columnIndex="2">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="466.0" minHeight="10.0" prefHeight="289.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="444.0" minHeight="10.0" prefHeight="442.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <VBox alignment="BOTTOM_LEFT" prefHeight="296.0" prefWidth="281.0">
+                                       <children>
+                                          <Label text="País:" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cbPais" prefWidth="250.0">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="5.0" />
+                                             </VBox.margin>
+                                          </ComboBox>
+                                          <Label text="Vista por última vez:" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cbVistaUltimaVez" prefWidth="250.0">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="5.0" />
+                                             </VBox.margin>
+                                          </ComboBox>
+                                          <Label text="Dispositivo:" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cbDispositivo" prefWidth="250.0">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="5.0" />
+                                             </VBox.margin>
+                                          </ComboBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label text="Donde ver:" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="30.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <GridPane alignment="CENTER" prefHeight="212.0" prefWidth="281.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <VBox alignment="CENTER">
+                                                   <children>
+                                                      <ImageView fx:id="imgNetflix" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                                      <CheckBox fx:id="cbNetflix" mnemonicParsing="false">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </CheckBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <ImageView fx:id="imgHBO" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                                      <CheckBox fx:id="cbHBO" mnemonicParsing="false">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </CheckBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" GridPane.columnIndex="2">
+                                                   <children>
+                                                      <ImageView fx:id="imgDisney" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                                      <CheckBox fx:id="cbDisney" mnemonicParsing="false">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </CheckBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <ImageView fx:id="imgPrimeVideo" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                                      <CheckBox fx:id="cbPrimeVideo" mnemonicParsing="false">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </CheckBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <ImageView fx:id="imgFilmin" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                                      <CheckBox fx:id="cbFilmin" mnemonicParsing="false">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </CheckBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <ImageView fx:id="imgAppleTV" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                                      <CheckBox fx:id="cbAppleTV" mnemonicParsing="false">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </CheckBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </GridPane>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="116.0" prefWidth="575.0">
+                                       <children>
+                                          <RadioButton fx:id="rbPelicula" mnemonicParsing="false" selected="true" text="Nueva Película" textFill="WHITE">
+                                             <HBox.margin>
+                                                <Insets left="50.0" right="50.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="rbSeleccion" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="rbSerie" mnemonicParsing="false" text="Nueva Serie" textFill="WHITE" toggleGroup="$rbSeleccion">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </RadioButton>
+                                       </children>
+                                    </HBox>
+                                    <GridPane prefHeight="545.0" prefWidth="561.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="281.0" minWidth="10.0" prefWidth="108.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="478.0" minWidth="10.0" prefWidth="467.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="250.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Título:" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Año:" textFill="WHITE" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Compañía:" textFill="WHITE" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Director:" textFill="WHITE" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Género:" textFill="WHITE" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Reparto:" textFill="WHITE" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Sinopsis:" textFill="WHITE" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtTitulo" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" right="40.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtAnno" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" right="40.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtCompania" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" right="40.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtDirector" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" right="40.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtGenero" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" right="40.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtReparto" prefHeight="110.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" right="40.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtSinopsis" prefHeight="240.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <GridPane.margin>
+                                                <Insets left="10.0" right="40.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                       </children>
+                                    </GridPane>
+                                    <HBox alignment="CENTER" prefHeight="116.0" prefWidth="575.0">
+                                       <children>
+                                          <Button fx:id="btnRestablecer" mnemonicParsing="false" onAction="#btnRestablecerPressed" text="Restablecer">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="80.0" right="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#btnGuardarPressed" text="Guardar">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
                            </children>
-                        </VBox>
+                        </GridPane>
                      </children>
-                  </Pane>
+                     <padding>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                     </padding>
+                  </VBox>
                </children>
-            </VBox>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </VBox.margin>
+            </Pane>
          </children>
-      </Pane>
+      </VBox>
    </children>
 </AnchorPane>

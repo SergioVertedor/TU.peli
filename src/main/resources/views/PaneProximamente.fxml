@@ -12,346 +12,350 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneProximamenteController">
+<AnchorPane maxHeight="882.0" maxWidth="1262.0" minHeight="882.0" minWidth="1262.0" prefHeight="882.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneProximamenteController">
    <children>
-      <VBox alignment="TOP_CENTER" minHeight="620.0" minWidth="1030.0" prefHeight="980.0" prefWidth="1670.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 8;" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" prefHeight="881.0" prefWidth="1262.0" AnchorPane.topAnchor="0.0">
          <children>
-            <GridPane alignment="TOP_CENTER" hgap="20.0" vgap="15.0" VBox.vgrow="ALWAYS">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="220.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="220.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="220.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="220.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <VBox alignment="TOP_CENTER" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <GridPane alignment="TOP_CENTER" hgap="20.0" vgap="25.0" VBox.vgrow="ALWAYS">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="480.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="480.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="220.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="220.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="220.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="220.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
                      <children>
-                        <ImageView fx:id="imgPoster00" fitHeight="200.0" fitWidth="140.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </ImageView>
-                        <VBox prefHeight="202.0" prefWidth="455.0">
+                        <HBox prefHeight="100.0" prefWidth="180.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <children>
-                              <Label fx:id="lblFecha00" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblTitulo00" prefHeight="30.0" prefWidth="405.0" text="Título" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <Label fx:id="lblInfo00" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblGenero00" prefWidth="405.0" text="Género" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fx:id="imgPoster00" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </ImageView>
+                              <VBox prefHeight="202.0" prefWidth="455.0">
+                                 <children>
+                                    <Label fx:id="lblFecha00" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblTitulo00" prefHeight="30.0" prefWidth="405.0" text="Título" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="lblInfo00" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblGenero00" prefWidth="405.0" text="Género" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
+                                 </HBox.margin>
+                              </VBox>
                            </children>
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                     <children>
-                        <ImageView fx:id="imgPoster10" fitHeight="200.0" fitWidth="140.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
-                        </ImageView>
-                        <VBox prefHeight="202.0" prefWidth="455.0">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <children>
-                              <Label fx:id="lblFecha10" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblTitulo10" prefWidth="405.0" text="Título" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <Label fx:id="lblInfo10" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblGenero10" prefWidth="405.0" text="Género" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fx:id="imgPoster10" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="202.0" prefWidth="455.0">
+                                 <children>
+                                    <Label fx:id="lblFecha10" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblTitulo10" prefWidth="405.0" text="Título" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="lblInfo10" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblGenero10" prefWidth="405.0" text="Género" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
+                                 </HBox.margin>
+                              </VBox>
                            </children>
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                     <children>
-                        <ImageView fx:id="imgPoster01" fitHeight="200.0" fitWidth="140.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
-                        </ImageView>
-                        <VBox prefHeight="202.0" prefWidth="455.0">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="180.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <children>
-                              <Label fx:id="lblFecha01" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblTitulo01" prefWidth="405.0" text="Título" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <Label fx:id="lblInfo01" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblGenero01" prefWidth="405.0" text="Género" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fx:id="imgPoster01" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="202.0" prefWidth="455.0">
+                                 <children>
+                                    <Label fx:id="lblFecha01" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblTitulo01" prefWidth="405.0" text="Título" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="lblInfo01" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblGenero01" prefWidth="405.0" text="Género" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
+                                 </HBox.margin>
+                              </VBox>
                            </children>
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                     <children>
-                        <ImageView fx:id="imgPoster11" fitHeight="200.0" fitWidth="140.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
-                        </ImageView>
-                        <VBox prefHeight="202.0" prefWidth="455.0">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <children>
-                              <Label fx:id="lblFecha11" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblTitulo11" prefWidth="405.0" text="Título" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <Label fx:id="lblInfo11" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblGenero11" prefWidth="405.0" text="Género" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fx:id="imgPoster11" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="202.0" prefWidth="455.0">
+                                 <children>
+                                    <Label fx:id="lblFecha11" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblTitulo11" prefWidth="405.0" text="Título" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="lblInfo11" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblGenero11" prefWidth="405.0" text="Género" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
+                                 </HBox.margin>
+                              </VBox>
                            </children>
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                     <children>
-                        <ImageView fx:id="imgPoster02" fitHeight="200.0" fitWidth="140.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
-                        </ImageView>
-                        <VBox prefHeight="202.0" prefWidth="455.0">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="180.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <children>
-                              <Label fx:id="lblFecha02" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblTitulo02" prefWidth="405.0" text="Título" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <Label fx:id="lblInfo02" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblGenero02" prefWidth="405.0" text="Género" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fx:id="imgPoster02" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="202.0" prefWidth="455.0">
+                                 <children>
+                                    <Label fx:id="lblFecha02" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblTitulo02" prefWidth="405.0" text="Título" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="lblInfo02" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblGenero02" prefWidth="405.0" text="Género" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
+                                 </HBox.margin>
+                              </VBox>
                            </children>
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                     <children>
-                        <ImageView fx:id="imgPoster12" fitHeight="200.0" fitWidth="140.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
-                        </ImageView>
-                        <VBox prefHeight="202.0" prefWidth="455.0">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <children>
-                              <Label fx:id="lblFecha12" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblTitulo12" prefWidth="405.0" text="Título" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <Label fx:id="lblInfo12" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblGenero12" prefWidth="405.0" text="Género" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fx:id="imgPoster12" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="202.0" prefWidth="455.0">
+                                 <children>
+                                    <Label fx:id="lblFecha12" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblTitulo12" prefWidth="405.0" text="Título" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="lblInfo12" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblGenero12" prefWidth="405.0" text="Género" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
+                                 </HBox.margin>
+                              </VBox>
                            </children>
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
-                     <children>
-                        <ImageView fx:id="imgPoster30" fitHeight="200.0" fitWidth="140.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
-                        </ImageView>
-                        <VBox prefHeight="202.0" prefWidth="455.0">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="180.0" GridPane.rowIndex="3">
                            <children>
-                              <Label fx:id="lblFecha30" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblTitulo30" prefWidth="405.0" text="Título" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <Label fx:id="lblInfo30" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblGenero30" prefWidth="405.0" text="Género" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fx:id="imgPoster30" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="202.0" prefWidth="455.0">
+                                 <children>
+                                    <Label fx:id="lblFecha30" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblTitulo30" prefWidth="405.0" text="Título" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="lblInfo30" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblGenero30" prefWidth="405.0" text="Género" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
+                                 </HBox.margin>
+                              </VBox>
                            </children>
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <children>
-                        <ImageView fx:id="imgPoster30" fitHeight="200.0" fitWidth="140.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                           <image>
-                              <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
-                           </image>
-                        </ImageView>
-                        <VBox prefHeight="202.0" prefWidth="455.0">
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <children>
-                              <Label fx:id="lblFecha30" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblTitulo30" prefWidth="405.0" text="Título" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <Label fx:id="lblInfo30" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblGenero30" prefWidth="405.0" text="Género" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
+                              <ImageView fx:id="imgPoster30" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="202.0" prefWidth="455.0">
+                                 <children>
+                                    <Label fx:id="lblFecha30" prefWidth="405.0" text="01/01/2024" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblTitulo30" prefWidth="405.0" text="Título" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="lblInfo30" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="409.0" text="Información sobre la película o serie" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblGenero30" prefWidth="405.0" text="Género" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
+                                 </HBox.margin>
+                              </VBox>
                            </children>
-                           <HBox.margin>
-                              <Insets bottom="10.0" left="10.0" right="30.0" top="5.0" />
-                           </HBox.margin>
-                        </VBox>
+                        </HBox>
                      </children>
-                  </HBox>
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin>
+                  </GridPane>
                </children>
-               <VBox.margin>
-                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-               </VBox.margin>
-            </GridPane>
+            </VBox>
          </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
       </VBox>
    </children>
-   <padding>
-      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-   </padding>
 </AnchorPane>

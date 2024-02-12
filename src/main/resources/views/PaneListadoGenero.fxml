@@ -13,11 +13,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneListadoGeneroController">
+<AnchorPane maxHeight="882.0" maxWidth="1262.0" minHeight="882.0" minWidth="1262.0" prefHeight="882.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneListadoGeneroController">
    <children>
-      <VBox prefHeight="878.0" prefWidth="1263.0" style="-fx-background-color: #E9E9E9;">
+      <VBox prefHeight="882.0" prefWidth="1262.0" style="-fx-background-color: #E9E9E9;" AnchorPane.topAnchor="0.0">
          <children>
-            <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="862.0" prefWidth="1203.0" vbarPolicy="NEVER">
+            <ScrollPane hbarPolicy="NEVER" pannable="true" vbarPolicy="NEVER">
                <content>
                   <GridPane prefHeight="942.0" prefWidth="1200.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;" vgap="25.0">
                      <columnConstraints>

@@ -10,6 +10,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 public class PaneNuevaController {
 
@@ -68,6 +69,15 @@ public class PaneNuevaController {
 	// Botones
 	@FXML	private Button btnGuardar;
 	@FXML	private Button btnRestablecer;
+	
+	/**
+	 * Insertar url de la imagen de la pelicula/serie
+	 * @param event
+	 */
+  @FXML
+  void imgPosterClicked(MouseEvent event) {
+  	
+  }
 	
 	
 	@FXML
