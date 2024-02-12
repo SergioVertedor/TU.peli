@@ -3,6 +3,7 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 public class PaneCartelera {
 
@@ -45,11 +46,43 @@ public class PaneCartelera {
     @FXML private Label lblGenero11;
     @FXML private Label lblGenero12;
     @FXML private Label lblGenero13;
+    
+
+    /**
+     * Asigna el mismo manejador de eventos a todos los ImageViews
+     */
+    void asignClickHandlers() {
+    	setClickHandler(imgPoster00);
+    	setClickHandler(imgPoster01);
+    	setClickHandler(imgPoster02);
+    	setClickHandler(imgPoster03);
+    	setClickHandler(imgPoster10);
+    	setClickHandler(imgPoster11);
+    	setClickHandler(imgPoster12);
+    	setClickHandler(imgPoster13);
+    }  
+    
+    /**
+     * Asigna un manejador de eventos al ImageView
+     * @param imageView
+     */
+		private void setClickHandler(ImageView imageView) {
+			imageView.setOnMouseClicked(event -> handleImageViewClick(imageView));
+		}
+
+		/**
+		 * Redirige la página hacia el detalle de la pelicula clicada 
+		 * @param clickedImageView
+		 */
+		private void handleImageViewClick(ImageView clickedImageView) {
+			// TODO: goToPelicula()
+		}
 
 		@FXML
 		void initialize() {
 			// TODO: Busqueda 8 elementos cartelera
-			// Posibilidad de ampliar si nos da tiempo
+			
+			asignClickHandlers();
 		}
 
 }
