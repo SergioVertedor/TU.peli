@@ -99,7 +99,7 @@
                   <Insets left="30.0" right="30.0" top="28.0" />
                </VBox.margin>
             </VBox>
-            <Pane maxHeight="48.0" maxWidth="1202.0" minHeight="48.0" minWidth="1202.0" prefHeight="48.0" prefWidth="1202.0" style="-fx-background-color: #292929; -fx-background-radius: 8;" VBox.vgrow="ALWAYS">
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="1210.0" style="-fx-background-color: #292929; -fx-background-radius: 8;" VBox.vgrow="ALWAYS">
                <children>
                   <HBox alignment="CENTER_LEFT" maxWidth="1202.0" minWidth="1202.0" prefHeight="46.0" prefWidth="1210.0" spacing="20.0">
                      <children>
@@ -139,7 +139,7 @@
                   <Insets bottom="12.0" left="30.0" right="30.0" top="12.0" />
                </VBox.margin>
             </Pane>
-            <Pane maxWidth="1202.0" minWidth="1202.0" prefWidth="1202.0" style="-fx-background-color: #292929; -fx-background-radius: 8;" VBox.vgrow="ALWAYS">
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1210.0" style="-fx-background-color: #292929; -fx-background-radius: 8;" VBox.vgrow="ALWAYS">
                <children>
                   <VBox>
                      <children>
@@ -172,7 +172,7 @@
                               <Insets top="12.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="lblSinopsis" alignment="TOP_LEFT" minWidth="1120.0" prefHeight="120.0" prefWidth="1120.0" textFill="WHITE" wrapText="true">
+                        <Label fx:id="lblSinopsis" alignment="TOP_LEFT" minWidth="1120.0" prefHeight="180.0" prefWidth="1120.0" textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
