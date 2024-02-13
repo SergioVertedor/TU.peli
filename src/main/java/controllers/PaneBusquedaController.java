@@ -1,21 +1,15 @@
 package controllers;
 
-<<<<<<< HEAD
-=======
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
-
 import javafx.application.Platform;
->>>>>>> e9086a980dc0f64ccb301877f55730b06426433b
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import service.APIService;
 import utils.ListStorage;
 
 public class PaneBusquedaController {
@@ -57,8 +51,6 @@ public class PaneBusquedaController {
   @FXML private ImageView imgResultado32;
   @FXML private ImageView imgResultado33;
 
-
-
   // Contenedores HBox de los resultados
   @FXML private HBox line0;
   @FXML private HBox line1;
@@ -76,200 +68,144 @@ public class PaneBusquedaController {
    * @param event
    */
   @FXML
-  void btnBuscarClicked(MouseEvent event) {
-
-  }
+  void btnBuscarClicked(MouseEvent event) {}
 
   @FXML
   void initialize() {
     Platform.runLater(this::fillInitialResults);
   }
 
-
-
   public void fillInitialResults() {
-String url = "https://image.tmdb.org/t/p/w500";
-     List<ImageView> row1 =
-            List.of(
-                    imgResultado00,
-                    imgResultado01,
-                    imgResultado02,
-                    imgResultado03,
-                    imgResultado04,
-                    imgResultado05,
-                    imgResultado06);
-     List<ImageView> row2 =
-            List.of(
-                    imgResultado10,
-                    imgResultado11,
-                    imgResultado12,
-                    imgResultado13,
-                    imgResultado14,
-                    imgResultado15,
-                    imgResultado16);
-     List<ImageView> row3 =
-            List.of(
-                    imgResultado20,
-                    imgResultado21,
-                    imgResultado22,
-                    imgResultado23,
-                    imgResultado24,
-                    imgResultado25,
-                    imgResultado26);
-     List<ImageView> row4 =
-            List.of(
-                    imgResultado27,
-                    imgResultado28,
-                    imgResultado29,
-                    imgResultado30,
-                    imgResultado31,
-                    imgResultado32,
-                    imgResultado33);
+    String url = "https://image.tmdb.org/t/p/w500";
+    List<ImageView> row1 =
+        List.of(
+            imgResultado00,
+            imgResultado01,
+            imgResultado02,
+            imgResultado03,
+            imgResultado04,
+            imgResultado05,
+            imgResultado06);
+    List<ImageView> row2 =
+        List.of(
+            imgResultado10,
+            imgResultado11,
+            imgResultado12,
+            imgResultado13,
+            imgResultado14,
+            imgResultado15,
+            imgResultado16);
+    List<ImageView> row3 =
+        List.of(
+            imgResultado20,
+            imgResultado21,
+            imgResultado22,
+            imgResultado23,
+            imgResultado24,
+            imgResultado25,
+            imgResultado26);
+    List<ImageView> row4 =
+        List.of(
+            imgResultado27,
+            imgResultado28,
+            imgResultado29,
+            imgResultado30,
+            imgResultado31,
+            imgResultado32,
+            imgResultado33);
     for (int i = 0; i < 7; i++) {
-      row1.get(i).setImage(new Image(url + ListStorage.getTrendingMovies().get(i).getPoster_path()));
-      row3.get(i).setImage(new Image(url + ListStorage.getTrendingMovies().get(i + 7).getPoster_path()));
-      row2.get(i).setImage(new Image(url + ListStorage.getTrendingSeries().get(i).getPoster_path()));
-      row4.get(i).setImage(new Image(url + ListStorage.getTrendingSeries().get(i + 7).getPoster_path()));
+      row1.get(i)
+          .setImage(new Image(url + ListStorage.getTrendingMovies().get(i).getPoster_path()));
+      row3.get(i)
+          .setImage(new Image(url + ListStorage.getTrendingMovies().get(i + 7).getPoster_path()));
+      row2.get(i)
+          .setImage(new Image(url + ListStorage.getTrendingSeries().get(i).getPoster_path()));
+      row4.get(i)
+          .setImage(new Image(url + ListStorage.getTrendingSeries().get(i + 7).getPoster_path()));
     }
   }
-  
-  @FXML
-  void img00Pressed(MouseEvent event) {
-
-  }
 
   @FXML
-  void img01Pressed(MouseEvent event) {
-
-  }
+  void img00Pressed(MouseEvent event) {}
 
   @FXML
-  void img02Pressed(MouseEvent event) {
-
-  }
+  void img01Pressed(MouseEvent event) {}
 
   @FXML
-  void img03Pressed(MouseEvent event) {
-
-  }
+  void img02Pressed(MouseEvent event) {}
 
   @FXML
-  void img04Pressed(MouseEvent event) {
-
-  }
+  void img03Pressed(MouseEvent event) {}
 
   @FXML
-  void img05Pressed(MouseEvent event) {
-
-  }
+  void img04Pressed(MouseEvent event) {}
 
   @FXML
-  void img06Pressed(MouseEvent event) {
-
-  }
+  void img05Pressed(MouseEvent event) {}
 
   @FXML
-  void img10Pressed(MouseEvent event) {
-
-  }
+  void img06Pressed(MouseEvent event) {}
 
   @FXML
-  void img11Pressed(MouseEvent event) {
-
-  }
+  void img10Pressed(MouseEvent event) {}
 
   @FXML
-  void img12Pressed(MouseEvent event) {
-
-  }
+  void img11Pressed(MouseEvent event) {}
 
   @FXML
-  void img13Pressed(MouseEvent event) {
-
-  }
+  void img12Pressed(MouseEvent event) {}
 
   @FXML
-  void img14Pressed(MouseEvent event) {
-
-  }
+  void img13Pressed(MouseEvent event) {}
 
   @FXML
-  void img15Pressed(MouseEvent event) {
-
-  }
+  void img14Pressed(MouseEvent event) {}
 
   @FXML
-  void img16Pressed(MouseEvent event) {
-
-  }
+  void img15Pressed(MouseEvent event) {}
 
   @FXML
-  void img20Pressed(MouseEvent event) {
-
-  }
+  void img16Pressed(MouseEvent event) {}
 
   @FXML
-  void img21Pressed(MouseEvent event) {
-
-  }
+  void img20Pressed(MouseEvent event) {}
 
   @FXML
-  void img22Pressed(MouseEvent event) {
-
-  }
+  void img21Pressed(MouseEvent event) {}
 
   @FXML
-  void img23Pressed(MouseEvent event) {
-
-  }
+  void img22Pressed(MouseEvent event) {}
 
   @FXML
-  void img24Pressed(MouseEvent event) {
-
-  }
+  void img23Pressed(MouseEvent event) {}
 
   @FXML
-  void img25Pressed(MouseEvent event) {
-
-  }
+  void img24Pressed(MouseEvent event) {}
 
   @FXML
-  void img26Pressed(MouseEvent event) {
-
-  }
+  void img25Pressed(MouseEvent event) {}
 
   @FXML
-  void img30Pressed(MouseEvent event) {
-
-  }
+  void img26Pressed(MouseEvent event) {}
 
   @FXML
-  void img31Pressed(MouseEvent event) {
-
-  }
+  void img30Pressed(MouseEvent event) {}
 
   @FXML
-  void img32Pressed(MouseEvent event) {
-
-  }
+  void img31Pressed(MouseEvent event) {}
 
   @FXML
-  void img33Pressed(MouseEvent event) {
-
-  }
+  void img32Pressed(MouseEvent event) {}
 
   @FXML
-  void img34Pressed(MouseEvent event) {
-
-  }
+  void img33Pressed(MouseEvent event) {}
 
   @FXML
-  void img35Pressed(MouseEvent event) {
-
-  }
+  void img34Pressed(MouseEvent event) {}
 
   @FXML
-  void img36Pressed(MouseEvent event) {
+  void img35Pressed(MouseEvent event) {}
 
-  }
+  @FXML
+  void img36Pressed(MouseEvent event) {}
 }
