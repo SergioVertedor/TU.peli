@@ -1,15 +1,17 @@
 package controllers;
 
+<<<<<<< HEAD
+=======
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
+>>>>>>> e9086a980dc0f64ccb301877f55730b06426433b
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -129,5 +131,145 @@ String url = "https://image.tmdb.org/t/p/w500";
       row2.get(i).setImage(new Image(url + ListStorage.getTrendingSeries().get(i).getPoster_path()));
       row4.get(i).setImage(new Image(url + ListStorage.getTrendingSeries().get(i + 7).getPoster_path()));
     }
+  }
+  
+  @FXML
+  void img00Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img01Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img02Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img03Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img04Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img05Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img06Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img10Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img11Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img12Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img13Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img14Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img15Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img16Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img20Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img21Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img22Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img23Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img24Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img25Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img26Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img30Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img31Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img32Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img33Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img34Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img35Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void img36Pressed(MouseEvent event) {
+
   }
 }
