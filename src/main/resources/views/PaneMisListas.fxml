@@ -106,8 +106,11 @@
                                     </ImageView>
                                  </children>
                                  <padding>
-                                    <Insets bottom="25.0" left="30.0" />
+                                    <Insets bottom="25.0" left="30.0" right="30.0" />
                                  </padding>
+                                 <VBox.margin>
+                                    <Insets right="15.0" />
+                                 </VBox.margin>
                               </HBox>
                            </children>
                         </VBox>

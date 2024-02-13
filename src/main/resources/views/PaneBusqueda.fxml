@@ -38,26 +38,21 @@
                         <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TextField fx:id="txtBusqueda" alignment="CENTER_RIGHT" onKeyPressed="#buscarKeyPressed" prefHeight="26.0" prefWidth="658.0" promptText="Búsqueda Avanzada ▼" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtBusqueda" alignment="CENTER_RIGHT" onKeyPressed="#buscarKeyPressed" prefHeight="26.0" prefWidth="658.0" promptText="Búsqueda" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <ImageView fx:id="btnBuscar" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#btnBuscarClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <image>
                               <Image url="@../images/others/search.png" />
                            </image>
                         </ImageView>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="35.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="45.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <children>
-                              <RadioButton fx:id="rbTodas" mnemonicParsing="false" selected="true" text="Todas" textFill="WHITE">
+                              <RadioButton fx:id="rbPeliculas" mnemonicParsing="false" selected="true" text="Peliculas" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                                  <toggleGroup>
                                     <ToggleGroup fx:id="btnGroup" />
                                  </toggleGroup>
-                              </RadioButton>
-                              <RadioButton fx:id="rbPeliculas" mnemonicParsing="false" text="Peliculas" textFill="WHITE" toggleGroup="$btnGroup">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
                               </RadioButton>
                               <RadioButton fx:id="rbSeries" mnemonicParsing="false" text="Series" textFill="WHITE" toggleGroup="$btnGroup">
                                  <font>
