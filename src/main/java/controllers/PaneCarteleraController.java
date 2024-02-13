@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import service.dto.Genre;
 import utils.ListStorage;
 
@@ -80,6 +81,46 @@ public class PaneCarteleraController {
    */
   private void handleImageViewClick(ImageView clickedImageView) {
     // TODO: goToPelicula()
+  }
+  
+  @FXML
+  void imgPoster00Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster01Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster02Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster03Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster10Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster11Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster12Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster13Pressed(MouseEvent event) {
+
   }
 
   @FXML
