@@ -20,6 +20,8 @@ public class PaneMisListasController {
 	@FXML	private ImageView imgReciente09;
 	@FXML	private ImageView imgReciente10;
 	@FXML	private ImageView imgReciente11;
+	@FXML	private ImageView imgReciente12;
+	@FXML	private ImageView imgReciente13;
 	
 	// Imagenes Mis Peliculas
 	@FXML	private ImageView imgPelicula00;

@@ -14,13 +14,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="882.0" maxWidth="1262.0" minHeight="882.0" minWidth="1262.0" prefHeight="882.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneMisListasController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneMisListasController">
    <children>
       <Pane AnchorPane.topAnchor="0.0">
          <children>
-            <VBox alignment="TOP_CENTER" prefHeight="883.0" prefWidth="1262.0" style="-fx-background-color: #E9E9E9;">
+            <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="1350.0" style="-fx-background-color: #E9E9E9;">
                <children>
-                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="265.0" prefWidth="1232.0" style="-fx-background-radius: 12;" vbarPolicy="NEVER" vmax="-1.0">
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" style="-fx-background-radius: 12;" vbarPolicy="NEVER" vmax="-1.0">
                      <content>
                         <VBox style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                            <children>
@@ -29,7 +29,7 @@
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets bottom="15.0" left="30.0" top="15.0" />
+                                    <Insets bottom="15.0" left="40.0" top="15.0" />
                                  </VBox.margin>
                               </Label>
                               <HBox spacing="20.0">
@@ -94,9 +94,19 @@
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
                                     </ImageView>
+                                    <ImageView fx:id="imgReciente12" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/examples/ejemploPosterSerie.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="imgReciente13" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/examples/ejemploPosterSerie.jpg" />
+                                       </image>
+                                    </ImageView>
                                  </children>
                                  <padding>
-                                    <Insets bottom="25.0" left="25.0" />
+                                    <Insets bottom="25.0" left="30.0" />
                                  </padding>
                               </HBox>
                            </children>
@@ -114,10 +124,10 @@
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints fillHeight="false" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                        <RowConstraints fillHeight="false" maxHeight="500.0" minHeight="500.0" prefHeight="500.0" />
+                        <RowConstraints fillHeight="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="420.0" />
                     </rowConstraints>
                      <VBox.margin>
-                        <Insets />
+                        <Insets top="30.0" />
                      </VBox.margin>
                      <children>
                         <HBox alignment="CENTER" spacing="100.0">
@@ -180,7 +190,7 @@
                               </ImageView>
                            </children>
                         </HBox>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" vbarPolicy="NEVER" GridPane.rowIndex="1">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefWidth="354.0" vbarPolicy="NEVER" GridPane.rowIndex="1">
                            <content>
                               <VBox alignment="TOP_CENTER" prefHeight="820.0" prefWidth="372.0" spacing="10.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                                  <padding>
@@ -218,7 +228,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="180.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula01" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgPelicula01" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
@@ -247,7 +257,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="180.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula02" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgPelicula02" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
@@ -276,7 +286,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="180.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula03" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgPelicula03" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
@@ -305,7 +315,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="180.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula04" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgPelicula04" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
@@ -334,7 +344,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="180.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula05" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgPelicula05" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
@@ -363,7 +373,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="180.0">
                                        <children>
-                                          <ImageView fx:id="imgPelicula06" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgPelicula06" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
@@ -445,7 +455,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgSerie01" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie01" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
@@ -474,7 +484,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgSerie02" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie02" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
@@ -503,7 +513,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgSerie03" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie03" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
@@ -532,7 +542,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgSerie04" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie04" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
@@ -561,7 +571,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgSerie05" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie05" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
@@ -590,7 +600,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgSerie06" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgSerie06" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
@@ -672,7 +682,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgFav01" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav01" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
@@ -701,7 +711,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgFav02" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav02" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
@@ -730,7 +740,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgFav03" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav03" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
@@ -759,7 +769,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgFav04" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav04" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
@@ -788,7 +798,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgFav05" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav05" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
@@ -817,7 +827,7 @@
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <ImageView fx:id="imgFav06" fitHeight="110.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgFav06" fitHeight="110.0" fitWidth="87.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>

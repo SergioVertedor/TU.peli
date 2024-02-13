@@ -16,6 +16,7 @@ public class PaneListadoGeneroController {
   @FXML private ImageView imgResultado04;
   @FXML private ImageView imgResultado05;
   @FXML private ImageView imgResultado06;
+  @FXML private ImageView imgResultado07;
   
   @FXML private ImageView imgResultado10;
   @FXML private ImageView imgResultado11;
@@ -24,6 +25,7 @@ public class PaneListadoGeneroController {
   @FXML private ImageView imgResultado14;
   @FXML private ImageView imgResultado15;
   @FXML private ImageView imgResultado16;
+  @FXML private ImageView imgResultado17;
 
   @FXML private ImageView imgResultado20;
   @FXML private ImageView imgResultado21;
@@ -32,6 +34,7 @@ public class PaneListadoGeneroController {
   @FXML private ImageView imgResultado24;
   @FXML private ImageView imgResultado25;
   @FXML private ImageView imgResultado26;
+  @FXML private ImageView imgResultado27;
   
   @FXML private ImageView imgResultado30; 
   @FXML private ImageView imgResultado31;
@@ -40,6 +43,7 @@ public class PaneListadoGeneroController {
   @FXML private ImageView imgResultado34;
   @FXML private ImageView imgResultado35;
   @FXML private ImageView imgResultado36;
+  @FXML private ImageView imgResultado37;
   
   @FXML private ImageView imgResultado40; 
   @FXML private ImageView imgResultado41;
@@ -48,6 +52,7 @@ public class PaneListadoGeneroController {
   @FXML private ImageView imgResultado44;
   @FXML private ImageView imgResultado45;
   @FXML private ImageView imgResultado46;
+  @FXML private ImageView imgResultado47;
 
 	// Labels nombre género por fila
 	@FXML	private Label lblGenero0;
