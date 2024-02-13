@@ -38,7 +38,7 @@
                         <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TextField fx:id="txtBusqueda" alignment="CENTER_RIGHT" onKeyPressed="#buscarKeyPressed" prefHeight="26.0" prefWidth="658.0" promptText="Búsqueda Avanzada ▼" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtBusqueda" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="658.0" promptText="Búsqueda Avanzada ▼" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <ImageView fx:id="btnBuscar" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#btnBuscarClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <image>
                               <Image url="@../images/others/search.png" />
@@ -208,6 +208,21 @@
                         </HBox>
                         <HBox fx:id="line3" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="35.0" GridPane.rowIndex="3">
                            <children>
+                              <ImageView fx:id="imgResultado27" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../images/examples/ejemploPosterSerie.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="imgResultado28" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../images/examples/ejemploPosterSerie.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="imgResultado29" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../images/examples/ejemploPosterSerie.jpg" />
+                                 </image>
+                              </ImageView>
                               <ImageView fx:id="imgResultado30" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterSerie.jpg" />
@@ -224,21 +239,6 @@
                                  </image>
                               </ImageView>
                               <ImageView fx:id="imgResultado33" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                                 <image>
-                                    <Image url="@../images/examples/ejemploPosterSerie.jpg" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fx:id="imgResultado34" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                                 <image>
-                                    <Image url="@../images/examples/ejemploPosterSerie.jpg" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fx:id="imgResultado35" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                                 <image>
-                                    <Image url="@../images/examples/ejemploPosterSerie.jpg" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fx:id="imgResultado36" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                                  <image>
                                     <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                  </image>
