@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="882.0" maxWidth="1262.0" minHeight="882.0" minWidth="1262.0" prefHeight="882.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneInicioController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneInicioController">
    <children>
-      <VBox alignment="TOP_CENTER" focusTraversable="true" prefHeight="882.0" prefWidth="1262.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" focusTraversable="true" prefHeight="800.0" prefWidth="1350.0" AnchorPane.topAnchor="0.0">
          <children>
             <GridPane alignment="CENTER" maxHeight="130.0" maxWidth="900.0" minHeight="130.0" minWidth="900.0" prefHeight="130.0" prefWidth="900.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
               <columnConstraints>
@@ -64,7 +64,7 @@
                   </ImageView>
                </children>
             </GridPane>
-            <ImageView fx:id="imgCentralInicio" fitHeight="250.0" fitWidth="750.0" pickOnBounds="true">
+            <ImageView fx:id="imgCentralInicio" fitHeight="290.0" fitWidth="750.0" pickOnBounds="true">
                <VBox.margin>
                   <Insets />
                </VBox.margin>

@@ -54,7 +54,8 @@ public class SceneSwitcher {
 
     // Crear la escena con las dimensiones de la pantalla y carga el archivo .css
     // asociado
-    Scene scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+//    Scene scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+    Scene scene = new Scene(root, 1600, 900);
     scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
     // Asigna la escena a la ventana principal
     stage.setScene(scene);
