@@ -31,7 +31,7 @@
                      <children>
                         <HBox prefHeight="100.0" prefWidth="180.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgPoster00" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                              <ImageView fx:id="imgPoster00" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster00Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
@@ -70,7 +70,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgPoster10" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                              <ImageView fx:id="imgPoster10" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster10Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                               <VBox prefHeight="202.0" prefWidth="455.0">
                                  <children>
                                     <Label fx:id="lblFecha10" prefWidth="405.0" textFill="WHITE">
@@ -105,7 +105,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="180.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgPoster01" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                              <ImageView fx:id="imgPoster01" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster01Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                               <VBox prefHeight="202.0" prefWidth="455.0">
                                  <children>
                                     <Label fx:id="lblFecha01" prefWidth="405.0" textFill="WHITE">
@@ -140,7 +140,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgPoster11" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                              <ImageView fx:id="imgPoster11" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster11Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                               <VBox prefHeight="202.0" prefWidth="455.0">
                                  <children>
                                     <Label fx:id="lblFecha11" prefWidth="405.0" textFill="WHITE">
@@ -175,7 +175,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="180.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgPoster02" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                              <ImageView fx:id="imgPoster02" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster02Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                               <VBox prefHeight="202.0" prefWidth="455.0">
                                  <children>
                                     <Label fx:id="lblFecha02" prefWidth="405.0" textFill="WHITE">
@@ -210,7 +210,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgPoster12" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                              <ImageView fx:id="imgPoster12" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster12Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                               <VBox prefHeight="202.0" prefWidth="455.0">
                                  <children>
                                     <Label fx:id="lblFecha12" prefWidth="405.0" textFill="WHITE">
@@ -245,7 +245,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="180.0" GridPane.rowIndex="3">
                            <children>
-                              <ImageView fx:id="imgPoster03" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                              <ImageView fx:id="imgPoster03" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster03Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                               <VBox prefHeight="202.0" prefWidth="455.0">
                                  <children>
                                     <Label fx:id="lblFecha03" prefWidth="405.0" textFill="WHITE">
@@ -280,7 +280,7 @@
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <children>
-                              <ImageView fx:id="imgPoster13" fitHeight="180.0" fitWidth="150.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                              <ImageView fx:id="imgPoster13" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster13Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                               <VBox prefHeight="202.0" prefWidth="455.0">
                                  <children>
                                     <Label fx:id="lblFecha13" prefWidth="405.0" textFill="WHITE">

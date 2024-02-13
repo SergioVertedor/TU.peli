@@ -63,13 +63,45 @@ public class PaneProximamenteController {
   @FXML private Label lblTitulo12;
   @FXML private Label lblTitulo13;
 
-  /**
-   * Te redirige hacia información detallada del titulo seleccionado
-   *
-   * @param event
-   */
   @FXML
-  void goToTitulo(MouseEvent event) {}
+  void imgPoster00Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster01Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster02Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster03Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster10Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster11Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster12Pressed(MouseEvent event) {
+
+  }
+
+  @FXML
+  void imgPoster13Pressed(MouseEvent event) {
+
+  }
 
   @FXML
   void initialize() {
