@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import service.APIService;
 import utils.ListStorage;
 
 public class PaneBusquedaController {
@@ -54,6 +55,8 @@ public class PaneBusquedaController {
   @FXML private ImageView imgResultado32;
   @FXML private ImageView imgResultado33;
 
+
+
   // Contenedores HBox de los resultados
   @FXML private HBox line0;
   @FXML private HBox line1;
@@ -62,7 +65,6 @@ public class PaneBusquedaController {
 
   // Opciones radioButton
   @FXML private ToggleGroup btnGroup;
-  @FXML private RadioButton rbTodas;
   @FXML private RadioButton rbPeliculas;
   @FXML private RadioButton rbSeries;
 
@@ -72,56 +74,55 @@ public class PaneBusquedaController {
    * @param event
    */
   @FXML
-  void btnBuscarClicked(MouseEvent event) {}
+  void btnBuscarClicked(MouseEvent event) {
+
+  }
 
   @FXML
   void initialize() {
     Platform.runLater(this::fillInitialResults);
   }
 
-  public void fillResults(char type) {}
+
 
   public void fillInitialResults() {
-    List<ImageView> row1 =
-        List.of(
-            imgResultado00,
-            imgResultado01,
-            imgResultado02,
-            imgResultado03,
-            imgResultado04,
-            imgResultado05,
-            imgResultado06);
-    List<ImageView> row2 =
-        List.of(
-            imgResultado10,
-            imgResultado11,
-            imgResultado12,
-            imgResultado13,
-            imgResultado14,
-            imgResultado15,
-            imgResultado16);
-    List<ImageView> row3 =
-        List.of(
-            imgResultado20,
-            imgResultado21,
-            imgResultado22,
-            imgResultado23,
-            imgResultado24,
-            imgResultado25,
-            imgResultado26);
-    List<ImageView> row4 =
-        List.of(
-            imgResultado27,
-            imgResultado28,
-            imgResultado29,
-            imgResultado30,
-            imgResultado31,
-            imgResultado32,
-            imgResultado33);
-
-    ListStorage.getTrendingMovies();
-    ListStorage.getTrendingSeries();
 String url = "https://image.tmdb.org/t/p/w500";
+     List<ImageView> row1 =
+            List.of(
+                    imgResultado00,
+                    imgResultado01,
+                    imgResultado02,
+                    imgResultado03,
+                    imgResultado04,
+                    imgResultado05,
+                    imgResultado06);
+     List<ImageView> row2 =
+            List.of(
+                    imgResultado10,
+                    imgResultado11,
+                    imgResultado12,
+                    imgResultado13,
+                    imgResultado14,
+                    imgResultado15,
+                    imgResultado16);
+     List<ImageView> row3 =
+            List.of(
+                    imgResultado20,
+                    imgResultado21,
+                    imgResultado22,
+                    imgResultado23,
+                    imgResultado24,
+                    imgResultado25,
+                    imgResultado26);
+     List<ImageView> row4 =
+            List.of(
+                    imgResultado27,
+                    imgResultado28,
+                    imgResultado29,
+                    imgResultado30,
+                    imgResultado31,
+                    imgResultado32,
+                    imgResultado33);
     for (int i = 0; i < 7; i++) {
       row1.get(i).setImage(new Image(url + ListStorage.getTrendingMovies().get(i).getPoster_path()));
       row3.get(i).setImage(new Image(url + ListStorage.getTrendingMovies().get(i + 7).getPoster_path()));

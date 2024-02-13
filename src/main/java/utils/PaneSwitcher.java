@@ -52,8 +52,6 @@ public class PaneSwitcher {
       loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
       Pane myPane = loader.load();
       centralPane.getChildren().setAll(myPane);
-      PaneBusquedaController paneBusquedaController = loader.getController();
-      paneBusquedaController.fillResults(type);
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
       System.out.println(e);

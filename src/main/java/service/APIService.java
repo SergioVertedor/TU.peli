@@ -26,14 +26,19 @@ public class APIService {
    * @return Objeto Java con los resultados de la búsqueda.
    * @throws IOException Excepción en caso de que la petición HTTP falle.
    */
-  public MovieSearchResult searchMovie(String name) throws IOException {
+  public MovieSearchResult searchMovie(String name) {
     // Generamos la URL de la petición HTTP.
     String url =
         "https://api.themoviedb.org/3/search/movie?query="
             + Formatter.acondicionaUrl(name)
             + "&include_adult=true&language=es-ES&page=1";
     Gson gson = new Gson();
-    return gson.fromJson(doRequest(url), MovieSearchResult.class);
+    try {
+      return gson.fromJson(doRequest(url), MovieSearchResult.class);
+    } catch (IOException e) {
+      System.err.println("Error al buscar películas.");
+      throw new RuntimeException(e);
+    }
   }
 
   /**
@@ -80,14 +85,19 @@ public class APIService {
    * @return Objeto Java con los resultados de la búsqueda.
    * @throws IOException Excepción en caso de que la petición HTTP falle.
    */
-  public TVSearchResult searchSerie(String name) throws IOException {
+  public TVSearchResult searchSerie(String name) {
     // Generamos la URL de la petición HTTP.
     String url =
         "https://api.themoviedb.org/3/search/tv?query="
             + Formatter.acondicionaUrl(name)
             + "&include_adult=true&language=es-ES&page=1";
     Gson gson = new Gson();
-    return gson.fromJson(doRequest(url), TVSearchResult.class);
+    try {
+      return gson.fromJson(doRequest(url), TVSearchResult.class);
+    } catch (IOException e) {
+      System.err.println("Error al buscar series.");
+      throw new RuntimeException(e);
+    }
   }
 
   /**
@@ -101,12 +111,12 @@ public class APIService {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/tv/" + id + "?language=es-ES";
     Gson gson = new Gson();
-      try {
-          return gson.fromJson(doRequest(url), TVDetail.class);
-      } catch (IOException e) {
+    try {
+      return gson.fromJson(doRequest(url), TVDetail.class);
+    } catch (IOException e) {
       System.err.println("Error al obtener los detalles de la serie.");
-          throw new RuntimeException(e);
-      }
+      throw new RuntimeException(e);
+    }
   }
 
   /**
@@ -164,6 +174,7 @@ public class APIService {
 
   /**
    * Obtiene los detalles de una película.
+   *
    * @param id ID de la película.
    * @return Objeto Java con los resultados de la búsqueda.
    */
