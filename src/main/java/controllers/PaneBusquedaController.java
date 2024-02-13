@@ -1,5 +1,13 @@
 package controllers;
 
+<<<<<<< HEAD
+=======
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.application.Platform;
+>>>>>>> e9086a980dc0f64ccb301877f55730b06426433b
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -39,6 +47,14 @@ public class PaneBusquedaController {
   @FXML private ImageView imgResultado25;
   @FXML private ImageView imgResultado26;
 
+  @FXML private ImageView imgResultado27;
+  @FXML private ImageView imgResultado28;
+  @FXML private ImageView imgResultado29;
+  @FXML private ImageView imgResultado30;
+  @FXML private ImageView imgResultado31;
+  @FXML private ImageView imgResultado32;
+  @FXML private ImageView imgResultado33;
+
   // Contenedores HBox de los resultados
   @FXML private HBox line0;
   @FXML private HBox line1;
@@ -60,10 +76,59 @@ public class PaneBusquedaController {
   
 
   @FXML
-  void initialize() {}
+  void initialize() {
+    Platform.runLater(this::fillInitialResults);
+  }
 
-  public void fillResults(char type) {
+  public void fillResults(char type) {}
 
+  public void fillInitialResults() {
+    List<ImageView> row1 =
+        List.of(
+            imgResultado00,
+            imgResultado01,
+            imgResultado02,
+            imgResultado03,
+            imgResultado04,
+            imgResultado05,
+            imgResultado06);
+    List<ImageView> row2 =
+        List.of(
+            imgResultado10,
+            imgResultado11,
+            imgResultado12,
+            imgResultado13,
+            imgResultado14,
+            imgResultado15,
+            imgResultado16);
+    List<ImageView> row3 =
+        List.of(
+            imgResultado20,
+            imgResultado21,
+            imgResultado22,
+            imgResultado23,
+            imgResultado24,
+            imgResultado25,
+            imgResultado26);
+    List<ImageView> row4 =
+        List.of(
+            imgResultado27,
+            imgResultado28,
+            imgResultado29,
+            imgResultado30,
+            imgResultado31,
+            imgResultado32,
+            imgResultado33);
+
+    ListStorage.getTrendingMovies();
+    ListStorage.getTrendingSeries();
+String url = "https://image.tmdb.org/t/p/w500";
+    for (int i = 0; i < 7; i++) {
+      row1.get(i).setImage(new Image(url + ListStorage.getTrendingMovies().get(i).getPoster_path()));
+      row3.get(i).setImage(new Image(url + ListStorage.getTrendingMovies().get(i + 7).getPoster_path()));
+      row2.get(i).setImage(new Image(url + ListStorage.getTrendingSeries().get(i).getPoster_path()));
+      row4.get(i).setImage(new Image(url + ListStorage.getTrendingSeries().get(i + 7).getPoster_path()));
+    }
   }
   
   @FXML
