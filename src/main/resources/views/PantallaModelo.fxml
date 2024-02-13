@@ -2,7 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -107,6 +109,26 @@
                         </ImageView>
                         <TextField fx:id="txtBusqueda" prefHeight="26.0" prefWidth="658.0" />
                      </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.rowIndex="2">
+                     <children>
+                        <RadioButton fx:id="rbPeliculas" mnemonicParsing="false" selected="true" text="Películas" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggle" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbSeries" mnemonicParsing="false" text="Series" textFill="WHITE" toggleGroup="$toggle">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                     </children>
+                     <GridPane.margin>
+                        <Insets bottom="8.0" />
+                     </GridPane.margin>
                   </HBox>
                </children>
             </GridPane>

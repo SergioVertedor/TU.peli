@@ -3,7 +3,9 @@ package controllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -34,9 +36,12 @@ public class PantallaModeloController {
 	@FXML	private ImageView imgUser;
 	@FXML	private Label lblUserName;
 	
-	// ELementos de búsqueda
+	// Elementos de búsqueda
 	@FXML	private TextField txtBusqueda;
 	@FXML	private ImageView btnBuscar;
+  @FXML private ToggleGroup toggle;
+  @FXML private RadioButton rbPeliculas;
+  @FXML private RadioButton rbSeries;
 
 	// Cerrar sesión
 	@FXML	private ImageView imgClose;
