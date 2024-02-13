@@ -22,7 +22,7 @@ import service.dto.tv.TV;
 import utils.ListStorage;
 
 public class PaneTopController {
-	
+
   @Setter @Getter private static char type;
 
   // Imagenes Top
@@ -48,7 +48,6 @@ public class PaneTopController {
   @FXML private RadioButton rbLastTenYears;
   @FXML private RadioButton rbThreeMonths;
   @FXML private RadioButton rbThisYear;
-
 
   @FXML
   void thisYearPressed(MouseEvent event) {
@@ -209,8 +208,14 @@ public class PaneTopController {
     String thisDecade = "1-1-" + (Integer.parseInt(actualYear) - 10);
     String threeMonths = "";
     if (timeFrame.equals("3m")) {
-      if (Integer.parseInt(actualMonth) <= 3) {
+      if (Integer.parseInt(actualMonth) - 3 == 0) {
         threeMonths = "1-1" + actualYear;
+      }
+      if (Integer.parseInt(actualMonth) - 3 == -1) {
+        threeMonths = "1-12-" + (Integer.parseInt(actualYear) - 1);
+      }
+      if (Integer.parseInt(actualMonth) - 3 == -2) {
+        threeMonths = "1-11-" + (Integer.parseInt(actualYear) - 1);
       } else {
         threeMonths = "1-" + (Integer.parseInt(actualMonth) - 3) + actualYear;
       }

@@ -91,31 +91,22 @@ public class APIService {
   }
 
   /**
-   * Obtiene el detalle de una película.
-   *
-   * @param id ID de la película.
-   * @return Objeto Java con los resultados de la búsqueda.
-   * @throws IOException Excepción en caso de que la petición HTTP falle.
-   */
-  public MovieDetail getMovieDetail(int id) throws IOException {
-    // Generamos la URL de la petición HTTP.
-    String url = "https://api.themoviedb.org/3/movie/" + id + "?language=es-ES";
-    Gson gson = new Gson();
-    return gson.fromJson(doRequest(url), MovieDetail.class);
-  }
-
-  /**
    * Obtiene el detalle de una serie.
    *
    * @param id ID de la serie.
    * @return Objeto Java con los resultados de la búsqueda.
    * @throws IOException Excepción en caso de que la petición HTTP falle.
    */
-  public TVDetail getTVDetail(int id) throws IOException {
+  public TVDetail getTVDetail(int id) {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/tv/" + id + "?language=es-ES";
     Gson gson = new Gson();
-    return gson.fromJson(doRequest(url), TVDetail.class);
+      try {
+          return gson.fromJson(doRequest(url), TVDetail.class);
+      } catch (IOException e) {
+      System.err.println("Error al obtener los detalles de la serie.");
+          throw new RuntimeException(e);
+      }
   }
 
   /**
@@ -169,6 +160,23 @@ public class APIService {
     String url = "https://api.themoviedb.org/3/genre/movie/list?language=es-ES";
     Gson gson = new Gson();
     return gson.fromJson(doRequest(url), GenreSearchResult.class);
+  }
+
+  /**
+   * Obtiene los detalles de una película.
+   * @param id ID de la película.
+   * @return Objeto Java con los resultados de la búsqueda.
+   */
+  public MovieDetail getMovieDetails(int id) {
+    // Generamos la URL de la petición HTTP.
+    String url = "https://api.themoviedb.org/3/movie/" + id + "?language=es-ES";
+    Gson gson = new Gson();
+    try {
+      return gson.fromJson(doRequest(url), MovieDetail.class);
+    } catch (IOException e) {
+      System.err.println("Error al obtener los detalles de la película.");
+      throw new RuntimeException(e);
+    }
   }
 
   /**

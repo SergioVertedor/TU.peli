@@ -1,6 +1,7 @@
 package utils;
 
 import controllers.PaneBusquedaController;
+import controllers.PaneDetalleController;
 import controllers.PaneTopController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.*;
@@ -68,6 +69,22 @@ public class PaneSwitcher {
       centralPane.getChildren().setAll(myPane);
       PaneTopController paneTopController = loader.getController();
       paneTopController.fillTopWorks(type, "");
+    } catch (Exception e) {
+      System.out.println("Error al cargar la ventana de inicio.");
+      System.out.println(e);
+    }
+  }
+
+  public static void switchToDetails(String paneTarget, Pane centralPane, char type, int idWork) {
+    String fxmlFile = "/views/" + paneTarget + ".fxml";
+    try {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
+      Pane myPane = loader.load();
+      centralPane.getChildren().setAll(myPane);
+      PaneDetalleController paneDetalleController = loader.getController();
+      paneDetalleController.setType(type);
+      paneDetalleController.fillInfo(idWork);
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
       System.out.println(e);

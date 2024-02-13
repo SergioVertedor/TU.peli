@@ -56,6 +56,7 @@ public class ListStorage {
       topMovies = Arrays.stream(apiService.getTopMovies().getResults()).toList();
       topSeries = Arrays.stream(apiService.getTopSeries().getResults()).toList();
       upcomingMovies = Arrays.stream(apiService.getUpcomingMovies().getResults()).toList();
+      nowPlayingMovies = Arrays.stream(apiService.getNowPlayingMovies().getResults()).toList();
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
