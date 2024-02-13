@@ -33,7 +33,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <HBox fx:id="line0" alignment="CENTER" prefHeight="216.0" prefWidth="1287.0" spacing="35.0">
+                        <HBox fx:id="line0" alignment="CENTER" prefHeight="216.0" prefWidth="1287.0" spacing="30.0">
                            <children>
                               <ImageView fx:id="imgResultado00" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                               <ImageView fx:id="imgResultado01" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
@@ -47,7 +47,7 @@
                               <Insets />
                            </GridPane.margin>
                         </HBox>
-                        <HBox fx:id="line1" alignment="CENTER" prefHeight="100.0" prefWidth="1200.0" spacing="35.0" GridPane.rowIndex="1">
+                        <HBox fx:id="line1" alignment="CENTER" prefHeight="100.0" prefWidth="1200.0" spacing="30.0" GridPane.rowIndex="1">
                            <children>
                               <ImageView fx:id="imgResultado10" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                               <ImageView fx:id="imgResultado11" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
@@ -58,7 +58,7 @@
                               <ImageView fx:id="imgResultado16" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
-                        <HBox fx:id="line2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="35.0" GridPane.rowIndex="2">
+                        <HBox fx:id="line2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.rowIndex="2">
                            <children>
                               <ImageView fx:id="imgResultado20" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                               <ImageView fx:id="imgResultado21" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
@@ -69,7 +69,7 @@
                               <ImageView fx:id="imgResultado26" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
-                        <HBox fx:id="line3" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="35.0" GridPane.rowIndex="3">
+                        <HBox fx:id="line3" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.rowIndex="3">
                            <children>
                               <ImageView fx:id="imgResultado27" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                               <ImageView fx:id="imgResultado28" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
