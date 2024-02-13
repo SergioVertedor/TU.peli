@@ -1,24 +1,26 @@
 package controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import lombok.Getter;
+import lombok.Setter;
+import service.dto.movie.Movie;
+import service.dto.tv.TV;
 import utils.ListStorage;
+import utils.PaneSwitcher;
 
 public class PaneBusquedaController {
-
+  @Getter @Setter private Pane centralPane;
+  private List<Movie> movies = new ArrayList<Movie>();
+  private List<TV> series = new ArrayList<TV>();
+  private static char type;
   // Elementos de búsqueda
-  @FXML private TextField txtBusqueda;
-  @FXML private ImageView btnBuscar;
-
-  // Imagenes por fila 0-3 y columna 0-6
   @FXML private ImageView imgResultado00;
   @FXML private ImageView imgResultado01;
   @FXML private ImageView imgResultado02;
@@ -26,7 +28,6 @@ public class PaneBusquedaController {
   @FXML private ImageView imgResultado04;
   @FXML private ImageView imgResultado05;
   @FXML private ImageView imgResultado06;
-
   @FXML private ImageView imgResultado10;
   @FXML private ImageView imgResultado11;
   @FXML private ImageView imgResultado12;
@@ -34,7 +35,6 @@ public class PaneBusquedaController {
   @FXML private ImageView imgResultado14;
   @FXML private ImageView imgResultado15;
   @FXML private ImageView imgResultado16;
-
   @FXML private ImageView imgResultado20;
   @FXML private ImageView imgResultado21;
   @FXML private ImageView imgResultado22;
@@ -43,36 +43,303 @@ public class PaneBusquedaController {
   @FXML private ImageView imgResultado25;
   @FXML private ImageView imgResultado26;
 
-  @FXML private ImageView imgResultado27;
-  @FXML private ImageView imgResultado28;
-  @FXML private ImageView imgResultado29;
-  @FXML private ImageView imgResultado30;
-  @FXML private ImageView imgResultado31;
-  @FXML private ImageView imgResultado32;
-  @FXML private ImageView imgResultado33;
-
-  // Contenedores HBox de los resultados
-  @FXML private HBox line0;
-  @FXML private HBox line1;
-  @FXML private HBox line2;
-  @FXML private HBox line3;
-
-  // Opciones radioButton
-  @FXML private ToggleGroup btnGroup;
-  @FXML private RadioButton rbPeliculas;
-  @FXML private RadioButton rbSeries;
-
-  /**
-   * Busca el titulo dado filtrando por Películas/Series o ambas opciones
-   *
-   * @param event
-   */
   @FXML
-  void btnBuscarClicked(MouseEvent event) {}
+  void imageViewPressed00(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(0).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(0).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed01(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(1).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(1).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed02(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(2).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(2).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed03(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(3).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(3).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed04(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(4).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(4).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed05(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(5).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(5).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed06(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(6).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(6).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed10(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(7).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(7).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed11(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(8).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(8).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed12(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(9).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(9).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed13(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(10).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(10).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed14(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(11).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(11).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed15(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(12).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(12).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed16(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(13).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(13).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed20(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(14).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(14).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed21(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(15).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(15).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed22(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(16).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(16).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed23(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(17).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(17).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed24(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(18).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(18).getId());
+    }
+  }
+
+  @FXML
+  void imageViewPressed25(MouseEvent event) {
+    if ((type == 'm')) {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(19).getId());
+    } else {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, series.get(19).getId());
+    }
+  }
 
   @FXML
   void initialize() {
     Platform.runLater(this::fillInitialResults);
+  }
+
+  public void fillSearchResults(char type) {
+    PaneBusquedaController.type = type;
+    if (type == 'm') {
+      fillMovies();
+    } else if (type == 't') {
+      fillSeries();
+    }
+  }
+
+  private void fillSeries() {
+    this.series.clear();
+    List<ImageView> imgResult =
+        List.of(
+            imgResultado00,
+            imgResultado01,
+            imgResultado02,
+            imgResultado03,
+            imgResultado04,
+            imgResultado05,
+            imgResultado06,
+            imgResultado10,
+            imgResultado11,
+            imgResultado12,
+            imgResultado13,
+            imgResultado14,
+            imgResultado15,
+            imgResultado16,
+            imgResultado20,
+            imgResultado21,
+            imgResultado22,
+            imgResultado23,
+            imgResultado24,
+            imgResultado25
+            // imgResultado26
+            );
+    String url = "https://image.tmdb.org/t/p/w500";
+    imgResult.forEach(
+        imageView -> {
+          imageView.setImage(
+              new Image(
+                  url
+                      + ListStorage.getTrendingSeries()
+                          .get(imgResult.indexOf(imageView))
+                          .getPoster_path()));
+          series.add(ListStorage.getTrendingSeries().get(imgResult.indexOf(imageView)));
+        });
+    imgResultado26.setImage(null);
+    imgResultado26.setVisible(false);
+  }
+
+  private void fillMovies() {
+    this.movies.clear();
+    List<ImageView> row1 =
+        List.of(
+            imgResultado00,
+            imgResultado01,
+            imgResultado02,
+            imgResultado03,
+            imgResultado04,
+            imgResultado05,
+            imgResultado06);
+    List<ImageView> row2 =
+        List.of(
+            imgResultado10,
+            imgResultado11,
+            imgResultado12,
+            imgResultado13,
+            imgResultado14,
+            imgResultado15,
+            imgResultado16);
+    List<ImageView> row3 =
+        List.of(
+            imgResultado20,
+            imgResultado21,
+            imgResultado22,
+            imgResultado23,
+            imgResultado24,
+            imgResultado25);
+
+    String url = "https://image.tmdb.org/t/p/w500";
+    row1.forEach(
+        imageView -> {
+          imageView.setImage(
+              new Image(
+                  url
+                      + ListStorage.getTrendingMovies()
+                          .get(row1.indexOf(imageView))
+                          .getPoster_path()));
+          movies.add(ListStorage.getTrendingMovies().get(row1.indexOf(imageView)));
+        });
+    row2.forEach(
+        imageView -> {
+          imageView.setImage(
+              new Image(
+                  url
+                      + ListStorage.getTrendingMovies()
+                          .get(row2.indexOf(imageView) + 7)
+                          .getPoster_path()));
+          movies.add(ListStorage.getTrendingMovies().get(row2.indexOf(imageView) + 7));
+        });
+    row3.forEach(
+        imageView -> {
+          imageView.setImage(
+              new Image(
+                  url
+                      + ListStorage.getTrendingMovies()
+                          .get(row3.indexOf(imageView) + 14)
+                          .getPoster_path()));
+          movies.add(ListStorage.getTrendingMovies().get(row3.indexOf(imageView) + 14));
+        });
+    imgResultado26.setImage(null);
+    imgResultado26.setVisible(false);
   }
 
   public void fillInitialResults() {
@@ -104,15 +371,7 @@ public class PaneBusquedaController {
             imgResultado24,
             imgResultado25,
             imgResultado26);
-    List<ImageView> row4 =
-        List.of(
-            imgResultado27,
-            imgResultado28,
-            imgResultado29,
-            imgResultado30,
-            imgResultado31,
-            imgResultado32,
-            imgResultado33);
+
     for (int i = 0; i < 7; i++) {
       row1.get(i)
           .setImage(new Image(url + ListStorage.getTrendingMovies().get(i).getPoster_path()));
@@ -120,92 +379,6 @@ public class PaneBusquedaController {
           .setImage(new Image(url + ListStorage.getTrendingMovies().get(i + 7).getPoster_path()));
       row2.get(i)
           .setImage(new Image(url + ListStorage.getTrendingSeries().get(i).getPoster_path()));
-      row4.get(i)
-          .setImage(new Image(url + ListStorage.getTrendingSeries().get(i + 7).getPoster_path()));
     }
   }
-
-  @FXML
-  void img00Pressed(MouseEvent event) {}
-
-  @FXML
-  void img01Pressed(MouseEvent event) {}
-
-  @FXML
-  void img02Pressed(MouseEvent event) {}
-
-  @FXML
-  void img03Pressed(MouseEvent event) {}
-
-  @FXML
-  void img04Pressed(MouseEvent event) {}
-
-  @FXML
-  void img05Pressed(MouseEvent event) {}
-
-  @FXML
-  void img06Pressed(MouseEvent event) {}
-
-  @FXML
-  void img10Pressed(MouseEvent event) {}
-
-  @FXML
-  void img11Pressed(MouseEvent event) {}
-
-  @FXML
-  void img12Pressed(MouseEvent event) {}
-
-  @FXML
-  void img13Pressed(MouseEvent event) {}
-
-  @FXML
-  void img14Pressed(MouseEvent event) {}
-
-  @FXML
-  void img15Pressed(MouseEvent event) {}
-
-  @FXML
-  void img16Pressed(MouseEvent event) {}
-
-  @FXML
-  void img20Pressed(MouseEvent event) {}
-
-  @FXML
-  void img21Pressed(MouseEvent event) {}
-
-  @FXML
-  void img22Pressed(MouseEvent event) {}
-
-  @FXML
-  void img23Pressed(MouseEvent event) {}
-
-  @FXML
-  void img24Pressed(MouseEvent event) {}
-
-  @FXML
-  void img25Pressed(MouseEvent event) {}
-
-  @FXML
-  void img26Pressed(MouseEvent event) {}
-
-  @FXML
-  void img30Pressed(MouseEvent event) {}
-
-  @FXML
-  void img31Pressed(MouseEvent event) {}
-
-  @FXML
-  void img32Pressed(MouseEvent event) {}
-
-  @FXML
-  void img33Pressed(MouseEvent event) {}
-
-  @FXML
-  void img34Pressed(MouseEvent event) {}
-
-  @FXML
-  void img35Pressed(MouseEvent event) {}
-
-  @FXML
-  void img36Pressed(MouseEvent event) {}
 }

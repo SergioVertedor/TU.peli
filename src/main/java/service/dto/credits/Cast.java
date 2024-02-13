@@ -11,11 +11,11 @@ public class Cast {
     private boolean adult;
     private long gender;
     private long id;
-    private Department knownForDepartment;
+    private Department known_for_department;
     private String name;
-    private String originalName;
+    private String original_name;
     private double popularity;
-    private String profilePath;
+    private String profile_path;
     private Long castID;
     private String character;
     private String creditID;

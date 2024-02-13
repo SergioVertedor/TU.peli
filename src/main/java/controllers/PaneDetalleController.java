@@ -3,7 +3,6 @@ package controllers;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -18,113 +17,98 @@ import service.dto.credits.Cast;
 import service.dto.credits.Credits;
 import service.dto.movie.MovieDetail;
 import service.dto.tv.TVDetail;
+import service.dto.watchprovider.WatchProvidersResults;
+import service.dto.watchprovider.WorkWatchProvider;
 
 public class PaneDetalleController {
   @Getter @Setter private static char type;
   @Getter @Setter private static int idWork;
 
-  @FXML private ImageView imgPen;
-
-  // Poster
-  @FXML private ImageView imgPoster;
-
-  @FXML private Label lblTitulo;
-  // Formato subtitulo: 'Director · Genero'
-  @FXML private Label lblSubtitulo;
-
-  // Puntuación media usuarios
-  @FXML private Label lblRating;
-
-  // Bandera pais
-  @FXML private ImageView imgPais;
-
-  // Formato estrenoDuracion para series: 'Estreno · x temporadas' (1980 · 1h15min)
-  @FXML private Label lblEstrenoDuracion;
-
-  // Guardado en favoritos (corazon)
-  @FXML private ImageView imgLike;
-
-  // Plataformas de Streaming
-  @FXML private ImageView imgNetflix;
-  @FXML private ImageView imgHBO;
-  @FXML private ImageView imgDisney;
-  @FXML private ImageView imgPrimeVideo;
-  @FXML private ImageView imgFilmin;
-  @FXML private ImageView imgAppleTV;
-
-  // Boton 'Añadir a...'
   @FXML private Button btnAdd;
 
-  // Ver trailer
   @FXML private Button btnTrailer;
 
-  // Puntuacion estrellas
+  @FXML private ImageView imgLike;
+
+  @FXML private ImageView imgPais;
+
+  @FXML private ImageView imgPen;
+
+  @FXML private ImageView imgPoster;
+
+  @FXML private ImageView imgReparto0;
+
+  @FXML private ImageView imgReparto1;
+
+  @FXML private ImageView imgReparto2;
+
+  @FXML private ImageView imgReparto3;
+
   @FXML private ImageView imgStar1;
+
   @FXML private ImageView imgStar2;
+
   @FXML private ImageView imgStar3;
+
   @FXML private ImageView imgStar4;
+
   @FXML private ImageView imgStar5;
 
   @FXML private Label lblComentario;
+
+  @FXML private Label lblEstrenoDuracion;
+
   @FXML private Label lblFechaVista;
 
-  // Sinopsis
-  @FXML private Label lblTituloSinopsis;
+  @FXML private Label lblRating;
+
+  @FXML private Label lblReparto;
+
+  @FXML private Label lblReparto0;
+
+  @FXML private Label lblReparto1;
+
+  @FXML private Label lblReparto2;
+
+  @FXML private Label lblReparto3;
+
   @FXML private Label lblSinopsis;
 
-  // Imagenes del reparto
-  @FXML private ImageView imgReparto1;
-  @FXML private ImageView imgReparto2;
-  @FXML private ImageView imgReparto3;
-  @FXML private ImageView imgReparto4;
+  @FXML private Label lblSubtitulo;
 
-  // Actores y actrices de reparto (nombre y apellido)
-  @FXML private Label lblReparto0;
-  @FXML private Label lblReparto1;
-  @FXML private Label lblReparto2;
-  @FXML private Label lblReparto3;
+  @FXML private Label lblTitulo;
+
+  @FXML private Label lblTituloSinopsis;
+
+  @FXML private ImageView streaming01;
+
+  @FXML private ImageView streaming02;
+
+  @FXML private ImageView streaming03;
+
+  @FXML private ImageView streaming04;
+
+  @FXML private ImageView streaming05;
+
+  @FXML private ImageView streaming06;
 
   @FXML
   void btnAddPressed(ActionEvent event) {}
 
-  /**
-   * Redigire al trailer de la película o serie
-   *
-   * @param event
-   */
   @FXML
   void btnTrailerPressed(ActionEvent event) {}
 
-  /**
-   * Permite al usuario agregar un comentario a la película
-   *
-   * @param event
-   */
-  @FXML
-  void escribirComentario(MouseEvent event) {
-    // TODO: no existe un textBox para recoger el comentario, lo hago mas adelante
-  }
-
-  /**
-   * Guarda la puntuación seleccionada
-   *
-   * @param event
-   */
   @FXML
   void changePuntuacionPressed(MouseEvent event) {}
 
-  /**
-   * Cambia el estado de like/unlike
-   *
-   * @param event
-   */
+  @FXML
+  void escribirComentario(MouseEvent event) {}
+
   @FXML
   void imgLikePressed(MouseEvent event) {}
 
   @FXML
-  void initialize() {
-    Platform.runLater(() -> fillInfo(idWork));
-  }
+  void initialize() {}
 
   public void fillInfo(int id) {
     if (type == 'm') {
@@ -132,7 +116,6 @@ public class PaneDetalleController {
     } else {
       fillSerieInfo(id);
     }
-
   }
 
   private void fillSerieInfo(int id) {
@@ -140,31 +123,34 @@ public class PaneDetalleController {
     TVDetail detalles = apiService.getTVDetail(id);
     Credits creditos = apiService.getTVCredits(id);
     List<Cast> crew = Arrays.asList(creditos.getCrew());
+    var directores = new ArrayList<Cast>();
     List<Cast> cast = Arrays.asList(creditos.getCast());
     var actores = new ArrayList<Cast>();
     for (int i = 0; i < 4; i++) {
       actores.add(cast.get(i));
     }
+    // TITULO
     lblTitulo.setText(detalles.getName());
-    String genero = "";
+    String directorYGenero = "";
     for (int i = 0; i < detalles.getGenres().length; i++) {
       if (i == detalles.getGenres().length - 1) {
-        genero += detalles.getGenres()[i].getName();
+        directorYGenero += detalles.getGenres()[i].getName();
       } else {
-        genero += detalles.getGenres()[i].getName() + ", ";
+        directorYGenero += detalles.getGenres()[i].getName() + ", ";
       }
     }
-    lblSubtitulo.setText(genero);
-    lblRating.setText(String.valueOf(detalles.getVoteAverage()));
-    // imgPais.setImage(detalles.getProductionCountries()[0].getName());
-    lblEstrenoDuracion.setText(detalles.getFirstAirDate() + " - " + detalles.getNumberOfSeasons() + "temporadas");
-    // imgLike.setImage();
-    // imgNetflix.setImage();
-    // imgHBO.setImage();
-    // imgDisney.setImage();
-    // imgPrimeVideo.setImage();
-    // imgFilmin.setImage();
-    // imgAppleTV.setImage();
+    // SUBTITULO
+    lblSubtitulo.setText(directorYGenero);
+
+    // RATING
+    lblRating.setText(String.format("%.1f", detalles.getVote_average()));
+
+    // ESTRENO Y DURACION
+    try {
+    lblEstrenoDuracion.setText(detalles.getFirst_air_date() + " - " + detalles.getEpisode_run_time()[0] + "min"); }
+    catch (Exception e) {
+      lblEstrenoDuracion.setText(detalles.getFirst_air_date().toString());
+    }
     // imgStar1.setImage();
     // imgStar2.setImage();
     // imgStar3.setImage();
@@ -172,13 +158,46 @@ public class PaneDetalleController {
     // imgStar5.setImage();
     // lblComentario.setText("");
     // lblFechaVista.setText("");
-    lblTituloSinopsis.setText(detalles.getOverview());
+
+    // SINOPSIS
+    lblSinopsis.setText(detalles.getOverview());
     String url = "https://image.tmdb.org/t/p/w500";
-    List<ImageView> imgReparto = (Arrays.asList(imgReparto1, imgReparto2, imgReparto3, imgReparto4));
-    imgReparto.forEach(img -> img.setImage(new Image(url + actores.get(imgReparto.indexOf(img)).getProfilePath())));
-List<Label> lblReparto = (Arrays.asList(lblReparto0, lblReparto1, lblReparto2, lblReparto3));
-    lblReparto.forEach(lbl -> lbl.setText(actores.get(lblReparto.indexOf(lbl)).getName()));
+
+    // IMAGENES
+    imgPais.setImage(new Image(url + detalles.getProduction_companies()[0].getLogo_path()));
+    imgPoster.setImage(new Image(url + detalles.getPoster_path()));
+    List<ImageView> imgReparto =
+            (Arrays.asList(imgReparto0, imgReparto1, imgReparto2, imgReparto3));
+    imgReparto.forEach(
+            img -> {
+              img.setImage(new Image(url + actores.get(imgReparto.indexOf(img)).getProfile_path()));
+            });
+    List<Label> lblReparto = (Arrays.asList(lblReparto0, lblReparto1, lblReparto2, lblReparto3));
+    lblReparto.forEach(
+            lbl -> {
+              lbl.setText(actores.get(lblReparto.indexOf(lbl)).getName());
+            });
+    List<ImageView> streamingIcon =
+            (Arrays.asList(
+                    streaming01, streaming02, streaming03, streaming04, streaming05, streaming06));
+    WorkWatchProvider streaming = apiService.getMovieWatchProviders(id);
+    for (int i = 0; i < streamingIcon.size(); i++) {
+      try {
+        if (i < streaming.getResults().getEs().getFlatrate().length) {
+
+          streamingIcon
+                  .get(i)
+                  .setImage(
+                          new Image(url + streaming.getResults().getEs().getFlatrate()[i].getLogo_path()));
+        } else {
+          streamingIcon.get(i).setVisible(false);
+        }
+      } catch (Exception e) {
+        streamingIcon.get(i).setVisible(false);
+      }
+    }
   }
+
 
   private void fillMovieInfo(int id) {
     var apiService = new APIService();
@@ -196,13 +215,14 @@ List<Label> lblReparto = (Arrays.asList(lblReparto0, lblReparto1, lblReparto2, l
     for (int i = 0; i < 4; i++) {
       actores.add(cast.get(i));
     }
+    // TITULO
     lblTitulo.setText(detalles.getTitle());
     String directorYGenero = "";
     for (int i = 0; i < directores.size(); i++) {
       if (i == directores.size() - 1) {
-        directorYGenero += " - ";
+        directorYGenero += directores.get(i).getName() + " - ";
       } else {
-        directorYGenero += ", ";
+        directorYGenero += directores.get(i).getName() + ", ";
       }
     }
     for (int i = 0; i < detalles.getGenres().length; i++) {
@@ -212,17 +232,14 @@ List<Label> lblReparto = (Arrays.asList(lblReparto0, lblReparto1, lblReparto2, l
         directorYGenero += detalles.getGenres()[i].getName() + ", ";
       }
     }
+    // SUBTITULO
     lblSubtitulo.setText(directorYGenero);
-    lblRating.setText(String.valueOf(detalles.getVoteAverage()));
-    // imgPais.setImage(detalles.getProductionCountries()[0].getName());
-    lblEstrenoDuracion.setText(detalles.getReleaseDate() + " - " + detalles.getRuntime() + "min");
-    // imgLike.setImage();
-    // imgNetflix.setImage();
-    // imgHBO.setImage();
-    // imgDisney.setImage();
-    // imgPrimeVideo.setImage();
-    // imgFilmin.setImage();
-    // imgAppleTV.setImage();
+
+    // RATING
+    lblRating.setText(String.format("%.1f", detalles.getVote_average()));
+
+    // ESTRENO Y DURACION
+    lblEstrenoDuracion.setText(detalles.getRelease_date() + " - " + detalles.getRuntime() + "min");
     // imgStar1.setImage();
     // imgStar2.setImage();
     // imgStar3.setImage();
@@ -230,18 +247,43 @@ List<Label> lblReparto = (Arrays.asList(lblReparto0, lblReparto1, lblReparto2, l
     // imgStar5.setImage();
     // lblComentario.setText("");
     // lblFechaVista.setText("");
-    lblTituloSinopsis.setText(detalles.getOverview());
+
+    // SINOPSIS
+    lblSinopsis.setText(detalles.getOverview());
     String url = "https://image.tmdb.org/t/p/w500";
+
+    // IMAGENES
+    imgPais.setImage(new Image(url + detalles.getProduction_companies()[0].getLogo_path()));
+    imgPoster.setImage(new Image(url + detalles.getPoster_path()));
     List<ImageView> imgReparto =
-            (Arrays.asList(imgReparto1, imgReparto2, imgReparto3, imgReparto4));
+        (Arrays.asList(imgReparto0, imgReparto1, imgReparto2, imgReparto3));
     imgReparto.forEach(
-            img -> {
-              img.setImage(new Image(url + actores.get(imgReparto.indexOf(img)).getProfilePath()));
-            });
+        img -> {
+          img.setImage(new Image(url + actores.get(imgReparto.indexOf(img)).getProfile_path()));
+        });
     List<Label> lblReparto = (Arrays.asList(lblReparto0, lblReparto1, lblReparto2, lblReparto3));
     lblReparto.forEach(
-            lbl -> {
-              lbl.setText(actores.get(lblReparto.indexOf(lbl)).getName());
-            });
+        lbl -> {
+          lbl.setText(actores.get(lblReparto.indexOf(lbl)).getName());
+        });
+    List<ImageView> streamingIcon =
+        (Arrays.asList(
+            streaming01, streaming02, streaming03, streaming04, streaming05, streaming06));
+    WorkWatchProvider streaming = apiService.getMovieWatchProviders(id);
+    for (int i = 0; i < streamingIcon.size(); i++) {
+      try {
+        if (i < streaming.getResults().getEs().getFlatrate().length) {
+
+          streamingIcon
+              .get(i)
+              .setImage(
+                  new Image(url + streaming.getResults().getEs().getFlatrate()[i].getLogo_path()));
+        } else {
+          streamingIcon.get(i).setVisible(false);
+        }
+      } catch (Exception e) {
+        streamingIcon.get(i).setVisible(false);
+      }
+    }
   }
 }

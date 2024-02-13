@@ -3,6 +3,7 @@ package utils;
 import controllers.PaneBusquedaController;
 import controllers.PaneDetalleController;
 import controllers.PaneTopController;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.*;
 import lombok.Getter;
@@ -18,17 +19,17 @@ public class PaneSwitcher {
     String fxmlFile = "/views/" + paneTarget + ".fxml";
 
     try {
-    	centralPane.getChildren().clear();
+      centralPane.getChildren().clear();
       FXMLLoader loader = new FXMLLoader();
       loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
       Pane myPane = loader.load();
-      
-//      myPane.maxHeightProperty();
-//      myPane.maxWidthProperty();
 
-			// Hacer que los contenedores se expandan si el tamaño de la ventana cambia
-//			HBox.setHgrow(myPane, Priority.ALWAYS);
-//			VBox.setVgrow(myPane, Priority.ALWAYS);
+      //      myPane.maxHeightProperty();
+      //      myPane.maxWidthProperty();
+
+      // Hacer que los contenedores se expandan si el tamaño de la ventana cambia
+      //			HBox.setHgrow(myPane, Priority.ALWAYS);
+      //			VBox.setVgrow(myPane, Priority.ALWAYS);
 
       centralPane.getChildren().setAll(myPane);
     } catch (Exception e) {
@@ -52,6 +53,9 @@ public class PaneSwitcher {
       loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
       Pane myPane = loader.load();
       centralPane.getChildren().setAll(myPane);
+      PaneBusquedaController paneBusquedaController = loader.getController();
+      paneBusquedaController.setCentralPane(centralPane);
+      Platform.runLater(() -> paneBusquedaController.fillSearchResults(type));
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
       System.out.println(e);
@@ -81,8 +85,8 @@ public class PaneSwitcher {
       Pane myPane = loader.load();
       centralPane.getChildren().setAll(myPane);
       PaneDetalleController paneDetalleController = loader.getController();
-      paneDetalleController.setType(type);
-      paneDetalleController.fillInfo(idWork);
+      PaneDetalleController.setType(type);
+      Platform.runLater(() -> paneDetalleController.fillInfo(idWork));
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
       System.out.println(e);

@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 public class Network {
     private long id;
-    private String logoPath;
+    private String logo_path;
     private String name;
     private String originCountry;
 }

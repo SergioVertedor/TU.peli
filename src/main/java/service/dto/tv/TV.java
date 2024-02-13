@@ -10,8 +10,8 @@ import service.dto.OriginalLanguage;
 public class TV {
     private boolean adult;
     private String backdrop_path;
-    private long[] genre_ids;
-    private long id;
+    private int[] genre_ids;
+    private int id;
     private OriginCountry[] origin_country;
     private OriginalLanguage original_language;
     private String original_name;
