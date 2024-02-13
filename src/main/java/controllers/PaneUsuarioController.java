@@ -63,7 +63,7 @@ public class PaneUsuarioController {
 	
 	
 	/**
-	 * Edita el listado de dispositivos del usuario
+	 * Añade un nuevo dispositivo (HBox) al listado con el nombre dado
 	 * 
 	 * @param event
 	 */
@@ -86,7 +86,11 @@ public class PaneUsuarioController {
 			vBoxDispositivos.getChildren().addAll(newHBox); 
 		}
 	}
-
+	
+ /**
+  * Muestra un dialogo con textField para rescatar el nombre del nuevo dispositivo
+  * @return
+  */
   String showTextDialog() {
 		TextInputDialog dialog = new TextInputDialog();
 		dialog.setTitle("Nuevo Dispositivo");
