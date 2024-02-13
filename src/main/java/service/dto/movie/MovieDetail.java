@@ -1,40 +1,37 @@
 package service.dto.movie;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import java.time.LocalDate;
+import lombok.Data;
 import service.dto.Genre;
 import service.dto.ProductionCompany;
 import service.dto.ProductionCountry;
 import service.dto.SpokenLanguage;
 
-import java.time.LocalDate;
-
-@AllArgsConstructor
-@Getter
+@Data
 public class MovieDetail {
   private boolean adult;
-  private String backdropPath;
-  private BelongsToCollection belongsToCollection;
+  private String backdrop_path;
+  private Object belongs_to_collection;
   private long budget;
   private Genre[] genres;
   private String homepage;
   private long id;
   private String imdbID;
-  private String originalLanguage;
-  private String originalTitle;
+  private String original_language;
+  private String original_title;
   private String overview;
   private double popularity;
-  private String posterPath;
-  private ProductionCompany[] productionCompanies;
-  private ProductionCountry[] productionCountries;
-  private LocalDate releaseDate;
+  private String poster_path;
+  private ProductionCompany[] production_companies;
+  private ProductionCountry[] production_countries;
+  private LocalDate release_date;
   private long revenue;
   private long runtime;
-  private SpokenLanguage[] spokenLanguages;
+  private SpokenLanguage[] spoken_languages;
   private String status;
   private String tagline;
   private String title;
   private boolean video;
-  private double voteAverage;
-  private long voteCount;
+  private double vote_average;
+  private long vote_count;
 }

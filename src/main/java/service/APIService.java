@@ -1,7 +1,9 @@
 package service;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.io.IOException;
+import java.time.LocalDate;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -13,6 +15,7 @@ import service.dto.tv.TVDetail;
 import service.dto.tv.TVSearchResult;
 import service.dto.watchprovider.WorkWatchProvider;
 import utils.Formatter;
+import utils.LocalDateAdapter;
 
 /** Clase que realiza peticiones HTTP a la API de TheMovieDB. */
 public class APIService {
@@ -110,7 +113,8 @@ public class APIService {
   public TVDetail getTVDetail(int id) {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/tv/" + id + "?language=es-ES";
-    Gson gson = new Gson();
+    Gson gson =
+            new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateAdapter()).create();
     try {
       return gson.fromJson(doRequest(url), TVDetail.class);
     } catch (IOException e) {
@@ -181,7 +185,8 @@ public class APIService {
   public MovieDetail getMovieDetails(int id) {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/movie/" + id + "?language=es-ES";
-    Gson gson = new Gson();
+    Gson gson =
+        new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateAdapter()).create();
     try {
       return gson.fromJson(doRequest(url), MovieDetail.class);
     } catch (IOException e) {
@@ -313,11 +318,16 @@ public class APIService {
     return gson.fromJson(doRequest(url), MovieSearchResult.class);
   }
 
-  public WorkWatchProvider getMovieWatchProviders(int id) throws IOException {
+  public WorkWatchProvider getMovieWatchProviders(int id) {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/movie/" + id + "/watch/providers?language=es-ES";
     Gson gson = new Gson();
-    return gson.fromJson(doRequest(url), WorkWatchProvider.class);
+    try {
+      return gson.fromJson(doRequest(url), WorkWatchProvider.class);
+    } catch (IOException e) {
+      System.out.println("Error al obtener los proveedores de streaming.");
+      throw new RuntimeException(e);
+    }
   }
 
   public WorkWatchProvider getTVWatchProviders(int id) throws IOException {

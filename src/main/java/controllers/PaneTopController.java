@@ -174,7 +174,7 @@ public class PaneTopController {
           }
         }
       }
-      long[] generos = ListStorage.getTopSeries().get(index).getGenre_ids();
+      int[] generos = ListStorage.getTopSeries().get(index).getGenre_ids();
       for (int i = 0; i < generos.length; i++) {
         for (Genre genre : ListStorage.getTvGenres()) {
           if (generos[i] == genre.getId()) {

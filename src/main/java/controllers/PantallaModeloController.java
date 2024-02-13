@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import lombok.Getter;
 import utils.*;
 
 public class PantallaModeloController {
@@ -18,7 +19,8 @@ public class PantallaModeloController {
 	private BorderPane borderPane;
 
 	// Panel central de carga
-	@FXML	private Pane centralPane;
+	@FXML @Getter
+	private Pane centralPane;
 	
 	// Otros paneles
 	@FXML	private Pane paneContent;
@@ -88,8 +90,6 @@ public class PantallaModeloController {
 	 */
 	@FXML
 	void goToFilmoteca(MouseEvent event) {
-		PaneSwitcher.switchSearchPane("PaneBusqueda", centralPane, 'b');
-		imgSection.setImage(new Image("images/sections/Filmoteca.png"));
 	}
 
 	/**

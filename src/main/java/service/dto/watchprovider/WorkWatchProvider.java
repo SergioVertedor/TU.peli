@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class WorkWatchProvider {
-    private int idWork;
-    private WatchProvidersResults watchProvidersResults;
+    private int id;
+    private WatchProvidersResults results;
 }
