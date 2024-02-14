@@ -1,8 +1,6 @@
 package utils;
 
-import controllers.PaneBusquedaController;
-import controllers.PaneDetalleController;
-import controllers.PaneTopController;
+import controllers.*;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.*;
@@ -62,7 +60,8 @@ public class PaneSwitcher {
     }
   }
 
-  public static void switchResultPane(String paneTarget, Pane centralPane, String type, String search) {
+  public static void switchResultPane(
+      String paneTarget, Pane centralPane, String type, String search) {
     String fxmlFile = "/views/" + paneTarget + ".fxml";
     try {
       FXMLLoader loader = new FXMLLoader();
@@ -87,6 +86,7 @@ public class PaneSwitcher {
       centralPane.getChildren().setAll(myPane);
       PaneTopController paneTopController = loader.getController();
       paneTopController.fillTopWorks(type, "");
+      paneTopController.setCentralPane(centralPane);
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
       System.out.println(e);
@@ -103,6 +103,37 @@ public class PaneSwitcher {
       PaneDetalleController paneDetalleController = loader.getController();
       PaneDetalleController.setType(type);
       Platform.runLater(() -> paneDetalleController.fillInfo(idWork));
+    } catch (Exception e) {
+      System.out.println("Error al cargar la ventana de inicio.");
+      System.out.println(e);
+    }
+  }
+
+  public static void switchInTheaterPane(String paneTarget, Pane centralPane) {
+    String fxmlFile = "/views/" + paneTarget + ".fxml";
+    try {
+      centralPane.getChildren().clear();
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
+      Pane myPane = loader.load();
+      centralPane.getChildren().setAll(myPane);
+
+      PaneCarteleraController.setContentPane(centralPane);
+    } catch (Exception e) {
+      System.out.println("Error al cargar la ventana de inicio.");
+      System.out.println(e);
+    }
+  }
+
+  public static void switchUpcomingPane(String paneTarget, Pane centralPane) {
+    String fxmlFile = "/views/" + paneTarget + ".fxml";
+    try {
+      centralPane.getChildren().clear();
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
+      Pane myPane = loader.load();
+      centralPane.getChildren().setAll(myPane);
+      PaneProximamenteController.setContentPane(centralPane);
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
       System.out.println(e);

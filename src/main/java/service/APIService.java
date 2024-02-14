@@ -13,7 +13,7 @@ import service.dto.movie.MovieDetail;
 import service.dto.movie.MovieSearchResult;
 import service.dto.tv.TVDetail;
 import service.dto.tv.TVSearchResult;
-import service.dto.watchprovider.WorkWatchProvider;
+import service.dto.watchprovider.WatchProvider;
 import utils.Formatter;
 import utils.LocalDateAdapter;
 
@@ -114,7 +114,7 @@ public class APIService {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/tv/" + id + "?language=es-ES";
     Gson gson =
-            new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateAdapter()).create();
+        new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateAdapter()).create();
     try {
       return gson.fromJson(doRequest(url), TVDetail.class);
     } catch (IOException e) {
@@ -318,23 +318,23 @@ public class APIService {
     return gson.fromJson(doRequest(url), MovieSearchResult.class);
   }
 
-  public WorkWatchProvider getMovieWatchProviders(int id) {
+  public WatchProvider getMovieWatchProviders(int id) {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/movie/" + id + "/watch/providers?language=es-ES";
     Gson gson = new Gson();
     try {
-      return gson.fromJson(doRequest(url), WorkWatchProvider.class);
+      return gson.fromJson(doRequest(url), WatchProvider.class);
     } catch (IOException e) {
       System.out.println("Error al obtener los proveedores de streaming.");
       throw new RuntimeException(e);
     }
   }
 
-  public WorkWatchProvider getTVWatchProviders(int id) throws IOException {
+  public WatchProvider getTVWatchProviders(int id) throws IOException {
     // Generamos la URL de la petición HTTP.
-    String url = "https://api.themoviedb.org/3/tv/" + id + "/watch/providers?language=es-ES";
+    String url = "https://api.themoviedb.org/3/tv/" + id + "/watch/providers?language=es-ES&watch_region=ES";
     Gson gson = new Gson();
-    return gson.fromJson(doRequest(url), WorkWatchProvider.class);
+    return gson.fromJson(doRequest(url), WatchProvider.class);
   }
 
   /**

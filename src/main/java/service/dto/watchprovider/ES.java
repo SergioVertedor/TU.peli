@@ -5,10 +5,6 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class Ag {
-    private String link;
-    private Flatrate[] rent;
-    private Flatrate[] buy;
+public class ES {
     private Flatrate[] flatrate;
-    private Flatrate[] ads;
 }

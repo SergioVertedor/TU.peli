@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -7,11 +8,18 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import lombok.Getter;
+import lombok.Setter;
 import service.dto.Genre;
+import service.dto.movie.Movie;
 import utils.ListStorage;
+import utils.PaneSwitcher;
 
 public class PaneProximamenteController {
 
+  @Getter @Setter private static Pane contentPane;
+  @Getter @Setter private List<Movie> upcomingMovies = new ArrayList<>();
   // Imagenes poster
   @FXML private ImageView imgPoster00;
   @FXML private ImageView imgPoster01;
@@ -65,42 +73,42 @@ public class PaneProximamenteController {
 
   @FXML
   void imgPoster00Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(0).getId());
   }
 
   @FXML
   void imgPoster01Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(1).getId());
   }
 
   @FXML
   void imgPoster02Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(2).getId());
   }
 
   @FXML
   void imgPoster03Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(3).getId());
   }
 
   @FXML
   void imgPoster10Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(4).getId());
   }
 
   @FXML
   void imgPoster11Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(5).getId());
   }
 
   @FXML
   void imgPoster12Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(6).getId());
   }
 
   @FXML
   void imgPoster13Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(7).getId());
   }
 
   @FXML
@@ -155,13 +163,15 @@ public class PaneProximamenteController {
             lblTitulo13);
     // Seteando imagenes
     imgPosters.forEach(
-        img ->
-            img.setImage(
-                new Image(
-                    url
-                        + ListStorage.getUpcomingMovies()
-                            .get(imgPosters.indexOf(img))
-                            .getPoster_path())));
+        img -> {
+          img.setImage(
+              new Image(
+                  url
+                      + ListStorage.getUpcomingMovies()
+                          .get(imgPosters.indexOf(img))
+                          .getPoster_path()));
+          upcomingMovies.add(ListStorage.getUpcomingMovies().get(imgPosters.indexOf(img)));
+        });
     // Seteando fechas de estreno
     lblFechas.forEach(
         lbl ->
@@ -191,7 +201,6 @@ public class PaneProximamenteController {
     // Seteando los titulos
     lblTitulos.forEach(
         lbl ->
-            lbl.setText(
-                ListStorage.getUpcomingMovies().get(lblTitulos.indexOf(lbl)).getTitle()));
+            lbl.setText(ListStorage.getUpcomingMovies().get(lblTitulos.indexOf(lbl)).getTitle()));
   }
 }

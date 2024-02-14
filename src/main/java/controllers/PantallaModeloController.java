@@ -147,7 +147,7 @@ public class PantallaModeloController {
 	 */
 	@FXML
 	void goToCartelera(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneCartelera", centralPane);
+		PaneSwitcher.switchInTheaterPane("PaneCartelera", centralPane);
 		imgSection.setImage(new Image("images/sections/Cartelera.png"));
 	}
 
@@ -157,7 +157,7 @@ public class PantallaModeloController {
 	 */
 	@FXML
 	void goToProximamente(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneProximamente", centralPane);
+		PaneSwitcher.switchUpcomingPane("PaneProximamente", centralPane);
 		imgSection.setImage(new Image("images/sections/Proximamente.png"));
 	}
 
