@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -9,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneCarteleraController">
@@ -29,30 +31,39 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster00" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster00Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                        <ImageView fx:id="imgPoster00" fitHeight="155.0" fitWidth="110.0" onMouseClicked="#imgPoster00Pressed" pickOnBounds="true" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.800000011920929" />
+                                 </color></DropShadow>
+                           </effect>
                         </ImageView>
                         <VBox prefHeight="202.0" prefWidth="455.0">
                            <children>
-                              <Label fx:id="lblTitulo00" textFill="WHITE" VBox.vgrow="ALWAYS">
+                              <Label fx:id="lblTitulo00" prefWidth="450.0" textFill="#469b65" wrapText="true" VBox.vgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets bottom="3.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="lblInfo00" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+                              <Label fx:id="lblInfo00" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="450.0" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lblGenero00" prefWidth="405.0" textFill="WHITE" VBox.vgrow="ALWAYS">
+                              <Label fx:id="lblGenero00" prefWidth="405.0" textFill="#8ebc9c" VBox.vgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
+                                 <VBox.margin>
+                                    <Insets top="3.0" />
+                                 </VBox.margin>
                               </Label>
                            </children>
                            <HBox.margin>
@@ -66,26 +77,35 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster10" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster10Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgPoster10" fitHeight="155.0" fitWidth="110.0" onMouseClicked="#imgPoster10Pressed" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.800000011920929" />
+                                 </color></DropShadow>
+                           </effect></ImageView>
                         <VBox prefHeight="202.0" prefWidth="455.0">
                            <children>
-                              <Label fx:id="lblTitulo10" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblTitulo10" prefWidth="450.0" textFill="#469b65" wrapText="true">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets bottom="3.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="lblInfo10" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" textFill="WHITE" wrapText="true">
+                              <Label fx:id="lblInfo10" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="450.0" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lblGenero10" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblGenero10" prefWidth="405.0" textFill="#8ebc9c">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
+                                 <VBox.margin>
+                                    <Insets top="3.0" />
+                                 </VBox.margin>
                               </Label>
                            </children>
                            <HBox.margin>
@@ -99,26 +119,35 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster01" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster01Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgPoster01" fitHeight="155.0" fitWidth="110.0" onMouseClicked="#imgPoster01Pressed" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.800000011920929" />
+                                 </color></DropShadow>
+                           </effect></ImageView>
                         <VBox prefHeight="202.0" prefWidth="455.0">
                            <children>
-                              <Label fx:id="lblTitulo01" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblTitulo01" prefWidth="450.0" textFill="#469b65" wrapText="true">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets bottom="3.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="lblInfo01" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" textFill="WHITE" wrapText="true">
+                              <Label fx:id="lblInfo01" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="450.0" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lblGenero01" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblGenero01" prefWidth="405.0" textFill="#8ebc9c">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
+                                 <VBox.margin>
+                                    <Insets top="3.0" />
+                                 </VBox.margin>
                               </Label>
                            </children>
                            <HBox.margin>
@@ -132,26 +161,35 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster11" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster11Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgPoster11" fitHeight="155.0" fitWidth="110.0" onMouseClicked="#imgPoster11Pressed" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.800000011920929" />
+                                 </color></DropShadow>
+                           </effect></ImageView>
                         <VBox prefHeight="202.0" prefWidth="455.0">
                            <children>
-                              <Label fx:id="lblTitulo11" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblTitulo11" prefWidth="450.0" textFill="#469b65" wrapText="true">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets bottom="3.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="lblInfo11" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" textFill="WHITE" wrapText="true">
+                              <Label fx:id="lblInfo11" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="450.0" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lblGenero11" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblGenero11" prefWidth="405.0" textFill="#8ebc9c">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
+                                 <VBox.margin>
+                                    <Insets top="3.0" />
+                                 </VBox.margin>
                               </Label>
                            </children>
                            <HBox.margin>
@@ -165,26 +203,35 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster02" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster02Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgPoster02" fitHeight="155.0" fitWidth="110.0" onMouseClicked="#imgPoster02Pressed" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.800000011920929" />
+                                 </color></DropShadow>
+                           </effect></ImageView>
                         <VBox prefHeight="202.0" prefWidth="455.0">
                            <children>
-                              <Label fx:id="lblTitulo02" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblTitulo02" prefWidth="450.0" textFill="#469b65" wrapText="true">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets bottom="3.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="lblInfo02" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" textFill="WHITE" wrapText="true">
+                              <Label fx:id="lblInfo02" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="450.0" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lblGenero02" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblGenero02" prefWidth="405.0" textFill="#8ebc9c">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
+                                 <VBox.margin>
+                                    <Insets top="3.0" />
+                                 </VBox.margin>
                               </Label>
                            </children>
                            <HBox.margin>
@@ -198,26 +245,35 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster12" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster12Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgPoster12" fitHeight="155.0" fitWidth="110.0" onMouseClicked="#imgPoster12Pressed" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.800000011920929" />
+                                 </color></DropShadow>
+                           </effect></ImageView>
                         <VBox prefHeight="202.0" prefWidth="455.0">
                            <children>
-                              <Label fx:id="lblTitulo12" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblTitulo12" prefWidth="450.0" textFill="#469b65" wrapText="true">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets bottom="3.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="lblInfo12" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" textFill="WHITE" wrapText="true">
+                              <Label fx:id="lblInfo12" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="450.0" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lblGenero12" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblGenero12" prefWidth="405.0" textFill="#8ebc9c">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
+                                 <VBox.margin>
+                                    <Insets top="3.0" />
+                                 </VBox.margin>
                               </Label>
                            </children>
                            <HBox.margin>
@@ -231,26 +287,35 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster03" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster03Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgPoster03" fitHeight="155.0" fitWidth="110.0" onMouseClicked="#imgPoster03Pressed" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.800000011920929" />
+                                 </color></DropShadow>
+                           </effect></ImageView>
                         <VBox prefHeight="202.0" prefWidth="455.0">
                            <children>
-                              <Label fx:id="lblTitulo03" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblTitulo03" prefWidth="450.0" textFill="#469b65" wrapText="true">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets bottom="3.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="lblInfo03" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" textFill="WHITE" wrapText="true">
+                              <Label fx:id="lblInfo03" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="450.0" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lblGenero03" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblGenero03" prefWidth="405.0" textFill="#8ebc9c">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
+                                 <VBox.margin>
+                                    <Insets top="3.0" />
+                                 </VBox.margin>
                               </Label>
                            </children>
                            <HBox.margin>
@@ -264,26 +329,35 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="imgPoster13" fitHeight="150.0" fitWidth="125.0" onMouseClicked="#imgPoster13Pressed" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgPoster13" fitHeight="155.0" fitWidth="110.0" onMouseClicked="#imgPoster13Pressed" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.800000011920929" />
+                                 </color></DropShadow>
+                           </effect></ImageView>
                         <VBox prefHeight="202.0" prefWidth="455.0">
                            <children>
-                              <Label fx:id="lblTitulo13" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblTitulo13" prefWidth="450.0" textFill="#469b65" wrapText="true">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets bottom="10.0" />
+                                    <Insets bottom="3.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="lblInfo13" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="409.0" textFill="WHITE" wrapText="true">
+                              <Label fx:id="lblInfo13" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="450.0" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lblGenero13" prefWidth="405.0" textFill="WHITE">
+                              <Label fx:id="lblGenero13" prefWidth="405.0" textFill="#8ebc9c">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
+                                 <VBox.margin>
+                                    <Insets top="3.0" />
+                                 </VBox.margin>
                               </Label>
                            </children>
                            <HBox.margin>

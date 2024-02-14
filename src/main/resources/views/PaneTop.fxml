@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,6 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneTopController">
@@ -48,41 +50,97 @@
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.5" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ImageView>
                         <ImageView fx:id="imgObra01" fitHeight="200.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle01" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.5" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ImageView>
                         <ImageView fx:id="imgObra02" fitHeight="200.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle02" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.5" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ImageView>
                         <ImageView fx:id="imgObra03" fitHeight="200.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle03" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.5" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ImageView>
                         <ImageView fx:id="imgObra04" fitHeight="200.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle04" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.5" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ImageView>
                         <ImageView fx:id="imgObra05" fitHeight="200.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle05" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.5" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ImageView>
                         <ImageView fx:id="imgObra06" fitHeight="200.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle06" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.5" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ImageView>
                         <ImageView fx:id="imgObra07" fitHeight="200.0" fitWidth="145.0" onMouseEntered="#onMouseEnteredTitle07" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <image>
                               <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                            </image>
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX">
+                                 <color>
+                                    <Color opacity="0.5" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ImageView>
                      </children>
                   </GridPane>

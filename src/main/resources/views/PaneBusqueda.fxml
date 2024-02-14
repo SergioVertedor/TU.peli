@@ -25,13 +25,13 @@
                <children>
                   <HBox fx:id="line0" alignment="CENTER" spacing="30.0">
                      <children>
-                        <ImageView fx:id="imgResultado00" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed00" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado01" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed01" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado02" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed02" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado03" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed03" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado04" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed04" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado05" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed05" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado06" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed06" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado00" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed00" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado01" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed01" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado02" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed02" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado03" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed03" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado04" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed04" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado05" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed05" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado06" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed06" pickOnBounds="true" HBox.hgrow="ALWAYS" />
                      </children>
                      <GridPane.margin>
                         <Insets />
@@ -39,24 +39,24 @@
                   </HBox>
                   <HBox fx:id="line1" alignment="CENTER" spacing="30.0" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fx:id="imgResultado10" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed10" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado11" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed11" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado12" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed12" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado13" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed13" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado14" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed14" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado15" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed15" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado16" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed16" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado10" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed10" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado11" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed11" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado12" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed12" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado13" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed13" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado14" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed14" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado15" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed15" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado16" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed16" pickOnBounds="true" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox fx:id="line2" alignment="CENTER" spacing="30.0" GridPane.rowIndex="2">
                      <children>
-                        <ImageView fx:id="imgResultado20" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed20" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado21" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed21" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado22" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed22" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado23" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed23" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado24" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed24" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado25" fitHeight="200.0" fitWidth="145.0" onMouseClicked="#imageViewPressed25" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="imgResultado26" fitHeight="200.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado20" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed20" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado21" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed21" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado22" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed22" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado23" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed23" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado24" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed24" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado25" fitHeight="200.0" fitWidth="142.0" onMouseClicked="#imageViewPressed25" pickOnBounds="true" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="imgResultado26" fitHeight="200.0" fitWidth="142.0" pickOnBounds="true" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                </children>

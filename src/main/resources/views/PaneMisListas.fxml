@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,6 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneMisListasController">
@@ -32,77 +34,175 @@
                                     <Insets bottom="15.0" left="40.0" top="15.0" />
                                  </VBox.margin>
                               </Label>
-                              <HBox spacing="20.0">
+                              <HBox spacing="20.0" style="-fx-background-radius: 8;">
                                  <children>
-                                    <ImageView fx:id="imgReciente00" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente00" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente01" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente01" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente02" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente02" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente03" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente03" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente04" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente04" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente05" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente05" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente06" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente06" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente07" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente07" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente08" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente08" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente09" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente09" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente10" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente10" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente11" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente11" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente12" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente12" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
-                                    <ImageView fx:id="imgReciente13" fitHeight="200.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgReciente13" fitHeight="170.0" fitWidth="118.0" onMouseClicked="#goToTitulo" pickOnBounds="true">
                                        <image>
                                           <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                        </image>
+                                       <effect>
+                                          <DropShadow blurType="TWO_PASS_BOX">
+                                             <color>
+                                                <Color opacity="0.800000011920929" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
                                     </ImageView>
                                  </children>
                                  <padding>
@@ -193,7 +293,7 @@
                               </ImageView>
                            </children>
                         </HBox>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefWidth="354.0" vbarPolicy="NEVER" GridPane.rowIndex="1">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefWidth="354.0" style="-fx-background-radius: 12;" vbarPolicy="NEVER" GridPane.rowIndex="1">
                            <content>
                               <VBox alignment="TOP_CENTER" prefHeight="820.0" prefWidth="372.0" spacing="10.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                                  <padding>
@@ -206,6 +306,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -235,6 +342,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -264,6 +378,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -293,6 +414,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -322,6 +450,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -351,6 +486,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -380,6 +522,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -420,7 +569,7 @@
                               <Insets right="6.0" />
                            </GridPane.margin>
                         </ScrollPane>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" vbarPolicy="NEVER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" style="-fx-background-radius: 12;" vbarPolicy="NEVER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <content>
                               <VBox alignment="TOP_CENTER" prefHeight="820.0" prefWidth="372.0" spacing="10.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                                  <padding>
@@ -433,6 +582,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -462,6 +618,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -491,6 +654,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -520,6 +690,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -549,6 +726,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -578,6 +762,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -607,6 +798,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterSerie.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -647,7 +845,7 @@
                               <Insets right="6.0" />
                            </GridPane.margin>
                         </ScrollPane>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" vbarPolicy="NEVER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" style="-fx-background-radius: 12;" vbarPolicy="NEVER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <content>
                               <VBox alignment="TOP_CENTER" prefHeight="820.0" prefWidth="372.0" spacing="10.0" style="-fx-background-color: #3B3B3B; -fx-background-radius: 12;">
                                  <padding>
@@ -660,6 +858,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -689,6 +894,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -718,6 +930,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -747,6 +966,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -776,6 +1002,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -805,6 +1038,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>
@@ -834,6 +1074,13 @@
                                              <image>
                                                 <Image url="@../images/examples/ejemploPosterPelicula.jpg" />
                                              </image>
+                                             <effect>
+                                                <DropShadow blurType="TWO_PASS_BOX">
+                                                   <color>
+                                                      <Color opacity="0.800000011920929" />
+                                                   </color>
+                                                </DropShadow>
+                                             </effect>
                                           </ImageView>
                                           <VBox>
                                              <children>

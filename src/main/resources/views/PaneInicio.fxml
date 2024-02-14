@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,6 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PaneInicioController">
    <children>
@@ -78,45 +80,101 @@
                   <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <ImageView fx:id="imgObra01" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra01" fitHeight="170.0" fitWidth="120.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX">
+                           <color>
+                              <Color opacity="0.800000011920929" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                   </ImageView>
-                  <ImageView fx:id="imgObra02" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra02" fitHeight="170.0" fitWidth="120.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX">
+                           <color>
+                              <Color opacity="0.800000011920929" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                   </ImageView>
-                  <ImageView fx:id="imgObra03" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra03" fitHeight="170.0" fitWidth="120.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX">
+                           <color>
+                              <Color opacity="0.800000011920929" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                   </ImageView>
-                  <ImageView fx:id="imgObra04" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra04" fitHeight="170.0" fitWidth="120.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX">
+                           <color>
+                              <Color opacity="0.800000011920929" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                   </ImageView>
-                  <ImageView fx:id="imgObra05" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra05" fitHeight="170.0" fitWidth="120.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX">
+                           <color>
+                              <Color opacity="0.800000011920929" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                   </ImageView>
-                  <ImageView fx:id="imgObra06" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra06" fitHeight="170.0" fitWidth="120.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX">
+                           <color>
+                              <Color opacity="0.800000011920929" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                   </ImageView>
-                  <ImageView fx:id="imgObra07" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra07" fitHeight="170.0" fitWidth="120.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX">
+                           <color>
+                              <Color opacity="0.800000011920929" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                   </ImageView>
-                  <ImageView fx:id="imgObra08" fitHeight="170.0" fitWidth="135.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <ImageView fx:id="imgObra08" fitHeight="170.0" fitWidth="120.0" focusTraversable="true" nodeOrientation="INHERIT" onMouseClicked="#imgObraPressed" pickOnBounds="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX">
+                           <color>
+                              <Color opacity="0.800000011920929" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                   </ImageView>
                </children>
                <VBox.margin>
