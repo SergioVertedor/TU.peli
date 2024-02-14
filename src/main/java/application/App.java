@@ -1,6 +1,6 @@
 package application;
 
-import connector.HibernateUtils;
+import model.connector.HibernateUtils;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import utils.DialogNotificator;

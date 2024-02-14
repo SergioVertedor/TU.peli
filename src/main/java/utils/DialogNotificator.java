@@ -144,4 +144,12 @@ public class DialogNotificator {
   }
 
 
+    public void searchErrorNotification() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(null);
+        alert.setHeaderText("Búsqueda incorrecta");
+        alert.setContentText("Por favor, introduzca un nombre válido");
+        activateLogos(alert);
+        alert.showAndWait();
+    }
 }

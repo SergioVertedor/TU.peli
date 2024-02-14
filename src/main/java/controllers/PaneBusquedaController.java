@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -10,7 +11,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import lombok.Getter;
 import lombok.Setter;
+import service.APIService;
 import service.dto.movie.Movie;
+import service.dto.movie.MovieSearchResult;
 import service.dto.tv.TV;
 import utils.ListStorage;
 import utils.PaneSwitcher;
@@ -41,6 +44,7 @@ public class PaneBusquedaController {
   @FXML private ImageView imgResultado32;
   @FXML private ImageView imgResultado33;
   @FXML private ImageView imgResultado34;
+
 
 
   @FXML
@@ -228,7 +232,7 @@ public class PaneBusquedaController {
     Platform.runLater(this::fillInitialResults);
   }
 
-  public void fillSearchResults(char type) {
+  public void fillFilmoteca(char type) {
     PaneBusquedaController.type = type;
     if (type == 'm') {
       fillMovies();
@@ -237,115 +241,136 @@ public class PaneBusquedaController {
     }
   }
 
+  public void fillSearchResults(String type, String search) {
+
+    if (type == "ms") {
+      fillMovieSearchResults(search);
+      ;
+    } else if (type == "ts") {
+      // fillSerieSearchResults(type);
+    }
+  }
+
+  private void fillMovieSearchResults(String search) {
+    this.movies.clear();
+    List<ImageView> imgViews =
+            List.of(
+                    imgResultado00,
+                    imgResultado01,
+                    imgResultado02,
+                    imgResultado03,
+                    imgResultado04,
+                    imgResultado10,
+                    imgResultado11,
+                    imgResultado12,
+                    imgResultado13,
+                    imgResultado14,
+                    imgResultado20,
+                    imgResultado21,
+                    imgResultado22,
+                    imgResultado23,
+                    imgResultado24,
+                    imgResultado30,
+                    imgResultado31,
+                    imgResultado32,
+                    imgResultado33,
+                    imgResultado34
+                 );
+    type = 'm';
+    APIService apiService = new APIService();
+    MovieSearchResult resultados = apiService.searchMovie(search);
+    List<Movie> resultadosBusqueda = Arrays.stream(resultados.getResults()).toList();
+
+    String url = "https://image.tmdb.org/t/p/w500";
+    imgViews.forEach(
+        imageView -> {
+          if (resultadosBusqueda.get(imgViews.indexOf(imageView)).getPoster_path() == null) {
+            imageView.setVisible(false);
+          }
+          imageView.setImage(
+              new Image(
+                  url + resultadosBusqueda.get(imgViews.indexOf(imageView)).getPoster_path()));
+          movies.add(resultadosBusqueda.get(imgViews.indexOf(imageView)));
+        });
+  }
+
   private void fillSeries() {
     this.series.clear();
-    List<ImageView> imgResult =
-        List.of(
-            imgResultado00,
-            imgResultado01,
-            imgResultado02,
-            imgResultado03,
-            imgResultado04,
-            imgResultado10,
-            imgResultado11,
-            imgResultado12,
-            imgResultado13,
-            imgResultado14,
-            imgResultado20,
-            imgResultado21,
-            imgResultado22,
-            imgResultado23,
-            imgResultado24,
-            imgResultado30,
-            imgResultado31,
-            imgResultado32,
-            imgResultado33,
-            imgResultado34
-            );
+    List<ImageView> imgViews =
+            List.of(
+                    imgResultado00,
+                    imgResultado01,
+                    imgResultado02,
+                    imgResultado03,
+                    imgResultado04,
+                    imgResultado10,
+                    imgResultado11,
+                    imgResultado12,
+                    imgResultado13,
+                    imgResultado14,
+                    imgResultado20,
+                    imgResultado21,
+                    imgResultado22,
+                    imgResultado23,
+                    imgResultado24,
+                    imgResultado30,
+                    imgResultado31,
+                    imgResultado32,
+                    imgResultado33,
+                    imgResultado34);
     String url = "https://image.tmdb.org/t/p/w500";
-    imgResult.forEach(
-        imageView -> {
-          imageView.setImage(
+    imgViews.forEach(
+        image -> {
+          if (ListStorage.getTrendingSeries().get(imgViews.indexOf(image)).getPoster_path() == null) {
+            image.setVisible(false);
+          }
+          image.setImage(
               new Image(
                   url
                       + ListStorage.getTrendingSeries()
-                          .get(imgResult.indexOf(imageView))
+                          .get(imgViews.indexOf(image))
                           .getPoster_path()));
-          series.add(ListStorage.getTrendingSeries().get(imgResult.indexOf(imageView)));
+          series.add(ListStorage.getTrendingSeries().get(imgViews.indexOf(image)));
         });
   }
 
   private void fillMovies() {
     this.movies.clear();
-    List<ImageView> row1 =
-        List.of(
-            imgResultado00,
-            imgResultado01,
-            imgResultado02,
-            imgResultado03,
-            imgResultado04);
-    List<ImageView> row2 =
-        List.of(
-            imgResultado10,
-            imgResultado11,
-            imgResultado12,
-            imgResultado13,
-            imgResultado14);
-    List<ImageView> row3 =
-        List.of(
-            imgResultado20,
-            imgResultado21,
-            imgResultado22,
-            imgResultado23,
-            imgResultado24);
-    List<ImageView> row4 =
-        List.of(
-            imgResultado30,
-            imgResultado31,
-            imgResultado32,
-            imgResultado33,
-            imgResultado34);
-
+    List<ImageView> imgViews =
+            List.of(
+                    imgResultado00,
+                    imgResultado01,
+                    imgResultado02,
+                    imgResultado03,
+                    imgResultado04,
+                    imgResultado10,
+                    imgResultado11,
+                    imgResultado12,
+                    imgResultado13,
+                    imgResultado14,
+                    imgResultado20,
+                    imgResultado21,
+                    imgResultado22,
+                    imgResultado23,
+                    imgResultado24,
+                    imgResultado30,
+                    imgResultado31,
+                    imgResultado32,
+                    imgResultado33,
+                    imgResultado34);
     String url = "https://image.tmdb.org/t/p/w500";
-    row1.forEach(
-        imageView -> {
-          imageView.setImage(
+    imgViews.forEach(
+        image -> {
+          if (ListStorage.getTrendingMovies().get(imgViews.indexOf(image)).getPoster_path() == null) {
+            image.setVisible(false);
+          }
+          image.setImage(
               new Image(
                   url
                       + ListStorage.getTrendingMovies()
-                          .get(row1.indexOf(imageView))
+                          .get(imgViews.indexOf(image))
                           .getPoster_path()));
-          movies.add(ListStorage.getTrendingMovies().get(row1.indexOf(imageView)));
-        });
-    row2.forEach(
-        imageView -> {
-          imageView.setImage(
-              new Image(
-                  url
-                      + ListStorage.getTrendingMovies()
-                          .get(row2.indexOf(imageView) + 5)
-                          .getPoster_path()));
-          movies.add(ListStorage.getTrendingMovies().get(row2.indexOf(imageView) + 5));
-        });
-    row3.forEach(
-        imageView -> {
-          imageView.setImage(
-              new Image(
-                  url
-                      + ListStorage.getTrendingMovies()
-                          .get(row3.indexOf(imageView) + 10)
-                          .getPoster_path()));
-          movies.add(ListStorage.getTrendingMovies().get(row3.indexOf(imageView) + 10));
-        });
-    row4.forEach(
-        imageView -> {
-          imageView.setImage(
-              new Image(
-                  url
-                      + ListStorage.getTrendingMovies()
-                          .get(row4.indexOf(imageView) + 15)
-                          .getPoster_path()));
-          movies.add(ListStorage.getTrendingMovies().get(row3.indexOf(imageView) + 15));
+          movies.add(ListStorage.getTrendingMovies().get(imgViews.indexOf(image)));
         });
   }
 
