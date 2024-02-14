@@ -1,17 +1,24 @@
 package controllers;
 
+import java.util.ArrayList;
 import java.util.List;
-
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import lombok.Getter;
+import lombok.Setter;
 import service.dto.Genre;
+import service.dto.movie.Movie;
 import utils.ListStorage;
+import utils.PaneSwitcher;
 
 public class PaneCarteleraController {
+  @Getter @Setter private static Pane contentPane;
+  private List<Movie> nowPlayingMovies = new ArrayList<Movie>();
 
   // Imagenes cartelera
   @FXML private ImageView imgPoster00;
@@ -53,79 +60,79 @@ public class PaneCarteleraController {
   @FXML private Label lblGenero12;
   @FXML private Label lblGenero13;
 
-  /** Asigna el mismo manejador de eventos a todos los ImageViews */
-  void asignClickHandlers() {
-    setClickHandler(imgPoster00);
-    setClickHandler(imgPoster01);
-    setClickHandler(imgPoster02);
-    setClickHandler(imgPoster03);
-    setClickHandler(imgPoster10);
-    setClickHandler(imgPoster11);
-    setClickHandler(imgPoster12);
-    setClickHandler(imgPoster13);
-  }
+//  /** Asigna el mismo manejador de eventos a todos los ImageViews */
+//  void asignClickHandlers() {
+//    setClickHandler(imgPoster00);
+//    setClickHandler(imgPoster01);
+//    setClickHandler(imgPoster02);
+//    setClickHandler(imgPoster03);
+//    setClickHandler(imgPoster10);
+//    setClickHandler(imgPoster11);
+//    setClickHandler(imgPoster12);
+//    setClickHandler(imgPoster13);
+//  }
 
-  /**
-   * Asigna un manejador de eventos al ImageView
-   *
-   * @param imageView
-   */
-  private void setClickHandler(ImageView imageView) {
-    imageView.setOnMouseClicked(event -> handleImageViewClick(imageView));
-  }
+//  /**
+//   * Asigna un manejador de eventos al ImageView
+//   *
+//   * @param imageView
+//   */
+//  private void setClickHandler(ImageView imageView) {
+//    imageView.setOnMouseClicked(event -> handleImageViewClick(imageView));
+//  }
 
-  /**
-   * Redirige la página hacia el detalle de la pelicula clicada
-   *
-   * @param clickedImageView
-   */
-  private void handleImageViewClick(ImageView clickedImageView) {
-    // TODO: goToPelicula()
-  }
-  
+//  /**
+//   * Redirige la página hacia el detalle de la pelicula clicada
+//   *
+//   * @param clickedImageView
+//   */
+//  private void handleImageViewClick(ImageView clickedImageView) {
+//    // TODO: goToPelicula()
+//  }
+
   @FXML
   void imgPoster00Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(0).getId());
   }
 
   @FXML
   void imgPoster01Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(1).getId());
   }
 
   @FXML
   void imgPoster02Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(2).getId());
   }
 
   @FXML
   void imgPoster03Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(3).getId());
   }
 
   @FXML
   void imgPoster10Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(4).getId());
   }
 
   @FXML
   void imgPoster11Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(5).getId());
   }
 
   @FXML
   void imgPoster12Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(6).getId());
   }
 
   @FXML
   void imgPoster13Pressed(MouseEvent event) {
-
+    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(7).getId());
   }
 
   @FXML
   void initialize() {
-    asignClickHandlers();
+//    asignClickHandlers();
     Platform.runLater(this::fillInfo);
   }
 
@@ -153,30 +160,45 @@ public class PaneCarteleraController {
     List<Label> labelsInfo =
         List.of(
             lblInfo00, lblInfo01, lblInfo02, lblInfo03, lblInfo10, lblInfo11, lblInfo12, lblInfo13);
-List<Label> labelsGenero =
-        List.of(lblGenero00, lblGenero01, lblGenero02, lblGenero03,
-                lblGenero10, lblGenero11, lblGenero12, lblGenero13);
+    List<Label> labelsGenero =
+        List.of(
+            lblGenero00,
+            lblGenero01,
+            lblGenero02,
+            lblGenero03,
+            lblGenero10,
+            lblGenero11,
+            lblGenero12,
+            lblGenero13);
     // Steamos imagenes
     String url = "https://image.tmdb.org/t/p/w500";
     imageViews.forEach(
         imageView -> {
           imageView.setImage(
               new Image(
-                  url + ListStorage.getNowPlayingMovies().get(imageViews.indexOf(imageView)).getPoster_path()));
+                  url
+                      + ListStorage.getNowPlayingMovies()
+                          .get(imageViews.indexOf(imageView))
+                          .getPoster_path()));
+          nowPlayingMovies.add(
+              ListStorage.getNowPlayingMovies().get(imageViews.indexOf(imageView)));
         });
-    //Seteamos los titulos
+    // Seteamos los titulos
     labelsTitulo.forEach(
         label -> {
           label.setText(
               ListStorage.getNowPlayingMovies().get(labelsTitulo.indexOf(label)).getTitle());
         });
-    //Seteamos la info de las peliculas
-    labelsInfo.forEach( label -> {
-      label.setText(ListStorage.getNowPlayingMovies().get(labelsInfo.indexOf(label)).getOverview());
-    });
-    //Seteamos los generos
+    // Seteamos la info de las peliculas
+    labelsInfo.forEach(
+        label -> {
+          label.setText(
+              ListStorage.getNowPlayingMovies().get(labelsInfo.indexOf(label)).getOverview());
+        });
+    // Seteamos los generos
     for (Label lbl : labelsGenero) {
-      int[] genres = ListStorage.getNowPlayingMovies().get(labelsGenero.indexOf(lbl)).getGenre_ids();
+      int[] genres =
+          ListStorage.getNowPlayingMovies().get(labelsGenero.indexOf(lbl)).getGenre_ids();
       StringBuilder genero = new StringBuilder();
       for (int i = 0; i < genres.length; i++) {
         for (Genre genre : ListStorage.getMovieGenres()) {

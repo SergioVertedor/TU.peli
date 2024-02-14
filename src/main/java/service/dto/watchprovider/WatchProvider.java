@@ -1,11 +1,9 @@
 package service.dto.watchprovider;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 
-@AllArgsConstructor
-@Getter
+@Data
 public class WatchProvider {
-    private long id;
-    private WatchProvidersResults watchProvidersResults;
+    private int id;
+    private ES[] results;
 }

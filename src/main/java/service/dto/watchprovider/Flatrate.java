@@ -1,10 +1,8 @@
 package service.dto.watchprovider;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
-@AllArgsConstructor
+@Data
 public class Flatrate {
     private String logo_path;
     private long provider_id;

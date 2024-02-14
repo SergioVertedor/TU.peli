@@ -12,6 +12,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,10 +22,13 @@ import service.dto.credits.Cast;
 import service.dto.movie.Movie;
 import service.dto.tv.TV;
 import utils.ListStorage;
+import utils.PaneSwitcher;
 
 public class PaneTopController {
-
+  private List<Movie> movie = new ArrayList<Movie>();
+  private List<TV> tv = new ArrayList<TV>();
   @Setter @Getter private static char type;
+  @Getter @Setter private Pane centralPane;
 
   // Imagenes Top
   @FXML private ImageView imgObra00;
@@ -79,42 +83,66 @@ public class PaneTopController {
   void onMouseEnteredTitle00(MouseEvent event) {
     fillInfo(0);
   }
-
   @FXML
   void onMouseEnteredTitle01(MouseEvent event) {
     fillInfo(1);
   }
-
   @FXML
   void onMouseEnteredTitle02(MouseEvent event) {
     fillInfo(2);
   }
-
   @FXML
   void onMouseEnteredTitle03(MouseEvent event) {
     fillInfo(3);
   }
-
   @FXML
   void onMouseEnteredTitle04(MouseEvent event) {
     fillInfo(4);
   }
-
   @FXML
   void onMouseEnteredTitle05(MouseEvent event) {
     fillInfo(5);
   }
-
   @FXML
   void onMouseEnteredTitle06(MouseEvent event) {
     fillInfo(6);
   }
-
   @FXML
   void onMouseEnteredTitle07(MouseEvent event) {
     fillInfo(7);
   }
-
+  @FXML
+  void titlePressed00(MouseEvent event) {
+    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(0).getId());
+  }
+  @FXML
+  void titlePressed01(MouseEvent event) {
+    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(1).getId());
+  }
+  @FXML
+  void titlePressed02(MouseEvent event) {
+    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(2).getId());
+  }
+  @FXML
+  void titlePressed03(MouseEvent event) {
+    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(3).getId());
+  }
+  @FXML
+  void titlePressed04(MouseEvent event) {
+    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(4).getId());
+  }
+  @FXML
+  void titlePressed05(MouseEvent event) {
+    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(5).getId());
+  }
+  @FXML
+  void titlePressed06(MouseEvent event) {
+    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(6).getId());
+  }
+  @FXML
+  void titlePressed07(MouseEvent event) {
+    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(7).getId());
+  }
   @FXML
   void initialize() {
     // Cargar selección Top Peliculas/Series de Todos los tiempos 'imgObra00'
@@ -245,6 +273,7 @@ public class PaneTopController {
                       + ListStorage.getTopMovies()
                           .get(imgViews.indexOf(imgObra))
                           .getPoster_path()));
+          movie.add(ListStorage.getTopMovies().get(imgViews.indexOf(imgObra)));
         }
       } else if (timeFrame.equals("year")) {
         movies = Arrays.stream(apiService.searchMovieByDate(thisYear).getResults()).toList();
@@ -281,6 +310,7 @@ public class PaneTopController {
                       + ListStorage.getTopSeries()
                           .get(imgViews.indexOf(imgObra))
                           .getPoster_path()));
+          tv.add(ListStorage.getTopSeries().get(imgViews.indexOf(imgObra)));
         }
       } else if (timeFrame.equals("year")) {
         series = Arrays.stream(apiService.searchSerieByYear(thisYear).getResults()).toList();

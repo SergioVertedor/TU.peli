@@ -3,6 +3,8 @@ package controllers;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -17,8 +19,6 @@ import service.dto.credits.Cast;
 import service.dto.credits.Credits;
 import service.dto.movie.MovieDetail;
 import service.dto.tv.TVDetail;
-import service.dto.watchprovider.WatchProvidersResults;
-import service.dto.watchprovider.WorkWatchProvider;
 
 public class PaneDetalleController {
   @Getter @Setter private static char type;
@@ -29,8 +29,6 @@ public class PaneDetalleController {
   @FXML private Button btnTrailer;
 
   @FXML private ImageView imgLike;
-
-  @FXML private ImageView imgPais;
 
   @FXML private ImageView imgPen;
 
@@ -112,9 +110,9 @@ public class PaneDetalleController {
 
   public void fillInfo(int id) {
     if (type == 'm') {
-      fillMovieInfo(id);
+      Platform.runLater(() -> fillMovieInfo(id));
     } else {
-      fillSerieInfo(id);
+      Platform.runLater(() -> fillSerieInfo(id));
     }
   }
 
@@ -122,13 +120,8 @@ public class PaneDetalleController {
     var apiService = new APIService();
     TVDetail detalles = apiService.getTVDetail(id);
     Credits creditos = apiService.getTVCredits(id);
-    List<Cast> crew = Arrays.asList(creditos.getCrew());
-    var directores = new ArrayList<Cast>();
     List<Cast> cast = Arrays.asList(creditos.getCast());
-    var actores = new ArrayList<Cast>();
-    for (int i = 0; i < 4; i++) {
-      actores.add(cast.get(i));
-    }
+
     // TITULO
     lblTitulo.setText(detalles.getName());
     String directorYGenero = "";
@@ -147,8 +140,9 @@ public class PaneDetalleController {
 
     // ESTRENO Y DURACION
     try {
-    lblEstrenoDuracion.setText(detalles.getFirst_air_date() + " - " + detalles.getEpisode_run_time()[0] + "min"); }
-    catch (Exception e) {
+      lblEstrenoDuracion.setText(
+          detalles.getFirst_air_date() + " - " + detalles.getEpisode_run_time()[0] + "min");
+    } catch (Exception e) {
       lblEstrenoDuracion.setText(detalles.getFirst_air_date().toString());
     }
     // imgStar1.setImage();
@@ -164,40 +158,38 @@ public class PaneDetalleController {
     String url = "https://image.tmdb.org/t/p/w500";
 
     // IMAGENES
-    imgPais.setImage(new Image(url + detalles.getProduction_companies()[0].getLogo_path()));
     imgPoster.setImage(new Image(url + detalles.getPoster_path()));
     List<ImageView> imgReparto =
-            (Arrays.asList(imgReparto0, imgReparto1, imgReparto2, imgReparto3));
+        (Arrays.asList(imgReparto0, imgReparto1, imgReparto2, imgReparto3));
     imgReparto.forEach(
-            img -> {
-              img.setImage(new Image(url + actores.get(imgReparto.indexOf(img)).getProfile_path()));
-            });
+        img -> {
+          try {
+            if (Optional.ofNullable(cast.get(imgReparto.indexOf(img))).isEmpty()) {
+              img.setVisible(false);
+            } else {
+              img.setImage(new Image(url + cast.get(imgReparto.indexOf(img)).getProfile_path()));
+            }
+          } catch (Exception e) {
+            img.setVisible(false);
+          }
+        });
     List<Label> lblReparto = (Arrays.asList(lblReparto0, lblReparto1, lblReparto2, lblReparto3));
     lblReparto.forEach(
-            lbl -> {
-              lbl.setText(actores.get(lblReparto.indexOf(lbl)).getName());
-            });
-    List<ImageView> streamingIcon =
-            (Arrays.asList(
-                    streaming01, streaming02, streaming03, streaming04, streaming05, streaming06));
-    WorkWatchProvider streaming = apiService.getMovieWatchProviders(id);
-    for (int i = 0; i < streamingIcon.size(); i++) {
-      try {
-        if (i < streaming.getResults().getEs().getFlatrate().length) {
-
-          streamingIcon
-                  .get(i)
-                  .setImage(
-                          new Image(url + streaming.getResults().getEs().getFlatrate()[i].getLogo_path()));
-        } else {
-          streamingIcon.get(i).setVisible(false);
-        }
-      } catch (Exception e) {
-        streamingIcon.get(i).setVisible(false);
-      }
-    }
+        lbl -> {
+          lbl.setText(cast.get(lblReparto.indexOf(lbl)).getName());
+        });
+    /**
+     * List<ImageView> streamingIcon = (Arrays.asList( streaming01, streaming02, streaming03,
+     * streaming04, streaming05, streaming06)); WatchProvider streaming =
+     * apiService.getMovieWatchProviders(id); List<Flatrate> proveedores =
+     * Arrays.asList(streaming.getResults()[0].getFlatrate()); ; final String urlOriginalSize =
+     * "https://image.tmdb.org/t/p/original"; try { proveedores.forEach( proveedor -> {
+     * streamingIcon .get(proveedores.indexOf(proveedor)) .setImage(new Image(urlOriginalSize +
+     * proveedor.getLogo_path())); }); } catch (Exception e) {
+     *
+     * <p>}*
+     */
   }
-
 
   private void fillMovieInfo(int id) {
     var apiService = new APIService();
@@ -210,9 +202,13 @@ public class PaneDetalleController {
         directores.add(c);
       }
     }
+
     List<Cast> cast = Arrays.asList(creditos.getCast());
     var actores = new ArrayList<Cast>();
     for (int i = 0; i < 4; i++) {
+      if (cast.isEmpty()) {
+        break;
+      }
       actores.add(cast.get(i));
     }
     // TITULO
@@ -253,37 +249,41 @@ public class PaneDetalleController {
     String url = "https://image.tmdb.org/t/p/w500";
 
     // IMAGENES
-    imgPais.setImage(new Image(url + detalles.getProduction_companies()[0].getLogo_path()));
-    imgPoster.setImage(new Image(url + detalles.getPoster_path()));
+
+    if (detalles.getPoster_path() == null) {
+      imgPoster.setVisible(false);
+    } else {
+      imgPoster.setImage(new Image(url + detalles.getPoster_path()));
+    }
     List<ImageView> imgReparto =
         (Arrays.asList(imgReparto0, imgReparto1, imgReparto2, imgReparto3));
     imgReparto.forEach(
         img -> {
-          img.setImage(new Image(url + actores.get(imgReparto.indexOf(img)).getProfile_path()));
+          if (actores.isEmpty()) {
+            img.setVisible(false);
+          } else {
+            img.setImage(new Image(url + actores.get(imgReparto.indexOf(img)).getProfile_path()));
+          }
         });
     List<Label> lblReparto = (Arrays.asList(lblReparto0, lblReparto1, lblReparto2, lblReparto3));
     lblReparto.forEach(
         lbl -> {
-          lbl.setText(actores.get(lblReparto.indexOf(lbl)).getName());
+          if (actores.isEmpty()) {
+            lbl.setVisible(false);
+          } else {
+            lbl.setText(actores.get(lblReparto.indexOf(lbl)).getName());
+          }
         });
     List<ImageView> streamingIcon =
         (Arrays.asList(
             streaming01, streaming02, streaming03, streaming04, streaming05, streaming06));
-    WorkWatchProvider streaming = apiService.getMovieWatchProviders(id);
-    for (int i = 0; i < streamingIcon.size(); i++) {
-      try {
-        if (i < streaming.getResults().getEs().getFlatrate().length) {
-
-          streamingIcon
-              .get(i)
-              .setImage(
-                  new Image(url + streaming.getResults().getEs().getFlatrate()[i].getLogo_path()));
-        } else {
-          streamingIcon.get(i).setVisible(false);
-        }
-      } catch (Exception e) {
-        streamingIcon.get(i).setVisible(false);
-      }
-    }
+    /**
+     * WatchProvider streaming = apiService.getMovieWatchProviders(id); for (int i = 0; i <
+     * streamingIcon.size(); i++) { try { if (i <
+     * streaming.getResults().getEs().getFlatrate().length) { streamingIcon .get(i) .setImage( new
+     * Image(url + streaming.getResults().getEs().getFlatrate()[i].getLogo_path())); } else {
+     * streamingIcon.get(i).setVisible(false); } } catch (Exception e) {
+     * streamingIcon.get(i).setVisible(false); } }*
+     */
   }
 }
