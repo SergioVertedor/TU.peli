@@ -260,22 +260,22 @@ public class PaneBusquedaController {
                     imgResultado02,
                     imgResultado03,
                     imgResultado04,
-                    imgResultado05,
-                    imgResultado06,
                     imgResultado10,
                     imgResultado11,
                     imgResultado12,
                     imgResultado13,
                     imgResultado14,
-                    imgResultado15,
-                    imgResultado16,
                     imgResultado20,
                     imgResultado21,
                     imgResultado22,
                     imgResultado23,
                     imgResultado24,
-                    imgResultado25,
-                    imgResultado26);
+                    imgResultado30,
+                    imgResultado31,
+                    imgResultado32,
+                    imgResultado33,
+                    imgResultado34
+                 );
     type = 'm';
     APIService apiService = new APIService();
     MovieSearchResult resultados = apiService.searchMovie(search);
@@ -303,22 +303,21 @@ public class PaneBusquedaController {
                     imgResultado02,
                     imgResultado03,
                     imgResultado04,
-                    imgResultado05,
-                    imgResultado06,
                     imgResultado10,
                     imgResultado11,
                     imgResultado12,
                     imgResultado13,
                     imgResultado14,
-                    imgResultado15,
-                    imgResultado16,
                     imgResultado20,
                     imgResultado21,
                     imgResultado22,
                     imgResultado23,
                     imgResultado24,
-                    imgResultado25,
-                    imgResultado26);
+                    imgResultado30,
+                    imgResultado31,
+                    imgResultado32,
+                    imgResultado33,
+                    imgResultado34);
     String url = "https://image.tmdb.org/t/p/w500";
     imgViews.forEach(
         image -> {
@@ -344,22 +343,21 @@ public class PaneBusquedaController {
                     imgResultado02,
                     imgResultado03,
                     imgResultado04,
-                    imgResultado05,
-                    imgResultado06,
                     imgResultado10,
                     imgResultado11,
                     imgResultado12,
                     imgResultado13,
                     imgResultado14,
-                    imgResultado15,
-                    imgResultado16,
                     imgResultado20,
                     imgResultado21,
                     imgResultado22,
                     imgResultado23,
                     imgResultado24,
-                    imgResultado25,
-                    imgResultado26);
+                    imgResultado30,
+                    imgResultado31,
+                    imgResultado32,
+                    imgResultado33,
+                    imgResultado34);
     String url = "https://image.tmdb.org/t/p/w500";
     imgViews.forEach(
         image -> {
