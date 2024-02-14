@@ -1,6 +1,6 @@
 package application;
 
-import connector.HibernateUtils;
+import model.connector.HibernateUtils;
 import java.util.List;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;

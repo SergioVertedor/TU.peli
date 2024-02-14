@@ -1,6 +1,6 @@
 package utils;
 
-import connector.HibernateUtils;
+import model.connector.HibernateUtils;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;

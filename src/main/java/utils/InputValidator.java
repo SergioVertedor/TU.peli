@@ -47,6 +47,6 @@ public class InputValidator {
 	 * @return true si el nombre es válido, false si no lo es
 	 */
 	public boolean isNameValid(String name) {
-		return name.matches("^[a-zA-Z ]{2,50}$");
+		return name.matches("^[a-zA-Z 0-9,.-]{2,50}$");
 	}
 }

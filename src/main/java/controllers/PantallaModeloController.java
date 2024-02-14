@@ -66,8 +66,19 @@ public class PantallaModeloController {
 	 */
 	@FXML
 	void btnBuscarPressed(MouseEvent event) {
-		PaneSwitcher.switchPane("PaneBusqueda", paneContent);
-		imgSection.setImage(new Image("images/sections/Filmoteca.png"));
+		String type;
+		if (rbPeliculas.isSelected()) {
+			type =  "ms";
+		} else {
+			type = "ts";
+		}
+		InputValidator iv = new InputValidator();
+		if (!iv.isNameValid(txtBusqueda.getText())) {
+			DialogNotificator dn = new DialogNotificator();
+			dn.searchErrorNotification();
+			return;
+		}
+		PaneSwitcher.switchResultPane("PaneBusqueda", centralPane, type, txtBusqueda.getText());
 	}
 
 	/**
@@ -94,7 +105,7 @@ public class PantallaModeloController {
 	 */
 	@FXML
 	void goToPeliculas(MouseEvent event) {
-		PaneSwitcher.switchSearchPane("PaneBusqueda", centralPane, 'm');
+		PaneSwitcher.switchFilmotecaPane("PaneBusqueda", centralPane, 'm');
 		imgSection.setImage(new Image("images/sections/Peliculas.png"));
 		// TODO: Mostrar solo peliculas
 	}
@@ -105,7 +116,7 @@ public class PantallaModeloController {
 	 */
 	@FXML
 	void goToSeries(MouseEvent event) {
-		PaneSwitcher.switchSearchPane("PaneBusqueda", centralPane, 't');
+		PaneSwitcher.switchFilmotecaPane("PaneBusqueda", centralPane, 't');
 		imgSection.setImage(new Image("images/sections/Series.png"));
 	// TODO: Mostrar solo series
 	}

@@ -1,6 +1,6 @@
 package model.dao;
 
-import connector.HibernateUtils;
+import model.connector.HibernateUtils;
 import java.util.List;
 import model.AppUser;
 import org.hibernate.Session;
