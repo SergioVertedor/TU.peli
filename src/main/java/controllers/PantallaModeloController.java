@@ -107,7 +107,6 @@ public class PantallaModeloController {
 	void goToPeliculas(MouseEvent event) {
 		PaneSwitcher.switchFilmotecaPane("PaneBusqueda", centralPane, 'm');
 		imgSection.setImage(new Image("images/sections/Peliculas.png"));
-		// TODO: Mostrar solo peliculas
 	}
 
 	/**
@@ -118,7 +117,6 @@ public class PantallaModeloController {
 	void goToSeries(MouseEvent event) {
 		PaneSwitcher.switchFilmotecaPane("PaneBusqueda", centralPane, 't');
 		imgSection.setImage(new Image("images/sections/Series.png"));
-	// TODO: Mostrar solo series
 	}
 
 	/**
@@ -179,8 +177,6 @@ public class PantallaModeloController {
 	void goToInicio(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneInicio", centralPane);
 		imgSection.setImage(null);
-		// TODO: que no se vea la imagen de section
-		
 	}
 
 	/**
@@ -190,7 +186,7 @@ public class PantallaModeloController {
 	@FXML
 	void goToUserProfile(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneUsuario", centralPane);
-		// TODO: que no se vea la imagen de section
+		imgSection.setImage(null);
 	}
 
 	@FXML

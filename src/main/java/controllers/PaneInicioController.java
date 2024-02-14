@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import lombok.Setter;
 import utils.ListStorage;
+import utils.PaneSwitcher;
 
 public class PaneInicioController {
   private final int NUM_OBRAS = 8;

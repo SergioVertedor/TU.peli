@@ -94,9 +94,9 @@ public class PaneUsuarioController {
   String showTextDialog() {
 		TextInputDialog dialog = new TextInputDialog();
 		dialog.setTitle("Nuevo Dispositivo");
-		dialog.setHeaderText("Hola");
+		dialog.setHeaderText("");
 		dialog.setContentText("Nombre del dispositivo:");
-		dialog.initStyle(StageStyle.DECORATED);
+		dialog.initStyle(StageStyle.UNDECORATED);
 		Optional<String> respuesta = dialog.showAndWait();
 		return respuesta.orElse("");
 	}

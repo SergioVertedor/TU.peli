@@ -1,5 +1,9 @@
 package controllers;
 
+import java.util.Optional;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,9 +12,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.StageStyle;
 
 public class PaneNuevaController {
 
@@ -41,10 +47,10 @@ public class PaneNuevaController {
 	
 	@FXML	private TextArea txtComentarios;
 	
-	// Selección paises 
+	// Selección paises (deshabilitado)
 	@FXML	private ComboBox<?> cbPais;
 	
-	// TODO: CAMBIAR A JCaledar !!!
+	// Vista por ultima vez (deshabilitado)
 	@FXML	private ComboBox<?> cbVistaUltimaVez;
 
 	// Elección entre dispositivos guardados por el usuario
@@ -70,13 +76,41 @@ public class PaneNuevaController {
 	@FXML	private Button btnGuardar;
 	@FXML	private Button btnRestablecer;
 	
+	 /**
+	  * Muestra un dialogo con textField para coger la url de la imagen
+	  * @return
+	  */
+	  String showTextDialog() {
+			TextInputDialog dialog = new TextInputDialog();
+			dialog.setTitle("URL imagen");
+			dialog.setHeaderText("Inserte la URL de la imagen a cargar");
+			dialog.setContentText("URL:");
+			dialog.initStyle(StageStyle.TRANSPARENT);
+			Optional<String> respuesta = dialog.showAndWait();
+			return respuesta.orElse("");
+		}
+	
+	// TODO
+	/**
+	 * Rellena el comboBox con los dispositivos del usuario
+	 */
+	void fillComboBox() {
+		ObservableList<String> dipositivosList = 
+		    FXCollections.observableArrayList(
+		        "",
+		        ""
+		    );
+		cbDispositivo = new ComboBox(dipositivosList);
+	}
+	
 	/**
 	 * Insertar url de la imagen de la pelicula/serie
 	 * @param event
 	 */
   @FXML
   void imgPosterClicked(MouseEvent event) {
-  	
+  	String urlDispositivo = showTextDialog();
+  	imgPoster.setImage(new Image(urlDispositivo));
   }
 	
 	
@@ -101,22 +135,25 @@ public class PaneNuevaController {
 		cbPrimeVideo.setSelected(false);
 		cbFilmin.setSelected(false);
 		cbAppleTV.setSelected(false);
-		// TODO: Imagenes de estrella
-		// TODO: comboBox vacios
+		imgStar1.setImage(new Image("images/favUnselected"));
+		imgStar2.setImage(new Image("images/favUnselected"));
+		imgStar3.setImage(new Image("images/favUnselected"));
+		imgStar4.setImage(new Image("images/favUnselected"));
+		imgStar5.setImage(new Image("images/favUnselected"));
+		// TODO: comboBox dispositivos sin seleccion
 		// TODO: imagen limpia
 	}
 
 
 	@FXML
 	void initialize() {
-		// No las tenemos aún
 		imgNetflix.setImage(new Image("images/streaming/Netflix.png"));
-		imgHBO.setImage(new Image("images/streaming/HBO.png"));
+		imgHBO.setImage(new Image("images/streaming/HBOMax.png"));
 		imgDisney.setImage(new Image("images/streaming/Disney.png"));
 		imgPrimeVideo.setImage(new Image("images/streaming/PrimeVideo.png"));
 		imgFilmin.setImage(new Image("images/streaming/Filmin.png"));
-		imgAppleTV.setImage(new Image("images/streaming/ApplelTV.png"));
-
+		imgAppleTV.setImage(new Image("images/streaming/AppleTV.png"));
+		
 	}
 
 }

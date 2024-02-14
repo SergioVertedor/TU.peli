@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -123,7 +124,7 @@
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox fx:id="cbPais" prefWidth="250.0">
+                                          <ComboBox fx:id="cbPais" disable="true" prefWidth="250.0">
                                              <VBox.margin>
                                                 <Insets bottom="15.0" top="5.0" />
                                              </VBox.margin>
@@ -133,7 +134,7 @@
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox fx:id="cbVistaUltimaVez" prefWidth="250.0">
+                                          <ComboBox fx:id="cbVistaUltimaVez" disable="true" prefWidth="250.0">
                                              <VBox.margin>
                                                 <Insets bottom="15.0" top="5.0" />
                                              </VBox.margin>
@@ -173,7 +174,10 @@
                                              <children>
                                                 <VBox alignment="CENTER">
                                                    <children>
-                                                      <ImageView fx:id="imgNetflix" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="imgNetflix" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/streaming/Netflix.png" />
+                                                         </image></ImageView>
                                                       <CheckBox fx:id="cbNetflix" mnemonicParsing="false">
                                                          <VBox.margin>
                                                             <Insets top="5.0" />
@@ -183,7 +187,10 @@
                                                 </VBox>
                                                 <VBox alignment="CENTER" GridPane.columnIndex="1">
                                                    <children>
-                                                      <ImageView fx:id="imgHBO" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="imgHBO" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/streaming/HBOMax.png" />
+                                                         </image></ImageView>
                                                       <CheckBox fx:id="cbHBO" mnemonicParsing="false">
                                                          <VBox.margin>
                                                             <Insets top="5.0" />
@@ -193,7 +200,10 @@
                                                 </VBox>
                                                 <VBox alignment="CENTER" GridPane.columnIndex="2">
                                                    <children>
-                                                      <ImageView fx:id="imgDisney" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="imgDisney" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/streaming/Disney.png" />
+                                                         </image></ImageView>
                                                       <CheckBox fx:id="cbDisney" mnemonicParsing="false">
                                                          <VBox.margin>
                                                             <Insets top="5.0" />
@@ -203,7 +213,10 @@
                                                 </VBox>
                                                 <VBox alignment="CENTER" GridPane.rowIndex="1">
                                                    <children>
-                                                      <ImageView fx:id="imgPrimeVideo" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="imgPrimeVideo" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/streaming/PrimeVideo.png" />
+                                                         </image></ImageView>
                                                       <CheckBox fx:id="cbPrimeVideo" mnemonicParsing="false">
                                                          <VBox.margin>
                                                             <Insets top="5.0" />
@@ -213,7 +226,13 @@
                                                 </VBox>
                                                 <VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <children>
-                                                      <ImageView fx:id="imgFilmin" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="imgFilmin" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/streaming/Filmin.png" />
+                                                         </image>
+                                                         <effect>
+                                                            <ColorAdjust contrast="0.09" />
+                                                         </effect></ImageView>
                                                       <CheckBox fx:id="cbFilmin" mnemonicParsing="false">
                                                          <VBox.margin>
                                                             <Insets top="5.0" />
@@ -223,7 +242,10 @@
                                                 </VBox>
                                                 <VBox alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                                    <children>
-                                                      <ImageView fx:id="imgAppleTV" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="imgAppleTV" fitHeight="75.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/streaming/AppleTV.png" />
+                                                         </image></ImageView>
                                                       <CheckBox fx:id="cbAppleTV" mnemonicParsing="false">
                                                          <VBox.margin>
                                                             <Insets top="5.0" />
