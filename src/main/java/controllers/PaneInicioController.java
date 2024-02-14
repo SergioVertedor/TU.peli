@@ -16,23 +16,15 @@ public class PaneInicioController {
 
   // Imagenes novedades inicio
   @FXML private ImageView imgObra01;
-
   @FXML private  ImageView imgObra02;
-
-  @FXML  private  ImageView imgObra03;
-
-  @FXML  private  ImageView imgObra04;
-
-  @FXML  private  ImageView imgObra05;
-
-  @FXML  private  ImageView imgObra06;
-
-  @FXML  private  ImageView imgObra07;
-
-  @FXML  private  ImageView imgObra08;
+  @FXML private  ImageView imgObra03;
+  @FXML private  ImageView imgObra04;
+  @FXML private  ImageView imgObra05;
+  @FXML private  ImageView imgObra06;
+  @FXML private  ImageView imgObra07;
+  @FXML private  ImageView imgObra08;
 
   // Imagenes secciones
-  @FXML private ImageView imgFilmoteca;
   @FXML private ImageView imgPeliculas;
   @FXML private ImageView imgSeries;
   @FXML private ImageView imgCartelera;
@@ -44,17 +36,6 @@ public class PaneInicioController {
   // Puesto así ahora mismo para que no falle
   //	Pane centralPane;
   //	ImageView imgSection;
-
-  /**
-   * Redirige la página hacia el apartado "Filmoteca"
-   *
-   * @param event
-   */
-  @FXML
-  void goToFilmoteca(MouseEvent event) {
-    //		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
-    //		imgSection.setImage(new Image("images/sections/Filmoteca.png"));
-  }
 
   /**
    * Redirige la página hacia el apartado "Películas"

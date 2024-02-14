@@ -51,7 +51,6 @@ public class PantallaModeloController {
 	
 	// Secciones barra menú 
 	@FXML	private Label lblInicio;
-	@FXML	private Label lblFilmoteca;
 	@FXML	private Label lblPeliculas;
 	@FXML	private Label lblSeries;
 	@FXML	private Label lblTopPeliculas;
@@ -87,14 +86,6 @@ public class PantallaModeloController {
 		} catch (IOException e) {
 			System.out.println("Error al cargar la ventana de inicio de sesión");
 		}
-	}
-
-	/**
-	 * Navega al panel "Filmoteca"
-	 * @param event
-	 */
-	@FXML
-	void goToFilmoteca(MouseEvent event) {
 	}
 
 	/**
@@ -176,6 +167,7 @@ public class PantallaModeloController {
 	@FXML
 	void goToInicio(MouseEvent event) {
 		PaneSwitcher.switchPane("PaneInicio", centralPane);
+		imgSection.setImage(null);
 		// TODO: que no se vea la imagen de section
 		
 	}

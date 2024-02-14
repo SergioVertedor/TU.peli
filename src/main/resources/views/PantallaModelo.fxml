@@ -37,7 +37,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
             </ImageView>
-            <ImageView fx:id="imgSection" fitHeight="80.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+            <ImageView fx:id="imgSection" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                <image>
                   <Image url="@../../resources/images/sections/Peliculas.png" />
                </image>
@@ -148,17 +148,12 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblFilmoteca" alignment="TOP_LEFT" onMouseClicked="#goToFilmoteca" text="FILMOTECA">
+                  <Label fx:id="lblPeliculas" alignment="TOP_LEFT" onMouseClicked="#goToPeliculas" text="PELICULAS">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblPeliculas" alignment="TOP_LEFT" onMouseClicked="#goToPeliculas" text="- PELICULAS">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="lblSeries" alignment="TOP_LEFT" onMouseClicked="#goToSeries" text="- SERIES">
+                  <Label fx:id="lblSeries" alignment="TOP_LEFT" onMouseClicked="#goToSeries" text="SERIES">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
