@@ -89,7 +89,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed05(MouseEvent event) {
+  void imageViewPressed10(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(5).getId());
     } else {
@@ -98,7 +98,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed06(MouseEvent event) {
+  void imageViewPressed11(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(6).getId());
     } else {
@@ -107,7 +107,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed10(MouseEvent event) {
+  void imageViewPressed12(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(7).getId());
     } else {
@@ -116,7 +116,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed11(MouseEvent event) {
+  void imageViewPressed13(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(8).getId());
     } else {
@@ -125,7 +125,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed12(MouseEvent event) {
+  void imageViewPressed14(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(9).getId());
     } else {
@@ -134,7 +134,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed13(MouseEvent event) {
+  void imageViewPressed20(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(10).getId());
     } else {
@@ -143,7 +143,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed14(MouseEvent event) {
+  void imageViewPressed21(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(11).getId());
     } else {
@@ -152,7 +152,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed15(MouseEvent event) {
+  void imageViewPressed22(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(12).getId());
     } else {
@@ -161,7 +161,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed16(MouseEvent event) {
+  void imageViewPressed23(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(13).getId());
     } else {
@@ -170,7 +170,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed20(MouseEvent event) {
+  void imageViewPressed24(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(14).getId());
     } else {
@@ -179,7 +179,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed21(MouseEvent event) {
+  void imageViewPressed30(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(15).getId());
     } else {
@@ -188,7 +188,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed22(MouseEvent event) {
+  void imageViewPressed31(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(16).getId());
     } else {
@@ -197,7 +197,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed23(MouseEvent event) {
+  void imageViewPressed32(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(17).getId());
     } else {
@@ -206,7 +206,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed24(MouseEvent event) {
+  void imageViewPressed33(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(18).getId());
     } else {
@@ -215,7 +215,7 @@ public class PaneBusquedaController {
   }
 
   @FXML
-  void imageViewPressed25(MouseEvent event) {
+  void imageViewPressed34(MouseEvent event) {
     if ((type == 'm')) {
       PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movies.get(19).getId());
     } else {
@@ -325,7 +325,7 @@ public class PaneBusquedaController {
                       + ListStorage.getTrendingMovies()
                           .get(row2.indexOf(imageView) + 5)
                           .getPoster_path()));
-          movies.add(ListStorage.getTrendingMovies().get(row2.indexOf(imageView) + 7));
+          movies.add(ListStorage.getTrendingMovies().get(row2.indexOf(imageView) + 5));
         });
     row3.forEach(
         imageView -> {
@@ -335,7 +335,7 @@ public class PaneBusquedaController {
                       + ListStorage.getTrendingMovies()
                           .get(row3.indexOf(imageView) + 10)
                           .getPoster_path()));
-          movies.add(ListStorage.getTrendingMovies().get(row3.indexOf(imageView) + 14));
+          movies.add(ListStorage.getTrendingMovies().get(row3.indexOf(imageView) + 10));
         });
     row4.forEach(
         imageView -> {
@@ -345,7 +345,7 @@ public class PaneBusquedaController {
                       + ListStorage.getTrendingMovies()
                           .get(row4.indexOf(imageView) + 15)
                           .getPoster_path()));
-          movies.add(ListStorage.getTrendingMovies().get(row3.indexOf(imageView) + 14));
+          movies.add(ListStorage.getTrendingMovies().get(row3.indexOf(imageView) + 15));
         });
   }
 

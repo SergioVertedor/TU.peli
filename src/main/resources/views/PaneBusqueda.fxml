@@ -16,7 +16,7 @@
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="1350.0" style="-fx-background-color: #E9E9E9;" AnchorPane.topAnchor="0.0">
          <children>
-            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" vbarPolicy="NEVER">
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" style="-fx-background-radius: 12;" vbarPolicy="NEVER">
                <VBox.margin>
                   <Insets left="50.0" right="50.0" top="50.0" />
                </VBox.margin>
@@ -169,7 +169,7 @@
                         </HBox>
                         <HBox fx:id="line21" alignment="CENTER" spacing="60.0" GridPane.rowIndex="3">
                            <children>
-                              <ImageView fx:id="imgResultado30" fitHeight="250.0" fitWidth="175.0" onMouseClicked="#imageViewPressed20" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                              <ImageView fx:id="imgResultado30" fitHeight="250.0" fitWidth="175.0" onMouseClicked="#imageViewPressed30" pickOnBounds="true" HBox.hgrow="ALWAYS">
                                  <effect>
                                     <DropShadow>
                                        <color>
@@ -177,7 +177,7 @@
                                        </color>
                                     </DropShadow>
                                  </effect></ImageView>
-                              <ImageView fx:id="imgResultado31" fitHeight="250.0" fitWidth="175.0" onMouseClicked="#imageViewPressed21" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                              <ImageView fx:id="imgResultado31" fitHeight="250.0" fitWidth="175.0" onMouseClicked="#imageViewPressed31" pickOnBounds="true" HBox.hgrow="ALWAYS">
                                  <effect>
                                     <DropShadow>
                                        <color>
@@ -185,7 +185,7 @@
                                        </color>
                                     </DropShadow>
                                  </effect></ImageView>
-                              <ImageView fx:id="imgResultado32" fitHeight="250.0" fitWidth="175.0" onMouseClicked="#imageViewPressed22" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                              <ImageView fx:id="imgResultado32" fitHeight="250.0" fitWidth="175.0" onMouseClicked="#imageViewPressed32" pickOnBounds="true" HBox.hgrow="ALWAYS">
                                  <effect>
                                     <DropShadow>
                                        <color>
@@ -193,7 +193,7 @@
                                        </color>
                                     </DropShadow>
                                  </effect></ImageView>
-                              <ImageView fx:id="imgResultado33" fitHeight="250.0" fitWidth="175.0" onMouseClicked="#imageViewPressed23" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                              <ImageView fx:id="imgResultado33" fitHeight="250.0" fitWidth="175.0" onMouseClicked="#imageViewPressed33" pickOnBounds="true" HBox.hgrow="ALWAYS">
                                  <effect>
                                     <DropShadow>
                                        <color>
@@ -201,7 +201,7 @@
                                        </color>
                                     </DropShadow>
                                  </effect></ImageView>
-                              <ImageView fx:id="imgResultado34" fitHeight="250.0" fitWidth="175.0" onMouseClicked="#imageViewPressed24" pickOnBounds="true" HBox.hgrow="ALWAYS">
+                              <ImageView fx:id="imgResultado34" fitHeight="250.0" fitWidth="175.0" onMouseClicked="#imageViewPressed34" pickOnBounds="true" HBox.hgrow="ALWAYS">
                                  <effect>
                                     <DropShadow>
                                        <color>
