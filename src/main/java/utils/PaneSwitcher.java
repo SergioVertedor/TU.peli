@@ -46,7 +46,7 @@ public class PaneSwitcher {
    * @param centralPane
    * @param type {m}ovie or {t}v
    */
-  public static void switchSearchPane(String paneTarget, Pane centralPane, char type) {
+  public static void switchFilmotecaPane(String paneTarget, Pane centralPane, char type) {
     String fxmlFile = "/views/" + paneTarget + ".fxml";
     try {
       FXMLLoader loader = new FXMLLoader();
@@ -55,7 +55,23 @@ public class PaneSwitcher {
       centralPane.getChildren().setAll(myPane);
       PaneBusquedaController paneBusquedaController = loader.getController();
       paneBusquedaController.setCentralPane(centralPane);
-      Platform.runLater(() -> paneBusquedaController.fillSearchResults(type));
+      Platform.runLater(() -> paneBusquedaController.fillFilmoteca(type));
+    } catch (Exception e) {
+      System.out.println("Error al cargar la ventana de inicio.");
+      System.out.println(e);
+    }
+  }
+
+  public static void switchResultPane(String paneTarget, Pane centralPane, String type, String search) {
+    String fxmlFile = "/views/" + paneTarget + ".fxml";
+    try {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
+      Pane myPane = loader.load();
+      centralPane.getChildren().setAll(myPane);
+      PaneBusquedaController paneBusquedaController = loader.getController();
+      paneBusquedaController.setCentralPane(centralPane);
+      Platform.runLater(() -> paneBusquedaController.fillSearchResults(type, search));
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
       System.out.println(e);

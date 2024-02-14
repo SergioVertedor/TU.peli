@@ -1,4 +1,4 @@
-package connector;
+package model.connector;
 
 import lombok.Getter;
 import org.hibernate.Session;

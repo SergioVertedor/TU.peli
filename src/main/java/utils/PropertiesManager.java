@@ -1,6 +1,6 @@
 package utils;
 
-import connector.HibernateUtils;
+import model.connector.HibernateUtils;
 import java.io.*;
 import java.util.Properties;
 import model.AppUser;
