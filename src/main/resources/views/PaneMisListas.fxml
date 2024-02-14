@@ -209,7 +209,7 @@
                                     <Insets bottom="25.0" left="30.0" right="30.0" />
                                  </padding>
                                  <VBox.margin>
-                                    <Insets right="15.0" />
+                                    <Insets right="10.0" />
                                  </VBox.margin>
                               </HBox>
                            </children>
@@ -873,7 +873,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="subtituloFav00" prefHeight="18.0" prefWidth="215.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav00" prefHeight="18.0" prefWidth="215.0" text="Director" textFill="#ffd52a" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -909,7 +909,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="subtituloFav01" prefHeight="18.0" prefWidth="215.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav01" prefHeight="18.0" prefWidth="215.0" text="Director" textFill="#ffd52a" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -945,7 +945,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="subtituloFav02" prefHeight="18.0" prefWidth="215.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav02" prefHeight="18.0" prefWidth="215.0" text="Director" textFill="#ffd52a" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -981,7 +981,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="subtituloFav03" prefHeight="18.0" prefWidth="215.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav03" prefHeight="18.0" prefWidth="215.0" text="Director" textFill="#ffd52a" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -1017,7 +1017,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="subtituloFav04" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav04" prefHeight="18.0" prefWidth="260.0" text="Director" textFill="#ffd52a" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -1053,7 +1053,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="subtituloFav05" prefHeight="18.0" prefWidth="215.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav05" prefHeight="18.0" prefWidth="215.0" text="Director" textFill="#ffd52a" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -1089,7 +1089,7 @@
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="subtituloFav06" prefHeight="18.0" prefWidth="215.0" text="Director" textFill="#c32124" wrapText="true">
+                                                <Label fx:id="subtituloFav06" prefHeight="18.0" prefWidth="215.0" text="Director" textFill="#ffd52a" wrapText="true">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>

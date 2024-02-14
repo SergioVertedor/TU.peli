@@ -26,22 +26,22 @@ public class PaneBusquedaController {
   @FXML private ImageView imgResultado02;
   @FXML private ImageView imgResultado03;
   @FXML private ImageView imgResultado04;
-  @FXML private ImageView imgResultado05;
-  @FXML private ImageView imgResultado06;
   @FXML private ImageView imgResultado10;
   @FXML private ImageView imgResultado11;
   @FXML private ImageView imgResultado12;
   @FXML private ImageView imgResultado13;
   @FXML private ImageView imgResultado14;
-  @FXML private ImageView imgResultado15;
-  @FXML private ImageView imgResultado16;
   @FXML private ImageView imgResultado20;
   @FXML private ImageView imgResultado21;
   @FXML private ImageView imgResultado22;
   @FXML private ImageView imgResultado23;
   @FXML private ImageView imgResultado24;
-  @FXML private ImageView imgResultado25;
-  @FXML private ImageView imgResultado26;
+  @FXML private ImageView imgResultado30;
+  @FXML private ImageView imgResultado31;
+  @FXML private ImageView imgResultado32;
+  @FXML private ImageView imgResultado33;
+  @FXML private ImageView imgResultado34;
+
 
   @FXML
   void imageViewPressed00(MouseEvent event) {
@@ -246,22 +246,21 @@ public class PaneBusquedaController {
             imgResultado02,
             imgResultado03,
             imgResultado04,
-            imgResultado05,
-            imgResultado06,
             imgResultado10,
             imgResultado11,
             imgResultado12,
             imgResultado13,
             imgResultado14,
-            imgResultado15,
-            imgResultado16,
             imgResultado20,
             imgResultado21,
             imgResultado22,
             imgResultado23,
             imgResultado24,
-            imgResultado25
-            // imgResultado26
+            imgResultado30,
+            imgResultado31,
+            imgResultado32,
+            imgResultado33,
+            imgResultado34
             );
     String url = "https://image.tmdb.org/t/p/w500";
     imgResult.forEach(
@@ -274,8 +273,6 @@ public class PaneBusquedaController {
                           .getPoster_path()));
           series.add(ListStorage.getTrendingSeries().get(imgResult.indexOf(imageView)));
         });
-    imgResultado26.setImage(null);
-    imgResultado26.setVisible(false);
   }
 
   private void fillMovies() {
@@ -286,26 +283,28 @@ public class PaneBusquedaController {
             imgResultado01,
             imgResultado02,
             imgResultado03,
-            imgResultado04,
-            imgResultado05,
-            imgResultado06);
+            imgResultado04);
     List<ImageView> row2 =
         List.of(
             imgResultado10,
             imgResultado11,
             imgResultado12,
             imgResultado13,
-            imgResultado14,
-            imgResultado15,
-            imgResultado16);
+            imgResultado14);
     List<ImageView> row3 =
         List.of(
             imgResultado20,
             imgResultado21,
             imgResultado22,
             imgResultado23,
-            imgResultado24,
-            imgResultado25);
+            imgResultado24);
+    List<ImageView> row4 =
+        List.of(
+            imgResultado30,
+            imgResultado31,
+            imgResultado32,
+            imgResultado33,
+            imgResultado34);
 
     String url = "https://image.tmdb.org/t/p/w500";
     row1.forEach(
@@ -324,7 +323,7 @@ public class PaneBusquedaController {
               new Image(
                   url
                       + ListStorage.getTrendingMovies()
-                          .get(row2.indexOf(imageView) + 7)
+                          .get(row2.indexOf(imageView) + 5)
                           .getPoster_path()));
           movies.add(ListStorage.getTrendingMovies().get(row2.indexOf(imageView) + 7));
         });
@@ -334,12 +333,20 @@ public class PaneBusquedaController {
               new Image(
                   url
                       + ListStorage.getTrendingMovies()
-                          .get(row3.indexOf(imageView) + 14)
+                          .get(row3.indexOf(imageView) + 10)
                           .getPoster_path()));
           movies.add(ListStorage.getTrendingMovies().get(row3.indexOf(imageView) + 14));
         });
-    imgResultado26.setImage(null);
-    imgResultado26.setVisible(false);
+    row4.forEach(
+        imageView -> {
+          imageView.setImage(
+              new Image(
+                  url
+                      + ListStorage.getTrendingMovies()
+                          .get(row4.indexOf(imageView) + 15)
+                          .getPoster_path()));
+          movies.add(ListStorage.getTrendingMovies().get(row3.indexOf(imageView) + 14));
+        });
   }
 
   public void fillInitialResults() {
@@ -350,35 +357,38 @@ public class PaneBusquedaController {
             imgResultado01,
             imgResultado02,
             imgResultado03,
-            imgResultado04,
-            imgResultado05,
-            imgResultado06);
+            imgResultado04);
     List<ImageView> row2 =
         List.of(
             imgResultado10,
             imgResultado11,
             imgResultado12,
             imgResultado13,
-            imgResultado14,
-            imgResultado15,
-            imgResultado16);
+            imgResultado14);
     List<ImageView> row3 =
         List.of(
             imgResultado20,
             imgResultado21,
             imgResultado22,
             imgResultado23,
-            imgResultado24,
-            imgResultado25,
-            imgResultado26);
+            imgResultado24);
+    List<ImageView> row4 =
+        List.of(
+            imgResultado30,
+            imgResultado31,
+            imgResultado32,
+            imgResultado33,
+            imgResultado34);
 
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 5; i++) {
       row1.get(i)
           .setImage(new Image(url + ListStorage.getTrendingMovies().get(i).getPoster_path()));
       row3.get(i)
-          .setImage(new Image(url + ListStorage.getTrendingMovies().get(i + 7).getPoster_path()));
+          .setImage(new Image(url + ListStorage.getTrendingMovies().get(i + 5).getPoster_path()));
       row2.get(i)
-          .setImage(new Image(url + ListStorage.getTrendingSeries().get(i).getPoster_path()));
+          .setImage(new Image(url + ListStorage.getTrendingSeries().get(i + 10).getPoster_path()));
+      row4.get(i)
+      .setImage(new Image(url + ListStorage.getTrendingSeries().get(i + 15).getPoster_path()));
     }
   }
 }

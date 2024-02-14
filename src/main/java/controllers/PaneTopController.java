@@ -12,6 +12,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import lombok.Getter;
 import lombok.Setter;
 import service.APIService;
@@ -123,6 +124,7 @@ public class PaneTopController {
     var apiService = new APIService();
     if (type == 'm') {
       lblTitulo.setText(ListStorage.getTopMovies().get(index).getTitle());
+      lblDirectorGenero.setTextFill(Color.rgb(195, 33, 36));
       long idMovie = ListStorage.getTopMovies().get(index).getId();
       List<Cast> credits = Arrays.stream(apiService.getMovieCredits(idMovie).getCrew()).toList();
       var directores = new ArrayList<String>();
@@ -158,6 +160,7 @@ public class PaneTopController {
 
     } else if (type == 't') {
       lblTitulo.setText(ListStorage.getTopSeries().get(index).getName());
+      lblDirectorGenero.setTextFill(Color.rgb(255, 117, 32));
       long idSerie = ListStorage.getTopSeries().get(index).getId();
       List<Cast> credits = Arrays.stream(apiService.getTVCredits(idSerie).getCrew()).toList();
       var directores = new ArrayList<String>();

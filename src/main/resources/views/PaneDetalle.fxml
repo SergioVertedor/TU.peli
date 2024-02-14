@@ -37,15 +37,15 @@
                               <ImageView fx:id="imgPoster" fitHeight="380.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                               <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                                  <children>
-                                    <Label fx:id="lblTitulo" prefHeight="90.0" prefWidth="570.0" textFill="WHITE" wrapText="true">
+                                    <Label fx:id="lblTitulo" prefHeight="90.0" prefWidth="570.0" text="adsfadfadsfadsf" textFill="WHITE" wrapText="true">
                                        <font>
                                           <Font name="System Bold" size="30.0" />
                                        </font>
                                        <VBox.margin>
-                                          <Insets bottom="10.0" top="4.0" />
+                                          <Insets bottom="5.0" top="2.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <Label fx:id="lblSubtitulo" alignment="TOP_LEFT" prefHeight="30.0" prefWidth="563.0" textFill="#ec1b1b">
+                                    <Label fx:id="lblSubtitulo" alignment="TOP_LEFT" prefHeight="30.0" prefWidth="563.0" text="asdfadsf" textFill="#ec1b1b">
                                        <font>
                                           <Font name="System Bold" size="20.0" />
                                        </font>
@@ -53,11 +53,11 @@
                                           <Insets bottom="20.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <HBox prefHeight="23.0" prefWidth="100.0">
+                                    <HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="100.0" spacing="10.0">
                                        <children>
-                                          <Pane prefHeight="51.0" prefWidth="41.0" style="-fx-background-color: #CFCFCF; -fx-background-radius: 4;">
+                                          <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="60.0" style="-fx-background-color: #CFCFCF; -fx-background-radius: 4;">
                                              <children>
-                                                <Label fx:id="lblRating" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="2.0" prefHeight="27.0" prefWidth="30.0" textAlignment="CENTER" textFill="#ec1b1b">
+                                                <Label fx:id="lblRating" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="2.0" prefHeight="27.0" prefWidth="50.0" textAlignment="CENTER" textFill="#ec1b1b">
                                                    <font>
                                                       <Font name="System Bold" size="18.0" />
                                                    </font>
@@ -70,15 +70,13 @@
                                                 <Insets bottom="1.0" top="1.0" />
                                              </padding>
                                           </Pane>
-                                          <ImageView fx:id="imgPais" fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                             <HBox.margin>
-                                                <Insets left="10.0" right="10.0" />
-                                             </HBox.margin>
-                                          </ImageView>
                                           <Label fx:id="lblEstrenoDuracion" prefHeight="25.0" prefWidth="224.0" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="16.0" />
                                              </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
                                           </Label>
                                        </children>
                                     </HBox>
