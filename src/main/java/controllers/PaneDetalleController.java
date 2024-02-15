@@ -1,5 +1,6 @@
 package controllers;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,6 +9,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -24,72 +26,67 @@ public class PaneDetalleController {
   @Getter @Setter private static char type;
   @Getter @Setter private static int idWork;
 
+  // Botones
   @FXML private Button btnAdd;
-
   @FXML private Button btnTrailer;
-
-  @FXML private ImageView imgLike;
-
-  @FXML private ImageView imgPen;
-
+  @FXML private Button btnGuardar;
+  
+  // Poster película
   @FXML private ImageView imgPoster;
 
-  @FXML private ImageView imgReparto0;
-
-  @FXML private ImageView imgReparto1;
-
-  @FXML private ImageView imgReparto2;
-
-  @FXML private ImageView imgReparto3;
-
-  @FXML private ImageView imgStar1;
-
-  @FXML private ImageView imgStar2;
-
-  @FXML private ImageView imgStar3;
-
-  @FXML private ImageView imgStar4;
-
-  @FXML private ImageView imgStar5;
-
+  // Detalles pelicula/serie
+  @FXML private Label lblSinopsis;
+  @FXML private Label lblSubtitulo;
+  @FXML private Label lblTitulo;
+  @FXML private Label lblTituloSinopsis;
   @FXML private Label lblComentario;
-
   @FXML private Label lblEstrenoDuracion;
-
-  @FXML private Label lblFechaVista;
-
   @FXML private Label lblRating;
 
+  // Reparto
   @FXML private Label lblReparto;
-
   @FXML private Label lblReparto0;
-
   @FXML private Label lblReparto1;
-
   @FXML private Label lblReparto2;
-
   @FXML private Label lblReparto3;
 
-  @FXML private Label lblSinopsis;
+  // Imagenes reparto
+  @FXML private ImageView imgReparto0;
+  @FXML private ImageView imgReparto1;
+  @FXML private ImageView imgReparto2;
+  @FXML private ImageView imgReparto3;
 
-  @FXML private Label lblSubtitulo;
+  // Estrellas valoracion
+  @FXML private ImageView imgStar1;
+  @FXML private ImageView imgStar2;
+  @FXML private ImageView imgStar3;
+  @FXML private ImageView imgStar4;
+  @FXML private ImageView imgStar5;
 
-  @FXML private Label lblTitulo;
-
-  @FXML private Label lblTituloSinopsis;
-
+  // Plataformas streaming
   @FXML private ImageView streaming01;
-
   @FXML private ImageView streaming02;
-
   @FXML private ImageView streaming03;
-
   @FXML private ImageView streaming04;
-
   @FXML private ImageView streaming05;
-
   @FXML private ImageView streaming06;
+  
+  // Otras imágenes
+  @FXML private ImageView imgLike;
+  @FXML private ImageView imgPen;
+  
+  // Última vez vista 
+  @FXML private DatePicker datePicker;
+  
+  @FXML
+  void btnGuardarPressed(ActionEvent event) {
 
+  }
+
+  /**
+   * 'Añadir a'
+   * @param event
+   */
   @FXML
   void btnAddPressed(ActionEvent event) {}
 
@@ -106,7 +103,9 @@ public class PaneDetalleController {
   void imgLikePressed(MouseEvent event) {}
 
   @FXML
-  void initialize() {}
+  void initialize() {
+  	datePicker.setValue(LocalDate.now());
+  }
 
   public void fillInfo(int id) {
     if (type == 'm') {
