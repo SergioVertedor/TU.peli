@@ -4,8 +4,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import lombok.Getter;
+import lombok.Setter;
+import utils.PaneSwitcher;
 
 public class PaneMisListasController {
+	
+	@Getter @Setter private Pane centralPane;
 
 	// Imagenes Añadidas Recientemente
 	@FXML	private ImageView imgReciente00;
@@ -114,12 +120,16 @@ public class PaneMisListasController {
 	
 	@FXML
 	void addMisPeliculasPressed(MouseEvent event) {
-	
+		// NO SE PORQUE PERO NO FURULA
+		// Cannot invoke "javafx.scene.layout.Pane.getChildren()" because "centralPane" is null
+		PaneSwitcher.switchToNueva("PaneNueva", centralPane);
 	}
 
 	@FXML
 	void addMisSeriesPressed(MouseEvent event) {
-
+		// NO SE PORQUE PERO NO FURULA
+		// Cannot invoke "javafx.scene.layout.Pane.getChildren()" because "centralPane" is null
+		PaneSwitcher.switchToNueva("PaneNueva", centralPane);
 	}
 
 	/**

@@ -16,13 +16,16 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.StageStyle;
+import lombok.Getter;
+import lombok.Setter;
 
 public class PaneNuevaController {
 
-
+	@Getter @Setter private Pane centralPane;
+	
 	// Imagen Poster
-	// TODO: Mejor generar una ventana con acceso a text para insertar un enlace a la imagen
 	@FXML	private ImageView imgPoster;
 
 	// Imagenes estrella puntuación
@@ -146,6 +149,7 @@ public class PaneNuevaController {
 
 
 	@FXML
+	public
 	void initialize() {
 		imgNetflix.setImage(new Image("images/streaming/Netflix.png"));
 		imgHBO.setImage(new Image("images/streaming/HBOMax.png"));
@@ -153,6 +157,10 @@ public class PaneNuevaController {
 		imgPrimeVideo.setImage(new Image("images/streaming/PrimeVideo.png"));
 		imgFilmin.setImage(new Image("images/streaming/Filmin.png"));
 		imgAppleTV.setImage(new Image("images/streaming/AppleTV.png"));
+	}
+
+	public void start() {
+		// TODO Auto-generated method stub
 		
 	}
 

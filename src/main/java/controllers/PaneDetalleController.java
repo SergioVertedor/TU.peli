@@ -21,6 +21,11 @@ import service.dto.credits.Cast;
 import service.dto.credits.Credits;
 import service.dto.movie.MovieDetail;
 import service.dto.tv.TVDetail;
+import javafx.stage.Modality;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.scene.layout.VBox;
 
 public class PaneDetalleController {
   @Getter @Setter private static char type;
@@ -78,17 +83,60 @@ public class PaneDetalleController {
   // Última vez vista 
   @FXML private DatePicker datePicker;
   
+  /**
+   * Devuelve la fecha seleccionada en el DatePicker.
+   * 
+   * @return La fecha seleccionada como una cadena.
+   */
+  private String getDateVista() {
+      LocalDate selectedDate = datePicker.getValue();
+      if (selectedDate != null) {
+          return selectedDate.toString();
+      } else {
+          return LocalDate.now().toString();
+      }
+  }
+
+	private void mostrarMenuDispositivos() {
+		Stage popupStage = new Stage();
+		popupStage.initModality(Modality.APPLICATION_MODAL);
+		popupStage.initStyle(StageStyle.UTILITY);
+		popupStage.setTitle("Añadir a dispositivo");
+
+		VBox popupContent = new VBox();
+
+		// Lista de dispositivos
+		List<Label> dispositivos = new ArrayList<>();
+		// Datos ejemplo
+		dispositivos.add(new Label("Dispositivo 1"));
+		dispositivos.add(new Label("Dispositivo 2"));
+		dispositivos.add(new Label("Dispositivo 3"));
+
+		for (Label label : dispositivos) {
+			popupContent.getChildren().add(label);
+		}
+
+		Scene popupScene = new Scene(popupContent, 400, 200);
+		popupStage.setScene(popupScene);
+		popupStage.centerOnScreen();
+		popupStage.show();
+	}
+
+  
   @FXML
   void btnGuardarPressed(ActionEvent event) {
 
   }
 
-  /**
-   * 'Añadir a'
-   * @param event
-   */
-  @FXML
-  void btnAddPressed(ActionEvent event) {}
+	/**
+	 * 'Añadir a'
+	 * 
+	 * @param event
+	 */
+	@FXML
+	void btnAddPressed(ActionEvent event) {
+		mostrarMenuDispositivos();
+	}
 
   @FXML
   void btnTrailerPressed(ActionEvent event) {}
