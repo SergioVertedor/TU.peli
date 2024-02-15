@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -83,7 +84,7 @@ public class PaneUsuarioController {
 	 */
 	@FXML
 	void btnAddDispositivoPressed(ActionEvent event) {
-		String nombreDispositivo = showTextDialog();
+		String nombreDispositivo = showNewDispositivoDialog();
 		if (!nombreDispositivo.isEmpty()) {
 			HBox newHBox = new HBox(10);
 			newHBox.setPrefHeight(25);
@@ -109,20 +110,6 @@ public class PaneUsuarioController {
 		}
 	}
 	
- /**
-  * Muestra un dialogo con textField para rescatar el nombre del nuevo dispositivo
-  * @return
-  */
-  String showTextDialog() {
-		TextInputDialog dialog = new TextInputDialog();
-		dialog.setTitle("Nuevo Dispositivo");
-		dialog.setHeaderText("");
-		dialog.setContentText("Nombre del dispositivo:");
-		dialog.initStyle(StageStyle.UNDECORATED);
-		Optional<String> respuesta = dialog.showAndWait();
-		return respuesta.orElse("");
-	}
-
 	/**
 	 * Guarda/Modifica la información del usuario
 	 * 
@@ -135,7 +122,49 @@ public class PaneUsuarioController {
 		String pw = txtPass.getText();
 		String pwRepeat = txtPass2.getText();
 		
-		SessionHandler.getAppUser();
+		if(SessionHandler.getAppUser() != null) {
+			showInformationDialog("Información", "Datos guardados satisfactoriamente");			
+		}
+		showInformationDialog("Aviso", "Error modificando los datos");			
+		
+		clearUserDataFields();
+	}
+	
+ /**
+  * Muestra un dialogo con textField para rescatar el nombre del nuevo dispositivo
+  * @return
+  */
+  String showNewDispositivoDialog() {
+		TextInputDialog dialog = new TextInputDialog();
+		dialog.setTitle("Nuevo Dispositivo");
+		dialog.setHeaderText("");
+		dialog.setContentText("Nombre del dispositivo:");
+		dialog.initStyle(StageStyle.UNDECORATED);
+		Optional<String> respuesta = dialog.showAndWait();
+		return respuesta.orElse("");
+	}
+
+	
+
+	/**
+	 * Muestra un dialogo de información personalizado
+	 * @param title
+	 * @param content
+	 */
+  private void showInformationDialog(String title, String content) {
+      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+      alert.setTitle(title);
+      alert.setHeaderText(null);
+      alert.setContentText(content);
+      
+      alert.showAndWait();
+  }
+
+	private void clearUserDataFields() {
+		txtUsername.clear();
+		txtEmail.clear();
+		txtPass.clear();
+		txtPass2.clear();
 	}
 
 	/**
