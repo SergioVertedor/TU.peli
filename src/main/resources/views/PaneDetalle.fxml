@@ -80,7 +80,7 @@
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <ImageView fx:id="imgLike" fitHeight="42.0" fitWidth="42.0" onDragDetected="#imgLikePressed" onMouseClicked="#favouritePressed" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgLike" fitHeight="42.0" fitWidth="42.0" onMouseClicked="#favouritePressed" pickOnBounds="true" preserveRatio="true">
                                        <VBox.margin>
                                           <Insets left="15.0" top="35.0" />
                                        </VBox.margin>
@@ -162,27 +162,27 @@
                                  <children>
                                     <HBox alignment="CENTER" layoutX="12.0" layoutY="4.0" prefHeight="16.0" prefWidth="228.0" spacing="6.0">
                                        <children>
-                                          <ImageView fx:id="imgStar1" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgStar1" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed00" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/others/favUnselected.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="imgStar2" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgStar2" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed01" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/others/favUnselected.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="imgStar3" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgStar3" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed02" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/others/favUnselected.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="imgStar4" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgStar4" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed03" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/others/favUnselected.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="imgStar5" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="imgStar5" fitHeight="18.0" fitWidth="200.0" nodeOrientation="INHERIT" onMouseClicked="#changePuntuacionPressed04" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../images/others/favUnselected.png" />
                                              </image>
