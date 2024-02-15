@@ -63,6 +63,7 @@ public class LoginValidator {
                   }
                   // Guardamos el usuario en la sesión
                   SessionHandler.setAppUser(appUser);
+
                   resultado.set(true);
                 }
               });
