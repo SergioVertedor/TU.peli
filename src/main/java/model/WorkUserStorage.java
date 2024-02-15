@@ -27,4 +27,7 @@ public class WorkUserStorage implements java.io.Serializable {
 
   @Column(name = "en_favoritos")
   private boolean enFavoritos;
+
+  @Column(name = "vista")
+  private String vista;
 }
