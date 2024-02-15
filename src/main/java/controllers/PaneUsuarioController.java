@@ -2,7 +2,6 @@ package controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import javafx.application.Platform;
@@ -33,34 +32,6 @@ public class PaneUsuarioController {
 
   // VBox dispositivos
   @FXML private VBox vBoxDispositivos;
-
-  // HBox dispositivos
-  @FXML private HBox hBoxDispositivo1;
-  @FXML private Label lblDispositivo1;
-  @FXML private ImageView imgDispositivo1;
-  @FXML private ImageView imgDeleteDisp1;
-
-  // Nombre e imagen de perfil del usuario
-  @FXML private Label lblUsername;
-  @FXML private ImageView imgUser;
-
-  // Otros Datos cabecera
-  @FXML private Label lblMiembroDesde;
-  @FXML private Label lblNumeroDeTitulosGuardados;
-  @FXML private Label lblUltimaConexion;
-
-  // Importar y Exportar (funcionan como botones)
-  @FXML private Button lblExportar;
-  @FXML private Button lblImportar;
-
-  // Campos para modificar los datos del usuario
-  @FXML private TextField txtEmail;
-  @FXML private TextField txtPass;
-  @FXML private TextField txtPass2;
-  @FXML private TextField txtUsername;
-
-  // Lista de dispositivos HBox
-  List<HBox> hBoxListDispositivos = new ArrayList<>();
 	
 	// HBox dispositivos
 	@FXML	private HBox hBoxDispositivo1;
@@ -118,7 +89,6 @@ public class PaneUsuarioController {
 	void btnAddDispositivoPressed(ActionEvent event) {
 		String nombreDispositivo = showTextDialog();
 		if (!nombreDispositivo.isEmpty()) {
-			HBox newHBox = new HBox(20);
 			HBox newHBox = new HBox(10);
 			newHBox.setPrefHeight(25);
 			Label id = new Label(String.valueOf(contador));
