@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -60,6 +62,26 @@ public class PantallaModeloController {
 	@FXML	private Label lblCartelera;
 	@FXML	private Label lblProximamente;
 	@FXML	private Label lblMisListas;
+
+	
+  @FXML
+  void buscadorOnKeyPressed(KeyEvent event) {
+  	if(event.getCode().equals(KeyCode.ENTER) || event.getCharacter().getBytes()[0] == '\n' || event.getCharacter().getBytes()[0] == '\r') {
+  		String type;
+  		if (rbPeliculas.isSelected()) {
+  			type =  "ms";
+  		} else {
+  			type = "ts";
+  		}
+  		InputValidator iv = new InputValidator();
+  		if (!iv.isNameValid(txtBusqueda.getText())) {
+  			DialogNotificator dn = new DialogNotificator();
+  			dn.searchErrorNotification();
+  			return;
+  		}
+  		PaneSwitcher.switchResultPane("PaneBusqueda", centralPane, type, txtBusqueda.getText());  		
+  	}
+  }
 
 
 	/**

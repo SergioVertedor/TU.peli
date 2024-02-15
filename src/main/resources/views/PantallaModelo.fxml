@@ -107,7 +107,7 @@
                               <Image url="@../images/others/search.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtBusqueda" prefHeight="26.0" prefWidth="658.0" />
+                        <TextField fx:id="txtBusqueda" onKeyPressed="#buscadorOnKeyPressed" prefHeight="26.0" prefWidth="658.0" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.rowIndex="2">
