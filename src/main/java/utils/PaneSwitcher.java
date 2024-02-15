@@ -105,13 +105,13 @@ public class PaneSwitcher {
   public static void switchToNueva(String paneTarget, Pane centralPane) {
     String fxmlFile = "/views/" + paneTarget + ".fxml";
     try {
-    	centralPane.getChildren().clear();
       FXMLLoader loader = new FXMLLoader();
       loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
       Pane myPane = loader.load();
       centralPane.getChildren().setAll(myPane);
       PaneNuevaController paneNuevaController = loader.getController();
-      Platform.runLater(paneNuevaController::initialize);
+      paneNuevaController.start();
+      paneNuevaController.setCentralPane(centralPane);
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
       System.out.println(e);

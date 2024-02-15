@@ -2,7 +2,6 @@ package controllers;
 
 import java.util.Optional;
 
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,10 +16,15 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.StageStyle;
+import lombok.Getter;
+import lombok.Setter;
 
 public class PaneNuevaController {
 
+	@Getter @Setter private Pane centralPane;
+	
 	// Imagen Poster
 	@FXML	private ImageView imgPoster;
 
@@ -153,6 +157,11 @@ public class PaneNuevaController {
 		imgPrimeVideo.setImage(new Image("images/streaming/PrimeVideo.png"));
 		imgFilmin.setImage(new Image("images/streaming/Filmin.png"));
 		imgAppleTV.setImage(new Image("images/streaming/AppleTV.png"));
+	}
+
+	public void start() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
