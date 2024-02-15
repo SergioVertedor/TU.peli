@@ -148,11 +148,105 @@ public class PaneDetalleController {
   void escribirComentario(MouseEvent event) {}
 
   @FXML
-  void imgLikePressed(MouseEvent event) {}
+  void changePuntuacionPressed00(MouseEvent event) {
+    clearStars();
+    List<ImageView> estrellas = Arrays.asList(imgStar1, imgStar2, imgStar3, imgStar4, imgStar5);
+    for (int i = 0; i < estrellas.size(); i++) {
+      if (i <= 0) {
+        if (estrellas.get(i).getImage().getUrl().contains("favUnselected"))
+          estrellas.get(i).setImage(new Image("/images/others/favSelected.png"));
+      } else {
+        if (estrellas.get(i).getImage().getUrl().contains("favSelected"))
+          estrellas.get(i).setImage(new Image("/images/others/favUnselected.png.png"));
+      }
+    }
+
+  }
+
+  @FXML
+  void changePuntuacionPressed01(MouseEvent event) {
+    clearStars();
+    List<ImageView> estrellas = Arrays.asList(imgStar1, imgStar2, imgStar3, imgStar4, imgStar5);
+    for (int i = 0; i < estrellas.size(); i++) {
+      if (i <= 1) {
+        if (estrellas.get(i).getImage().getUrl().contains("favUnselected"))
+          estrellas.get(i).setImage(new Image("/images/others/favSelected.png"));
+      } else {
+        if (estrellas.get(i).getImage().getUrl().contains("favSelected"))
+          estrellas.get(i).setImage(new Image("/images/others/favUnselected.png.png"));
+      }
+    }
+  }
+
+  @FXML
+  void changePuntuacionPressed02(MouseEvent event) {
+    clearStars();
+    List<ImageView> estrellas = Arrays.asList(imgStar1, imgStar2, imgStar3, imgStar4, imgStar5);
+    for (int i = 0; i < estrellas.size(); i++) {
+      if (i <= 2) {
+        if (estrellas.get(i).getImage().getUrl().contains("favUnselected"))
+          estrellas.get(i).setImage(new Image("/images/others/favSelected.png"));
+      } else {
+        if (estrellas.get(i).getImage().getUrl().contains("favSelected"))
+          estrellas.get(i).setImage(new Image("/images/others/favUnselected.png.png"));
+      }
+    }
+  }
+
+  @FXML
+  void changePuntuacionPressed03(MouseEvent event) {
+    clearStars();
+    List<ImageView> estrellas = Arrays.asList(imgStar1, imgStar2, imgStar3, imgStar4, imgStar5);
+    for (int i = 0; i < estrellas.size(); i++) {
+      if (i <= 3) {
+        if (estrellas.get(i).getImage().getUrl().contains("favUnselected"))
+          estrellas.get(i).setImage(new Image("/images/others/favSelected.png"));
+      } else {
+        if (estrellas.get(i).getImage().getUrl().contains("favSelected"))
+          estrellas.get(i).setImage(new Image("/images/others/favUnselected.png.png"));
+      }
+    }
+  }
+
+  @FXML
+  void changePuntuacionPressed04(MouseEvent event) {
+    clearStars();
+    List<ImageView> estrellas = Arrays.asList(imgStar1, imgStar2, imgStar3, imgStar4, imgStar5);
+    for (int i = 0; i < estrellas.size(); i++) {
+      if (i <= 4) {
+        if (estrellas.get(i).getImage().getUrl().contains("favUnselected"))
+          estrellas.get(i).setImage(new Image("/images/others/favSelected.png"));
+      } else {
+        if (estrellas.get(i).getImage().getUrl().contains("favSelected"))
+          estrellas.get(i).setImage(new Image("/images/others/favUnselected.png.png"));
+      }
+    }
+  }
+
+  @FXML
+  void favouritePressed(MouseEvent event) {
+    if (imgLike.getImage().getUrl().contains("likeUnselected")) {
+      imgLike.setImage(new Image("/images/others/likeSelected.png"));
+    } else imgLike.setImage(new Image("/images/others/likeUnselected.png"));
+  }
 
   @FXML
   void initialize() {
   	datePicker.setValue(LocalDate.now());
+  }
+
+  public void fillUserPreferences() {
+    // TODO
+  }
+
+  private void clearStars() {
+    List<ImageView> estrellas = Arrays.asList(imgStar1, imgStar2, imgStar3, imgStar4, imgStar5);
+    estrellas.forEach(
+            estrella -> {
+              if (estrella.getImage().getUrl().contains("favSelected")) {
+                estrella.setImage(new Image("/images/others/favUnselected.png"));
+              }
+            });
   }
 
   public void fillInfo(int id) {
