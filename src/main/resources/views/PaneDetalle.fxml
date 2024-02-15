@@ -270,7 +270,7 @@
                                     <Insets bottom="15.0" top="35.0" />
                                  </VBox.margin>
                                  <children>
-                                    <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#btnGuardarPressed" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: white; -fx-border-color: #02ffa1; -fx-background-radius: 18; -fx-border-radius: 18;" text="Guardar" />
+                                    <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#btnGuardarPressed" onMouseClicked="#savePressed" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: white; -fx-border-color: #02ffa1; -fx-background-radius: 18; -fx-border-radius: 18;" text="Guardar" />
                                  </children>
                               </HBox>
                            </children>

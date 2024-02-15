@@ -7,13 +7,19 @@ import java.util.List;
 import java.util.Optional;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import lombok.Getter;
 import lombok.Setter;
 import service.APIService;
@@ -21,21 +27,18 @@ import service.dto.credits.Cast;
 import service.dto.credits.Credits;
 import service.dto.movie.MovieDetail;
 import service.dto.tv.TVDetail;
-import javafx.stage.Modality;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.scene.layout.VBox;
+import utils.SessionHandler;
 
 public class PaneDetalleController {
   @Getter @Setter private static char type;
   @Getter @Setter private static int idWork;
+  private int totalEstrellas = 0;
 
   // Botones
   @FXML private Button btnAdd;
   @FXML private Button btnTrailer;
   @FXML private Button btnGuardar;
-  
+
   // Poster película
   @FXML private ImageView imgPoster;
 
@@ -75,68 +78,83 @@ public class PaneDetalleController {
   @FXML private ImageView streaming04;
   @FXML private ImageView streaming05;
   @FXML private ImageView streaming06;
-  
+
   // Otras imágenes
   @FXML private ImageView imgLike;
   @FXML private ImageView imgPen;
-  
-  // Última vez vista 
+
+  // Última vez vista
   @FXML private DatePicker datePicker;
-  
+
   /**
    * Devuelve la fecha seleccionada en el DatePicker.
-   * 
+   *
    * @return La fecha seleccionada como una cadena.
    */
   private String getDateVista() {
-      LocalDate selectedDate = datePicker.getValue();
-      if (selectedDate != null) {
-          return selectedDate.toString();
-      } else {
-          return LocalDate.now().toString();
-      }
+    LocalDate selectedDate = datePicker.getValue();
+    if (selectedDate != null) {
+      return selectedDate.toString();
+    } else {
+      return LocalDate.now().toString();
+    }
   }
 
-	private void mostrarMenuDispositivos() {
-		Stage popupStage = new Stage();
-		popupStage.initModality(Modality.APPLICATION_MODAL);
-		popupStage.initStyle(StageStyle.UTILITY);
-		popupStage.setTitle("Añadir a dispositivo");
+  private void mostrarMenuDispositivos() {
+    Stage popupStage = new Stage();
+    popupStage.initModality(Modality.APPLICATION_MODAL);
+    popupStage.initStyle(StageStyle.UTILITY);
+    popupStage.setTitle("Añadir a dispositivo");
 
-		VBox popupContent = new VBox();
+    VBox popupContent = new VBox();
 
-		// Lista de dispositivos
-		List<Label> dispositivos = new ArrayList<>();
-		// Datos ejemplo
-		dispositivos.add(new Label("Dispositivo 1"));
-		dispositivos.add(new Label("Dispositivo 2"));
-		dispositivos.add(new Label("Dispositivo 3"));
+    // Lista de dispositivos
+    List<Label> dispositivos = new ArrayList<>();
+    // Datos ejemplo
+    SessionHandler.getAppUser()
+        .getStorages()
+        .forEach(
+            storage -> {
+              Label label = new Label(storage.getStorageName());
+              popupContent.getChildren().add(label);
+            });
+    Scene popupScene = new Scene(popupContent, 400, 200);
+    popupStage.setScene(popupScene);
+    popupStage.centerOnScreen();
+    popupStage.show();
+    System.out.println(
+    popupContent.onMouseClickedProperty().getName());
+  }
 
-		for (Label label : dispositivos) {
-			popupContent.getChildren().add(label);
-		}
-
-		Scene popupScene = new Scene(popupContent, 400, 200);
-		popupStage.setScene(popupScene);
-		popupStage.centerOnScreen();
-		popupStage.show();
-	}
-
-  
   @FXML
-  void btnGuardarPressed(ActionEvent event) {
+  void savePressed(Event event) {
+    boolean fav;
+    int valoracion;
+    String comentario;
+    String fechaVista;
 
+    if (imgLike.getImage().getUrl().contains("likeSelected")) {
+      fav = true;
+    } else {
+      fav = false;
+    }
+    valoracion = totalEstrellas;
+    comentario = lblComentario.getText();
+    fechaVista = getDateVista();
   }
 
-	/**
-	 * 'Añadir a'
-	 * 
-	 * @param event
-	 */
-	@FXML
-	void btnAddPressed(ActionEvent event) {
-		mostrarMenuDispositivos();
-	}
+  @FXML
+  void btnGuardarPressed(ActionEvent event) {}
+
+  /**
+   * 'Añadir a'
+   *
+   * @param event
+   */
+  @FXML
+  void btnAddPressed(ActionEvent event) {
+    mostrarMenuDispositivos();
+  }
 
   @FXML
   void btnTrailerPressed(ActionEvent event) {}
@@ -155,12 +173,12 @@ public class PaneDetalleController {
       if (i <= 0) {
         if (estrellas.get(i).getImage().getUrl().contains("favUnselected"))
           estrellas.get(i).setImage(new Image("/images/others/favSelected.png"));
+        totalEstrellas = 1;
       } else {
         if (estrellas.get(i).getImage().getUrl().contains("favSelected"))
           estrellas.get(i).setImage(new Image("/images/others/favUnselected.png.png"));
       }
     }
-
   }
 
   @FXML
@@ -171,6 +189,7 @@ public class PaneDetalleController {
       if (i <= 1) {
         if (estrellas.get(i).getImage().getUrl().contains("favUnselected"))
           estrellas.get(i).setImage(new Image("/images/others/favSelected.png"));
+        totalEstrellas = 2;
       } else {
         if (estrellas.get(i).getImage().getUrl().contains("favSelected"))
           estrellas.get(i).setImage(new Image("/images/others/favUnselected.png.png"));
@@ -186,6 +205,7 @@ public class PaneDetalleController {
       if (i <= 2) {
         if (estrellas.get(i).getImage().getUrl().contains("favUnselected"))
           estrellas.get(i).setImage(new Image("/images/others/favSelected.png"));
+        totalEstrellas = 3;
       } else {
         if (estrellas.get(i).getImage().getUrl().contains("favSelected"))
           estrellas.get(i).setImage(new Image("/images/others/favUnselected.png.png"));
@@ -201,6 +221,7 @@ public class PaneDetalleController {
       if (i <= 3) {
         if (estrellas.get(i).getImage().getUrl().contains("favUnselected"))
           estrellas.get(i).setImage(new Image("/images/others/favSelected.png"));
+        totalEstrellas = 4;
       } else {
         if (estrellas.get(i).getImage().getUrl().contains("favSelected"))
           estrellas.get(i).setImage(new Image("/images/others/favUnselected.png.png"));
@@ -216,6 +237,7 @@ public class PaneDetalleController {
       if (i <= 4) {
         if (estrellas.get(i).getImage().getUrl().contains("favUnselected"))
           estrellas.get(i).setImage(new Image("/images/others/favSelected.png"));
+        totalEstrellas = 5;
       } else {
         if (estrellas.get(i).getImage().getUrl().contains("favSelected"))
           estrellas.get(i).setImage(new Image("/images/others/favUnselected.png.png"));
@@ -232,7 +254,7 @@ public class PaneDetalleController {
 
   @FXML
   void initialize() {
-  	datePicker.setValue(LocalDate.now());
+    datePicker.setValue(LocalDate.now());
   }
 
   public void fillUserPreferences() {
@@ -242,11 +264,11 @@ public class PaneDetalleController {
   private void clearStars() {
     List<ImageView> estrellas = Arrays.asList(imgStar1, imgStar2, imgStar3, imgStar4, imgStar5);
     estrellas.forEach(
-            estrella -> {
-              if (estrella.getImage().getUrl().contains("favSelected")) {
-                estrella.setImage(new Image("/images/others/favUnselected.png"));
-              }
-            });
+        estrella -> {
+          if (estrella.getImage().getUrl().contains("favSelected")) {
+            estrella.setImage(new Image("/images/others/favUnselected.png"));
+          }
+        });
   }
 
   public void fillInfo(int id) {
