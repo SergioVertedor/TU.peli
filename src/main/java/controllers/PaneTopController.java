@@ -83,66 +83,114 @@ public class PaneTopController {
   void onMouseEnteredTitle00(MouseEvent event) {
     fillInfo(0);
   }
+
   @FXML
   void onMouseEnteredTitle01(MouseEvent event) {
     fillInfo(1);
   }
+
   @FXML
   void onMouseEnteredTitle02(MouseEvent event) {
     fillInfo(2);
   }
+
   @FXML
   void onMouseEnteredTitle03(MouseEvent event) {
     fillInfo(3);
   }
+
   @FXML
   void onMouseEnteredTitle04(MouseEvent event) {
     fillInfo(4);
   }
+
   @FXML
   void onMouseEnteredTitle05(MouseEvent event) {
     fillInfo(5);
   }
+
   @FXML
   void onMouseEnteredTitle06(MouseEvent event) {
     fillInfo(6);
   }
+
   @FXML
   void onMouseEnteredTitle07(MouseEvent event) {
     fillInfo(7);
   }
+
   @FXML
   void titlePressed00(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(0).getId());
+    if (type == 'm') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(0).getId());
+    } else if (type == 't') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, tv.get(0).getId());
+    }
   }
+
   @FXML
   void titlePressed01(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(1).getId());
+    if (type == 'm') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(1).getId());
+    } else if (type == 't') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, tv.get(1).getId());
+    }
   }
+
   @FXML
   void titlePressed02(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(2).getId());
+    if (type == 'm') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(2).getId());
+    } else if (type == 't') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, tv.get(2).getId());
+    }
   }
+
   @FXML
   void titlePressed03(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(3).getId());
+    if (type == 'm') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(3).getId());
+    } else if (type == 't') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, tv.get(3).getId());
+    }
   }
+
   @FXML
   void titlePressed04(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(4).getId());
+    if (type == 'm') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(4).getId());
+    } else if (type == 't') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, tv.get(4).getId());
+    }
   }
+
   @FXML
   void titlePressed05(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(5).getId());
+    if (type == 'm') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(5).getId());
+    } else if (type == 't') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, tv.get(5).getId());
+    }
   }
+
   @FXML
   void titlePressed06(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(6).getId());
+    if (type == 'm') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(6).getId());
+    } else if (type == 't') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, tv.get(6).getId());
+    }
   }
+
   @FXML
   void titlePressed07(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(7).getId());
+    if (type == 'm') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, movie.get(7).getId());
+    } else if (type == 't') {
+      PaneSwitcher.switchToDetails("PaneDetalle", centralPane, type, tv.get(7).getId());
+    }
   }
+
   @FXML
   void initialize() {
     // Cargar selección Top Peliculas/Series de Todos los tiempos 'imgObra00'
