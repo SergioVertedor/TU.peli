@@ -1,6 +1,8 @@
 package controllers;
 
 import java.io.IOException;
+
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -192,9 +194,12 @@ public class PantallaModeloController {
 	@FXML
 	void initialize() throws InterruptedException {
 		PaneSwitcher.switchPane("PaneInicio", centralPane);
+		Platform.runLater(this::fillContent);
+  }
+
+	private void fillContent() {
 		imgLogo.setImage(new Image("images/logo/logo.png"));
 		imgUser.setImage(new Image("images/user.png"));
-    //		var workerThread = new WorkerPantallaModelo();
-    //		workerThread.start();
-  }
+		lblUserName.setText(SessionHandler.getAppUser().getUsername());
+	}
 }

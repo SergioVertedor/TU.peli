@@ -20,6 +20,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
 import javafx.scene.control.TextInputDialog;
+import utils.SessionHandler;
 
 public class PaneUsuarioController {
 	
@@ -73,8 +74,10 @@ public class PaneUsuarioController {
 		if (!nombreDispositivo.isEmpty()) {
 			HBox newHBox = new HBox();
 			Label nombre = new Label(nombreDispositivo);
-			ImageView image = new ImageView("images/pcIcon.png");
-			ImageView imgRemove = new ImageView("images/remove.png");
+			ImageView image = new ImageView();
+			image.setImage(new Image("images/others/pcIcon.png"));
+			ImageView imgRemove = new ImageView();
+			imgRemove.setImage(new Image("images/others/remove.png"));
 			nombre.setTextFill(Color.WHITE);
 			image.setFitWidth(20);
 			image.setFitHeight(20);
@@ -108,7 +111,12 @@ public class PaneUsuarioController {
 	 */
 	@FXML
 	void btnGuardarPressed(ActionEvent event) {
-		// TODO
+		String nombreUsuario = txtUsername.getText();
+		String email = txtEmail.getText();
+		String pw = txtPass.getText();
+		String pwRepeat = txtPass2.getText();
+		
+		SessionHandler.getAppUser();
 	}
 
 	/**
