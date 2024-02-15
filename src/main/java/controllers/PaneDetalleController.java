@@ -122,8 +122,6 @@ public class PaneDetalleController {
     popupStage.setScene(popupScene);
     popupStage.centerOnScreen();
     popupStage.show();
-    System.out.println(
-    popupContent.onMouseClickedProperty().getName());
   }
 
   @FXML
