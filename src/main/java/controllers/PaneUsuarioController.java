@@ -9,11 +9,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-<<<<<<< HEAD
 import javafx.scene.control.Alert;
-=======
 import javafx.scene.Node;
->>>>>>> main
+
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -67,97 +65,6 @@ public class PaneUsuarioController {
   // Observable list
   private ObservableList<HBox> obsListDispositivos;
 
-<<<<<<< HEAD
-	/**
-	 * Añade un nuevo dispositivo (HBox) al listado con el nombre dado
-	 * 
-	 * @param event
-	 */
-	@FXML
-	void btnAddDispositivoPressed(ActionEvent event) {
-		String nombreDispositivo = showNewDispositivoDialog();
-		if (!nombreDispositivo.isEmpty()) {
-			HBox newHBox = new HBox(10);
-			newHBox.setPrefHeight(25);
-			Label id = new Label(String.valueOf(contador));
-			contador++;
-			id.setVisible(false);
-			Label nombre = new Label(nombreDispositivo);
-			nombre.setPrefWidth(190);
-			ImageView image = new ImageView();
-			image.setImage(new Image("images/others/pcIcon.png"));
-			ImageView imgRemove = new ImageView();
-			imgRemove.setImage(new Image("images/others/remove.png"));
-			imgRemove.setOnMouseClicked(removeHandler);
-			nombre.setTextFill(Color.WHITE);
-			image.setFitWidth(20);
-			image.setFitHeight(20);
-			imgRemove.setFitWidth(20);
-			imgRemove.setFitHeight(20);
-			newHBox.getChildren().addAll(image, nombre, imgRemove);
-			hBoxListDispositivos.add(newHBox); 
-			obsListDispositivos.add(newHBox); 
-			vBoxDispositivos.getChildren().addAll(newHBox); 
-		}
-	}
-	
-	/**
-	 * Guarda/Modifica la información del usuario
-	 * 
-	 * @param event
-	 */
-	@FXML
-	void btnGuardarPressed(ActionEvent event) {
-		String nombreUsuario = txtUsername.getText();
-		String email = txtEmail.getText();
-		String pw = txtPass.getText();
-		String pwRepeat = txtPass2.getText();
-		
-		if(SessionHandler.getAppUser() != null) {
-			showInformationDialog("Información", "Datos guardados satisfactoriamente");			
-		}
-		showInformationDialog("Aviso", "Error modificando los datos");			
-		
-		clearUserDataFields();
-	}
-	
- /**
-  * Muestra un dialogo con textField para rescatar el nombre del nuevo dispositivo
-  * @return
-  */
-  String showNewDispositivoDialog() {
-		TextInputDialog dialog = new TextInputDialog();
-		dialog.setTitle("Nuevo Dispositivo");
-		dialog.setHeaderText("");
-		dialog.setContentText("Nombre del dispositivo:");
-		dialog.initStyle(StageStyle.UNDECORATED);
-		Optional<String> respuesta = dialog.showAndWait();
-		return respuesta.orElse("");
-	}
-
-	
-
-	/**
-	 * Muestra un dialogo de información personalizado
-	 * @param title
-	 * @param content
-	 */
-  private void showInformationDialog(String title, String content) {
-      Alert alert = new Alert(Alert.AlertType.INFORMATION);
-      alert.setTitle(title);
-      alert.setHeaderText(null);
-      alert.setContentText(content);
-      
-      alert.showAndWait();
-  }
-
-	private void clearUserDataFields() {
-		txtUsername.clear();
-		txtEmail.clear();
-		txtPass.clear();
-		txtPass2.clear();
-	}
-=======
   // Botones
   @FXML private Button btnAddDispositivo;
   @FXML private Button btnGuardar;
@@ -234,7 +141,7 @@ public class PaneUsuarioController {
     DialogNotificator dialogNotificator = new DialogNotificator();
     LoginValidator loginValidator = new LoginValidator();
     InputValidator inputValidator = new InputValidator();
->>>>>>> main
+
 
     String nombreUsuario = "";
     String email = "";
