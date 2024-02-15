@@ -36,7 +36,7 @@
                         </ImageView>
                         <VBox prefHeight="160.0" prefWidth="740.0">
                            <children>
-                              <Label fx:id="lblUsername" text="Usuario" textFill="WHITE">
+                              <Label fx:id="lblUsername" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="26.0" />
                                  </font>
@@ -47,17 +47,17 @@
                                     <Insets bottom="5.0" />
                                  </padding>
                               </Label>
-                              <Label fx:id="lblMiembroDesde" prefHeight="26.0" prefWidth="326.0" text="Miembro desde el {dia} de {mes} del {año}" textFill="WHITE">
+                              <Label fx:id="lblMiembroDesde" prefHeight="26.0" prefWidth="326.0" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lblNumeroDeTitulosGuardados" text="En lista: {num} títulos" textFill="WHITE">
+                              <Label fx:id="lblNumeroDeTitulosGuardados" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lblUltimaConexion" text="Última conexión: {fecha 00/00/0000}" textFill="WHITE">
+                              <Label fx:id="lblUltimaConexion" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>

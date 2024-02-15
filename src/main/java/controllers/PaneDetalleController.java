@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import lombok.Getter;
 import lombok.Setter;
+import model.WorkUserStorage;
 import service.APIService;
 import service.dto.credits.Cast;
 import service.dto.credits.Credits;
@@ -104,9 +105,24 @@ public class PaneDetalleController {
 
   @FXML
   void imgLikePressed(MouseEvent event) {}
+  @FXML
+  void favouritePressed(MouseEvent event) {
+    if (imgLike.getImage().getUrl().contains("likeUnselected")) {
+      imgLike.setImage(new Image("/images/others/likeSelected.png"));
+      WorkUserStorage workUserStorage = new WorkUserStorage();
+
+
+    }
+    else
+      imgLike.setImage(new Image("/images/others/likeUnselected.png"));
+  }
 
   @FXML
   void initialize() {}
+
+  public void fillUserPreferences(){
+    //TODO
+  }
 
   public void fillInfo(int id) {
     if (type == 'm') {

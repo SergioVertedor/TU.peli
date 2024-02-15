@@ -80,7 +80,7 @@
                                           </Label>
                                        </children>
                                     </HBox>
-                                    <ImageView fx:id="imgLike" fitHeight="42.0" fitWidth="42.0" onDragDetected="#imgLikePressed" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgLike" fitHeight="42.0" fitWidth="42.0" onDragDetected="#imgLikePressed" onMouseClicked="#favouritePressed" pickOnBounds="true" preserveRatio="true">
                                        <VBox.margin>
                                           <Insets left="15.0" top="35.0" />
                                        </VBox.margin>
