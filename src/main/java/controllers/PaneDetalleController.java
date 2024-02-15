@@ -8,7 +8,9 @@ import java.util.Optional;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -16,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -99,6 +102,16 @@ public class PaneDetalleController {
       return LocalDate.now().toString();
     }
   }
+  
+  /**
+   * Método que obtiene el dispositivo seleccionado
+   */
+  private final EventHandler<MouseEvent> selectedHandler =
+      event -> {
+        Node source = (Node) event.getSource();
+        Label dispositivoSeleccionado = (Label) source.getParent();
+        String nombreDispositivo = dispositivoSeleccionado.getText();
+      };
 
   private void mostrarMenuDispositivos() {
     Stage popupStage = new Stage();
@@ -117,6 +130,7 @@ public class PaneDetalleController {
             storage -> {
               Label label = new Label(storage.getStorageName());
               popupContent.getChildren().add(label);
+              label.setOnMouseClicked(selectedHandler);
             });
     Scene popupScene = new Scene(popupContent, 400, 200);
     popupStage.setScene(popupScene);
