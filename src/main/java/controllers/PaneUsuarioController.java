@@ -103,7 +103,6 @@ public class PaneUsuarioController {
               }
             });
     if (!existe.get()) {
-      SessionHandler.getAppUser().getStorages().add(new Storage(nombreDispositivo));
       if (!nombreDispositivo.isEmpty()) {
         deviceManager(nombreDispositivo);
         AppUserImpl appUserImpl = new AppUserImpl(HibernateUtils.getSession());

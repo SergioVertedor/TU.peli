@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @Getter
 @Entity
 @SuperBuilder
-@AllArgsConstructor
 @NoArgsConstructor
 @DiscriminatorValue("S")
 public class Serie extends Work implements java.io.Serializable {

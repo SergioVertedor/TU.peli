@@ -16,7 +16,7 @@
         <!-- Para mostrar las sentencias SQL formateadas y leerlas con mayor facilidad -->
         <property name="hibernate.format_sql">true</property>
         <!-- Esta propiedad dicta lo que sucede en la fase de arranque de la aplicación -->
-        <!--  <property name="hibernate.hbm2ddl.auto">update</property> -->
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
 
          <!-- Mapeo de las clases -->
         <mapping class="model.AppUser"/>

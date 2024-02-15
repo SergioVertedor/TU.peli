@@ -1,7 +1,6 @@
 package model;
 
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
@@ -18,4 +17,10 @@ public class WorkUserStorageId implements java.io.Serializable {
   @ManyToOne
   @JoinColumn(name = "storage_id")
   private Storage storage;
+
+  public WorkUserStorageId(Work work, AppUser user, Storage storage) {
+    this.work = work;
+    this.user = user;
+    this.storage = storage;
+  }
 }

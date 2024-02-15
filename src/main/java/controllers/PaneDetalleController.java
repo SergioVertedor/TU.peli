@@ -18,13 +18,18 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lombok.Getter;
 import lombok.Setter;
+import model.*;
+import model.connector.HibernateUtils;
+import model.dao.PeliculaImpl;
+import model.dao.SerieDAOImpl;
+import model.dao.WorkUserStorageImpl;
+import org.jetbrains.annotations.NotNull;
 import service.APIService;
 import service.dto.credits.Cast;
 import service.dto.credits.Credits;
@@ -36,6 +41,13 @@ public class PaneDetalleController {
   @Getter @Setter private static char type;
   @Getter @Setter private static int idWork;
   private int totalEstrellas = 0;
+  private Stage popupStage;
+  private Storage device;
+  private String deviceName;
+
+  private TVDetail tvDetail;
+
+  private MovieDetail movieDetails;
 
   // Botones
   @FXML private Button btnAdd;
@@ -102,19 +114,20 @@ public class PaneDetalleController {
       return LocalDate.now().toString();
     }
   }
-  
-  /**
-   * Método que obtiene el dispositivo seleccionado
-   */
+
+  /** Método que obtiene el dispositivo seleccionado */
   private final EventHandler<MouseEvent> selectedHandler =
       event -> {
         Node source = (Node) event.getSource();
-        Label dispositivoSeleccionado = (Label) source.getParent();
-        String nombreDispositivo = dispositivoSeleccionado.getText();
+        if (source instanceof Label) {
+          Label dispositivoSeleccionado = (Label) source;
+          deviceName = dispositivoSeleccionado.getText();
+          popupStage.close();
+        }
       };
 
   private void mostrarMenuDispositivos() {
-    Stage popupStage = new Stage();
+    popupStage = new Stage();
     popupStage.initModality(Modality.APPLICATION_MODAL);
     popupStage.initStyle(StageStyle.UTILITY);
     popupStage.setTitle("Añadir a dispositivo");
@@ -153,6 +166,74 @@ public class PaneDetalleController {
     valoracion = totalEstrellas;
     comentario = lblComentario.getText();
     fechaVista = getDateVista();
+    SessionHandler.getAppUser()
+        .getStorages()
+        .forEach(
+            storage -> {
+              if (storage.getStorageName().equals(deviceName)) {
+                device = storage;
+              }
+            });
+
+    Pelicula work = null;
+    Serie serie = null;
+    if (type == 'm') {
+      work =
+          new Pelicula(
+              movieDetails.getTitle(),
+              movieDetails.getRelease_date(),
+              Integer.parseInt(String.valueOf(movieDetails.getRuntime())),
+              lblSinopsis.getText(),
+              movieDetails.getBackdrop_path(),
+              movieDetails.getPoster_path(),
+              Double.parseDouble(lblRating.getText()),
+              LocalDate.now(),
+              "",
+              "");
+      PeliculaImpl peliculaImpl = new PeliculaImpl(HibernateUtils.getSession());
+      peliculaImpl.insert(work);
+      peliculaImpl.update(work);
+      WorkUserStorageId id = new WorkUserStorageId(work, SessionHandler.getAppUser(), device);
+      WorkUserStorage workUserStorage =
+          new WorkUserStorage(id, valoracion, comentario, true, fav, fechaVista);
+      WorkUserStorageImpl workUserStorageImpl =
+          new WorkUserStorageImpl(HibernateUtils.getSession());
+      workUserStorageImpl.insert(workUserStorage);
+      workUserStorageImpl.update(workUserStorage);
+    } else if (type == 't') {
+      serie = getSerie();
+      SerieDAOImpl serieImpl = new SerieDAOImpl(HibernateUtils.getSession());
+
+      serieImpl.insert(serie);
+      serieImpl.update(serie);
+    }
+    WorkUserStorageId id = new WorkUserStorageId(serie, SessionHandler.getAppUser(), device);
+    WorkUserStorage workUserStorage =
+        new WorkUserStorage(id, valoracion, comentario, true, fav, fechaVista);
+    WorkUserStorageImpl workUserStorageImpl = new WorkUserStorageImpl(HibernateUtils.getSession());
+    workUserStorageImpl.insert(workUserStorage);
+    workUserStorageImpl.update(workUserStorage);
+  }
+
+  @NotNull
+  private Serie getSerie() {
+    Serie serie;
+    serie =
+        new Serie(
+            tvDetail.getName(),
+            tvDetail.getFirst_air_date(),
+            Integer.parseInt(String.valueOf(tvDetail.getEpisode_run_time()[0])),
+            tvDetail.getOverview(),
+            tvDetail.getBackdrop_path(),
+            tvDetail.getPoster_path(),
+            tvDetail.getVote_average(),
+            null,
+            "",
+            "",
+            null,
+            null,
+            null);
+    return serie;
   }
 
   @FXML
@@ -293,32 +374,32 @@ public class PaneDetalleController {
 
   private void fillSerieInfo(int id) {
     var apiService = new APIService();
-    TVDetail detalles = apiService.getTVDetail(id);
+    tvDetail = apiService.getTVDetail(id);
     Credits creditos = apiService.getTVCredits(id);
     List<Cast> cast = Arrays.asList(creditos.getCast());
 
     // TITULO
-    lblTitulo.setText(detalles.getName());
+    lblTitulo.setText(tvDetail.getName());
     String directorYGenero = "";
-    for (int i = 0; i < detalles.getGenres().length; i++) {
-      if (i == detalles.getGenres().length - 1) {
-        directorYGenero += detalles.getGenres()[i].getName();
+    for (int i = 0; i < tvDetail.getGenres().length; i++) {
+      if (i == tvDetail.getGenres().length - 1) {
+        directorYGenero += tvDetail.getGenres()[i].getName();
       } else {
-        directorYGenero += detalles.getGenres()[i].getName() + ", ";
+        directorYGenero += tvDetail.getGenres()[i].getName() + ", ";
       }
     }
     // SUBTITULO
     lblSubtitulo.setText(directorYGenero);
 
     // RATING
-    lblRating.setText(String.format("%.1f", detalles.getVote_average()));
+    lblRating.setText(String.format("%.1f", tvDetail.getVote_average()));
 
     // ESTRENO Y DURACION
     try {
       lblEstrenoDuracion.setText(
-          detalles.getFirst_air_date() + " - " + detalles.getEpisode_run_time()[0] + "min");
+          tvDetail.getFirst_air_date() + " - " + tvDetail.getEpisode_run_time()[0] + "min");
     } catch (Exception e) {
-      lblEstrenoDuracion.setText(detalles.getFirst_air_date().toString());
+      lblEstrenoDuracion.setText(tvDetail.getFirst_air_date().toString());
     }
     // imgStar1.setImage();
     // imgStar2.setImage();
@@ -329,11 +410,11 @@ public class PaneDetalleController {
     // lblFechaVista.setText("");
 
     // SINOPSIS
-    lblSinopsis.setText(detalles.getOverview());
+    lblSinopsis.setText(tvDetail.getOverview());
     String url = "https://image.tmdb.org/t/p/w500";
 
     // IMAGENES
-    imgPoster.setImage(new Image(url + detalles.getPoster_path()));
+    imgPoster.setImage(new Image(url + tvDetail.getPoster_path()));
     List<ImageView> imgReparto =
         (Arrays.asList(imgReparto0, imgReparto1, imgReparto2, imgReparto3));
     imgReparto.forEach(
@@ -368,7 +449,7 @@ public class PaneDetalleController {
 
   private void fillMovieInfo(int id) {
     var apiService = new APIService();
-    MovieDetail detalles = apiService.getMovieDetails(id);
+    movieDetails = apiService.getMovieDetails(id);
     Credits creditos = apiService.getMovieCredits(id);
     List<Cast> crew = Arrays.asList(creditos.getCrew());
     var directores = new ArrayList<Cast>();
@@ -387,7 +468,7 @@ public class PaneDetalleController {
       actores.add(cast.get(i));
     }
     // TITULO
-    lblTitulo.setText(detalles.getTitle());
+    lblTitulo.setText(movieDetails.getTitle());
     String directorYGenero = "";
     for (int i = 0; i < directores.size(); i++) {
       if (i == directores.size() - 1) {
@@ -396,21 +477,22 @@ public class PaneDetalleController {
         directorYGenero += directores.get(i).getName() + ", ";
       }
     }
-    for (int i = 0; i < detalles.getGenres().length; i++) {
-      if (i == detalles.getGenres().length - 1) {
-        directorYGenero += detalles.getGenres()[i].getName();
+    for (int i = 0; i < movieDetails.getGenres().length; i++) {
+      if (i == movieDetails.getGenres().length - 1) {
+        directorYGenero += movieDetails.getGenres()[i].getName();
       } else {
-        directorYGenero += detalles.getGenres()[i].getName() + ", ";
+        directorYGenero += movieDetails.getGenres()[i].getName() + ", ";
       }
     }
     // SUBTITULO
     lblSubtitulo.setText(directorYGenero);
 
     // RATING
-    lblRating.setText(String.format("%.1f", detalles.getVote_average()));
+    lblRating.setText(String.format("%.1f", movieDetails.getVote_average()));
 
     // ESTRENO Y DURACION
-    lblEstrenoDuracion.setText(detalles.getRelease_date() + " - " + detalles.getRuntime() + "min");
+    lblEstrenoDuracion.setText(
+        movieDetails.getRelease_date() + " - " + movieDetails.getRuntime() + "min");
     // imgStar1.setImage();
     // imgStar2.setImage();
     // imgStar3.setImage();
@@ -420,15 +502,15 @@ public class PaneDetalleController {
     // lblFechaVista.setText("");
 
     // SINOPSIS
-    lblSinopsis.setText(detalles.getOverview());
+    lblSinopsis.setText(movieDetails.getOverview());
     String url = "https://image.tmdb.org/t/p/w500";
 
     // IMAGENES
 
-    if (detalles.getPoster_path() == null) {
+    if (movieDetails.getPoster_path() == null) {
       imgPoster.setVisible(false);
     } else {
-      imgPoster.setImage(new Image(url + detalles.getPoster_path()));
+      imgPoster.setImage(new Image(url + movieDetails.getPoster_path()));
     }
     List<ImageView> imgReparto =
         (Arrays.asList(imgReparto0, imgReparto1, imgReparto2, imgReparto3));
@@ -452,6 +534,10 @@ public class PaneDetalleController {
     List<ImageView> streamingIcon =
         (Arrays.asList(
             streaming01, streaming02, streaming03, streaming04, streaming05, streaming06));
+
+    if(this.movieDetails.getTitle().equals(PeliculaImpl.getMovieTitle(id))) {
+      this.movieDetails = PeliculaImpl.getMovie(id);
+    }
     /**
      * WatchProvider streaming = apiService.getMovieWatchProviders(id); for (int i = 0; i <
      * streamingIcon.size(); i++) { try { if (i <

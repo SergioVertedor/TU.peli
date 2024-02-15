@@ -2,7 +2,9 @@ package model.dao;
 
 import java.util.List;
 import model.Pelicula;
+import model.connector.HibernateUtils;
 import org.hibernate.Session;
+import service.dto.movie.MovieDetail;
 
 /** Clase con el DAO generico, CommonDaoImpl y la interfaz WorkInt */
 public class PeliculaImpl extends CommonDAOImpl<Pelicula> implements PeliculaInt {
@@ -14,6 +16,37 @@ public class PeliculaImpl extends CommonDAOImpl<Pelicula> implements PeliculaInt
    */
   public PeliculaImpl(Session session) {
     super(session);
+  }
+
+  /**
+   * Busca Pelicula por id
+   * @param id id de la pelicula
+   * @return Pelicula
+   */
+  public static String getMovieTitle(int id) {
+    HibernateUtils.openSession();
+    Session session = HibernateUtils.getSession();
+    session.beginTransaction();
+    String hql = "SELECT originalTitle FROM Work WHERE id=" + id;
+    String title = session.createQuery(hql, String.class).getSingleResult();
+    session.getTransaction().commit();
+    return title;
+  }
+
+  /**
+   * Busca Pelicula por id
+   * @param id id de la pelicula
+   * @return Pelicula
+   */
+  public static MovieDetail getMovie(int id) {
+    HibernateUtils.openSession();
+    Session session = HibernateUtils.getSession();
+    session.beginTransaction();
+    String hql = "FROM Work WHERE id=" + id;
+    MovieDetail movie = session.createQuery(hql, MovieDetail.class).getSingleResult();
+    HibernateUtils.commitTransaction();
+    HibernateUtils.closeSession();
+    return movie;
   }
 
   /**
