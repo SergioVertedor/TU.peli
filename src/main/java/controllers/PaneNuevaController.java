@@ -2,6 +2,7 @@ package controllers;
 
 import java.util.Optional;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,9 +21,7 @@ import javafx.stage.StageStyle;
 
 public class PaneNuevaController {
 
-
 	// Imagen Poster
-	// TODO: Mejor generar una ventana con acceso a text para insertar un enlace a la imagen
 	@FXML	private ImageView imgPoster;
 
 	// Imagenes estrella puntuación
@@ -146,6 +145,7 @@ public class PaneNuevaController {
 
 
 	@FXML
+	public
 	void initialize() {
 		imgNetflix.setImage(new Image("images/streaming/Netflix.png"));
 		imgHBO.setImage(new Image("images/streaming/HBOMax.png"));
@@ -153,7 +153,6 @@ public class PaneNuevaController {
 		imgPrimeVideo.setImage(new Image("images/streaming/PrimeVideo.png"));
 		imgFilmin.setImage(new Image("images/streaming/Filmin.png"));
 		imgAppleTV.setImage(new Image("images/streaming/AppleTV.png"));
-		
 	}
 
 }

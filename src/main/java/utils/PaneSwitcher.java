@@ -22,13 +22,6 @@ public class PaneSwitcher {
       loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
       Pane myPane = loader.load();
 
-      //      myPane.maxHeightProperty();
-      //      myPane.maxWidthProperty();
-
-      // Hacer que los contenedores se expandan si el tamaño de la ventana cambia
-      //			HBox.setHgrow(myPane, Priority.ALWAYS);
-      //			VBox.setVgrow(myPane, Priority.ALWAYS);
-
       centralPane.getChildren().setAll(myPane);
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
@@ -103,6 +96,22 @@ public class PaneSwitcher {
       PaneDetalleController paneDetalleController = loader.getController();
       PaneDetalleController.setType(type);
       Platform.runLater(() -> paneDetalleController.fillInfo(idWork));
+    } catch (Exception e) {
+      System.out.println("Error al cargar la ventana de inicio.");
+      System.out.println(e);
+    }
+  }
+  
+  public static void switchToNueva(String paneTarget, Pane centralPane) {
+    String fxmlFile = "/views/" + paneTarget + ".fxml";
+    try {
+    	centralPane.getChildren().clear();
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
+      Pane myPane = loader.load();
+      centralPane.getChildren().setAll(myPane);
+      PaneNuevaController paneNuevaController = loader.getController();
+      Platform.runLater(paneNuevaController::initialize);
     } catch (Exception e) {
       System.out.println("Error al cargar la ventana de inicio.");
       System.out.println(e);
