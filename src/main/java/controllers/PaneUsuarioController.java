@@ -72,8 +72,10 @@ public class PaneUsuarioController {
 	void btnAddDispositivoPressed(ActionEvent event) {
 		String nombreDispositivo = showTextDialog();
 		if (!nombreDispositivo.isEmpty()) {
-			HBox newHBox = new HBox();
+			HBox newHBox = new HBox(20);
+			newHBox.setPrefHeight(25);
 			Label nombre = new Label(nombreDispositivo);
+			nombre.setPrefWidth(190);
 			ImageView image = new ImageView();
 			image.setImage(new Image("images/others/pcIcon.png"));
 			ImageView imgRemove = new ImageView();
