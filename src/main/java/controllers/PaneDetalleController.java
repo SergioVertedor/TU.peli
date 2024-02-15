@@ -84,14 +84,18 @@ public class PaneDetalleController {
   @FXML private DatePicker datePicker;
   
   /**
-   * Devuelve la decha seleccionda en datePciker
+   * Devuelve la fecha seleccionada en el DatePicker.
+   * 
+   * @return La fecha seleccionada como una cadena.
    */
-	private String getDateVista() {
-		datePicker.setOnAction(event -> {
-			return datePicker.getValue().toString();
-		});
-	}
-  
+  private String getDateVista() {
+      LocalDate selectedDate = datePicker.getValue();
+      if (selectedDate != null) {
+          return selectedDate.toString();
+      } else {
+          return LocalDate.now().toString();
+      }
+  }
 
 	private void mostrarMenuDispositivos() {
 		Stage popupStage = new Stage();
