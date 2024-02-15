@@ -31,4 +31,12 @@ public class AppUserImpl extends CommonDAOImpl<AppUser> implements AppUserDAOInt
     session.getTransaction().commit();
     return appUsers;
   }
+
+  public AppUser searchById(int id) {
+    session = HibernateUtils.getSession();
+    session.beginTransaction();
+    AppUser appUser = session.get(AppUser.class, id);
+    session.getTransaction().commit();
+    return appUser;
+  }
 }

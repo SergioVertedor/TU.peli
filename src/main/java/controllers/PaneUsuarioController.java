@@ -3,6 +3,7 @@ package controllers;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicBoolean;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,6 +25,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
+import model.Storage;
 import model.connector.HibernateUtils;
 import model.dao.AppUserImpl;
 import utils.*;
@@ -91,29 +93,49 @@ public class PaneUsuarioController {
   @FXML
   void btnAddDispositivoPressed(ActionEvent event) {
     String nombreDispositivo = showTextDialog();
-    if (!nombreDispositivo.isEmpty()) {
-      HBox newHBox = new HBox(10);
-      newHBox.setPrefHeight(25);
-      Label id = new Label(String.valueOf(contador));
-      contador++;
-      id.setVisible(false);
-      Label nombre = new Label(nombreDispositivo);
-      nombre.setPrefWidth(190);
-      ImageView image = new ImageView();
-      image.setImage(new Image("images/others/pcIcon.png"));
-      ImageView imgRemove = new ImageView();
-      imgRemove.setImage(new Image("images/others/remove.png"));
-      imgRemove.setOnMouseClicked(removeHandler);
-      nombre.setTextFill(Color.WHITE);
-      image.setFitWidth(20);
-      image.setFitHeight(20);
-      imgRemove.setFitWidth(20);
-      imgRemove.setFitHeight(20);
-      newHBox.getChildren().addAll(image, nombre, imgRemove);
-      hBoxListDispositivos.add(newHBox);
-      obsListDispositivos.add(newHBox);
-      vBoxDispositivos.getChildren().addAll(newHBox);
+    AtomicBoolean existe = new AtomicBoolean(false);
+    SessionHandler.getAppUser()
+        .getStorages()
+        .forEach(
+            storage -> {
+              if (storage.getStorageName().equals(nombreDispositivo)) {
+                existe.set(true);
+              }
+            });
+    if (!existe.get()) {
+      SessionHandler.getAppUser().getStorages().add(new Storage(nombreDispositivo));
+      if (!nombreDispositivo.isEmpty()) {
+        deviceManager(nombreDispositivo);
+        AppUserImpl appUserImpl = new AppUserImpl(HibernateUtils.getSession());
+        Storage storage = new Storage(nombreDispositivo, SessionHandler.getAppUser());
+        SessionHandler.getAppUser().getStorages().add(storage);
+        appUserImpl.update(SessionHandler.getAppUser());
+      }
+    } else {
+      DialogNotificator dialogNotificator = new DialogNotificator();
+      dialogNotificator.deviceExistsNotification();
     }
+  }
+
+  private void deviceManager(String nombreDispositivo) {
+    HBox newHBox = new HBox(10);
+    newHBox.setPrefHeight(25);
+    Label nombre = new Label(nombreDispositivo);
+    nombre.setPrefWidth(190);
+    ImageView image = new ImageView();
+    image.setImage(new Image("images/others/pcIcon.png"));
+    ImageView imgRemove = new ImageView();
+    imgRemove.setImage(new Image("images/others/remove.png"));
+    imgRemove.setOnMouseClicked(removeHandler);
+    nombre.setTextFill(Color.WHITE);
+    image.setFitWidth(20);
+    image.setFitHeight(20);
+    imgRemove.setFitWidth(20);
+    imgRemove.setFitHeight(20);
+    newHBox.getChildren().addAll(image, nombre, imgRemove);
+    hBoxListDispositivos.add(newHBox);
+    obsListDispositivos.add(newHBox);
+    vBoxDispositivos.getChildren().addAll(newHBox);
   }
 
   /**
@@ -227,6 +249,9 @@ public class PaneUsuarioController {
     }
     lblNumeroDeTitulosGuardados.setText("En lista: " + numWorks + " títulos");
     lblUltimaConexion.setText("Última conexión: " + SessionHandler.getAppUser().getLastLogin());
+    SessionHandler.getAppUser()
+        .getStorages()
+        .forEach(storage -> deviceManager(storage.getStorageName()));
   }
 
   public void fillComponents() {

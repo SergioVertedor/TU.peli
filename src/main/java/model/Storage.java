@@ -20,9 +20,6 @@ public class Storage implements java.io.Serializable {
   @Column(name = "name")
   private String storageName;
 
-  @Column(name = "type")
-  private String storageType;
-
   @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "id_user")
   private AppUser user;
@@ -30,8 +27,12 @@ public class Storage implements java.io.Serializable {
   @OneToMany(mappedBy = "id.storage", cascade = CascadeType.ALL)
   private Set<WorkUserStorage> workUserStorages = new HashSet<>();
 
-  public Storage(String storageName, String storageType) {
+  public Storage(String storageName) {
     this.storageName = storageName;
-    this.storageType = storageType;
+  }
+
+  public Storage(String nombreDispositivo, AppUser appUser) {
+    this.storageName = nombreDispositivo;
+    this.user = appUser;
   }
 }

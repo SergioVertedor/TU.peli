@@ -196,4 +196,16 @@ public class DialogNotificator {
         activateLogos(alert);
         alert.showAndWait();
     }
+
+    /**
+     * Notifica al usuario que el dispositivo ya existe
+     */
+    public void deviceExistsNotification() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(null);
+        alert.setHeaderText("Dispositivo existente");
+        alert.setContentText("El dispositivo ya existe");
+        activateLogos(alert);
+        alert.showAndWait();
+    }
 }
