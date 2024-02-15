@@ -121,6 +121,9 @@ public class DialogNotificator {
     alert.showAndWait();
   }
 
+  /**
+   * Notifica al usuario que el usuario introducido no es válido
+   */
   public void notifyInvalidUserOrMail() {
     Alert alert = new Alert(Alert.AlertType.WARNING);
     alert.setTitle(null);
@@ -130,6 +133,9 @@ public class DialogNotificator {
     alert.showAndWait();
   }
 
+  /**
+   * Notifica al usuario que el usuario introducido no es válido
+   */
   private void activateLogos(Alert alert) {
     // LOGO ALERT
     ImageView imageView = new ImageView(new Image(LOGO_PATH));
@@ -143,12 +149,50 @@ public class DialogNotificator {
         .add(new Image(Objects.requireNonNull(this.getClass().getResource(LOGO_PATH)).toString()));
   }
 
-
+  /**
+   * Notifica al usuario que se ha producido un error durante el proceso de búsqueda
+   */
     public void searchErrorNotification() {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle(null);
         alert.setHeaderText("Búsqueda incorrecta");
         alert.setContentText("Por favor, introduzca un nombre válido");
+        activateLogos(alert);
+        alert.showAndWait();
+    }
+
+    public void usernameUpdateErrorNotification() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(null);
+        alert.setHeaderText("Nombre de usuario incorrecto");
+        alert.setContentText("Por favor, introduzca un nombre de usuario válido");
+        activateLogos(alert);
+        alert.showAndWait();
+    }
+
+    public void passwordUpdateErrorNotification() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(null);
+        alert.setHeaderText("Contraseña incorrecta");
+        alert.setContentText("Por favor, introduzca una contraseña válida. Debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número");
+        activateLogos(alert);
+        alert.showAndWait();
+    }
+
+    public void passwordCheckErrorNotification() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(null);
+        alert.setHeaderText("Contraseña incorrecta");
+        alert.setContentText("Las contraseñas no coinciden");
+        activateLogos(alert);
+        alert.showAndWait();
+    }
+
+    public void emailUpdateErrorNotification() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(null);
+        alert.setHeaderText("Email incorrecto");
+        alert.setContentText("Por favor, introduzca un email válido");
         activateLogos(alert);
         alert.showAndWait();
     }

@@ -1,11 +1,11 @@
 package utils;
 
-import model.connector.HibernateUtils;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import model.AppUser;
+import model.connector.HibernateUtils;
 import model.dao.AppUserImpl;
 
 /**
@@ -33,32 +33,69 @@ public class LoginValidator {
     var dialogNotificator = new DialogNotificator();
     // Comprobamos que los campos no estén vacíos
     if (userOrMail.isEmpty() || password.isEmpty()) {
-        dialogNotificator.notifyEmptyFields();
+      dialogNotificator.notifyEmptyFields();
     } else {
-      users.stream().filter(appUser -> appUser.getUsername().equalsIgnoreCase(userOrMail)
-          || appUser.getMail().equalsIgnoreCase(userOrMail)).forEach(appUser -> {
-            // Desciframos la contraseña del usuario en lista
-            String pw = RSAUtils.descifra(appUser.getPassword());
-            // Comprobamos si el usuario o el email introducido coinciden con la contraseña descifrada
-            if (appUser.getUsername().equalsIgnoreCase(userOrMail) && pw.equals(password)
-                || appUser.getMail().equalsIgnoreCase(userOrMail) && pw.equals(password)) {
-              var fechaActual = LocalDate.now();
-              // Formateamos la fecha actual
-              var formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-              String fechaFormateada = fechaActual.format(formatter);
-              // Actualizamos la fecha de último login
-              appUser.setLastLogin(fechaFormateada);
-              appUserImpl.update(appUser);
-              // Si el usuario ha marcado la casilla de "Recordar usuario", guardamos el usuario en
-              // el fichero de propiedades
-              if (PropertiesManager.getRememberLogin() == 1) {
-                PropertiesManager.setUser(appUser.getUsername());
-              }
-              // Guardamos el usuario en la sesión
-              SessionHandler.setAppUser(appUser);
-              resultado.set(true);
-            }
-          });
+      users.stream()
+          .filter(
+              appUser ->
+                  appUser.getUsername().equalsIgnoreCase(userOrMail)
+                      || appUser.getMail().equalsIgnoreCase(userOrMail))
+          .forEach(
+              appUser -> {
+                // Desciframos la contraseña del usuario en lista
+                String pw = RSAUtils.descifra(appUser.getPassword());
+                // Comprobamos si el usuario o el email introducido coinciden con la contraseña
+                // descifrada
+                if (appUser.getUsername().equalsIgnoreCase(userOrMail) && pw.equals(password)
+                    || appUser.getMail().equalsIgnoreCase(userOrMail) && pw.equals(password)) {
+                  var fechaActual = LocalDate.now();
+                  // Formateamos la fecha actual
+                  var formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                  String fechaFormateada = fechaActual.format(formatter);
+                  // Actualizamos la fecha de último login
+                  appUser.setLastLogin(fechaFormateada);
+                  appUserImpl.update(appUser);
+                  // Si el usuario ha marcado la casilla de "Recordar usuario", guardamos el usuario
+                  // en
+                  // el fichero de propiedades
+                  if (PropertiesManager.getRememberLogin() == 1) {
+                    PropertiesManager.setUser(appUser.getUsername());
+                  }
+                  // Guardamos el usuario en la sesión
+                  SessionHandler.setAppUser(appUser);
+                  resultado.set(true);
+                }
+              });
+    }
+    return resultado.get();
+  }
+
+  public boolean updateUser(String userName, String password, String email) {
+    AtomicBoolean resultado = new AtomicBoolean(false);
+    var appUserImpl = new AppUserImpl(HibernateUtils.getSession());
+    // Obtenemos todos los usuarios de la base de datos
+    List<AppUser> users = appUserImpl.searchAll();
+    var dialogNotificator = new DialogNotificator();
+    // Comprobamos que los campos no estén vacíos
+    if (userName.isEmpty() || password.isEmpty() && email.isEmpty() || password.isEmpty()) {
+      dialogNotificator.notifyEmptyFields();
+    } else {
+      users.stream()
+          .filter(
+              appUser ->
+                  appUser.getUsername().equalsIgnoreCase(userName)
+                      || appUser.getMail().equalsIgnoreCase(email))
+          .forEach(
+              appUser -> {
+                // Desciframos la contraseña del usuario en lista
+                String pw = RSAUtils.descifra(appUser.getPassword());
+                // Comprobamos si el usuario o el email introducido coinciden con la contraseña
+                // descifrada
+                if (appUser.getUsername().equalsIgnoreCase(userName) && pw.equals(password)
+                    || appUser.getMail().equalsIgnoreCase(email) && pw.equals(password)) {
+                  resultado.set(true);
+                }
+              });
     }
     return resultado.get();
   }
