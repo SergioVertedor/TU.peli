@@ -225,11 +225,15 @@ public class PaneDetalleController {
   @NotNull
   private Serie getSerie() {
     Serie serie;
+    int runtime = 0;
+    if (tvDetail.getEpisode_run_time().length > 0) {
+      runtime = Integer.parseInt(String.valueOf(tvDetail.getEpisode_run_time()[0]));
+    }
     serie =
         new Serie(
             tvDetail.getName(),
             tvDetail.getFirst_air_date(),
-            Integer.parseInt(String.valueOf(tvDetail.getEpisode_run_time()[0])),
+            runtime,
             tvDetail.getOverview(),
             tvDetail.getBackdrop_path(),
             tvDetail.getPoster_path(),
@@ -446,6 +450,38 @@ public class PaneDetalleController {
         lbl -> {
           lbl.setText(cast.get(lblReparto.indexOf(lbl)).getName());
         });
+    SerieDAOImpl serieDAOImpl = new SerieDAOImpl(HibernateUtils.getSession());
+    Work work = null;
+    WorkUserStorage userStorage = null;
+    var workUserStorageImpl = new WorkUserStorageImpl(HibernateUtils.getSession());
+    try {
+      work = serieDAOImpl.getSerie(tvDetail.getName());
+      userStorage = workUserStorageImpl.getWorkUserStorage(work, SessionHandler.getAppUser());
+    } catch (Exception e) {
+      System.out.println("No existe la obra en BBDD");
+    }
+    if (Optional.ofNullable(userStorage).isPresent()) {
+      if (userStorage.isEnFavoritos()) {
+        imgLike.setImage(new Image("/images/others/likeSelected.png"));
+      }
+      if (userStorage.getValoracion() != 0) {
+        totalEstrellas = (int) Double.parseDouble(String.valueOf(userStorage.getValoracion()));
+        List<ImageView> estrellas = Arrays.asList(imgStar1, imgStar2, imgStar3, imgStar4, imgStar5);
+        for (int i = 0; i < estrellas.size(); i++) {
+          if (i < totalEstrellas) {
+            estrellas.get(i).setImage(new Image("/images/others/favSelected.png"));
+          } else {
+            estrellas.get(i).setImage(new Image("/images/others/favUnselected.png"));
+          }
+        }
+      }
+      if (userStorage.getComentario() != null) {
+        lblComentario.setText(userStorage.getComentario());
+      }
+      if (userStorage.getVista() != null) {
+        datePicker.setValue(LocalDate.parse(userStorage.getVista()));
+      }
+    }
     /**
      * List<ImageView> streamingIcon = (Arrays.asList( streaming01, streaming02, streaming03,
      * streaming04, streaming05, streaming06)); WatchProvider streaming =
@@ -547,10 +583,16 @@ public class PaneDetalleController {
         (Arrays.asList(
             streaming01, streaming02, streaming03, streaming04, streaming05, streaming06));
 
+    Work work = null;
+    WorkUserStorage userStorage = null;
     var workUserStorageImpl = new WorkUserStorageImpl(HibernateUtils.getSession());
-    Work work = PeliculaImpl.getMovieFromTitle(movieDetails.getTitle());
-    WorkUserStorage userStorage =
-        workUserStorageImpl.getWorkUserStorage(work, SessionHandler.getAppUser());
+    try {
+      work = PeliculaImpl.getMovieFromTitle(movieDetails.getTitle());
+      userStorage = workUserStorageImpl.getWorkUserStorage(work, SessionHandler.getAppUser());
+    } catch (Exception e) {
+      System.out.println("No existe la obra en BBDD");
+      ;
+    }
     if (Optional.ofNullable(userStorage).isPresent()) {
       if (userStorage.isEnFavoritos()) {
         imgLike.setImage(new Image("/images/others/likeSelected.png"));

@@ -19,8 +19,7 @@ public class PeliculaImpl extends CommonDAOImpl<Pelicula> implements PeliculaInt
   }
 
   /**
-   * Busca Pelicula por id
-   * @param id id de la pelicula
+   * Busca Pelicula por titulo
    * @return Pelicula
    */
   public static Pelicula getMovieFromTitle(String title) {
