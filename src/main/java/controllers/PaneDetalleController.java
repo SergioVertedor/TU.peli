@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -100,6 +101,11 @@ public class PaneDetalleController {
 
   // Última vez vista
   @FXML private DatePicker datePicker;
+  
+  // Comentario
+
+  @FXML
+  private TextField txtComentario;
 
   /**
    * Devuelve la fecha seleccionada en el DatePicker.
@@ -257,7 +263,12 @@ public class PaneDetalleController {
   void changePuntuacionPressed(MouseEvent event) {}
 
   @FXML
-  void escribirComentario(MouseEvent event) {}
+  void escribirComentario(MouseEvent event) {
+  	if(txtComentario.isDisable()) {
+  		txtComentario.isEditable();
+  		txtComentario.isFocusVisible();
+  	}
+  }
 
   @FXML
   void changePuntuacionPressed00(MouseEvent event) {
