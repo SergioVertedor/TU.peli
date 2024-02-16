@@ -53,6 +53,13 @@ public class PaneSwitcher {
     }
   }
 
+  /**
+   * Método que cambia el panel principal de la aplicación cargando un nuevo archivo FXML y
+   * @param paneTarget
+   * @param centralPane
+   * @param type
+   * @param search
+   */
   public static void switchResultPane(
       String paneTarget, Pane centralPane, String type, String search) {
     String fxmlFile = "/views/" + paneTarget + ".fxml";
@@ -70,6 +77,12 @@ public class PaneSwitcher {
     }
   }
 
+  /**
+   * Método que cambia el panel principal de la aplicación cargando un nuevo archivo FXML y
+   * @param paneTarget
+   * @param centralPane
+   * @param type
+   */
   public static void switchTopPane(String paneTarget, Pane centralPane, char type) {
     String fxmlFile = "/views/" + paneTarget + ".fxml";
     try {
@@ -86,6 +99,13 @@ public class PaneSwitcher {
     }
   }
 
+  /**
+   * Método que cambia el panel principal de la aplicación cargando un nuevo archivo FXML y
+   * @param paneTarget
+   * @param centralPane
+   * @param type
+   * @param idWork
+   */
   public static void switchToDetails(String paneTarget, Pane centralPane, char type, int idWork) {
     String fxmlFile = "/views/" + paneTarget + ".fxml";
     try {
@@ -101,23 +121,12 @@ public class PaneSwitcher {
       System.out.println(e);
     }
   }
-  
-  public static void switchToNueva(String paneTarget, Pane centralPane) {
-    String fxmlFile = "/views/" + paneTarget + ".fxml";
-    try {
-      FXMLLoader loader = new FXMLLoader();
-      loader.setLocation(PaneSwitcher.class.getResource(fxmlFile));
-      Pane myPane = loader.load();
-      centralPane.getChildren().setAll(myPane);
-      PaneNuevaController paneNuevaController = loader.getController();
-      paneNuevaController.start();
-      paneNuevaController.setCentralPane(centralPane);
-    } catch (Exception e) {
-      System.out.println("Error al cargar la ventana de inicio.");
-      System.out.println(e);
-    }
-  }
 
+  /**
+   * Método que cambia el panel principal de la aplicación cargando un nuevo archivo FXML y
+   * @param paneTarget
+   * @param centralPane
+   */
   public static void switchInTheaterPane(String paneTarget, Pane centralPane) {
     String fxmlFile = "/views/" + paneTarget + ".fxml";
     try {
@@ -134,6 +143,11 @@ public class PaneSwitcher {
     }
   }
 
+  /**
+   * Método que cambia el panel principal de la aplicación cargando un nuevo archivo FXML y
+   * @param paneTarget
+   * @param centralPane
+   */
   public static void switchUpcomingPane(String paneTarget, Pane centralPane) {
     String fxmlFile = "/views/" + paneTarget + ".fxml";
     try {

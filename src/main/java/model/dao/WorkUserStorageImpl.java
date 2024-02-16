@@ -13,6 +13,12 @@ public class WorkUserStorageImpl extends CommonDAOImpl<WorkUserStorage>
     super(session);
   }
 
+  /**
+   * Busca WorkUserStorage por work y appUser
+   * @param work
+   * @param appUser
+   * @return
+   */
   public WorkUserStorage getWorkUserStorage(Work work, AppUser appUser) {
     HibernateUtils.openSession();
     Session session = HibernateUtils.getSession();
@@ -29,6 +35,13 @@ public class WorkUserStorageImpl extends CommonDAOImpl<WorkUserStorage>
     return workUserStorage;
   }
 
+  /**
+   * Busca WorkUserStorage por work, appUser y device
+   * @param work
+   * @param appUser
+   * @param device
+   * @return
+   */
   public boolean ifExists(Pelicula work, AppUser appUser, Storage device) {
     try {
       HibernateUtils.openSession();

@@ -318,6 +318,11 @@ public class APIService {
     return gson.fromJson(doRequest(url), MovieSearchResult.class);
   }
 
+  /**
+   * Obtiene los proveedores de streaming de una película.
+   * @param id
+   * @return
+   */
   public WatchProvider getMovieWatchProviders(int id) {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/movie/" + id + "/watch/providers?language=es-ES";
@@ -330,6 +335,12 @@ public class APIService {
     }
   }
 
+  /**
+   * Obtiene los proveedores de streaming de una serie.
+   * @param id
+   * @return
+   * @throws IOException
+   */
   public WatchProvider getTVWatchProviders(int id) throws IOException {
     // Generamos la URL de la petición HTTP.
     String url = "https://api.themoviedb.org/3/tv/" + id + "/watch/providers?language=es-ES&watch_region=ES";

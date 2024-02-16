@@ -71,6 +71,13 @@ public class LoginValidator {
     return resultado.get();
   }
 
+  /**
+   * Este método comprueba si el usuario y la contraseña introducidos son válidos
+   * @param userName
+   * @param password
+   * @param email
+   * @return
+   */
   public boolean updateUser(String userName, String password, String email) {
     AtomicBoolean resultado = new AtomicBoolean(false);
     var appUserImpl = new AppUserImpl(HibernateUtils.getSession());

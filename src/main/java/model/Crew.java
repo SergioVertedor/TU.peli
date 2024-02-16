@@ -11,6 +11,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Clase Crew que representa una entidad de la base de datos
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

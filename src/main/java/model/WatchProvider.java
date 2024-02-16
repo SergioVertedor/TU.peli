@@ -9,7 +9,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
+/**
+ * Clase que modela un proveedor de contenido audiovisual.
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

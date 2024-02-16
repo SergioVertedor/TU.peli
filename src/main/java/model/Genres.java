@@ -10,6 +10,9 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Clase que modela la tabla "genero" de la base de datos
+ */
 @Setter
 @Getter
 @AllArgsConstructor

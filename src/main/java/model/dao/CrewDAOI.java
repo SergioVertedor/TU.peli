@@ -1,13 +1,11 @@
 package model.dao;
 
-import java.util.List;
-
 import model.Crew;
 
 /**
  * Interface para Crew
  */
-public interface CrewDaoI extends CommonDaoInt<Crew> {
+public interface CrewDAOI extends CommonDAOInt<Crew> {
 	
 	/**
 	 * Busca Crew por id
@@ -21,6 +19,4 @@ public interface CrewDaoI extends CommonDaoInt<Crew> {
 	 * @param crewName
 	 * @return Crews que coincidan con el nombre dado
 	 */
-	public List<Crew> searchByName(final String crewName);
-
 }

@@ -17,6 +17,10 @@ public class PropertiesManager {
   /** Ruta del archivo de configuración por defecto */
   private static final String CONFIG_FILE = "src/main/resources/config.properties";
 
+  /**
+   * Método que se encarga de obtener el valor de la propiedad user
+   * @param nombreUsuario
+   */
   public static void setUser(String nombreUsuario) {
     Properties prop = new Properties();
     InputStream input = null;
@@ -52,6 +56,10 @@ public class PropertiesManager {
     }
   }
 
+  /**
+   * Método que se encarga de obtener el valor de la propiedad user
+   * @return
+   */
   public static AppUser getUser() {
     Properties prop = new Properties();
     InputStream input = null;

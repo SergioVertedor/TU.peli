@@ -10,6 +10,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * Clase que representa una obra, la cual puede ser una película, serie o documental.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder

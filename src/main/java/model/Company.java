@@ -10,6 +10,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Clase que representa la tabla "company" en la base de datos
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

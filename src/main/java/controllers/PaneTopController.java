@@ -54,21 +54,37 @@ public class PaneTopController {
   @FXML private RadioButton rbThreeMonths;
   @FXML private RadioButton rbThisYear;
 
+  /**
+   * Muestra las obras más populares de todos los tiempos
+   * @param event
+   */
   @FXML
   void thisYearPressed(MouseEvent event) {
     fillTopWorks(type, "year");
   }
 
+  /**
+   * Muestra las obras más populares de los últimos 10 años
+   * @param event
+   */
   @FXML
   void LastTenYearsPressed(MouseEvent event) {
     fillTopWorks(type, "decade");
   }
 
+  /**
+   * Muestra las obras más populares de los últimos 3 meses
+   * @param event
+   */
   @FXML
   void LastThreeMonthsPressed(MouseEvent event) {
     fillTopWorks(type, "3m");
   }
 
+  /**
+   * Muestra las obras más populares de todos los tiempos
+   * @param event
+   */
   @FXML
   void allTimePressed(MouseEvent event) {
     fillTopWorks(type, "");
@@ -84,41 +100,73 @@ public class PaneTopController {
     fillInfo(0);
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void onMouseEnteredTitle01(MouseEvent event) {
     fillInfo(1);
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void onMouseEnteredTitle02(MouseEvent event) {
     fillInfo(2);
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void onMouseEnteredTitle03(MouseEvent event) {
     fillInfo(3);
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void onMouseEnteredTitle04(MouseEvent event) {
     fillInfo(4);
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void onMouseEnteredTitle05(MouseEvent event) {
     fillInfo(5);
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void onMouseEnteredTitle06(MouseEvent event) {
     fillInfo(6);
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void onMouseEnteredTitle07(MouseEvent event) {
     fillInfo(7);
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void titlePressed00(MouseEvent event) {
     if (type == 'm') {
@@ -128,6 +176,10 @@ public class PaneTopController {
     }
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void titlePressed01(MouseEvent event) {
     if (type == 'm') {
@@ -137,6 +189,10 @@ public class PaneTopController {
     }
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void titlePressed02(MouseEvent event) {
     if (type == 'm') {
@@ -146,6 +202,10 @@ public class PaneTopController {
     }
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void titlePressed03(MouseEvent event) {
     if (type == 'm') {
@@ -155,6 +215,10 @@ public class PaneTopController {
     }
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void titlePressed04(MouseEvent event) {
     if (type == 'm') {
@@ -164,6 +228,10 @@ public class PaneTopController {
     }
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void titlePressed05(MouseEvent event) {
     if (type == 'm') {
@@ -173,6 +241,10 @@ public class PaneTopController {
     }
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void titlePressed06(MouseEvent event) {
     if (type == 'm') {
@@ -182,6 +254,10 @@ public class PaneTopController {
     }
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param event
+   */
   @FXML
   void titlePressed07(MouseEvent event) {
     if (type == 'm') {
@@ -191,11 +267,18 @@ public class PaneTopController {
     }
   }
 
+  /**
+   * Inicializa el controlador
+   */
   @FXML
   void initialize() {
     // Cargar selección Top Peliculas/Series de Todos los tiempos 'imgObra00'
   }
 
+  /**
+   * Muestra la información de la obra seleccionada
+   * @param index
+   */
   public void fillInfo(int index) {
     var apiService = new APIService();
     if (type == 'm') {

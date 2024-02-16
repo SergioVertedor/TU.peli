@@ -7,7 +7,11 @@ import org.hibernate.resource.transaction.spi.TransactionStatus;
 
 import model.Crew;
 
-public class CrewDAOImpl extends CommonDAOImpl<Crew> implements CrewDaoI {
+/**
+ * Clase con el DAO generico, CommonDaoImpl y la interfaz CrewDAOI
+
+ */
+public class CrewDAOImpl extends CommonDAOImpl<Crew> implements CrewDAOI {
 
 	// Sesion para Crew
 	private Session session;
@@ -32,7 +36,6 @@ public class CrewDAOImpl extends CommonDAOImpl<Crew> implements CrewDaoI {
 	/**
 	 * Busca Crew por nombre
 	 */
-	@Override
 	public List<Crew> searchByName(String crewName) {
 		if (!session.getTransaction().equals(TransactionStatus.ACTIVE)) {
 			session.getTransaction().begin();

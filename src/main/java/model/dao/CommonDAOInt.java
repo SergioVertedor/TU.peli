@@ -2,7 +2,11 @@ package model.dao;
 
 import java.util.List;
 
-public interface CommonDaoInt<T> {
+/**
+ * Interfaz con los métodos comunes para los DAO
+ * @param <T>
+ */
+public interface CommonDAOInt<T> {
 
 	/**
 	 * Inserta un objeto a la base de datos

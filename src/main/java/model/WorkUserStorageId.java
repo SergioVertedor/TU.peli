@@ -4,7 +4,9 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-
+/**
+ * Clase que representa la clave primaria compuesta de la tabla work_user_storage
+ */
 @Embeddable
 public class WorkUserStorageId implements java.io.Serializable {
   @ManyToOne

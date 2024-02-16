@@ -119,7 +119,7 @@
                               </Button>
                               <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <children>
-                                    <Button fx:id="btnTrailer" mnemonicParsing="false" onAction="#btnTrailerPressed" prefHeight="25.0" prefWidth="450.0" text="Ver Trailer">
+                                    <Button fx:id="btnTrailer" mnemonicParsing="false" onAction="#btnTrailerPressed" opacity="0.0" prefHeight="25.0" prefWidth="450.0" text="Ver Trailer">
                                        <HBox.margin>
                                           <Insets left="10.0" right="10.0" />
                                        </HBox.margin>

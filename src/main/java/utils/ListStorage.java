@@ -13,6 +13,10 @@ import service.dto.movie.Movie;
 import service.dto.tv.TV;
 import service.dto.watchprovider.Flatrate;
 
+/**
+ * Clase que almacena las listas de películas y series.
+ 
+ */
 public class ListStorage {
   // Añadimos las listas de películas y series más populares.
   @Setter @Getter private static List<Movie> trendingMovies = new ArrayList<>();
@@ -46,6 +50,9 @@ public class ListStorage {
   // Añadimos la lista de proveedores de streaming.
   @Setter @Getter private static List<Flatrate> watchProviders;
 
+  /**
+   * Método que rellena las listas de películas y series.
+   */
   public static void fillLists() {
     var apiService = new APIService();
     try {

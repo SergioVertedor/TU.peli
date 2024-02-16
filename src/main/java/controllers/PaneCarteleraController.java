@@ -16,6 +16,10 @@ import service.dto.movie.Movie;
 import utils.ListStorage;
 import utils.PaneSwitcher;
 
+/**
+ * Controlador de la pantalla de cartelera
+
+ */
 public class PaneCarteleraController {
   @Getter @Setter private static Pane contentPane;
   private List<Movie> nowPlayingMovies = new ArrayList<Movie>();
@@ -59,83 +63,89 @@ public class PaneCarteleraController {
   @FXML private Label lblGenero11;
   @FXML private Label lblGenero12;
   @FXML private Label lblGenero13;
-
-//  /** Asigna el mismo manejador de eventos a todos los ImageViews */
-//  void asignClickHandlers() {
-//    setClickHandler(imgPoster00);
-//    setClickHandler(imgPoster01);
-//    setClickHandler(imgPoster02);
-//    setClickHandler(imgPoster03);
-//    setClickHandler(imgPoster10);
-//    setClickHandler(imgPoster11);
-//    setClickHandler(imgPoster12);
-//    setClickHandler(imgPoster13);
-//  }
-
-//  /**
-//   * Asigna un manejador de eventos al ImageView
-//   *
-//   * @param imageView
-//   */
-//  private void setClickHandler(ImageView imageView) {
-//    imageView.setOnMouseClicked(event -> handleImageViewClick(imageView));
-//  }
-
-//  /**
-//   * Redirige la página hacia el detalle de la pelicula clicada
-//   *
-//   * @param clickedImageView
-//   */
-//  private void handleImageViewClick(ImageView clickedImageView) {
-//    // TODO: goToPelicula()
-//  }
-
+  /**
+   * Metodo que se ejecuta al hacer click en la imagen de la cartelera
+   * @param event
+   */
   @FXML
   void imgPoster00Pressed(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(0).getId());
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', nowPlayingMovies.get(0).getId());
   }
 
+  /**
+   * Metodo que se ejecuta al hacer click en la imagen de la cartelera
+   * @param event
+   */
   @FXML
   void imgPoster01Pressed(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(1).getId());
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', nowPlayingMovies.get(1).getId());
   }
 
+  /**
+   * Metodo que se ejecuta al hacer click en la imagen de la cartelera
+   * @param event
+   */
   @FXML
   void imgPoster02Pressed(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(2).getId());
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', nowPlayingMovies.get(2).getId());
   }
 
+  /**
+   * Metodo que se ejecuta al hacer click en la imagen de la cartelera
+   * @param event
+   */
   @FXML
   void imgPoster03Pressed(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(3).getId());
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', nowPlayingMovies.get(3).getId());
   }
 
+  /**
+   * Metodo que se ejecuta al hacer click en la imagen de la cartelera
+   * @param event
+   */
   @FXML
   void imgPoster10Pressed(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(4).getId());
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', nowPlayingMovies.get(4).getId());
   }
 
+  /**
+   * Metodo que se ejecuta al hacer click en la imagen de la cartelera
+   *
+   * @param event
+   */
   @FXML
   void imgPoster11Pressed(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(5).getId());
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', nowPlayingMovies.get(5).getId());
   }
 
+  /**
+   * Metodo que se ejecuta al hacer click en la imagen de la cartelera
+   * @param event
+   */
   @FXML
   void imgPoster12Pressed(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(6).getId());
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', nowPlayingMovies.get(6).getId());
   }
 
+  /**
+   * Metodo que se ejecuta al hacer click en la imagen de la cartelera
+   * @param event
+   */
   @FXML
   void imgPoster13Pressed(MouseEvent event) {
-    PaneSwitcher.switchToDetails("PaneDetalle" ,contentPane, 'm', nowPlayingMovies.get(7).getId());
+    PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', nowPlayingMovies.get(7).getId());
   }
 
+  /**
+   * Metodo que se ejecuta al inicializar el controlador. Se ejecuta antes que el metodo
+   */
   @FXML
   void initialize() {
-//    asignClickHandlers();
+    //    asignClickHandlers();
     Platform.runLater(this::fillInfo);
   }
 
+  /** Asigna los click handlers a las imagenes de la cartelera */
   private void fillInfo() {
     List<ImageView> imageViews =
         List.of(

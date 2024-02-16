@@ -27,9 +27,9 @@ import lombok.Getter;
 import lombok.Setter;
 import model.*;
 import model.connector.HibernateUtils;
-import model.dao.PeliculaImpl;
+import model.dao.PeliculaDAOImpl;
 import model.dao.SerieDAOImpl;
-import model.dao.WorkUserStorageIdImpl;
+import model.dao.WorkUserStorageIdDAOImpl;
 import model.dao.WorkUserStorageImpl;
 import org.jetbrains.annotations.NotNull;
 import service.APIService;
@@ -39,6 +39,10 @@ import service.dto.movie.MovieDetail;
 import service.dto.tv.TVDetail;
 import utils.SessionHandler;
 
+/**
+ * Controlador de la ventana de detalle de una película o serie.
+
+ */
 public class PaneDetalleController {
   @Getter @Setter private static char type;
   @Getter @Setter private static int idWork;
@@ -46,11 +50,8 @@ public class PaneDetalleController {
   private Stage popupStage;
   private Storage device;
   private String deviceName;
-
   private TVDetail tvDetail;
-
   private MovieDetail movieDetails;
-
   // Botones
   @FXML private Button btnAdd;
   @FXML private Button btnTrailer;
@@ -104,7 +105,6 @@ public class PaneDetalleController {
   @FXML private DatePicker datePicker;
 
   // Comentario
-
   @FXML private TextField txtComentario;
 
   /**
@@ -132,14 +132,13 @@ public class PaneDetalleController {
         }
       };
 
+  /** Muestra un menú con los dispositivos disponibles para añadir la película o serie. */
   private void mostrarMenuDispositivos() {
     popupStage = new Stage();
     popupStage.initModality(Modality.APPLICATION_MODAL);
     popupStage.initStyle(StageStyle.UTILITY);
     popupStage.setTitle("Añadir a dispositivo");
-
     VBox popupContent = new VBox();
-
     // Lista de dispositivos
     List<Label> dispositivos = new ArrayList<>();
     // Datos ejemplo
@@ -157,6 +156,11 @@ public class PaneDetalleController {
     popupStage.show();
   }
 
+  /**
+   * Guarda la información de la película o serie en la base de datos.
+   *
+   * @param event
+   */
   @FXML
   void savePressed(Event event) {
     boolean fav;
@@ -196,14 +200,14 @@ public class PaneDetalleController {
               LocalDate.now(),
               "",
               "");
-      PeliculaImpl peliculaImpl = new PeliculaImpl(HibernateUtils.getSession());
-      if (peliculaImpl.ifExists(movieDetails.getTitle())) {
-        peliculaImpl.update(work);
+      PeliculaDAOImpl peliculaDAOImpl = new PeliculaDAOImpl(HibernateUtils.getSession());
+      if (peliculaDAOImpl.ifExists(movieDetails.getTitle())) {
+        peliculaDAOImpl.update(work);
       } else {
-        peliculaImpl.insert(work);
+        peliculaDAOImpl.insert(work);
       }
-      WorkUserStorageIdImpl workUserStorageIdImpl =
-          new WorkUserStorageIdImpl(HibernateUtils.getSession());
+      WorkUserStorageIdDAOImpl workUserStorageIdImpl =
+          new WorkUserStorageIdDAOImpl(HibernateUtils.getSession());
       WorkUserStorageId id = new WorkUserStorageId(work, SessionHandler.getAppUser(), device);
       workUserStorageIdImpl.update(id);
       WorkUserStorage workUserStorage =
@@ -232,6 +236,11 @@ public class PaneDetalleController {
     }
   }
 
+  /**
+   * Devuelve un objeto de tipo Serie con la información de la serie.
+   *
+   * @return
+   */
   @NotNull
   private Serie getSerie() {
     Serie serie;
@@ -270,12 +279,27 @@ public class PaneDetalleController {
     mostrarMenuDispositivos();
   }
 
+  /**
+   * 'Trailer'
+   *
+   * @param event
+   */
   @FXML
   void btnTrailerPressed(ActionEvent event) {}
 
+  /**
+   * Acción al pulsar sobre la imagen de la estrella.
+   *
+   * @param event
+   */
   @FXML
   void changePuntuacionPressed(MouseEvent event) {}
 
+  /**
+   * Acción al pulsar sobre la imagen del lápiz.
+   *
+   * @param event
+   */
   @FXML
   void escribirComentario(MouseEvent event) {
     if (txtComentario.isDisable()) {
@@ -284,6 +308,11 @@ public class PaneDetalleController {
     }
   }
 
+  /**
+   * Acción al pulsar sobre la imagen de la estrella.
+   *
+   * @param event
+   */
   @FXML
   void changePuntuacionPressed00(MouseEvent event) {
     clearStars();
@@ -300,6 +329,11 @@ public class PaneDetalleController {
     }
   }
 
+  /**
+   * Acción al pulsar sobre la imagen de la estrella.
+   *
+   * @param event
+   */
   @FXML
   void changePuntuacionPressed01(MouseEvent event) {
     clearStars();
@@ -316,6 +350,11 @@ public class PaneDetalleController {
     }
   }
 
+  /**
+   * Acción al pulsar sobre la imagen de la estrella.
+   *
+   * @param event
+   */
   @FXML
   void changePuntuacionPressed02(MouseEvent event) {
     clearStars();
@@ -332,6 +371,11 @@ public class PaneDetalleController {
     }
   }
 
+  /**
+   * Acción al pulsar sobre la imagen de la estrella.
+   *
+   * @param event
+   */
   @FXML
   void changePuntuacionPressed03(MouseEvent event) {
     clearStars();
@@ -348,6 +392,11 @@ public class PaneDetalleController {
     }
   }
 
+  /**
+   * Acción al pulsar sobre la imagen de la estrella.
+   *
+   * @param event
+   */
   @FXML
   void changePuntuacionPressed04(MouseEvent event) {
     clearStars();
@@ -364,6 +413,11 @@ public class PaneDetalleController {
     }
   }
 
+  /**
+   * Acción al pulsar sobre la imagen de favoritos
+   *
+   * @param event
+   */
   @FXML
   void favouritePressed(MouseEvent event) {
     if (imgLike.getImage().getUrl().contains("likeUnselected")) {
@@ -371,15 +425,13 @@ public class PaneDetalleController {
     } else imgLike.setImage(new Image("/images/others/likeUnselected.png"));
   }
 
+  /** Método que se ejecuta al inicializar el controlador. */
   @FXML
   void initialize() {
     datePicker.setValue(LocalDate.now());
   }
 
-  public void fillUserPreferences() {
-    // TODO
-  }
-
+  /** Método que se ejecuta al inicializar el controlador. */
   private void clearStars() {
     List<ImageView> estrellas = Arrays.asList(imgStar1, imgStar2, imgStar3, imgStar4, imgStar5);
     estrellas.forEach(
@@ -390,6 +442,11 @@ public class PaneDetalleController {
         });
   }
 
+  /**
+   * Método que rellena la información de la película o serie dependiendo del tipo.
+   *
+   * @param id
+   */
   public void fillInfo(int id) {
     if (type == 'm') {
       Platform.runLater(() -> fillMovieInfo(id));
@@ -398,6 +455,10 @@ public class PaneDetalleController {
     }
   }
 
+  /**
+   * Método que rellena la información de la serie.
+   * @param id
+   */
   private void fillSerieInfo(int id) {
     var apiService = new APIService();
     tvDetail = apiService.getTVDetail(id);
@@ -492,19 +553,12 @@ public class PaneDetalleController {
         datePicker.setValue(LocalDate.parse(userStorage.getVista()));
       }
     }
-    /**
-     * List<ImageView> streamingIcon = (Arrays.asList( streaming01, streaming02, streaming03,
-     * streaming04, streaming05, streaming06)); WatchProvider streaming =
-     * apiService.getMovieWatchProviders(id); List<Flatrate> proveedores =
-     * Arrays.asList(streaming.getResults()[0].getFlatrate()); ; final String urlOriginalSize =
-     * "https://image.tmdb.org/t/p/original"; try { proveedores.forEach( proveedor -> {
-     * streamingIcon .get(proveedores.indexOf(proveedor)) .setImage(new Image(urlOriginalSize +
-     * proveedor.getLogo_path())); }); } catch (Exception e) {
-     *
-     * <p>}*
-     */
   }
 
+  /**
+   * Método que rellena la información de la película.
+   * @param id
+   */
   private void fillMovieInfo(int id) {
     var apiService = new APIService();
     movieDetails = apiService.getMovieDetails(id);
@@ -597,7 +651,7 @@ public class PaneDetalleController {
     WorkUserStorage userStorage = null;
     var workUserStorageImpl = new WorkUserStorageImpl(HibernateUtils.getSession());
     try {
-      work = PeliculaImpl.getMovieFromTitle(movieDetails.getTitle());
+      work = PeliculaDAOImpl.getMovieFromTitle(movieDetails.getTitle());
       userStorage = workUserStorageImpl.getWorkUserStorage(work, SessionHandler.getAppUser());
     } catch (Exception e) {
       System.out.println("No existe la obra en BBDD");

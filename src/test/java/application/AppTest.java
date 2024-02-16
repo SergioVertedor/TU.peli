@@ -1,13 +1,12 @@
 package application;
 
-import model.connector.HibernateUtils;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.stage.Stage;
 import model.AppUser;
+import model.connector.HibernateUtils;
 import model.dao.AppUserImpl;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,10 +19,15 @@ import utils.PropertiesManager;
 import utils.SceneSwitcher;
 import utils.SessionHandler;
 
+/** Clase que contiene los test de la aplicación */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(ApplicationExtension.class)
 public class AppTest {
-
+  /**
+   * Método que inicia la aplicación
+   *
+   * @param primaryStage
+   */
   @Start
   public void setup(Stage primaryStage) {
     PropertiesManager.setRememberLogin("0");
@@ -52,6 +56,7 @@ public class AppTest {
     }
   }
 
+  /** Método que limpia la base de datos antes de ejecutar los test */
   @BeforeAll
   public static void cleanBBDD() {
     AppUserImpl appUserImpl = new AppUserImpl(HibernateUtils.getSession());
@@ -62,6 +67,7 @@ public class AppTest {
         .forEach(appUserImpl::delete);
   }
 
+  /** Método que cierra la sesión de Hibernate y la ventana después de ejecutar los test */
   @BeforeEach
   public void nullifyStage() {
     PropertiesManager.setRememberLogin("0");
@@ -90,11 +96,13 @@ public class AppTest {
     }
   }
 
+  /** Método que cierra la ventana después de ejecutar los test */
   @AfterEach
   public void closeStage() {
     SceneSwitcher.setStage(null);
   }
 
+  /** Método que cierra la sesión de Hibernate después de ejecutar los test */
   @AfterAll
   public static void close() {
     AppUserImpl appUserImpl = new AppUserImpl(HibernateUtils.getSession());
@@ -105,6 +113,11 @@ public class AppTest {
     HibernateUtils.closeSession();
   }
 
+  /**
+   * Test que comprueba el registro y login de un usuario
+   *
+   * @param robot
+   */
   @Test
   @Order(1)
   public void registroLogin(FxRobot robot) {
@@ -136,6 +149,12 @@ public class AppTest {
     assert headerText.equals("Registro correcto");
   }
 
+  /**
+   * Test que comprueba el login de un usuario
+   *
+   * @param robot
+   * @throws InterruptedException
+   */
   @Test
   @Order(2)
   public void login(FxRobot robot) throws InterruptedException {

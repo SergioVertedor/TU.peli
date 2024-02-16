@@ -10,6 +10,9 @@ import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
 
+/**
+ * Clase que representa una serie.
+ */
 @Getter
 @Entity
 @SuperBuilder

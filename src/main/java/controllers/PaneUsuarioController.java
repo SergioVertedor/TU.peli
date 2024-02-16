@@ -10,9 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.Node;
-
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -31,46 +29,41 @@ import model.dao.AppUserImpl;
 import utils.*;
 import utils.SessionHandler;
 
+/**
+ * Controlador de la vista de usuario
+
+ */
 public class PaneUsuarioController {
 
   // VBox dispositivos
   @FXML private VBox vBoxDispositivos;
-
   // HBox dispositivos
   @FXML private HBox hBoxDispositivo1;
   @FXML private Label lblDispositivo1;
   @FXML private ImageView imgDispositivo1;
   @FXML private ImageView imgDeleteDisp1;
-
   // Nombre e imagen de perfil del usuario
   @FXML private Label lblUsername;
   @FXML private ImageView imgUser;
-
   // Otros Datos cabecera
   @FXML private Label lblMiembroDesde;
   @FXML private Label lblNumeroDeTitulosGuardados;
   @FXML private Label lblUltimaConexion;
-
   // Importar y Exportar (funcionan como botones)
   @FXML private Button lblExportar;
   @FXML private Button lblImportar;
-
   // Campos para modificar los datos del usuario
   @FXML private TextField txtEmail;
   @FXML private PasswordField txtPass;
   @FXML private PasswordField txtPass2;
   @FXML private TextField txtUsername;
-
   // Lista de dispositivos HBox
   List<HBox> hBoxListDispositivos = new ArrayList<>();
-
   // Observable list
   private ObservableList<HBox> obsListDispositivos;
-
   // Botones
   @FXML private Button btnAddDispositivo;
   @FXML private Button btnGuardar;
-
   // Contador de dispositivos
   int contador = 0;
 
@@ -116,6 +109,11 @@ public class PaneUsuarioController {
     }
   }
 
+  /**
+   * Añade un nuevo dispositivo (HBox) al listado con el nombre dado
+   *
+   * @param nombreDispositivo
+   */
   private void deviceManager(String nombreDispositivo) {
     HBox newHBox = new HBox(10);
     newHBox.setPrefHeight(25);
@@ -162,7 +160,6 @@ public class PaneUsuarioController {
     DialogNotificator dialogNotificator = new DialogNotificator();
     LoginValidator loginValidator = new LoginValidator();
     InputValidator inputValidator = new InputValidator();
-
 
     String nombreUsuario = "";
     String email = "";
@@ -214,9 +211,7 @@ public class PaneUsuarioController {
    * @param event
    */
   @FXML
-  void exportarDatosPressed(ActionEvent event) {
-    // TODO
-  }
+  void exportarDatosPressed(ActionEvent event) {}
 
   /**
    * Importar datos
@@ -224,9 +219,7 @@ public class PaneUsuarioController {
    * @param event
    */
   @FXML
-  void importarDatosPressed(ActionEvent event) {
-    // TODO
-  }
+  void importarDatosPressed(ActionEvent event) {}
 
   @FXML
   void initialize() {
@@ -237,6 +230,7 @@ public class PaneUsuarioController {
         });
   }
 
+  /** Rellena los campos con los datos del usuario */
   private void fillUserData() {
     lblUsername.setText(SessionHandler.getAppUser().getUsername());
     txtUsername.setText(SessionHandler.getAppUser().getUsername());
@@ -253,6 +247,7 @@ public class PaneUsuarioController {
         .forEach(storage -> deviceManager(storage.getStorageName()));
   }
 
+  /** Rellena los componentes con las imágenes y los datos necesarios */
   public void fillComponents() {
     imgUser.setImage(new Image("images/user.png"));
     hBoxListDispositivos = new ArrayList<>();

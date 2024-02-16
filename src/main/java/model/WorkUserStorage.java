@@ -6,6 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Clase que modela la tabla work_user_storage de la base de datos
+
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

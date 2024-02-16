@@ -5,11 +5,15 @@ import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import lombok.Setter;
+import javafx.scene.layout.Pane;
 import utils.ListStorage;
-import utils.PaneSwitcher;
 
+/**
+ * Controlador de la página de inicio
+
+ */
 public class PaneInicioController {
+  private static Pane centralPane;
   private final int NUM_OBRAS = 8;
 
   // Imagen central de la página de inicio
@@ -17,26 +21,13 @@ public class PaneInicioController {
 
   // Imagenes novedades inicio
   @FXML private ImageView imgObra01;
-  @FXML private  ImageView imgObra02;
-  @FXML private  ImageView imgObra03;
-  @FXML private  ImageView imgObra04;
-  @FXML private  ImageView imgObra05;
-  @FXML private  ImageView imgObra06;
-  @FXML private  ImageView imgObra07;
-  @FXML private  ImageView imgObra08;
-
-  // Imagenes secciones
-  @FXML private ImageView imgPeliculas;
-  @FXML private ImageView imgSeries;
-  @FXML private ImageView imgCartelera;
-  @FXML private ImageView imgProximamente;
-  @FXML private ImageView imgFavoritos;
-
-  // TODO: DECLARACION centralPane e imgSection del parent para cargar los
-  // distintos paneles
-  // Puesto así ahora mismo para que no falle
-  //	Pane centralPane;
-  //	ImageView imgSection;
+  @FXML private ImageView imgObra02;
+  @FXML private ImageView imgObra03;
+  @FXML private ImageView imgObra04;
+  @FXML private ImageView imgObra05;
+  @FXML private ImageView imgObra06;
+  @FXML private ImageView imgObra07;
+  @FXML private ImageView imgObra08;
 
   /**
    * Redirige la página hacia el apartado "Películas"
@@ -56,8 +47,8 @@ public class PaneInicioController {
    */
   @FXML
   void goToSeries(MouseEvent event) {
-    //		PaneSwitcher.switchPane("PaneBusqueda", centralPane);
-    //		imgSection.setImage(new Image("images/sections/Series.png"));
+    // PaneSwitcher.switchFilmotecaPane("PaneBusqueda", PantallaModeloController.getCentralPane(),
+    // 't');
   }
 
   /**
@@ -93,29 +84,38 @@ public class PaneInicioController {
     //		imgSection.setImage(new Image("images/sections/Favoritos.png"));
   }
 
-  // Redirige al titulo seleccionado en detalle
+  /**
+   * Redirige la página hacia el apartado "Top Películas"
+   *
+   * @param event
+   */
   @FXML
-  void imgObraPressed(MouseEvent event) {
-    //		PaneSwitcher.switchPane("PaneMisListas", centralPane);
-    // If pelicula o serie
-    // imgSection.setImage(new Image("images/sections/Peliculas.png"));
-    // imgSection.setImage(new Image("images/sections/Series.png"));
-  }
+  void imgObraPressed(MouseEvent event) {}
 
+  /** Inicializa la página de inicio */
   @FXML
   void initialize() {
     Platform.runLater(this::setImages);
   }
 
+  /** Establece las imágenes de las obras en la página de inicio */
   private void setImages() {
     String url = "https://image.tmdb.org/t/p/w500";
-    this.imgObra01.setImage(new Image(url + ListStorage.getTrendingMovies().get(0).getPoster_path()));
-    this.imgObra02.setImage(new Image(url + ListStorage.getTrendingSeries().get(0).getPoster_path()));
-    this.imgObra03.setImage(new Image(url + ListStorage.getTrendingMovies().get(1).getPoster_path()));
-    this.imgObra04.setImage(new Image(url + ListStorage.getTrendingSeries().get(1).getPoster_path()));
-    this.imgObra05.setImage(new Image(url + ListStorage.getTrendingMovies().get(2).getPoster_path()));
-    this.imgObra06.setImage(new Image(url + ListStorage.getTrendingSeries().get(2).getPoster_path()));
-    this.imgObra07.setImage(new Image(url + ListStorage.getTrendingMovies().get(3).getPoster_path()));
-    this.imgObra08.setImage(new Image(url + ListStorage.getTrendingSeries().get(3).getPoster_path()));
+    this.imgObra01.setImage(
+        new Image(url + ListStorage.getTrendingMovies().get(0).getPoster_path()));
+    this.imgObra02.setImage(
+        new Image(url + ListStorage.getTrendingSeries().get(0).getPoster_path()));
+    this.imgObra03.setImage(
+        new Image(url + ListStorage.getTrendingMovies().get(1).getPoster_path()));
+    this.imgObra04.setImage(
+        new Image(url + ListStorage.getTrendingSeries().get(1).getPoster_path()));
+    this.imgObra05.setImage(
+        new Image(url + ListStorage.getTrendingMovies().get(2).getPoster_path()));
+    this.imgObra06.setImage(
+        new Image(url + ListStorage.getTrendingSeries().get(2).getPoster_path()));
+    this.imgObra07.setImage(
+        new Image(url + ListStorage.getTrendingMovies().get(3).getPoster_path()));
+    this.imgObra08.setImage(
+        new Image(url + ListStorage.getTrendingSeries().get(3).getPoster_path()));
   }
 }

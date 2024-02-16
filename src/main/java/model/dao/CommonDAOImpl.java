@@ -1,12 +1,13 @@
 package model.dao;
 
-import model.connector.HibernateUtils;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
+
+import model.connector.HibernateUtils;
 import org.hibernate.Session;
 
 /** Clase con el DAO generico, CommonDaoImpl */
-public abstract class CommonDAOImpl<T> implements CommonDaoInt<T> {
+public abstract class CommonDAOImpl<T> implements CommonDAOInt<T> {
 
   /** Tipo de clase */
   private Class<T> entityClass;
@@ -79,16 +80,19 @@ public abstract class CommonDAOImpl<T> implements CommonDaoInt<T> {
 
   /** Método que lista todos los objetos de la base de datos */
   public List<T> searchAll() {
-   HibernateUtils.openSession();
-      List<T> list = null;
-      try {
-          list = HibernateUtils.getSession().createQuery("FROM " + this.entityClass.getName(), this.entityClass).list();
+    HibernateUtils.openSession();
+    List<T> list = null;
+    try {
+      list =
+          HibernateUtils.getSession()
+              .createQuery("FROM " + this.entityClass.getName(), this.entityClass)
+              .list();
     } catch (Exception e) {
       System.out.println("Error al listar.");
     } finally {
       HibernateUtils.closeSession();
     }
-      return list;
+    return list;
   }
 
   /**

@@ -16,41 +16,35 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import lombok.Getter;
-import org.hibernate.Hibernate;
 import utils.*;
 
+/**
+ * Controlador de la pantalla de inicio
+
+ */
 public class PantallaModeloController {
-
   @FXML private BorderPane borderPane;
-
   // Panel central de carga
   @FXML @Getter private Pane centralPane;
-
   // Otros paneles
   @FXML private Pane paneContent;
   @FXML private GridPane paneHeader;
-
   // Logo TU.PELI
   @FXML private ImageView imgLogo;
-
   // ImageView para la sección seleccionada
   @FXML private ImageView imgSection;
-
   // Nombre e imagen de perfil del usuario
   @FXML private ImageView imgUser;
   @FXML private Label lblUserName;
-
   // Elementos de búsqueda
   @FXML private TextField txtBusqueda;
   @FXML private ImageView btnBuscar;
   @FXML private ToggleGroup toggle;
   @FXML private RadioButton rbPeliculas;
   @FXML private RadioButton rbSeries;
-
   // Cerrar sesión
   @FXML private ImageView imgClose;
   @FXML private Label lblCerrarSesion;
-
   // Secciones barra menú
   @FXML private Label lblInicio;
   @FXML private Label lblPeliculas;
@@ -61,6 +55,11 @@ public class PantallaModeloController {
   @FXML private Label lblProximamente;
   @FXML private Label lblMisListas;
 
+  /**
+   * Cambia el panel central de la aplicación por el panel de inicio
+   *
+   * @param event
+   */
   @FXML
   void buscadorOnKeyPressed(KeyEvent event) {
     if (event.getCode().equals(KeyCode.ENTER)
@@ -222,6 +221,11 @@ public class PantallaModeloController {
     imgSection.setImage(null);
   }
 
+  /**
+   * Inicializa la pantalla de inicio
+   *
+   * @throws InterruptedException
+   */
   @FXML
   void initialize() throws InterruptedException {
     PaneSwitcher.switchPane("PaneInicio", centralPane);
@@ -229,11 +233,13 @@ public class PantallaModeloController {
     Platform.runLater(this::loadUser);
   }
 
+  /** Carga el usuario activo en la sesión */
   private void loadUser() {
     SessionHandler sessionHandler = new SessionHandler();
     sessionHandler.loadUser();
   }
 
+  /** Rellena los elementos de la pantalla de inicio */
   private void fillContent() {
     imgLogo.setImage(new Image("images/logo/logo.png"));
     imgUser.setImage(new Image("images/user.png"));

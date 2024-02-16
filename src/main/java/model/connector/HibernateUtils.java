@@ -8,6 +8,10 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+/**
+ * Clase que gestiona la conexión con la base de datos.
+
+ */
 public class HibernateUtils {
   @Getter private static Session session;
   private static Transaction transaction;

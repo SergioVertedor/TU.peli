@@ -7,6 +7,9 @@ import model.AppUser;
 import model.connector.HibernateUtils;
 import model.dao.AppUserImpl;
 
+/**
+ * Clase que maneja la sesión del usuario.
+ */
 public class SessionHandler {
   @Getter @Setter private static AppUser appUser;
 

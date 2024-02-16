@@ -1,8 +1,24 @@
 package model.dao;
 
-import java.util.List;
-import model.AppUser;
-import model.WorkUserStorage;
+import model.*;
 
-public interface WorkUserStorageDAOInt extends CommonDaoInt<WorkUserStorage> {
+public interface WorkUserStorageDAOInt extends CommonDAOInt<WorkUserStorage> {
+  /**
+   * Busca WorkUserStorage por work y appUser
+   *
+   * @param work
+   * @param appUser
+   * @return
+   */
+  public WorkUserStorage getWorkUserStorage(Work work, AppUser appUser);
+
+  /**
+   * Busca WorkUserStorage por work, appUser y device
+   *
+   * @param work
+   * @param appUser
+   * @param device
+   * @return
+   */
+  public boolean ifExists(Pelicula work, AppUser appUser, Storage device);
 }

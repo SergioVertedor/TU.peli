@@ -16,6 +16,9 @@ import service.dto.movie.Movie;
 import utils.ListStorage;
 import utils.PaneSwitcher;
 
+/**
+ * Clase controladora de la pantalla de proximamente
+ */
 public class PaneProximamenteController {
 
   @Getter @Setter private static Pane contentPane;
@@ -71,51 +74,93 @@ public class PaneProximamenteController {
   @FXML private Label lblTitulo12;
   @FXML private Label lblTitulo13;
 
+  /**
+   * Metodo que se encarga de cambiar a la pantalla de detalles de la pelicula seleccionada
+   *
+   * @param event
+   */
   @FXML
   void imgPoster00Pressed(MouseEvent event) {
     PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(0).getId());
   }
 
+  /**
+   * Metodo que se encarga de cambiar a la pantalla de detalles de la pelicula seleccionada
+   *
+   * @param event
+   */
   @FXML
   void imgPoster01Pressed(MouseEvent event) {
     PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(1).getId());
   }
 
+  /**
+   * Metodo que se encarga de cambiar a la pantalla de detalles de la pelicula seleccionada
+   *
+   * @param event
+   */
   @FXML
   void imgPoster02Pressed(MouseEvent event) {
     PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(2).getId());
   }
 
+  /**
+   * Metodo que se encarga de cambiar a la pantalla de detalles de la pelicula seleccionada
+   *
+   * @param event
+   */
   @FXML
   void imgPoster03Pressed(MouseEvent event) {
     PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(3).getId());
   }
 
+  /**
+   * Metodo que se encarga de cambiar a la pantalla de detalles de la pelicula seleccionada
+   *
+   * @param event
+   */
   @FXML
   void imgPoster10Pressed(MouseEvent event) {
     PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(4).getId());
   }
 
+  /**
+   * Metodo que se encarga de cambiar a la pantalla de detalles de la pelicula seleccionada
+   *
+   * @param event
+   */
   @FXML
   void imgPoster11Pressed(MouseEvent event) {
     PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(5).getId());
   }
 
+  /**
+   * Metodo que se encarga de cambiar a la pantalla de detalles de la pelicula seleccionada
+   *
+   * @param event
+   */
   @FXML
   void imgPoster12Pressed(MouseEvent event) {
     PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(6).getId());
   }
 
+  /**
+   * Metodo que se encarga de cambiar a la pantalla de detalles de la pelicula seleccionada
+   *
+   * @param event
+   */
   @FXML
   void imgPoster13Pressed(MouseEvent event) {
     PaneSwitcher.switchToDetails("PaneDetalle", contentPane, 'm', upcomingMovies.get(7).getId());
   }
 
+  /** Metodo que se encarga de inicializar el controlador */
   @FXML
   void initialize() {
     Platform.runLater(this::fillResults);
   }
 
+  /** Metodo que se encarga de llenar los resultados de las peliculas proximas a estrenarse */
   public void fillResults() {
     String url = "https://image.tmdb.org/t/p/w500";
     List<ImageView> imgPosters =

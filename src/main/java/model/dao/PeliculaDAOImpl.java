@@ -1,23 +1,23 @@
 package model.dao;
 
 import java.util.List;
+
 import model.Pelicula;
 import model.connector.HibernateUtils;
 import org.hibernate.Session;
 import service.dto.movie.MovieDetail;
 
 /** Clase con el DAO generico, CommonDaoImpl y la interfaz WorkInt */
-public class PeliculaImpl extends CommonDAOImpl<Pelicula> implements PeliculaInt {
+public class PeliculaDAOImpl extends CommonDAOImpl<Pelicula> implements PeliculaDAOInt {
 
   /**
    * Constructor de la clase
    *
    * @param session Session de la base de datos
    */
-  public PeliculaImpl(Session session) {
+  public PeliculaDAOImpl(Session session) {
     super(session);
   }
-
   /**
    * Busca Pelicula por titulo
    * @return Pelicula
@@ -65,6 +65,11 @@ public class PeliculaImpl extends CommonDAOImpl<Pelicula> implements PeliculaInt
     return peliculas;
   }
 
+  /**
+   * Busca confirmar si existe una pelicula
+   * @param title
+   * @return
+   */
   public boolean ifExists(String title) {
     HibernateUtils.openSession();
     if (HibernateUtils.getSession().getTransaction().isActive()) {

@@ -3,7 +3,11 @@ package model.dao;
 import java.util.List;
 import model.AppUser;
 
-public interface AppUserDAOInt extends CommonDaoInt<AppUser> {
+/**
+ * Interfaz con el DAO generico, CommonDaoInt y la interfaz AppUserInt
+
+ */
+public interface AppUserDAOInt extends CommonDAOInt<AppUser> {
 
   /**
    * Busca usuario por username

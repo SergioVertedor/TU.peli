@@ -10,7 +10,6 @@ public class AppUserImpl extends CommonDAOImpl<AppUser> implements AppUserDAOInt
   public AppUserImpl(Session session) {
     super(session);
   }
-
   @Override
   public AppUser searchByUsername(String username) {
     session = HibernateUtils.getSession();
@@ -21,7 +20,11 @@ public class AppUserImpl extends CommonDAOImpl<AppUser> implements AppUserDAOInt
     AppUser appUser = appUsers.get(0);
     return appUser;
   }
-
+  /**
+   * Metodo para buscar un usuario por su mail
+   * @param mail
+   * @return
+   */
   @Override
   public List<AppUser> searchByMail(String mail) {
     session = HibernateUtils.getSession();
@@ -31,7 +34,11 @@ public class AppUserImpl extends CommonDAOImpl<AppUser> implements AppUserDAOInt
     session.getTransaction().commit();
     return appUsers;
   }
-
+  /**
+   * Metodo para buscar un usuario por su id
+   * @param id
+   * @return
+   */
   public AppUser searchById(int id) {
     session = HibernateUtils.getSession();
     session.beginTransaction();

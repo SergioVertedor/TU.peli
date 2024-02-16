@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * Esta clase representa una película. Hereda de la clase Work.
+ */
 @Getter
 @Setter
 @Entity

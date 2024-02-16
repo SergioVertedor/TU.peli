@@ -4,7 +4,7 @@ import java.util.List;
 import model.Serie;
 
 /** Interface para Serie */
-public interface SerieDaoI extends CommonDaoInt<Serie> {
+public interface SerieDAOI extends CommonDAOInt<Serie> {
 
   /**
    * Busca Serie por id
