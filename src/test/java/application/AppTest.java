@@ -2,6 +2,8 @@ package application;
 
 import model.connector.HibernateUtils;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.stage.Stage;
@@ -136,7 +138,7 @@ public class AppTest {
 
   @Test
   @Order(2)
-  public void login(FxRobot robot) {
+  public void login(FxRobot robot) throws InterruptedException {
     WaitForAsyncUtils.waitForFxEvents();
     robot.clickOn("#txtLoginUser");
     robot.write("prueba");
@@ -154,11 +156,9 @@ public class AppTest {
                 .findFirst()
                 .orElse(null);
     assert dialogPane != null;
+    // Esperamos unos segundos
+    TimeUnit.SECONDS.sleep(3);
     String headerText = dialogPane.getHeaderText();
-    robot.lookup(".dialog-pane .button").queryAll().stream()
-        .filter(node -> "Aceptar".equals(((Button) node).getText()))
-        .findFirst()
-        .ifPresent(robot::clickOn);
     assert headerText.equals("Login correcto");
   }
 }
