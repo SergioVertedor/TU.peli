@@ -193,6 +193,7 @@ public class PaneDetalleController {
       PeliculaImpl peliculaImpl = new PeliculaImpl(HibernateUtils.getSession());
       peliculaImpl.insert(work);
       peliculaImpl.update(work);
+      HibernateUtils.flushSession();
       WorkUserStorageId id = new WorkUserStorageId(work, SessionHandler.getAppUser(), device);
       WorkUserStorage workUserStorage =
           new WorkUserStorage(id, valoracion, comentario, true, fav, fechaVista);
@@ -535,16 +536,40 @@ public class PaneDetalleController {
         (Arrays.asList(
             streaming01, streaming02, streaming03, streaming04, streaming05, streaming06));
 
-    if(this.movieDetails.getTitle().equals(PeliculaImpl.getMovieTitle(id))) {
-      this.movieDetails = PeliculaImpl.getMovie(id);
+    var workUserStorageImpl = new WorkUserStorageImpl(HibernateUtils.getSession());
+    Work work = PeliculaImpl.getMovieFromTitle(movieDetails.getTitle());
+    WorkUserStorage userStorage =
+        workUserStorageImpl.getWorkUserStorage(work, SessionHandler.getAppUser());
+    if (Optional.ofNullable(userStorage).isPresent()) {
+      if (userStorage.isEnFavoritos()) {
+        imgLike.setImage(new Image("/images/others/likeSelected.png"));
+      }
+      if (userStorage.getValoracion() != 0) {
+        totalEstrellas = (int) Double.parseDouble(String.valueOf(userStorage.getValoracion()));
+        List<ImageView> estrellas = Arrays.asList(imgStar1, imgStar2, imgStar3, imgStar4, imgStar5);
+        for (int i = 0; i < estrellas.size(); i++) {
+          if (i < totalEstrellas) {
+            estrellas.get(i).setImage(new Image("/images/others/favSelected.png"));
+          } else {
+            estrellas.get(i).setImage(new Image("/images/others/favUnselected.png"));
+          }
+        }
+      }
+      if (userStorage.getComentario() != null) {
+        lblComentario.setText(userStorage.getComentario());
+      }
+      if (userStorage.getVista() != null) {
+        datePicker.setValue(LocalDate.parse(userStorage.getVista()));
+      }
+
+      /**
+       * WatchProvider streaming = apiService.getMovieWatchProviders(id); for (int i = 0; i <
+       * streamingIcon.size(); i++) { try { if (i <
+       * streaming.getResults().getEs().getFlatrate().length) { streamingIcon .get(i) .setImage( new
+       * Image(url + streaming.getResults().getEs().getFlatrate()[i].getLogo_path())); } else {
+       * streamingIcon.get(i).setVisible(false); } } catch (Exception e) {
+       * streamingIcon.get(i).setVisible(false); } }*
+       */
     }
-    /**
-     * WatchProvider streaming = apiService.getMovieWatchProviders(id); for (int i = 0; i <
-     * streamingIcon.size(); i++) { try { if (i <
-     * streaming.getResults().getEs().getFlatrate().length) { streamingIcon .get(i) .setImage( new
-     * Image(url + streaming.getResults().getEs().getFlatrate()[i].getLogo_path())); } else {
-     * streamingIcon.get(i).setVisible(false); } } catch (Exception e) {
-     * streamingIcon.get(i).setVisible(false); } }*
-     */
   }
 }

@@ -23,14 +23,14 @@ public class PeliculaImpl extends CommonDAOImpl<Pelicula> implements PeliculaInt
    * @param id id de la pelicula
    * @return Pelicula
    */
-  public static String getMovieTitle(int id) {
+  public static Pelicula getMovieFromTitle(String title) {
     HibernateUtils.openSession();
     Session session = HibernateUtils.getSession();
     session.beginTransaction();
-    String hql = "SELECT originalTitle FROM Work WHERE id=" + id;
-    String title = session.createQuery(hql, String.class).getSingleResult();
+    String hql = "FROM Work WHERE originalTitle='" + title + "'";
+    Pelicula work = session.createQuery(hql, Pelicula.class).getSingleResult();
     session.getTransaction().commit();
-    return title;
+    return work;
   }
 
   /**

@@ -4,6 +4,7 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+
 @Embeddable
 public class WorkUserStorageId implements java.io.Serializable {
   @ManyToOne
@@ -22,5 +23,7 @@ public class WorkUserStorageId implements java.io.Serializable {
     this.work = work;
     this.user = user;
     this.storage = storage;
+  }
+  public WorkUserStorageId() {
   }
 }
