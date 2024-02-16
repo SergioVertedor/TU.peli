@@ -56,10 +56,25 @@ public class PeliculaImpl extends CommonDAOImpl<Pelicula> implements PeliculaInt
    */
   @Override
   public List<Pelicula> searchByTitle(String title) {
-    session.beginTransaction();
+    HibernateUtils.openSession();
+    HibernateUtils.startTransaction();
     String hql = "FROM Work WHERE originalTitle='" + title + "'";
     List<Pelicula> peliculas = session.createQuery(hql, Pelicula.class).list();
-    session.getTransaction().commit();
+    HibernateUtils.commitTransaction();
+    HibernateUtils.closeSession();
     return peliculas;
+  }
+
+  public boolean ifExists(String title) {
+    HibernateUtils.openSession();
+    if (HibernateUtils.getSession().getTransaction().isActive()) {
+      HibernateUtils.commitTransaction();
+    }
+    HibernateUtils.startTransaction();
+    String hql = "FROM Work WHERE originalTitle='" + title + "'";
+    List<Pelicula> peliculas = session.createQuery(hql, Pelicula.class).list();
+    HibernateUtils.commitTransaction();
+    HibernateUtils.closeSession();
+    return !peliculas.isEmpty();
   }
 }

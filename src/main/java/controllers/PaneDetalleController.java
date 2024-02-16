@@ -29,6 +29,7 @@ import model.*;
 import model.connector.HibernateUtils;
 import model.dao.PeliculaImpl;
 import model.dao.SerieDAOImpl;
+import model.dao.WorkUserStorageIdImpl;
 import model.dao.WorkUserStorageImpl;
 import org.jetbrains.annotations.NotNull;
 import service.APIService;
@@ -101,11 +102,10 @@ public class PaneDetalleController {
 
   // Última vez vista
   @FXML private DatePicker datePicker;
-  
+
   // Comentario
 
-  @FXML
-  private TextField txtComentario;
+  @FXML private TextField txtComentario;
 
   /**
    * Devuelve la fecha seleccionada en el DatePicker.
@@ -192,34 +192,44 @@ public class PaneDetalleController {
               lblSinopsis.getText(),
               movieDetails.getBackdrop_path(),
               movieDetails.getPoster_path(),
-              Double.parseDouble(lblRating.getText()),
+              Double.parseDouble(lblRating.getText().replace(",", ".")),
               LocalDate.now(),
               "",
               "");
       PeliculaImpl peliculaImpl = new PeliculaImpl(HibernateUtils.getSession());
-      peliculaImpl.insert(work);
-      peliculaImpl.update(work);
-      HibernateUtils.flushSession();
+      if (peliculaImpl.ifExists(movieDetails.getTitle())) {
+        peliculaImpl.update(work);
+      } else {
+        peliculaImpl.insert(work);
+      }
+      WorkUserStorageIdImpl workUserStorageIdImpl =
+          new WorkUserStorageIdImpl(HibernateUtils.getSession());
       WorkUserStorageId id = new WorkUserStorageId(work, SessionHandler.getAppUser(), device);
+      workUserStorageIdImpl.update(id);
       WorkUserStorage workUserStorage =
           new WorkUserStorage(id, valoracion, comentario, true, fav, fechaVista);
       WorkUserStorageImpl workUserStorageImpl =
           new WorkUserStorageImpl(HibernateUtils.getSession());
-      workUserStorageImpl.insert(workUserStorage);
-      workUserStorageImpl.update(workUserStorage);
+      if (!workUserStorageImpl.ifExists(work, SessionHandler.getAppUser(), device)) {
+        workUserStorageImpl.update(workUserStorage);
+      } else {
+        workUserStorageImpl.insert(workUserStorage);
+      }
     } else if (type == 't') {
       serie = getSerie();
       SerieDAOImpl serieImpl = new SerieDAOImpl(HibernateUtils.getSession());
 
       serieImpl.insert(serie);
       serieImpl.update(serie);
+
+      WorkUserStorageId id = new WorkUserStorageId(serie, SessionHandler.getAppUser(), device);
+      WorkUserStorage workUserStorage =
+          new WorkUserStorage(id, valoracion, comentario, true, fav, fechaVista);
+      WorkUserStorageImpl workUserStorageImpl =
+          new WorkUserStorageImpl(HibernateUtils.getSession());
+      workUserStorageImpl.insert(workUserStorage);
+      workUserStorageImpl.update(workUserStorage);
     }
-    WorkUserStorageId id = new WorkUserStorageId(serie, SessionHandler.getAppUser(), device);
-    WorkUserStorage workUserStorage =
-        new WorkUserStorage(id, valoracion, comentario, true, fav, fechaVista);
-    WorkUserStorageImpl workUserStorageImpl = new WorkUserStorageImpl(HibernateUtils.getSession());
-    workUserStorageImpl.insert(workUserStorage);
-    workUserStorageImpl.update(workUserStorage);
   }
 
   @NotNull
@@ -268,10 +278,10 @@ public class PaneDetalleController {
 
   @FXML
   void escribirComentario(MouseEvent event) {
-  	if(txtComentario.isDisable()) {
-  		txtComentario.isEditable();
-  		txtComentario.isFocusVisible();
-  	}
+    if (txtComentario.isDisable()) {
+      txtComentario.isEditable();
+      txtComentario.isFocusVisible();
+    }
   }
 
   @FXML
