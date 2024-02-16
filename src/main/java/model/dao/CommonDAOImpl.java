@@ -30,8 +30,9 @@ public abstract class CommonDAOImpl<T> implements CommonDaoInt<T> {
 
   /** Metodo insert, que inserta un objeto en la base de datos */
   public void insert(final T paramT) {
+
+    session = HibernateUtils.getSession();
     try {
-      session = HibernateUtils.getSession();
       HibernateUtils.startTransaction();
       session.persist(paramT);
       HibernateUtils.flushSession();
