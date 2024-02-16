@@ -13,9 +13,9 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
  */
 public class HibernateUtils {
-  @Getter private static Session session;
-  private static Transaction transaction;
-  private static SessionFactory sessionFactory;
+  private static Session session;
+  @Getter private static Transaction transaction;
+  @Getter private static SessionFactory sessionFactory;
 
   /** Método que abre la conexión con la base de datos. */
   public static void openSession() {
@@ -56,14 +56,14 @@ public class HibernateUtils {
   }
 
   /** Método que inicia la transacción. */
-  public static void startTransaction() {
+  public static synchronized void startTransaction() {
     if (transaction == null || !transaction.isActive()) {
      transaction = session.beginTransaction();
     }
   }
 
   /** Método que confirma la transacción. */
-  public static void commitTransaction() {
+  public static synchronized void commitTransaction() {
     transaction.commit();
   }
 

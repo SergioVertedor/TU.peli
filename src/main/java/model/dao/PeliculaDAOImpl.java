@@ -72,9 +72,6 @@ public class PeliculaDAOImpl extends CommonDAOImpl<Pelicula> implements Pelicula
    */
   public boolean ifExists(String title) {
     HibernateUtils.openSession();
-    if (HibernateUtils.getSession().getTransaction().isActive()) {
-      HibernateUtils.commitTransaction();
-    }
     HibernateUtils.startTransaction();
     String hql = "FROM Work WHERE originalTitle='" + title + "'";
     List<Pelicula> peliculas = session.createQuery(hql, Pelicula.class).list();

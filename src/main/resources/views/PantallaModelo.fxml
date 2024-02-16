@@ -178,7 +178,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblMisListas" alignment="TOP_LEFT" onMouseClicked="#goToMisListas" text="MIS LISTAS">
+                  <Label fx:id="lblMisListas" alignment="TOP_LEFT" onMouseClicked="#goToMisListas" opacity="0.0" text="MIS LISTAS">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
