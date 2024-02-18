@@ -24,6 +24,10 @@ import service.dto.tv.TV;
 import utils.ListStorage;
 import utils.PaneSwitcher;
 
+/**
+ * Clase que controla el panel superior de la aplicación.
+
+ */
 public class PaneTopController {
   private List<Movie> movie = new ArrayList<Movie>();
   private List<TV> tv = new ArrayList<TV>();

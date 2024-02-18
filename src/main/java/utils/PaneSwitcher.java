@@ -7,9 +7,11 @@ import javafx.scene.layout.*;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Clase que se encarga de cambiar el panel principal de la aplicación cargando un nuevo archivo
+ */
 @Getter
 @Setter
-/** Clase que facilita el cambio de paneles en una aplicación JavaFX. */
 public class PaneSwitcher {
 
   /** Método que cambia el panel principal de la aplicación cargando un nuevo archivo FXML. */

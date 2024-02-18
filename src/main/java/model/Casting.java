@@ -10,6 +10,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Clase que representa un casting de una película o serie.
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

@@ -6,6 +6,10 @@ import model.connector.HibernateUtils;
 import org.hibernate.Session;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 
+/**
+ * Clase que implementa la interfaz SerieDAOI
+
+ */
 public class SerieDAOImpl extends CommonDAOImpl<Serie> implements SerieDAOI {
 
   private Session session;

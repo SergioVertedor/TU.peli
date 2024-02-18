@@ -9,8 +9,7 @@ import utils.SceneSwitcher;
 import utils.SessionHandler;
 
 /**
- * @author SVB
- * @author EPP
+ * Clase principal de la aplicación.
  */
 public class App extends Application {
 

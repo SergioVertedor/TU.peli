@@ -2,6 +2,9 @@ package model.dao;
 
 import model.*;
 
+/**
+ * Interfaz que implementa la clase WorkUserStorageDAOImpl
+ */
 public interface WorkUserStorageDAOInt extends CommonDAOInt<WorkUserStorage> {
   /**
    * Busca WorkUserStorage por work y appUser
